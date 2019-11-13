@@ -31,8 +31,8 @@ document.body.appendChild(chart.Render());
 
 ```
 
-You can follow the official [documentation](https://plot.ly/javascript/) from Plotly, as the types and usage are almost exactly the same (one minor but important change: some of the objects on C# have the first letter in upper-case (like Traces.heatmap on the example above).
+You can follow the official [documentation](https://plot.ly/javascript/) from Plotly, as the types and usage are almost exactly the same (one minor but **important change**: some of the objects on C# have the first letter in upper-case (like Traces.heatmap on the example above).
 
-> Event types have been manually created, and have not been all checked for consistency. If you find any definition that doesn't match the expected one from plotly, please open an issue for it!
+*Note*: Event types have been manually created, and have not been all validated against plotly's events. If you find any definition that doesn't match the expected one from plotly, please open an issue for it!
 
 This project is derived from the awesome work by [Cody Johnson](https://github.com/Shmew) on the [F# bindings](https://github.com/Shmew/Feliz.Plotly/).
