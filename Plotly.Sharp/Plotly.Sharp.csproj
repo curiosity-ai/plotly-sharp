@@ -1,12 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.42</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>(c) Copyright 2019 Curiosity GmbH - all right reserved</Copyright>
+    <Company>Curiosity GmbH</Company>
+    <Authors>Curiosity GmbH</Authors>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+    <PackageProjectUrl>https://github.com/curiosity-ai/plotly.bridge</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/curiosity-ai/plotly.bridge</RepositoryUrl>
+    <AssemblyName>Plotly.Sharp</AssemblyName>
+    <RootNamespace>Plotly</RootNamespace>
+    <PackageId>Plotly.Sharp</PackageId>
+    <Description>Plotly.Sharp provides a strongly-typed binding that generates embedded HTML using Plotly.</Description>
+    <PackageTags>Plotly, Graphs, Charts, HTML</PackageTags>
+    <PackageIcon>plotly-sharp-logo.png</PackageIcon>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
-
 </Project>
+

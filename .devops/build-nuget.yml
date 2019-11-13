@@ -1,5 +1,6 @@
 variables:
-  project:  './Plotly.Bridge/Plotly.Bridge.csproj'
+  projectBridge:  './Plotly.Bridge/Plotly.Bridge.csproj'
+  projectSharp:  './Plotly.Sharp/Plotly.Sharp.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -13,16 +14,31 @@ steps:
 - task: NuGetToolInstaller@0
 
 - task: DotNetCoreCLI@2
+  displayName: 'restore projectBridge'
   inputs:
     command: 'restore'
-    projects: '$(project)'
+    projects: '$(projectBridge)'
     displayName: 'restore nuget'
 
+- task: DotNetCoreCLI@2
+  displayName: 'restore projectSharp'
+  inputs:
+    command: 'restore'
+    projects: '$(projectSharp)'
+    displayName: 'restore nuget'
 
 - task: VSBuild@1
-  displayName: 'build project'
+  displayName: 'build projectBridge'
   inputs:
-    solution: '$(project)'
+    solution: '$(projectBridge)'
+    msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSBuild@1
+  displayName: 'build projectSharp'
+  inputs:
+    solution: '$(projectSharp)'
     msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
@@ -38,3 +54,12 @@ steps:
     packagesToPush: '**/Plotly.Bridge.0.0.$(build.buildId).nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget-curiosity'
+
+- task: NuGetCommand@2
+  displayName: 'push Plotly.Sharp to nuget'
+  inputs:
+    command: 'push'
+    packagesToPush: '**/Plotly.Sharp.0.0.$(build.buildId).nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'nuget-curiosity'
+
