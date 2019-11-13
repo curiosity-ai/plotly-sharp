@@ -17,14 +17,12 @@
       "files": [ "$(OutDir)bridge/Plotly.Bridge.min.js" ]
     },
     {
-      "name": "plotly.min.js",
-      "files": [ "bridge/plotly.min.js" ],
-      "output": "plotly.min.js"
+      "name": "plotly.js",
+      "files": [ "bridge/plotly.js" ]
     },
     {
-      "name": "plotly.js",
-      "files": [ "bridge/plotly.js" ],
-      "output": "plotly.js"
+      "name": "plotly.min.js",
+      "files": [ "bridge/plotly.min.js" ]
     }
   ],
   "outputFormatting": "Both",
