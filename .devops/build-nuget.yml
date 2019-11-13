@@ -1,5 +1,5 @@
 variables:
-  solution: '**/*.sln'
+  project:  './Plotly.Bridge/Plotly.Bridge.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -12,21 +12,17 @@ pool:
 steps:
 - task: NuGetToolInstaller@0
 
-- task: DotNetCoreInstaller@0
-  displayName: 'Install .net core 3.0'
-  inputs:
-    version: '3.0.100'
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    restoreSolution: '$(solution)'
-    feedsToUse: 'select'
+    projects: '$(project)'
+    displayName: 'restore nuget'
+
 
 - task: VSBuild@1
-  displayName: 'build solution'
+  displayName: 'build project'
   inputs:
-    solution: '$(solution)'
+    solution: '$(project)'
     msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
@@ -36,9 +32,9 @@ steps:
     script: 'dir $(Build.SourcesDirectory)\*.nupkg /S'
 
 - task: NuGetCommand@2
-  displayName: 'push PlotlyBridge to nuget'
+  displayName: 'push Plotly.Bridge to nuget'
   inputs:
     command: 'push'
-    packagesToPush: '**/PlotlyBridge.0.0.$(build.buildId).nupkg'
+    packagesToPush: '**/Plotly.Bridge.0.0.$(build.buildId).nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget-curiosity'
