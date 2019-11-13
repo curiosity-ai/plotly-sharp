@@ -14,9 +14,11 @@ module Program =
         let interopFile = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/Interop.cs"
         let typesFile   = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/Types.cs"
         let propsDir    = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/Props"
-        let libFile     = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.min.js"
+        let libMinFile  = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.min.js"
+        let libFile     = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.js"
 
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libFile
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFile
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js") |> File.writeString false libFile
 
         Shell.cleanDir propsDir
 

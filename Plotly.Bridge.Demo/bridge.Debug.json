@@ -1,4 +1,4 @@
 {
-  "outputFormatting": "Formatted",
+  "outputFormatting": "Minified", //There is a bug with Formated output not copying plotly.js file, so for now use the minified version here
   "combineScripts": false
 }
