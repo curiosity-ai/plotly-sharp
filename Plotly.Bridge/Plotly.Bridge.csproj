@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
- <PropertyGroup>
+  <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
     <Version>0.0.42</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -9,14 +9,14 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
     <PackageProjectUrl>https://github.com/curiosity-ai/plotly.bridge</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/curiosity-ai/plotly.bridge</RepositoryUrl>
     <AssemblyName>Plotly.Bridge</AssemblyName>
     <RootNamespace>PlotlyBridge</RootNamespace>
-
-   <PackageId>Plotly.Bridge</PackageId>
-   <Description>Plotly.Bridge provides a strongly-typed binding to use Plotly on Bridge.Net applications.</Description>
-   <PackageTags>Plotly, Bridge.Net, BridgeNET, Bridge, Graphs, Charts, HTML</PackageTags>
-   <PackageIcon>plotly-bridge-logo.png</PackageIcon>
- </PropertyGroup>
+    <PackageId>Plotly.Bridge</PackageId>
+    <Description>Plotly.Bridge provides a strongly-typed binding to use Plotly on Bridge.Net applications.</Description>
+    <PackageTags>Plotly, Bridge.Net, BridgeNET, Bridge, Graphs, Charts, HTML</PackageTags>
+    <PackageIcon>plotly-bridge-logo.png</PackageIcon>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bridge" Version="17.10.0" />
