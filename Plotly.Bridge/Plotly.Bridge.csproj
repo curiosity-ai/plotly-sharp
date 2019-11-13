@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <Version>0.0.42</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>(c) Copyright 2019 Curiosity GmbH - all right reserved</Copyright>
+    <Company>Curiosity GmbH</Company>
+    <Authors>Curiosity GmbH</Authors>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
+    <PackageProjectUrl>https://github.com/curiosity-ai/plotly.bridge</PackageProjectUrl>
+    <AssemblyName>Plotly.Bridge</AssemblyName>
+    <RootNamespace>PlotlyBridge</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bridge" Version="17.10.0" />
+    <PackageReference Include="Bridge.Core" Version="17.10.0" />
+    <PackageReference Include="Retyped.dom" Version="2.8.6733" />
+    <PackageReference Include="Retyped.es5" Version="2.8.6733" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="bridge.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="bridge\plotly.min.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

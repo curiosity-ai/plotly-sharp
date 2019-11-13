@@ -1,0 +1,38 @@
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+trigger:
+- master
+
+pool:
+  vmImage: 'VS2017-Win2016'
+
+steps:
+- task: NuGetToolInstaller@0
+
+- task: NuGetCommand@2
+  displayName: 'restore nuget'
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  displayName: 'build solution'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
+
+- task: CmdLine@2
+  inputs:
+    script: 'dir $(Build.SourcesDirectory)\*.nupkg /S'
+
+- task: NuGetCommand@2
+  displayName: 'push PlotlyBridge to nuget'
+  inputs:
+    command: 'push'
+    packagesToPush: '**/PlotlyBridge.0.0.$(build.buildId).nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'nuget-curiosity'
