@@ -17,18 +17,14 @@ steps:
   inputs:
     version: '3.0.100'
 
-- task: NuGetCommand@2
-  displayName: 'restore nuget'
-  inputs:
-    restoreSolution: '$(solution)'
-
 - task: VSBuild@1
   displayName: 'build solution'
   inputs:
     solution: '$(solution)'
+    msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
+    restoreNugetPackages: true
 
 - task: CmdLine@2
   inputs:
