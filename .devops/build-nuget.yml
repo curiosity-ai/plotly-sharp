@@ -12,6 +12,11 @@ pool:
 steps:
 - task: NuGetToolInstaller@0
 
+- task: DotNetCoreInstaller@0
+  displayName: 'Install .net core 3.0'
+  inputs:
+    version: '3.0.100'
+
 - task: NuGetCommand@2
   displayName: 'restore nuget'
   inputs:
