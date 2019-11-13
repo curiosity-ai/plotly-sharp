@@ -31,7 +31,7 @@ namespace PlotlyBridge
         /// When `layout.autosize` is turned on, set the frame margins in fraction of the graph size.
         public static Box<IConfigProperty> frameMargins(float val) => Interop.mkConfigAttr("frameMargins", val);
         /// Determines whether mouse wheel or two-finger scroll zooms is enable. Turned on by default for gl3d, geo and mapbox subplots (as these subplot types do not have zoombox via pan), but turned off by default for cartesian subplots. Set `scrollZoom` to *false* to disable scrolling for all subplots.
-        public static Box<IConfigProperty> scrollZoom(params Box<IConfigProperty>[] properties) => Interop.mkConfigAttr("scrollZoom", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IConfigProperty> scrollZoom(params Box<IConfigProperty>[] properties) => Interop.mkConfigAttr("scrollZoom", Bindings.joinEnumProperties(properties));
         /// Sets the delay for registering a double-click in ms. This is the time interval (in ms) between first mousedown and 2nd mouseup to constitute a double-click. This setting propagates to all on-subplot double clicks (except for geo and mapbox) and on-legend double clicks.
         public static Box<IConfigProperty> doubleClickDelay(int val) => Interop.mkConfigAttr("doubleClickDelay", val);
         /// Sets the delay for registering a double-click in ms. This is the time interval (in ms) between first mousedown and 2nd mouseup to constitute a double-click. This setting propagates to all on-subplot double clicks (except for geo and mapbox) and on-legend double clicks.

@@ -154,7 +154,7 @@ namespace PlotlyBridge
         /// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
         public static Box<IBarProperty> selectedpoints(params string[] values) => Interop.mkBarAttr("selectedpoints", values);
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IBarProperty> hoverinfo(params Box<IBarProperty>[] properties) => Interop.mkBarAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IBarProperty> hoverinfo(params Box<IBarProperty>[] properties) => Interop.mkBarAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         public static Box<IBarProperty> hoverlabel(params Box<IHoverlabelProperty>[] properties) => Interop.mkBarAttr("hoverlabel", Bindings.flattenProperties(properties));
         public static Box<IBarProperty> stream(params Box<IStreamProperty>[] properties) => Interop.mkBarAttr("stream", Bindings.flattenProperties(properties));
         public static Box<IBarProperty> transforms(params Box<ITransformsProperty>[] properties) => Interop.mkBarAttr("transforms", Bindings.flattenPropertiesToArray(properties));

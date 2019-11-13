@@ -416,7 +416,7 @@ namespace PlotlyBridge
         /// Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
         public static Box<ISurfaceProperty> opacity(float val) => Interop.mkSurfaceAttr("opacity", val);
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<ISurfaceProperty> hoverinfo(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<ISurfaceProperty> hoverinfo(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<ISurfaceProperty> scene(int anchorId) => Interop.mkSurfaceAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
@@ -452,7 +452,7 @@ namespace PlotlyBridge
         /// Sets the fill ratio of the iso-surface. The default fill value of the surface is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
         public static Box<ISurfaceProperty> fill(float val) => Interop.mkSurfaceAttr("fill", val);
         /// Sets the surface pattern of the iso-surface 3-D sections. The default pattern of the surface is `all` meaning that the rest of surface elements would be shaded. The check options (either 1 or 2) could be used to draw half of the squares on the surface. Using various combinations of capital `A`, `B`, `C`, `D` and `E` may also be used to reduce the number of triangles on the iso-surfaces and creating other patterns of interest.
-        public static Box<ISurfaceProperty> pattern(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("pattern", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<ISurfaceProperty> pattern(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("pattern", Bindings.joinEnumProperties(properties));
     }
 
     public static partial class Surface

@@ -446,7 +446,7 @@ namespace PlotlyBridge
         public static Box<IVolumeProperty> flatshading(bool val) => Interop.mkVolumeAttr("flatshading", val);
         public static Box<IVolumeProperty> contour(params Box<IContourProperty>[] properties) => Interop.mkVolumeAttr("contour", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IVolumeProperty> hoverinfo(params Box<IVolumeProperty>[] properties) => Interop.mkVolumeAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IVolumeProperty> hoverinfo(params Box<IVolumeProperty>[] properties) => Interop.mkVolumeAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IVolumeProperty> scene(int anchorId) => Interop.mkVolumeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

@@ -160,7 +160,7 @@ module rec Domain =
 
         let flaglistStrSeq s =
             sprintf "params Box<I%sProperty>[] properties" s,
-            "Script.Write<object>(\"{0}.join('+')\", properties)"
+            "Bindings.joinEnumProperties(properties)"
 
         let floatStr = "float val", "val"
         let floatResizeSingleton = "float val", "new []{ val }"

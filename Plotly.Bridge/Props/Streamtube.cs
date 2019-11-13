@@ -522,7 +522,7 @@ namespace PlotlyBridge
         public static Box<IStreamtubeProperty> lightposition(params Box<ILightpositionProperty>[] properties) => Interop.mkStreamtubeAttr("lightposition", Bindings.flattenProperties(properties));
         public static Box<IStreamtubeProperty> lighting(params Box<ILightingProperty>[] properties) => Interop.mkStreamtubeAttr("lighting", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IStreamtubeProperty> hoverinfo(params Box<IStreamtubeProperty>[] properties) => Interop.mkStreamtubeAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IStreamtubeProperty> hoverinfo(params Box<IStreamtubeProperty>[] properties) => Interop.mkStreamtubeAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IStreamtubeProperty> scene(int anchorId) => Interop.mkStreamtubeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

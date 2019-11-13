@@ -177,7 +177,7 @@ namespace PlotlyBridge
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScatterpolarglProperty> uirevision(params string[] values) => Interop.mkScatterpolarglAttr("uirevision", values);
         /// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
-        public static Box<IScatterpolarglProperty> mode(params Box<IScatterpolarglProperty>[] properties) => Interop.mkScatterpolarglAttr("mode", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IScatterpolarglProperty> mode(params Box<IScatterpolarglProperty>[] properties) => Interop.mkScatterpolarglAttr("mode", Bindings.joinEnumProperties(properties));
         /// Sets the radial coordinates
         public static Box<IScatterpolarglProperty> r(bool val) => Interop.mkScatterpolarglAttr("r", new[]{val});
         /// Sets the radial coordinates
@@ -361,7 +361,7 @@ namespace PlotlyBridge
         /// Sets the text font.
         public static Box<IScatterpolarglProperty> textfont(params Box<ITextfontProperty>[] properties) => Interop.mkScatterpolarglAttr("textfont", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IScatterpolarglProperty> hoverinfo(params Box<IScatterpolarglProperty>[] properties) => Interop.mkScatterpolarglAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IScatterpolarglProperty> hoverinfo(params Box<IScatterpolarglProperty>[] properties) => Interop.mkScatterpolarglAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         public static Box<IScatterpolarglProperty> selected(params Box<ISelectedProperty>[] properties) => Interop.mkScatterpolarglAttr("selected", Bindings.flattenProperties(properties));
         public static Box<IScatterpolarglProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkScatterpolarglAttr("unselected", Bindings.flattenProperties(properties));
         /// Sets a reference between this trace's data coordinates and a polar subplot. If *polar* (the default value), the data refer to `layout.polar`. If *polar2*, the data refer to `layout.polar2`, and so on.

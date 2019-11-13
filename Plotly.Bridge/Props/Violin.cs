@@ -152,7 +152,7 @@ namespace PlotlyBridge
         /// Array containing integer indices of selected points. Has an effect only for traces that support selections. Note that an empty array means an empty selection where the `unselected` are turned on for all points, whereas, any other non-array values means no selection all where the `selected` and `unselected` styles have no effect.
         public static Box<IViolinProperty> selectedpoints(params string[] values) => Interop.mkViolinAttr("selectedpoints", values);
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IViolinProperty> hoverinfo(params Box<IViolinProperty>[] properties) => Interop.mkViolinAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IViolinProperty> hoverinfo(params Box<IViolinProperty>[] properties) => Interop.mkViolinAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         public static Box<IViolinProperty> hoverlabel(params Box<IHoverlabelProperty>[] properties) => Interop.mkViolinAttr("hoverlabel", Bindings.flattenProperties(properties));
         public static Box<IViolinProperty> stream(params Box<IStreamProperty>[] properties) => Interop.mkViolinAttr("stream", Bindings.flattenProperties(properties));
         public static Box<IViolinProperty> transforms(params Box<ITransformsProperty>[] properties) => Interop.mkViolinAttr("transforms", Bindings.flattenPropertiesToArray(properties));
@@ -389,7 +389,7 @@ namespace PlotlyBridge
         public static Box<IViolinProperty> selected(params Box<ISelectedProperty>[] properties) => Interop.mkViolinAttr("selected", Bindings.flattenProperties(properties));
         public static Box<IViolinProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkViolinAttr("unselected", Bindings.flattenProperties(properties));
         /// Do the hover effects highlight individual violins or sample points or the kernel density estimate or any combination of them?
-        public static Box<IViolinProperty> hoveron(params Box<IViolinProperty>[] properties) => Interop.mkViolinAttr("hoveron", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IViolinProperty> hoveron(params Box<IViolinProperty>[] properties) => Interop.mkViolinAttr("hoveron", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
         public static Box<IViolinProperty> xaxis(int anchorId) => Interop.mkViolinAttr("xaxis", anchorId > 1 ? $"x{anchorId}" : "");
         /// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.

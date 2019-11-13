@@ -28,11 +28,39 @@
     public static class Bindings
     {
         public static bool Debug { get; set; } = false;
-        public static object flatten2DArrayIf1D<T>(IEnumerable<IEnumerable<T>> values)
+        
+        public static IPlot createPlot(params Box<IPlotProperty>[] props)
+        {
+            CheckForPlotlyOrLoadFromCDN();
+            return new PlotlyPlot(props);
+        }
+
+        internal static object joinEnumProperties<T>(params Box<T>[] props)
+        {
+            var l = new List<string>();
+
+            for (int i = 0; i < props.Length; i++)
+            {
+                var p = props[i];
+                var keys = object.GetOwnPropertyNames(p);
+
+                foreach (var k in keys)
+                {
+                    if (k.StartsWith("$")) continue;
+                    l.Add((string)p[k]);
+                    break;
+                }
+            }
+
+            return string.Join("+", l);
+        }
+
+        internal static object flatten2DArrayIf1D<T>(IEnumerable<IEnumerable<T>> values)
         {
             return values.Count() == 1 ? (object)(values.First().ToArray()) : values.Select(a => a.ToArray()).ToArray();
         }
-        public static object flattenProperties<T>(IEnumerable<Box<T>> properties)
+
+        internal static object flattenProperties<T>(IEnumerable<Box<T>> properties)
         {
             object result = new object();
             foreach (var prop in properties)
@@ -41,23 +69,20 @@
             }
             return result;
         }
-        public static IPlot createPlot(params Box<IPlotProperty>[] props) 
-        {
-            CheckForPlotlyOrLoadFromCDN();
-            return new PlotlyPlot(props);
-        }
+
+
 
         private static void CheckForPlotlyOrLoadFromCDN()
         {
             //TODO
         }
 
-        public static Box<IPlotProperty> extractTraces(IEnumerable<Box<ITracesProperty>> props)
+        internal static Box<IPlotProperty> extractTraces(IEnumerable<Box<ITracesProperty>> props)
         {
             return Interop.mkPlotAttr("data", flattenPropertiesToArray(props));
         }
 
-        public static object[] flattenPropertiesToArray<T>(IEnumerable<Box<T>> props)
+        internal static object[] flattenPropertiesToArray<T>(IEnumerable<Box<T>> props)
         {
             var all = props.ToArray();
 
@@ -78,12 +103,12 @@
             return results;
         }
 
-        public static Box<IPlotProperty> extractConfig(IEnumerable<Box<IConfigProperty>> props)
+        internal static Box<IPlotProperty> extractConfig(IEnumerable<Box<IConfigProperty>> props)
         {
             return Interop.mkPlotAttr("config", flattenProperties(props));
         }
 
-        public static Box<IPlotProperty> extractLayout(IEnumerable<Box<ILayoutProperty>> props)
+        internal static Box<IPlotProperty> extractLayout(IEnumerable<Box<ILayoutProperty>> props)
         {
             return Interop.mkPlotAttr("layout", flattenProperties(props));
         }

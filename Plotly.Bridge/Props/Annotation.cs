@@ -132,7 +132,7 @@ namespace PlotlyBridge
         /// Sets the start annotation arrow head style.
         public static Box<IAnnotationProperty> startarrowhead(int val) => Interop.mkAnnotationAttr("startarrowhead", val);
         /// Sets the annotation arrow head position.
-        public static Box<IAnnotationProperty> arrowside(params Box<IAnnotationProperty>[] properties) => Interop.mkAnnotationAttr("arrowside", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IAnnotationProperty> arrowside(params Box<IAnnotationProperty>[] properties) => Interop.mkAnnotationAttr("arrowside", Bindings.joinEnumProperties(properties));
         /// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.
         public static Box<IAnnotationProperty> arrowsize(int val) => Interop.mkAnnotationAttr("arrowsize", val);
         /// Sets the size of the end annotation arrow head, relative to `arrowwidth`. A value of 1 (default) gives a head about 3x as wide as the line.

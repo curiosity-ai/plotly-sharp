@@ -9,7 +9,7 @@ namespace PlotlyBridge
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class Interop
+    internal static class Interop
     {
         public static Box<IPlotProperty> mkPlotAttr(string key, object value) => new Box<IPlotProperty>(key, value);
         public static Box<IAaxisProperty> mkAaxisAttr(string key, object value) => new Box<IAaxisProperty>(key, value);

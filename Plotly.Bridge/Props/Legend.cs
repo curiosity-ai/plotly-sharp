@@ -24,7 +24,7 @@ namespace PlotlyBridge
         /// Sets the font used to text the legend items.
         public static Box<ILegendProperty> font(params Box<IFontProperty>[] properties) => Interop.mkLegendAttr("font", Bindings.flattenProperties(properties));
         /// Determines the order at which the legend items are displayed. If *normal*, the items are displayed top-to-bottom in the same order as the input data. If *reversed*, the items are displayed in the opposite order as *normal*. If *grouped*, the items are displayed in groups (when a trace `legendgroup` is provided). if *grouped+reversed*, the items are displayed in the opposite order as *grouped*.
-        public static Box<ILegendProperty> traceorder(params Box<ILegendProperty>[] properties) => Interop.mkLegendAttr("traceorder", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<ILegendProperty> traceorder(params Box<ILegendProperty>[] properties) => Interop.mkLegendAttr("traceorder", Bindings.joinEnumProperties(properties));
         /// Sets the amount of vertical space (in px) between legend groups.
         public static Box<ILegendProperty> tracegroupgap(int val) => Interop.mkLegendAttr("tracegroupgap", val);
         /// Sets the amount of vertical space (in px) between legend groups.

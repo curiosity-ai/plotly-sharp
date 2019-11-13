@@ -523,7 +523,7 @@ namespace PlotlyBridge
         public static Box<IConeProperty> lightposition(params Box<ILightpositionProperty>[] properties) => Interop.mkConeAttr("lightposition", Bindings.flattenProperties(properties));
         public static Box<IConeProperty> lighting(params Box<ILightingProperty>[] properties) => Interop.mkConeAttr("lighting", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IConeProperty> hoverinfo(params Box<IConeProperty>[] properties) => Interop.mkConeAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IConeProperty> hoverinfo(params Box<IConeProperty>[] properties) => Interop.mkConeAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IConeProperty> scene(int anchorId) => Interop.mkConeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

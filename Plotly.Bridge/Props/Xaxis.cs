@@ -219,7 +219,7 @@ namespace PlotlyBridge
         /// Sets the width (in px) of the zero line.
         public static Box<IXaxisProperty> spikethickness(float val) => Interop.mkXaxisAttr("spikethickness", val);
         /// Determines the drawing mode for the spike line If *toaxis*, the line is drawn from the data point to the axis the  series is plotted on. If *across*, the line is drawn across the entire plot area, and supercedes *toaxis*. If *marker*, then a marker dot is drawn on the axis the series is plotted on
-        public static Box<IXaxisProperty> spikemode(params Box<IXaxisProperty>[] properties) => Interop.mkXaxisAttr("spikemode", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IXaxisProperty> spikemode(params Box<IXaxisProperty>[] properties) => Interop.mkXaxisAttr("spikemode", Bindings.joinEnumProperties(properties));
         /// Sets the tick font.
         public static Box<IXaxisProperty> tickfont(params Box<ITickfontProperty>[] properties) => Interop.mkXaxisAttr("tickfont", Bindings.flattenProperties(properties));
         /// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.

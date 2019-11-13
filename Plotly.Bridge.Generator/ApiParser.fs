@@ -495,7 +495,7 @@ module rec ApiParser =
              >> (fun (n, j) -> parseComponent [ n |> String.upperFirst ] n j))
 
     /// Parse the Plotly.js json schema
-    let parseApi() =
+    let parseApi baseNamespace =
         let components = getAllComponents()
 
         let addAllComponents api = (api, components) ||> List.fold (flip ComponentApi.addComponent)
@@ -588,7 +588,7 @@ module rec ApiParser =
               "",
               "public static Box<IPlotProperty> onUnhover (Action<Literals.PlotMouseEvent> handler) => Interop.mkPlotAttr(\"onUnhover\", handler);" ]
 
-        let api = ComponentApi.create "PlotlyBridge" "Plot" "Plotly" bindings typePostlude |> addAllComponents
+        let api = ComponentApi.create baseNamespace "Plot" "Plotly" bindings typePostlude |> addAllComponents
 
         { GeneratorComponentApi = api
           PlotlyComponents = components }

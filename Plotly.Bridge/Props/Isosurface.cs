@@ -426,7 +426,7 @@ namespace PlotlyBridge
         public static Box<IIsosurfaceProperty> flatshading(bool val) => Interop.mkIsosurfaceAttr("flatshading", val);
         public static Box<IIsosurfaceProperty> contour(params Box<IContourProperty>[] properties) => Interop.mkIsosurfaceAttr("contour", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IIsosurfaceProperty> hoverinfo(params Box<IIsosurfaceProperty>[] properties) => Interop.mkIsosurfaceAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IIsosurfaceProperty> hoverinfo(params Box<IIsosurfaceProperty>[] properties) => Interop.mkIsosurfaceAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IIsosurfaceProperty> scene(int anchorId) => Interop.mkIsosurfaceAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

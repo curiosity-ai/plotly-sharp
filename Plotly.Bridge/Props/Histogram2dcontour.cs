@@ -134,7 +134,7 @@ namespace PlotlyBridge
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<float?> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
-        public static Box<IHistogram2dcontourProperty> hoverinfo(params Box<IHistogram2dcontourProperty>[] properties) => Interop.mkHistogram2dcontourAttr("hoverinfo", Script.Write<object>("{0}.join('+')", properties));
+        public static Box<IHistogram2dcontourProperty> hoverinfo(params Box<IHistogram2dcontourProperty>[] properties) => Interop.mkHistogram2dcontourAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         public static Box<IHistogram2dcontourProperty> hoverlabel(params Box<IHoverlabelProperty>[] properties) => Interop.mkHistogram2dcontourAttr("hoverlabel", Bindings.flattenProperties(properties));
         public static Box<IHistogram2dcontourProperty> stream(params Box<IStreamProperty>[] properties) => Interop.mkHistogram2dcontourAttr("stream", Bindings.flattenProperties(properties));
         public static Box<IHistogram2dcontourProperty> transforms(params Box<ITransformsProperty>[] properties) => Interop.mkHistogram2dcontourAttr("transforms", Bindings.flattenPropertiesToArray(properties));

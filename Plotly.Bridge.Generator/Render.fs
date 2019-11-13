@@ -183,7 +183,7 @@ module Render =
           "using System.Collections.Generic;"
           "using System.Linq;"
           ""
-          "public static class Interop"
+          "internal static class Interop"
           "{"
           sprintf "public static Box<I%sProperty> mk%sAttr(string key, object value) =>  new Box<I%sProperty>(key, value);"
               api.ComponentContainerTypeName api.ComponentContainerTypeName api.ComponentContainerTypeName |> indent 1
