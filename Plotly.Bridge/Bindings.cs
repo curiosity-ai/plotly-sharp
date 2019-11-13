@@ -9,6 +9,7 @@
     using Retyped;
     using System.ComponentModel.DataAnnotations.Schema;
     using static Retyped.es5;
+    using System.Diagnostics;
 
     public interface IPlot
     {
@@ -26,7 +27,7 @@
 
     public static class Bindings
     {
-
+        public static bool Debug { get; set; } = false;
         public static object flatten2DArrayIf1D<T>(IEnumerable<IEnumerable<T>> values)
         {
             return values.Count() == 1 ? (object)(values.First().ToArray()) : values.Select(a => a.ToArray()).ToArray();
@@ -107,14 +108,12 @@
                 object layout = Props["layout"] ?? new object();
                 object config = Props["config"] ?? new object();
 
-
-                data = JSON.parse(JSON.stringify(data));
-                layout = JSON.parse(JSON.stringify(layout));
-                config = JSON.parse(JSON.stringify(config));
-
-                console.log(data);
-                console.log(layout);
-                console.log(config);
+                if (Debug)
+                {
+                    console.log(data);
+                    console.log(layout);
+                    console.log(config);
+                }
 
                 if (IsRendered)
                 {
