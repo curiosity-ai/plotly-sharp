@@ -8,8 +8,8 @@
     <Authors>Curiosity GmbH</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
-    <PackageProjectUrl>https://github.com/curiosity-ai/plotly.bridge</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/curiosity-ai/plotly.bridge</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/curiosity-ai/plotly.sharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/curiosity-ai/plotly.sharp</RepositoryUrl>
     <AssemblyName>Plotly.Sharp</AssemblyName>
     <RootNamespace>Plotly</RootNamespace>
     <PackageId>Plotly.Sharp</PackageId>
