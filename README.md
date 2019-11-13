@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/curiosity-ai/plotly.bridge/master/Plotly.Bridge/plotly-bridge-logo.png"/>
+
 <a href="https://curiosity.ai"><img src="https://curiosity.ai/assets/images/logos/curiosity.png" width="100" height="100" align="right" /></a>
 
 _**Plotly.Bridge**_ provides a strongly-typed binding to use [Plotly](https://plot.ly/javascript/) on [Bridge.Net](https://github.com/bridgedotnet/Bridge) applications. 
