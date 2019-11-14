@@ -3,13 +3,36 @@
     using System;
     using Types;
     using System.Collections.Generic;
-    using global::Bridge;
+    using Bridge;
     using static Retyped.dom;
     using System.Linq;
-    using Retyped;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using static Retyped.es5;
-    using System.Diagnostics;
+
+    public static class data
+    {
+        /// <summary>
+        /// Helper class for creating matrices with less typing
+        /// </summary>
+        /// <typeparam name="T">Element type, like string, float, etc...</typeparam>
+        /// <returns>Itself, can be implicitly cast to T[][]</returns>
+        public static mat<T> m<T>(params T[] firstRow) => new mat<T>().r(firstRow);
+        public static T[] v<T>(params T[] values) => values;
+
+        public class mat<T>
+        {
+            private List<T[]> rows = new List<T[]>();
+            public mat<T> r(params T[] newRow)
+            {
+                rows.Add(newRow); return this;
+            }
+            public static implicit operator T[][](mat<T> m) => m.rows.ToArray();
+
+            public T[] this[int i]
+            {
+                get { return rows[i]; }
+                set { rows[i] = value; }
+            }
+        }
+    }
 
     public interface IPlot
     {

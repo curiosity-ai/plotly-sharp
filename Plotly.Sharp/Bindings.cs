@@ -1,41 +1,21 @@
-﻿namespace Bridge
+﻿namespace Bridge //Kept only for simplicity of the generator code
 {
-    using System;
-
-    public class HTMLElement
+    /// Placeholder to hold the generated HTML, can cast implicitly to string
+    public class HTMLElement 
     {
         private string HTML;
-
-        internal HTMLElement(string html)
-        {
-            HTML = html;
-        }
-
-        public string ToHTML() => HTML;
+        internal HTMLElement(string html) { HTML = html; }
+        public static implicit operator string(HTMLElement html) => html.HTML;
+        public override string ToString() => HTML;
     }
 
-    internal class HTMLDivElement
-    {
-
-    }
-
-    internal class ObjectLiteralAttribute : Attribute
-    {
-
-    }
+    internal class ObjectLiteralAttribute : System.Attribute { }
 }
 
-namespace Retyped
+namespace Retyped //Kept only for simplicity of the generator code - not used here
 {
-    internal static class dom
-    {
-
-    }
-
-    internal static class es5
-    {
-
-    }
+    internal static class dom { } 
+    internal static class es5 { }
 }
 
 namespace Plotly
@@ -44,14 +24,37 @@ namespace Plotly
     using Types;
     using System.Collections.Generic;
     using Bridge;
-    using static Retyped.dom;
     using System.Linq;
-    using Retyped;
-    using static Retyped.es5;
-    using System.Diagnostics;
     using System.Dynamic;
     using System.Text;
     using Newtonsoft.Json;
+
+    public static class data
+    {
+        /// <summary>
+        /// Helper class for creating matrices with less typing
+        /// </summary>
+        /// <typeparam name="T">Element type, like string, float, etc...</typeparam>
+        /// <returns>Itself, can be implicitly cast to T[][]</returns>
+        public static mat<T> m<T>(params T[] firstRow) => new mat<T>().r(firstRow);
+        public static T[] v<T>(params T[] values) => values;
+
+        public class mat<T>
+        {
+            private List<T[]> rows = new List<T[]>();
+            public mat<T> r(params T[] newRow)
+            {
+                rows.Add(newRow); return this;
+            }
+            public static implicit operator T[][](mat<T> m) => m.rows.ToArray();
+
+            public T[] this[int i]
+            {
+                get { return rows[i]; }
+                set { rows[i] = value; }
+            }
+        }
+    }
 
     public interface IPlot
     {
@@ -69,11 +72,9 @@ namespace Plotly
         }
     }
 
-    public static class Bindings
+    internal static class Bindings
     {
-        public static bool Debug { get; set; } = false;
-
-        public static IPlot createPlot(params Box<IPlotProperty>[] props)
+        internal static IPlot createPlot(params Box<IPlotProperty>[] props)
         {
             return new PlotlyPlot(props);
         }

@@ -19,7 +19,7 @@ namespace Plotly
         public class MouseEvent {  } //TODO
 
 
-        [ObjectLiteral]
+        
         public class ErrorEvent
         {
         }
@@ -862,7 +862,7 @@ namespace Plotly
         }
 
 
-        [ObjectLiteral]
+        
         public partial class Point
         {
             public float x;
@@ -870,7 +870,7 @@ namespace Plotly
             public float z;
         }
 
-        [ObjectLiteral]
+        
         public partial class PlotScatterDataPoint
         {
             public float curveNumber;
@@ -883,7 +883,7 @@ namespace Plotly
             public LayoutAxis yaxis;
         }
 
-        [ObjectLiteral]
+        
         public partial class PlotDatum
         {
             public float curveNumber;
@@ -896,62 +896,62 @@ namespace Plotly
             public LayoutAxis yaxis;
         }
 
-        [ObjectLiteral]
+        
         public partial class PlotMouseEvent
         {
             public PlotDatum[] points;
             public MouseEvent @event;
         }
-        [ObjectLiteral]
+        
         public partial class PlotCoordinate
         {
             public float x;
             public float y;
             public float pointNumber;
         }
-        [ObjectLiteral]
+        
         public partial class SelectionRange
         {
             public float[] x;
             public float[] y;
         }
 
-        [ObjectLiteral]
+        
         public partial class PlotSelectedData { }
 
 
-        [ObjectLiteral]
+        
         public partial class PlotSelectionEvent
         {
             public PlotDatum[] points;
             public SelectionRange range;
             public SelectionRange lassoPoints;
         }
-        [ObjectLiteral]
+        
         public partial class PlotRestyleEvent { }
 
 
-        [ObjectLiteral]
+        
         public partial class PlotAxis
         {
             public float[] range;
             public bool autorange;
         }
-        [ObjectLiteral]
+        
         public partial class PlotScene
         {
             public Point center;
             public Point eye;
             public Point up;
         }
-        [ObjectLiteral]
+        
         public partial class PlotRelayoutEvent
         {
             public PlotAxis xaxis;
             public PlotAxis yaxis;
             public PlotScene scene;
         }
-        [ObjectLiteral]
+        
         public partial class ClickAnnotationEvent
         {
             public float index;
@@ -959,14 +959,14 @@ namespace Plotly
             public Annotations fullAnnotation;
             public MouseEvent @event;
         }
-        [ObjectLiteral]
+        
         public partial class FrameAnimationEvent
         {
             public string name;
             public Frame frame;
             public Animation animation;
         }
-        [ObjectLiteral]
+        
         public partial class LegendClickEvent
         {
             public MouseEvent @event;
@@ -980,7 +980,7 @@ namespace Plotly
             public Data[] fullData;
             public object fullLayout;
         }
-        [ObjectLiteral]
+        
         public partial class SliderChangeEvent
         {
             public Slider slider;
@@ -988,18 +988,18 @@ namespace Plotly
             public bool interaction;
             public float previousActive;
         }
-        [ObjectLiteral]
+        
         public partial class SliderStartEvent
         {
             public Slider slider;
         }
-        [ObjectLiteral]
+        
         public partial class SliderEndEvent
         {
             public Slider slider;
             public SliderStep step;
         }
-        [ObjectLiteral]
+        
         public partial class BeforePlotEvent
         {
             public Data[] data;
@@ -1007,14 +1007,14 @@ namespace Plotly
             public object config;
         }
 
-        [ObjectLiteral]
+        
         public partial class ToImgopts
         {
             public ImageFormat format;
             public float width;
             public float height;
         }
-        [ObjectLiteral]
+        
         public partial class DownloadImgopts
         {
             public ImageFormat format;
@@ -1023,7 +1023,7 @@ namespace Plotly
             public string filename;
         }
 
-        [ObjectLiteral]
+        
         public partial class Layout
         {
             public dynamic title;
@@ -1081,7 +1081,7 @@ namespace Plotly
             public float bargroupgap;
             public Layout.SelectDirection selectdirection;
         }
-        [ObjectLiteral]
+        
         public partial class Legend : Label
         {
             public dynamic traceorder;
@@ -1094,7 +1094,7 @@ namespace Plotly
             public YAnchorAuto yanchor;
         }
 
-        [ObjectLiteral]
+        
         public partial class Axis
         {
             public bool visible;
@@ -1145,7 +1145,7 @@ namespace Plotly
             public Calendar calendar;
         }
 
-        [ObjectLiteral]
+        
         public partial class LayoutAxis : Axis
         {
             public bool fixedrange;
@@ -1166,7 +1166,7 @@ namespace Plotly
             public bool automargin;
         }
 
-        [ObjectLiteral]
+        
         public partial class SceneAxis : Axis
         {
             public bool spikesides;
@@ -1174,14 +1174,14 @@ namespace Plotly
             public Color backgroundcolor;
             public bool showaxeslabels;
         }
-        [ObjectLiteral]
+        
         public partial class ShapeLine
         {
             public string color;
             public float width;
             public Dash dash;
         }
-        [ObjectLiteral]
+        
         public partial class Shape
         {
             public bool visible;
@@ -1198,7 +1198,7 @@ namespace Plotly
             public float opacity;
             public object line;
         }
-        [ObjectLiteral]
+        
         public partial class Margin
         {
             public float t;
@@ -1206,12 +1206,12 @@ namespace Plotly
             public float l;
             public float r;
         }
-        [ObjectLiteral]
+        
         public partial class ButtonClickEvent
         {
 
         }
-        [ObjectLiteral]
+        
         public partial class Icon
         {
             public float width;
@@ -1220,7 +1220,7 @@ namespace Plotly
             public float descent;
         }
 
-        [ObjectLiteral]
+        
         public partial class ModeBarButton
         {
             /// name / id of the buttons (for tracking) 
@@ -1246,7 +1246,7 @@ namespace Plotly
             public bool? toggle;
         }
 
-        //    [ObjectLiteral]
+        //    
         //    public partial class Datum
         //    {
         //        dynamic option
@@ -1287,7 +1287,7 @@ namespace Plotly
         //                                                    match v with None -> None | Some o->match o with U3.Case3 o -> Some o | _->None
 
 
-        [ObjectLiteral]
+        
         public partial class ErrorOptions
         {
             public bool visible;
@@ -1298,19 +1298,19 @@ namespace Plotly
             public float opacity;
         }
 
-        [ObjectLiteral]
+        
         public partial class ErrorBar
         {
         }
 
-        [ObjectLiteral] public partial class Data : PlotData { }
+         public partial class Data : PlotData { }
 
-        [ObjectLiteral] public partial class DataTransform { }
+         public partial class DataTransform { }
 
-        [ObjectLiteral] public partial class ScatterData : PlotData { }
+         public partial class ScatterData : PlotData { }
 
 
-        [ObjectLiteral]
+        
         public class PlotLine
         {
             public Color color;
@@ -1322,7 +1322,7 @@ namespace Plotly
         }
 
 
-        [ObjectLiteral]
+        
         public partial class PlotData
         {
             public PlotData.Type @type;
@@ -1373,14 +1373,14 @@ namespace Plotly
 
         /// These interfaces are based on attribute descriptions in
         /// https://github.com/plotly/plotly.js/tree/9d6144304308fc3007f0facf2535d38ea3e9b26c/src/transforms
-        [ObjectLiteral]
+        
         public partial class TransformStyle
         {
             public dynamic target;
             public object value;
         }
 
-        [ObjectLiteral]
+        
         public partial class TransformAggregation
         {
             public string target;
@@ -1389,7 +1389,7 @@ namespace Plotly
             public bool? enabled;
         }
 
-        [ObjectLiteral]
+        
         public partial class Transform
         {
             public Transform.Type @type;
@@ -1405,7 +1405,7 @@ namespace Plotly
             public Transform.Order order;
         }
 
-        [ObjectLiteral]
+        
         public partial class ColorBar
         {
             public SizeMode thicknessmode;
@@ -1455,7 +1455,7 @@ namespace Plotly
         /// Any combination of "x", "y", "z", "text", "name" joined with a "+" OR "all" or "none" or "skip".
         /// examples: "x", "y", "x+y", "x+y+z", "all"
         /// default: "all"
-        [ObjectLiteral]
+        
         public partial class PlotMarker
         {
             public dynamic symbol;
@@ -1481,9 +1481,9 @@ namespace Plotly
             public Gradient gradient;
 
         }
-        [ObjectLiteral] public partial class ScatterMarker : PlotMarker { }
+         public partial class ScatterMarker : PlotMarker { }
 
-        [ObjectLiteral]
+        
         public partial class ScatterMarkerLine
         {
             public dynamic width;
@@ -1496,7 +1496,7 @@ namespace Plotly
             public bool reversescale;
 
         }
-        [ObjectLiteral]
+        
         public partial class ScatterLine
         {
             public Color color;
@@ -1506,7 +1506,7 @@ namespace Plotly
             public float smoothing;
             public bool simplify;
         }
-        [ObjectLiteral]
+        
         public partial class Font
         {
             /// HTML font family - the typeface that will be applied by the web browser.
@@ -1522,7 +1522,7 @@ namespace Plotly
             public float size;
             public Color color;
         }
-        [ObjectLiteral]
+        
         public partial class Edits
         {
             public bool annotationPosition;
@@ -1538,7 +1538,7 @@ namespace Plotly
         }
 
 
-        [ObjectLiteral]
+        
         public partial class Config
         {
             /// override the defaults for the toImageButton 
@@ -1610,7 +1610,7 @@ namespace Plotly
             /// Make the chart responsive to window size 
             public bool responsive;
         }
-        [ObjectLiteral]
+        
         public partial class RangeSlider
         {
             public bool visible;
@@ -1621,7 +1621,7 @@ namespace Plotly
             public string bgcolor;
         }
 
-        [ObjectLiteral]
+        
         public partial class RangeSelectorButton
         {
             public RangeSelectorButton.Step step;
@@ -1630,7 +1630,7 @@ namespace Plotly
             public string label;
         }
 
-        [ObjectLiteral]
+        
         public partial class RangeSelector : Label
         {
             public object[] buttons; // Array<Partial<RangeSelectorButton>>
@@ -1642,14 +1642,14 @@ namespace Plotly
             public string activecolor;
             public float borderwidth;
         }
-        [ObjectLiteral]
+        
         public partial class Camera
         {
             public object up; // Partial<Point>
             public object center; // Partial<Point>
             public object eye; // Partial<Point>
         }
-        [ObjectLiteral]
+        
         public partial class Label
         {
             /// Sets the background color of all hover labels on graph. 
@@ -1661,7 +1661,7 @@ namespace Plotly
         }
 
 
-        [ObjectLiteral]
+        
         public partial class HoverLabel : Label
         {
             /// Sets the horizontal alignment of the text content within hover label box. 
@@ -1672,7 +1672,7 @@ namespace Plotly
             public float namelength;
         }
 
-        [ObjectLiteral]
+        
         public partial class Annotations : Label
         {
             /// Determines whether or not this annotation is visible. 
@@ -1840,7 +1840,7 @@ namespace Plotly
             public bool captureevents;
         }
 
-        [ObjectLiteral]
+        
         public partial class Image
         {
             public bool visible;
@@ -1858,7 +1858,7 @@ namespace Plotly
             public Image.Yref yref;
         }
 
-        [ObjectLiteral]
+        
         public partial class Scene
         {
             public string bgcolor;
@@ -1874,13 +1874,13 @@ namespace Plotly
             public dynamic annotations; // Partial<Annotations> | Array<Partial<Annotations>>
             public bool captureevents;
         }
-        [ObjectLiteral]
+        
         public partial class Domain
         {
             public float[] x;
             public float[] y;
         }
-        [ObjectLiteral]
+        
         public partial class Frame
         {
             /// An identifier that specifies the group to which the frame belongs,
@@ -1903,7 +1903,7 @@ namespace Plotly
             public object layout; // Partial<Layout>
         }
 
-        [ObjectLiteral]
+        
         public partial class Transition
         {
             /// Sets the duration of the slider transition
@@ -1912,7 +1912,7 @@ namespace Plotly
             public Transition.Easing easing;
         }
 
-        [ObjectLiteral]
+        
         public partial class SliderStep
         {
             /// Determines whether or not this step is included in the slider.
@@ -1939,7 +1939,7 @@ namespace Plotly
             public bool execute;
         }
 
-        [ObjectLiteral]
+        
         public partial class Padding
         {
             /// The amount of padding (in px) along the top of the component.
@@ -1952,7 +1952,7 @@ namespace Plotly
             public float l;
             public Padding.EditType editType;
         }
-        [ObjectLiteral]
+        
         public partial class Slider
         {
             /// Determines whether or not the slider is visible.
@@ -2007,7 +2007,7 @@ namespace Plotly
             public float minorticklen;
         }
 
-        [ObjectLiteral]
+        
         public partial class Gradient
         {
             public Gradient.Type @type;
@@ -2016,32 +2016,32 @@ namespace Plotly
             public object colorsrc; // any
         }
 
-        [ObjectLiteral]
+        
         public partial class TickFormatStops
         {
             public object[] dtickrange;
             public string value;
         }
-        [ObjectLiteral]
+        
         public partial class FrameAnimation
         {
             public float duration;
             public bool redraw;
         }
-        [ObjectLiteral]
+        
         public partial class Animation
         {
             public FrameAnimation frame;
             public Transition transition;
         }
-        [ObjectLiteral]
+        
         public partial class XBins
         {
             public dynamic start;
             public dynamic end;
             public dynamic size;
         }
-        [ObjectLiteral]
+        
         public partial class SliderValue
         {
             /// Shows the currently-selected value above the slider.

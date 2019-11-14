@@ -11,8 +11,13 @@ namespace Plotly
     using Bridge;
     using static Retyped.dom;
 
-    public static partial class plot
+    public partial class plot
     {
+        ///Create a Plotly plot
+        public plot(params Box<IPlotProperty>[] props) => this.Plot = Bindings.createPlot(props);
+        private IPlot Plot;
+        ///Render the plot
+        public HTMLElement Render() => Plot.Render();
         ///Create the plotly traces
         public static Box<IPlotProperty> traces(params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);
         ///Create the plotly config
@@ -68,11 +73,5 @@ namespace Plotly
         public static Box<IPlotProperty> onTransitioning(Action handler) => Interop.mkPlotAttr("onTransitioning", handler);
         public static Box<IPlotProperty> onTransitionInterrupted(Action handler) => Interop.mkPlotAttr("onTransitionInterrupted", handler);
         public static Box<IPlotProperty> onUnhover(Action<Literals.PlotMouseEvent> handler) => Interop.mkPlotAttr("onUnhover", handler);
-    }
-
-    public static partial class Plotly
-    {
-        /// Create a Plotly plot component.
-        public static IPlot plot(params Box<IPlotProperty>[] props) => Bindings.createPlot(props);
     }
 }

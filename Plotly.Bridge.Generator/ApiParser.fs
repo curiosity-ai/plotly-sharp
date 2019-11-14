@@ -500,12 +500,16 @@ module rec ApiParser =
 
         let addAllComponents api = (api, components) ||> List.fold (flip ComponentApi.addComponent)
 
-        let bindings =
-            [ "Create a Plotly plot component.",
-              "public static IPlot plot (params Box<IPlotProperty>[] props) => Bindings.createPlot(props);" ]
+        let bindings = [ ]
 
         let typePostlude =
-            [ "Create the plotly traces",
+            [ "Create a Plotly plot",
+              "public plot (params Box<IPlotProperty>[] props) => this.Plot = Bindings.createPlot(props);"
+              "",
+              "private IPlot Plot;"
+              "Render the plot",
+              "public HTMLElement Render() => Plot.Render();"
+              "Create the plotly traces",
               "public static Box<IPlotProperty> traces (params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);"
               "Create the plotly config",
               "public static Box<IPlotProperty> config (params Box<IConfigProperty>[] properties) => Bindings.extractConfig(properties);"
