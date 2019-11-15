@@ -226,6 +226,7 @@ module Render =
           "using System.Collections.Generic;"
           "using Types;"
           "using Bridge;"
+          "using static Retyped.dom;"
           ""
           if not api.ComponentsPrelude.IsEmpty then
               sprintf "public partial class %sHelpers " api.ComponentContainerTypeName

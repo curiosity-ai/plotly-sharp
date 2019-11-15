@@ -1,20 +1,22 @@
 ﻿namespace Bridge //Kept only for simplicity of the generator code
 {
-    /// Placeholder to hold the generated HTML, can cast implicitly to string
-    public class HTMLElement 
-    {
-        private string HTML;
-        internal HTMLElement(string html) { HTML = html; }
-        public static implicit operator string(HTMLElement html) => html.HTML;
-        public override string ToString() => HTML;
-    }
-
     internal class ObjectLiteralAttribute : System.Attribute { }
 }
 
-namespace Retyped //Kept only for simplicity of the generator code - not used here
+namespace Retyped //Kept only for simplicity of the generator code
 {
-    internal static class dom { } 
+    public static class dom 
+    {
+        /// Placeholder to hold the generated HTML, can cast implicitly to string
+        public class HTMLElement
+        {
+            private string HTML;
+            internal HTMLElement(string html) { HTML = html; }
+
+            public static implicit operator string(HTMLElement html) => html.HTML;
+            public override string ToString() => HTML;
+        }
+    }
     internal static class es5 { }
 }
 
@@ -28,6 +30,7 @@ namespace Plotly
     using System.Dynamic;
     using System.Text;
     using Newtonsoft.Json;
+    using static Retyped.dom;
 
     public static class data
     {

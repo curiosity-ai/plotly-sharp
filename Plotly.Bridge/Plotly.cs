@@ -8,6 +8,7 @@ namespace PlotlyBridge
     using System.Collections.Generic;
     using Types;
     using Bridge;
+    using static Retyped.dom;
 
     public sealed partial class Plot
     {
