@@ -13,7 +13,7 @@ namespace Plotly.Sharp.Demo
                 new float[]{30, 60,  1 }
             };
 
-            var chart = new plot(plot.traces(Traces.heatmap(Heatmap.z(testData))));
+            var chart = new Plot(Plot.traces(Traces.heatmap(Heatmap.z(testData))));
             
             Console.WriteLine(chart.Render());
         }

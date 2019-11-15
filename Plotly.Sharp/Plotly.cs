@@ -6,18 +6,16 @@ namespace Plotly
     ////////////////////////////////*/
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Types;
     using Bridge;
-    using static Retyped.dom;
 
-    public partial class plot
+    public sealed partial class Plot
     {
         ///Create a Plotly plot
-        public plot(params Box<IPlotProperty>[] props) => this.Plot = Bindings.createPlot(props);
-        private IPlot Plot;
+        public Plot(params Box<IPlotProperty>[] props) => plot = Bindings.createPlot(props);
+        private IPlot plot;
         ///Render the plot
-        public HTMLElement Render() => Plot.Render();
+        public HTMLElement Render() => plot.Render();
         ///Create the plotly traces
         public static Box<IPlotProperty> traces(params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);
         ///Create the plotly config

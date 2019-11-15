@@ -504,11 +504,11 @@ module rec ApiParser =
 
         let typePostlude =
             [ "Create a Plotly plot",
-              "public plot (params Box<IPlotProperty>[] props) => this.Plot = Bindings.createPlot(props);"
+              "public Plot (params Box<IPlotProperty>[] props) => plot = Bindings.createPlot(props);"
               "",
-              "private IPlot Plot;"
+              "private IPlot plot;"
               "Render the plot",
-              "public HTMLElement Render() => Plot.Render();"
+              "public HTMLElement Render() => plot.Render();"
               "Create the plotly traces",
               "public static Box<IPlotProperty> traces (params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);"
               "Create the plotly config",

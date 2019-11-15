@@ -15,21 +15,22 @@ Both libraries are automatically generated from the official [plotly.js API sche
 Example:
 
 ```csharp
-var data = new[]
-                {
-                    new float[]{ 1, 20, 30 },
-                    new float[]{20,  1, 60 },
-                    new float[]{30, 60,  1 }
+var data = new[]{
+					new []{ 1f, 20f, 30f },
+                    new []{20f,  1f, 60f },
+                    new []{30f, 60f,  1f }
                 };
 
+//Or use the shortcut:
+// var data = data.m( 1f, 20f, 30f)
+//		          .r(20f,  1f, 60f)
+//				  .r(30f, 60f,  1f);
 
-var chart = Plotly.plot(
-                   plot.traces(
-                        Traces.heatmap(
-                               Heatmap.z(data)
-                        )
-                    )
-                );
+var chart = Plot(
+            Plot.traces(
+                 Traces.heatmap(
+                        Heatmap.z(data)
+				)));
 
 //For Plotly.Bridge, you can directly render the chart to an HTMLElement:
     document.body.appendChild(chart.Render());

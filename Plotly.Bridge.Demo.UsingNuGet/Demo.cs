@@ -8,6 +8,8 @@ namespace PlotlyBridgeDemo
     {
         public static void Main()
         {
+            //✨ Make sure to update to the latest nuget first ✨
+
             var testData = new[]
             {
                 new float[]{ 1, 20, 30 },
@@ -15,7 +17,7 @@ namespace PlotlyBridgeDemo
                 new float[]{30, 60,  1 }
             };
 
-            var chart = new plot(plot.traces(Traces.heatmap(Heatmap.z(testData))));
+            var chart = new Plot(Plot.traces(Traces.heatmap(Heatmap.z(testData))));
 
             document.body.appendChild(chart.Render());
 
@@ -37,8 +39,8 @@ namespace PlotlyBridgeDemo
                   Annotation.showarrow(false)
                   ))).ToArray();
 
-            var chart2 = new plot(
-                             plot.traces(
+            var chart2 = new Plot(
+                             Plot.traces(
                                   Traces.heatmap(
                                          Heatmap.x(xData),
                                          Heatmap.y(yData),

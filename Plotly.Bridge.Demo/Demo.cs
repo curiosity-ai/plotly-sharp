@@ -15,7 +15,7 @@ namespace PlotlyBridgeDemo
                 new float[]{30, 60,  1 }
             };
 
-            var chart = new plot(plot.traces(Traces.heatmap(Heatmap.z(testData))));
+            var chart = new Plot(Plot.traces(Traces.heatmap(Heatmap.z(testData))));
 
             document.body.appendChild(chart.Render());
             
@@ -37,8 +37,8 @@ namespace PlotlyBridgeDemo
                 Annotation.showarrow(false)
                 ))).ToArray();
 
-            var chart2 = new plot(
-                             plot.traces(
+            var chart2 = new Plot(
+                             Plot.traces(
                                   Traces.heatmap(
                                          Heatmap.x(xData),
                                          Heatmap.y(yData),
@@ -47,7 +47,7 @@ namespace PlotlyBridgeDemo
                                          Heatmap.showscale(false)
                                                 )
                                         ),
-                             plot.layout(Layout.title(Title.text("Annotated Heatmap")),
+                             Plot.layout(Layout.title(Title.text("Annotated Heatmap")),
                                             Layout.annotations(annotations),
                                             Layout.xaxis(Xaxis.Ticks.none(), Xaxis.Side.top(), Xaxis.ticksuffix(" ")),
                                             Layout.yaxis(Yaxis.Ticks.none(), Yaxis.Side.top(), Yaxis.ticksuffix(" ")),
@@ -55,7 +55,7 @@ namespace PlotlyBridgeDemo
                                             Layout.height(700),
                                             Layout.autosize(false)
                                         ),
-                             plot.onClick(me => { console.log(me.points.First().x); })
+                             Plot.onClick(me => { console.log(me.points.First().x); })
                                  );
             
             document.body.appendChild(chart2.Render());

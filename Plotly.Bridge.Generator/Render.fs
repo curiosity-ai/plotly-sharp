@@ -224,10 +224,8 @@ module Render =
           ""
           "using System;"
           "using System.Collections.Generic;"
-          "using System.Linq;"
           "using Types;"
           "using Bridge;"
-          "using static Retyped.dom;"
           ""
           if not api.ComponentsPrelude.IsEmpty then
               sprintf "public partial class %sHelpers " api.ComponentContainerTypeName
@@ -235,7 +233,7 @@ module Render =
               yield! api.ComponentsPrelude
               "}"
           if not api.TypePostlude.IsEmpty then
-              sprintf "public partial class %s" (api.ComponentContainerTypeName |> String.lowerFirst)
+              sprintf "public sealed partial class %s" (api.ComponentContainerTypeName |> String.upperFirst)
               "{"
               for doc, cont in api.TypePostlude do
                   if doc
@@ -249,7 +247,7 @@ module Render =
                   cont |> indent 1
               "}"
           if not api.Bindings.IsEmpty then
-              sprintf "public partial class %s" api.ComponentContainerName
+              sprintf "public sealed partial class %s" api.ComponentContainerName
               "{"
               for (docs, binding) in api.Bindings do
                   if docs
