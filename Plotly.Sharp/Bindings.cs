@@ -178,10 +178,11 @@ namespace Plotly
 
                 var sb = new StringBuilder();
                 sb.AppendLine("<!DOCTYPE html>");
+    
+
                 sb.AppendLine("<html>");
                 sb.AppendLine("<head><script src='https://cdn.plot.ly/plotly-latest.min.js'></script></head>");
-
-                sb.AppendLine("<body><div id='plotContainer'></div>");
+                sb.AppendLine("<body><div id='plotContainer' style='width: 100%; height: 100%;'></div>");
                 sb.AppendLine("<script>");
 
                 sb.Append("data   = ").Append(dataJson).AppendLine(";");

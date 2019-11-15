@@ -151,6 +151,9 @@
             public HTMLElement Render()
             {
                 Container = Container ?? new HTMLDivElement();
+                
+                Container.style.height = "100%";
+                Container.style.width = "100%";
 
                 object data = Props["data"] ?? new object();
                 object layout = Props["layout"] ?? new object();
