@@ -894,6 +894,7 @@ namespace Plotly
             public LayoutAxis xaxis;
             public Datum y;
             public LayoutAxis yaxis;
+            public string text;
         }
 
         
@@ -1334,7 +1335,7 @@ namespace Plotly
             public ErrorBar error_y;
             public string xaxis;
             public string yaxis;
-            public dynamic text;
+            public string text;
             public PlotMarker marker;
             public PlotLine line;
             public PlotData.Mode mode;
