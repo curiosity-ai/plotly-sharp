@@ -1314,15 +1314,15 @@ namespace PlotlyBridge
         public partial class PlotData
         {
             public PlotData.Type @type;
-            public dynamic x;
-            public dynamic y;
-            public dynamic z;
+            public dynamic x; //TODO: this is actually an array of data - need to figure out how to use the right type
+            public dynamic y; //TODO: this is actually an array of data - need to figure out how to use the right type
+            public dynamic z; //TODO: this is actually an array of data - need to figure out how to use the right type
+            public dynamic text; //TODO: this is actually an array of data - need to figure out how to use the right type
             public object xy;
             public ErrorBar error_x;
             public ErrorBar error_y;
             public string xaxis;
             public string yaxis;
-            public string text;
             public PlotMarker marker;
             public PlotLine line;
             public PlotData.Mode mode;
