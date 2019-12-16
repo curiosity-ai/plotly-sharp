@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Runtime.Serialization;
 using static Retyped.dom;
 
@@ -18,16 +19,12 @@ namespace Plotly
         public class ColorScale { } //TODO 
         public class MouseEvent {  } //TODO
 
-
-        
         public class ErrorEvent
         {
         }
 
         public class Datum { }
 
-
-        
         [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public enum XAnchor
         {
@@ -1593,7 +1590,7 @@ namespace Plotly
             /// function to add the background color to a different container
             /// or 'opaque' to ensure there's white behind it
             /// or 'transparent'
-            public extern void setBackground(string color);
+            public void setBackground(string color) { throw new NotImplementedException(); } //TODO
             /// URL to topojson files used in geo charts 
             public string topojsonURL;
             /// Mapbox access token (required to plot mapbox trace types)
