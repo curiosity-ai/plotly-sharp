@@ -1,11 +1,11 @@
 ﻿namespace PlotlyBridge
 {
     using System;
-    using Types;
     using System.Collections.Generic;
-    using Bridge;
-    using static Retyped.dom;
     using System.Linq;
+    using Bridge;
+    using Types;
+    using static Retyped.dom;
 
     public static class data
     {
@@ -147,11 +147,12 @@
 
             private bool IsRendered;
             private HTMLElement Container;
+            private bool ResizeEventIsActive;
 
             public HTMLElement Render()
             {
                 Container = Container ?? new HTMLDivElement();
-                
+
                 Container.style.height = "100%";
                 Container.style.width = "100%";
 
@@ -181,6 +182,50 @@
                                  data,
                                  layout,
                                  config);
+                }
+
+                // 2020-01-07 DWR: Plotly graphs aren't "responsive" by default, meaning that they won't automatically resize themselves if their container's size is changed - to try to improve on this, whenever the window
+                // is resized, we'll resize the chart in case its container's dimensions were affected. To try to prevent having resize handlers hanging around that are not-needed/no-longer-needed, we'll only attach the
+                // resize event when the Container is first mounted and then we'll stop listening when it gets unmounted (if the same instance of a chart gets remounted after being unmounted then the event will be
+                // reattached if this method is called - if the caller stores a reference to the element returned from here and unmounts it and the remounts it then it WON'T get reattached but there's not much
+                // that we can do about that here).
+                if (!ResizeEventIsActive)
+                {
+                    DomObserver.NotifyWhenMounted(
+                        Container,
+                        () =>
+                        {
+                            window.addEventListener("resize", OnResizeEvent);
+                            ResizeEventIsActive = true;
+
+                            DomObserver.NotifyWhenRemoved(
+                                Container,
+                                () =>
+                                {
+                                    window.removeEventListener("resize", OnResizeEvent);
+                                    ResizeEventIsActive = false;
+                                }
+                            );
+
+                            // Plotly is happiest if it asked to render within an element that already exists in the document because then it knows how much space it has available - however, we want to render to a Container
+                            // element that the caller of this method may then use and so the chart's parent will NOT initially be mounted and Plotly won't know how big to draw its content. To workaround this, as soon as the
+                            // Container IS mounted, we'll call OnResize so that the chart is forced to fit within whatever space it finds that it has.
+                            OnResize();
+
+                            void OnResize()
+                            {
+                                // The resize call will fail if the chart is currently in a hidden state - if this is the case then swallow the exception (it's not recommended, though, since there is no support for the story
+                                // where the chart gets hidden, the User resizes the window and then the chart gets shown again; it may no longer be the correct size after the resize)
+                                try
+                                {
+                                    Script.Write("Plotly.Plots.resize({0})", Container);
+                                }
+                                catch { }
+                            }
+
+                            void OnResizeEvent(Event e) => OnResize();
+                        }
+                    );
                 }
 
                 //onError onPurge onUpdate  onInitialized useResizeHandler events should go to the newPlot
