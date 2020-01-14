@@ -16,21 +16,20 @@ Example:
 
 ```csharp
 var data = new[]{
-					new []{ 1f, 20f, 30f },
+                    new []{ 1f, 20f, 30f },
                     new []{20f,  1f, 60f },
                     new []{30f, 60f,  1f }
                 };
 
 //Or use the shortcut:
 // var data = data.m( 1f, 20f, 30f)
-//		          .r(20f,  1f, 60f)
-//				  .r(30f, 60f,  1f);
+//                .r(20f,  1f, 60f)
+//                .r(30f, 60f,  1f);
 
-var chart = Plot(
-            Plot.traces(
-                 Traces.heatmap(
-                        Heatmap.z(data)
-				)));
+var chart = new Plot(
+                Plot.traces(
+                     Traces.heatmap(
+                            Heatmap.z(data))));
 
 //For Plotly.Bridge, you can directly render the chart to an HTMLElement:
     document.body.appendChild(chart.Render());
