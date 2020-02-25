@@ -885,6 +885,7 @@ namespace Plotly
         {
             public float curveNumber;
             public PlotData data;
+            public dynamic customdata;
             public float pointIndex;
             public float pointNumber;
             public Datum x;
