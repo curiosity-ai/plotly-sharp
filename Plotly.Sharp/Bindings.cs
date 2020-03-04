@@ -59,9 +59,10 @@ namespace Plotly
         }
     }
 
-    public interface IPlot
+    internal interface IPlot
     {
         HTMLElement Render();
+        void Update(params Box<IPlotProperty>[] props);
     }
 
     public class Box<T>
@@ -111,9 +112,9 @@ namespace Plotly
             return values.Count() == 1 ? (object)(values.First().ToArray()) : values.Select(a => a.ToArray()).ToArray();
         }
 
-        internal static dynamic flattenProperties<T>(IEnumerable<Box<T>> properties)
+        internal static dynamic flattenProperties<T>(IEnumerable<Box<T>> properties, dynamic initial = null)
         {
-            dynamic result = new ExpandoObject();
+            dynamic result = initial ?? new ExpandoObject();
             foreach (var prop in properties)
             {
                 foreach(var p in prop.DICT.Keys)
@@ -164,7 +165,12 @@ namespace Plotly
                 Props = flattenProperties(props) as IDictionary<string, object>;
             }
 
-            public IDictionary<string, object> Props { get; }
+            public void Update(params Box<IPlotProperty>[] props)
+            {
+                Props = flattenProperties(props, Props);
+            }
+
+            public IDictionary<string, object> Props { get; private set; }
 
             public HTMLElement Render()
             {
