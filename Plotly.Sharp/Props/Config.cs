@@ -185,7 +185,9 @@ namespace Plotly
         /// Mapbox access token (required to plot mapbox trace types) If using an Mapbox Atlas server, set this option to '' so that plotly.js won't attempt to authenticate to the public Mapbox server.
         public static Box<IConfigProperty> mapboxAccessToken(string val) => Interop.mkConfigAttr("mapboxAccessToken", val);
         /// Turn all console logging on or off (errors will be thrown) This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no logs 1: warnings and errors, but not informational messages 2: verbose logs
-        public static Box<IConfigProperty> logging(bool val) => Interop.mkConfigAttr("logging", val);
+        public static Box<IConfigProperty> logging(int val) => Interop.mkConfigAttr("logging", val);
+        /// Set on-graph logging (notifier) level This should ONLY be set via Plotly.setPlotConfig Available levels: 0: no on-graph logs 1: warnings and errors, but not informational messages 2: verbose logs
+        public static Box<IConfigProperty> notifyOnLogging(int val) => Interop.mkConfigAttr("notifyOnLogging", val);
         /// Sets the length of the undo/redo queue.
         public static Box<IConfigProperty> queueLength(int val) => Interop.mkConfigAttr("queueLength", val);
         /// Set global transform to be applied to all traces with no specification needed

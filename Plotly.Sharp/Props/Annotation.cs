@@ -224,7 +224,7 @@ namespace Plotly
             public static Box<IAnnotationProperty> top() => Interop.mkAnnotationAttr("yanchor", "top");
         }
 
-        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans more two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
         public static partial class Align
         {
             public static Box<IAnnotationProperty> center() => Interop.mkAnnotationAttr("align", "center");

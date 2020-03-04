@@ -13,6 +13,8 @@ namespace PlotlyBridge
 
     public static partial class Histogram2d
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<IHistogram2dProperty> legendgroup(string val) => Interop.mkHistogram2dAttr("legendgroup", val);
         /// Sets the opacity of the trace.
         public static Box<IHistogram2dProperty> opacity(int val) => Interop.mkHistogram2dAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -347,6 +349,8 @@ namespace PlotlyBridge
         public static Box<IHistogram2dProperty> hovertemplate(string val) => Interop.mkHistogram2dAttr("hovertemplate", val);
         /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IHistogram2dProperty> hovertemplate(IEnumerable<string> values) => Interop.mkHistogram2dAttr("hovertemplate", values.ToArray());
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<IHistogram2dProperty> showlegend(bool val) => Interop.mkHistogram2dAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
         public static Box<IHistogram2dProperty> zauto(bool val) => Interop.mkHistogram2dAttr("zauto", val);
         /// Sets the lower bound of the color domain. Value should have the same units as in `z` and if set, `zmax` must be set as well.

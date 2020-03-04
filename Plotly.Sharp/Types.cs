@@ -809,6 +809,11 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface IUniformtextProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IUnselectedProperty
         {
         }

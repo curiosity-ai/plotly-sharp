@@ -13,7 +13,7 @@ namespace Plotly
 
     public static partial class Legend
     {
-        /// Sets the legend background color.
+        /// Sets the legend background color. Defaults to `layout.paper_bgcolor`.
         public static Box<ILegendProperty> bgcolor(string val) => Interop.mkLegendAttr("bgcolor", val);
         /// Sets the color of the border enclosing the legend.
         public static Box<ILegendProperty> bordercolor(string val) => Interop.mkLegendAttr("bordercolor", val);
@@ -57,6 +57,7 @@ namespace Plotly
         public static Box<ILegendProperty> uirevision(string val) => Interop.mkLegendAttr("uirevision", val);
         /// Controls persistence of legend-driven changes in trace and pie label visibility. Defaults to `layout.uirevision`.
         public static Box<ILegendProperty> uirevision(params string[] values) => Interop.mkLegendAttr("uirevision", values);
+        public static Box<ILegendProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkLegendAttr("title", Bindings.flattenProperties(properties));
     }
 
     public static partial class Legend

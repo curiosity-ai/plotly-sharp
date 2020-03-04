@@ -13,6 +13,8 @@ namespace PlotlyBridge
 
     public static partial class Choropleth
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<IChoroplethProperty> legendgroup(string val) => Interop.mkChoroplethAttr("legendgroup", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IChoroplethProperty> name(string val) => Interop.mkChoroplethAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -276,6 +278,28 @@ namespace PlotlyBridge
         public static Box<IChoroplethProperty> z(IEnumerable<int?> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
         public static Box<IChoroplethProperty> z(IEnumerable<float?> values) => Interop.mkChoroplethAttr("z", values.ToArray());
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(bool val) => Interop.mkChoroplethAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(params bool[] values) => Interop.mkChoroplethAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(System.DateTime val) => Interop.mkChoroplethAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(params System.DateTime[] values) => Interop.mkChoroplethAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(int val) => Interop.mkChoroplethAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(params int[] values) => Interop.mkChoroplethAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(float val) => Interop.mkChoroplethAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(params float[] values) => Interop.mkChoroplethAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(string val) => Interop.mkChoroplethAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IChoroplethProperty> geojson(params string[] values) => Interop.mkChoroplethAttr("geojson", values);
+        /// Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Only has an effect when `geojson` is set. Support nested property, for example *properties.name*.
+        public static Box<IChoroplethProperty> featureidkey(string val) => Interop.mkChoroplethAttr("featureidkey", val);
         /// Sets the text elements associated with each location.
         public static Box<IChoroplethProperty> text(string val) => Interop.mkChoroplethAttr("text", val);
         /// Sets the text elements associated with each location.
@@ -293,6 +317,8 @@ namespace PlotlyBridge
         public static Box<IChoroplethProperty> hovertemplate(string val) => Interop.mkChoroplethAttr("hovertemplate", val);
         /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IChoroplethProperty> hovertemplate(IEnumerable<string> values) => Interop.mkChoroplethAttr("hovertemplate", values.ToArray());
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<IChoroplethProperty> showlegend(bool val) => Interop.mkChoroplethAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
         public static Box<IChoroplethProperty> zauto(bool val) => Interop.mkChoroplethAttr("zauto", val);
         /// Sets the lower bound of the color domain. Value should have the same units as in `z` and if set, `zmax` must be set as well.
@@ -356,12 +382,13 @@ namespace PlotlyBridge
             public static Box<IChoroplethProperty> _true() => Interop.mkChoroplethAttr("visible", true);
         }
 
-        /// Determines the set of locations used to match entries in `locations` to regions on the map.
+        /// Determines the set of locations used to match entries in `locations` to regions on the map. Values *ISO-3*, *USA-states*, *country names* correspond to features on the base map and value *geojson-id* corresponds to features from a custom GeoJSON linked to the `geojson` attribute.
         public static partial class Locationmode
         {
             public static Box<IChoroplethProperty> ISO3() => Interop.mkChoroplethAttr("locationmode", "ISO-3");
             public static Box<IChoroplethProperty> USAStates() => Interop.mkChoroplethAttr("locationmode", "USA-states");
             public static Box<IChoroplethProperty> countryNames() => Interop.mkChoroplethAttr("locationmode", "country names");
+            public static Box<IChoroplethProperty> geojsonId() => Interop.mkChoroplethAttr("locationmode", "geojson-id");
         }
 
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.

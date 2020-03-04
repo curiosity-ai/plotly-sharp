@@ -171,6 +171,7 @@ namespace PlotlyBridge
         public static Box<ITransformsProperty> mkTransformsAttr(string key, object value) => new Box<ITransformsProperty>(key, value);
         public static Box<ITransitionProperty> mkTransitionAttr(string key, object value) => new Box<ITransitionProperty>(key, value);
         public static Box<ITreemapProperty> mkTreemapAttr(string key, object value) => new Box<ITreemapProperty>(key, value);
+        public static Box<IUniformtextProperty> mkUniformtextAttr(string key, object value) => new Box<IUniformtextProperty>(key, value);
         public static Box<IUnselectedProperty> mkUnselectedAttr(string key, object value) => new Box<IUnselectedProperty>(key, value);
         public static Box<IUpProperty> mkUpAttr(string key, object value) => new Box<IUpProperty>(key, value);
         public static Box<IUpdatemenuProperty> mkUpdatemenuAttr(string key, object value) => new Box<IUpdatemenuProperty>(key, value);

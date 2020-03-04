@@ -136,6 +136,7 @@ namespace PlotlyBridge
         /// Sets the global font. Note that fonts used in traces and other layout components inherit from the global font.
         public static Box<ILayoutProperty> font(params Box<IFontProperty>[] properties) => Interop.mkLayoutAttr("font", Bindings.flattenProperties(properties));
         public static Box<ILayoutProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkLayoutAttr("title", Bindings.flattenProperties(properties));
+        public static Box<ILayoutProperty> uniformtext(params Box<IUniformtextProperty>[] properties) => Interop.mkLayoutAttr("uniformtext", Bindings.flattenProperties(properties));
         /// Determines whether or not a layout width or height that has been left undefined by the user is initialized on each relayout. Note that, regardless of this attribute, an undefined layout width or height is always initialized on the first call to plot.
         public static Box<ILayoutProperty> autosize(bool val) => Interop.mkLayoutAttr("autosize", val);
         /// Sets the plot's width (in px).
@@ -147,9 +148,9 @@ namespace PlotlyBridge
         /// Sets the plot's height (in px).
         public static Box<ILayoutProperty> height(float val) => Interop.mkLayoutAttr("height", val);
         public static Box<ILayoutProperty> margin(params Box<IMarginProperty>[] properties) => Interop.mkLayoutAttr("margin", Bindings.flattenProperties(properties));
-        /// Sets the color of paper where the graph is drawn.
+        /// Sets the background color of the paper where the graph is drawn.
         public static Box<ILayoutProperty> paperBgcolor(string val) => Interop.mkLayoutAttr("paper_bgcolor", val);
-        /// Sets the color of plotting area in-between x and y axes.
+        /// Sets the background color of the plotting area in-between x and y axes.
         public static Box<ILayoutProperty> plotBgcolor(string val) => Interop.mkLayoutAttr("plot_bgcolor", val);
         /// Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
         public static Box<ILayoutProperty> separators(string val) => Interop.mkLayoutAttr("separators", val);

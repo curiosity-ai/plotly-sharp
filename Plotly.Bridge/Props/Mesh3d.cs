@@ -13,6 +13,8 @@ namespace PlotlyBridge
 
     public static partial class Mesh3d
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<IMesh3dProperty> legendgroup(string val) => Interop.mkMesh3dAttr("legendgroup", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IMesh3dProperty> name(string val) => Interop.mkMesh3dAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -487,59 +489,59 @@ namespace PlotlyBridge
         public static Box<IMesh3dProperty> alphahull(int val) => Interop.mkMesh3dAttr("alphahull", val);
         /// Determines how the mesh surface triangles are derived from the set of vertices (points) represented by the `x`, `y` and `z` arrays, if the `i`, `j`, `k` arrays are not supplied. For general use of `mesh3d` it is preferred that `i`, `j`, `k` are supplied. If *-1*, Delaunay triangulation is used, which is mainly suitable if the mesh is a single, more or less layer surface that is perpendicular to `delaunayaxis`. In case the `delaunayaxis` intersects the mesh surface at more than one point it will result triangles that are very long in the dimension of `delaunayaxis`. If *>0*, the alpha-shape algorithm is used. In this case, the positive `alphahull` value signals the use of the alpha-shape algorithm, _and_ its value acts as the parameter for the mesh fitting. If *0*,  the convex-hull algorithm is used. It is suitable for convex bodies or if the intention is to enclose the `x`, `y` and `z` point set into a convex hull.
         public static Box<IMesh3dProperty> alphahull(float val) => Interop.mkMesh3dAttr("alphahull", val);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(bool val) => Interop.mkMesh3dAttr("intensity", new[]{val});
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params bool[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(System.DateTime val) => Interop.mkMesh3dAttr("intensity", new[]{val});
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params System.DateTime[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(float val) => Interop.mkMesh3dAttr("intensity", new[]{val});
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params float[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(int val) => Interop.mkMesh3dAttr("intensity", new[]{val});
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params int[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(string val) => Interop.mkMesh3dAttr("intensity", new[]{val});
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params string[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(List<bool[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params bool[][] values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<IEnumerable<string>> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(List<string[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params string[][] values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<IEnumerable<int>> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(List<int[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params int[][] values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<IEnumerable<float>> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(List<float[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(params float[][] values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(Literals.PlotData[] values) => Interop.mkMesh3dAttr("intensity", values);
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<bool?> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<System.DateTime?> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<int?> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
-        /// Sets the vertex intensity values, used for plotting fields on meshes
+        /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<float?> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the color of the whole mesh
         public static Box<IMesh3dProperty> color(string val) => Interop.mkMesh3dAttr("color", val);
@@ -691,6 +693,8 @@ namespace PlotlyBridge
         public static Box<IMesh3dProperty> lighting(params Box<ILightingProperty>[] properties) => Interop.mkMesh3dAttr("lighting", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IMesh3dProperty> hoverinfo(params Box<IMesh3dProperty>[] properties) => Interop.mkMesh3dAttr("hoverinfo", Bindings.joinEnumProperties(properties));
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<IMesh3dProperty> showlegend(bool val) => Interop.mkMesh3dAttr("showlegend", val);
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IMesh3dProperty> scene(int anchorId) => Interop.mkMesh3dAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
@@ -745,6 +749,13 @@ namespace PlotlyBridge
             public static Box<IMesh3dProperty> x() => Interop.mkMesh3dAttr("delaunayaxis", "x");
             public static Box<IMesh3dProperty> y() => Interop.mkMesh3dAttr("delaunayaxis", "y");
             public static Box<IMesh3dProperty> z() => Interop.mkMesh3dAttr("delaunayaxis", "z");
+        }
+
+        /// Determines the source of `intensity` values.
+        public static partial class Intensitymode
+        {
+            public static Box<IMesh3dProperty> cell() => Interop.mkMesh3dAttr("intensitymode", "cell");
+            public static Box<IMesh3dProperty> vertex() => Interop.mkMesh3dAttr("intensitymode", "vertex");
         }
 
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.

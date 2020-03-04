@@ -284,45 +284,45 @@ namespace Plotly
         public static Box<IViolinProperty> x(IEnumerable<int?> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<float?> values) => Interop.mkViolinAttr("x", values.ToArray());
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(bool val) => Interop.mkViolinAttr("x0", val);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(params bool[] values) => Interop.mkViolinAttr("x0", values);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(System.DateTime val) => Interop.mkViolinAttr("x0", val);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(params System.DateTime[] values) => Interop.mkViolinAttr("x0", values);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(int val) => Interop.mkViolinAttr("x0", val);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(params int[] values) => Interop.mkViolinAttr("x0", values);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(float val) => Interop.mkViolinAttr("x0", val);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(params float[] values) => Interop.mkViolinAttr("x0", values);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(string val) => Interop.mkViolinAttr("x0", val);
-        /// Sets the x coordinate of the box. See overview for more info.
+        /// Sets the x coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> x0(params string[] values) => Interop.mkViolinAttr("x0", values);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(bool val) => Interop.mkViolinAttr("y0", val);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params bool[] values) => Interop.mkViolinAttr("y0", values);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(System.DateTime val) => Interop.mkViolinAttr("y0", val);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params System.DateTime[] values) => Interop.mkViolinAttr("y0", values);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(int val) => Interop.mkViolinAttr("y0", val);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params int[] values) => Interop.mkViolinAttr("y0", values);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(float val) => Interop.mkViolinAttr("y0", val);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params float[] values) => Interop.mkViolinAttr("y0", values);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(string val) => Interop.mkViolinAttr("y0", val);
-        /// Sets the y coordinate of the box. See overview for more info.
+        /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params string[] values) => Interop.mkViolinAttr("y0", values);
         /// Sets the trace name. The trace name appear as the legend item and on hover. For violin traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical. Note that the trace name is also used as a default value for attribute `scalegroup` (please see its description for details).
         public static Box<IViolinProperty> name(string val) => Interop.mkViolinAttr("name", val);
@@ -463,7 +463,7 @@ namespace Plotly
             public static Box<IViolinProperty> soft() => Interop.mkViolinAttr("spanmode", "soft");
         }
 
-        /// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the violins are shown with no sample points
+        /// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the violins are shown with no sample points. Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set, otherwise defaults to *outliers*.
         public static partial class Points
         {
             public static Box<IViolinProperty> all() => Interop.mkViolinAttr("points", "all");

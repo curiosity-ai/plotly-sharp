@@ -443,6 +443,15 @@ namespace PlotlyBridge
             public static Box<IPieProperty> outside() => Interop.mkPieAttr("textposition", "outside");
         }
 
+        /// Controls the orientation of the text inside chart sectors. When set to *auto*, text may be oriented in any direction in order to be as big as possible in the middle of a sector. The *horizontal* option orients text to be parallel with the bottom of the chart, and may make text smaller in order to achieve that goal. The *radial* option orients text along the radius of the sector. The *tangential* option orients text perpendicular to the radius of the sector.
+        public static partial class Insidetextorientation
+        {
+            public static Box<IPieProperty> auto() => Interop.mkPieAttr("insidetextorientation", "auto");
+            public static Box<IPieProperty> horizontal() => Interop.mkPieAttr("insidetextorientation", "horizontal");
+            public static Box<IPieProperty> radial() => Interop.mkPieAttr("insidetextorientation", "radial");
+            public static Box<IPieProperty> tangential() => Interop.mkPieAttr("insidetextorientation", "tangential");
+        }
+
         /// Specifies the direction at which succeeding sectors follow one another.
         public static partial class Direction
         {

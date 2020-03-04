@@ -13,6 +13,8 @@ namespace Plotly
 
     public static partial class Choroplethmapbox
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<IChoroplethmapboxProperty> legendgroup(string val) => Interop.mkChoroplethmapboxAttr("legendgroup", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IChoroplethmapboxProperty> name(string val) => Interop.mkChoroplethmapboxAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -276,26 +278,28 @@ namespace Plotly
         public static Box<IChoroplethmapboxProperty> z(IEnumerable<int?> values) => Interop.mkChoroplethmapboxAttr("z", values.ToArray());
         /// Sets the color values.
         public static Box<IChoroplethmapboxProperty> z(IEnumerable<float?> values) => Interop.mkChoroplethmapboxAttr("z", values.ToArray());
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(bool val) => Interop.mkChoroplethmapboxAttr("geojson", val);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(params bool[] values) => Interop.mkChoroplethmapboxAttr("geojson", values);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(System.DateTime val) => Interop.mkChoroplethmapboxAttr("geojson", val);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(params System.DateTime[] values) => Interop.mkChoroplethmapboxAttr("geojson", values);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(int val) => Interop.mkChoroplethmapboxAttr("geojson", val);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(params int[] values) => Interop.mkChoroplethmapboxAttr("geojson", values);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(float val) => Interop.mkChoroplethmapboxAttr("geojson", val);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(params float[] values) => Interop.mkChoroplethmapboxAttr("geojson", values);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(string val) => Interop.mkChoroplethmapboxAttr("geojson", val);
-        /// Sets the GeoJSON data associated with this trace. Can be set as a valid GeoJSON object or as URL string Note that we only accept GeoJSON of type *FeatureCollection* and *Feature* with geometries of type *Polygon* and *MultiPolygon*.
+        /// Sets the GeoJSON data associated with this trace. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
         public static Box<IChoroplethmapboxProperty> geojson(params string[] values) => Interop.mkChoroplethmapboxAttr("geojson", values);
+        /// Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Support nested property, for example *properties.name*.
+        public static Box<IChoroplethmapboxProperty> featureidkey(string val) => Interop.mkChoroplethmapboxAttr("featureidkey", val);
         /// Determines if the choropleth polygons will be inserted before the layer with the specified ID. By default, choroplethmapbox traces are placed above the water layers. If set to '', the layer will be inserted above every existing layer.
         public static Box<IChoroplethmapboxProperty> below(string val) => Interop.mkChoroplethmapboxAttr("below", val);
         /// Sets the text elements associated with each location.
@@ -315,6 +319,8 @@ namespace Plotly
         public static Box<IChoroplethmapboxProperty> hovertemplate(string val) => Interop.mkChoroplethmapboxAttr("hovertemplate", val);
         /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `properties` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IChoroplethmapboxProperty> hovertemplate(IEnumerable<string> values) => Interop.mkChoroplethmapboxAttr("hovertemplate", values.ToArray());
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<IChoroplethmapboxProperty> showlegend(bool val) => Interop.mkChoroplethmapboxAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
         public static Box<IChoroplethmapboxProperty> zauto(bool val) => Interop.mkChoroplethmapboxAttr("zauto", val);
         /// Sets the lower bound of the color domain. Value should have the same units as in `z` and if set, `zmax` must be set as well.

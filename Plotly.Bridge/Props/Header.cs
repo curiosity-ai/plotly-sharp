@@ -133,7 +133,7 @@ namespace PlotlyBridge
         public static Box<IHeaderProperty> height(int val) => Interop.mkHeaderAttr("height", val);
         /// The height of cells.
         public static Box<IHeaderProperty> height(float val) => Interop.mkHeaderAttr("height", val);
-        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans more two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
         public static Box<IHeaderProperty> align(IEnumerable<Box<IHeaderProperty>> properties) => Interop.mkHeaderAttr("align", Bindings.flattenProperties(properties));
         public static Box<IHeaderProperty> line(params Box<ILineProperty>[] properties) => Interop.mkHeaderAttr("line", Bindings.flattenProperties(properties));
         public static Box<IHeaderProperty> fill(params Box<IFillProperty>[] properties) => Interop.mkHeaderAttr("fill", Bindings.flattenProperties(properties));
@@ -152,7 +152,7 @@ namespace PlotlyBridge
 
     public static partial class Header
     {
-        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans more two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
         public static partial class Align
         {
             public static Box<IHeaderProperty> center() => Interop.mkHeaderAttr("align", "center");

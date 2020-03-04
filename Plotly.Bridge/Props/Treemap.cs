@@ -415,7 +415,7 @@ namespace PlotlyBridge
         public static Box<ITreemapProperty> textfont(params Box<ITextfontProperty>[] properties) => Interop.mkTreemapAttr("textfont", Bindings.flattenProperties(properties));
         /// Sets the font used for `textinfo` lying inside the sector.
         public static Box<ITreemapProperty> insidetextfont(params Box<IInsidetextfontProperty>[] properties) => Interop.mkTreemapAttr("insidetextfont", Bindings.flattenProperties(properties));
-        /// Sets the font used for `textinfo` lying outside the sector.
+        /// Sets the font used for `textinfo` lying outside the sector. This option refers to the root of the hierarchy presented on top left corner of a treemap graph. Please note that if a hierarchy has multiple root nodes, this option won't have any effect and `insidetextfont` would be used.
         public static Box<ITreemapProperty> outsidetextfont(params Box<IOutsidetextfontProperty>[] properties) => Interop.mkTreemapAttr("outsidetextfont", Bindings.flattenProperties(properties));
         public static Box<ITreemapProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkTreemapAttr("domain", Bindings.flattenProperties(properties));
         /// Sets the source reference on plot.ly for  ids .

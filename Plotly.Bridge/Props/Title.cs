@@ -43,7 +43,9 @@ namespace PlotlyBridge
         public static partial class Side
         {
             public static Box<ITitleProperty> bottom() => Interop.mkTitleAttr("side", "bottom");
+            public static Box<ITitleProperty> left() => Interop.mkTitleAttr("side", "left");
             public static Box<ITitleProperty> right() => Interop.mkTitleAttr("side", "right");
+            public static Box<ITitleProperty> topLeft() => Interop.mkTitleAttr("side", "top left");
             public static Box<ITitleProperty> top() => Interop.mkTitleAttr("side", "top");
         }
 

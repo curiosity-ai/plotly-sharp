@@ -414,7 +414,7 @@ namespace PlotlyBridge
         public static Box<ISunburstProperty> textfont(params Box<ITextfontProperty>[] properties) => Interop.mkSunburstAttr("textfont", Bindings.flattenProperties(properties));
         /// Sets the font used for `textinfo` lying inside the sector.
         public static Box<ISunburstProperty> insidetextfont(params Box<IInsidetextfontProperty>[] properties) => Interop.mkSunburstAttr("insidetextfont", Bindings.flattenProperties(properties));
-        /// Sets the font used for `textinfo` lying outside the sector.
+        /// Sets the font used for `textinfo` lying outside the sector. This option refers to the root of the hierarchy presented at the center of a sunburst graph. Please note that if a hierarchy has multiple root nodes, this option won't have any effect and `insidetextfont` would be used.
         public static Box<ISunburstProperty> outsidetextfont(params Box<IOutsidetextfontProperty>[] properties) => Interop.mkSunburstAttr("outsidetextfont", Bindings.flattenProperties(properties));
         public static Box<ISunburstProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkSunburstAttr("domain", Bindings.flattenProperties(properties));
         /// Sets the source reference on plot.ly for  ids .
@@ -492,6 +492,15 @@ namespace PlotlyBridge
             public static Box<ISunburstProperty> percentRoot() => Interop.mkSunburstAttr("hoverinfo", "percent root");
             public static Box<ISunburstProperty> text() => Interop.mkSunburstAttr("hoverinfo", "text");
             public static Box<ISunburstProperty> value() => Interop.mkSunburstAttr("hoverinfo", "value");
+        }
+
+        /// Controls the orientation of the text inside chart sectors. When set to *auto*, text may be oriented in any direction in order to be as big as possible in the middle of a sector. The *horizontal* option orients text to be parallel with the bottom of the chart, and may make text smaller in order to achieve that goal. The *radial* option orients text along the radius of the sector. The *tangential* option orients text perpendicular to the radius of the sector.
+        public static partial class Insidetextorientation
+        {
+            public static Box<ISunburstProperty> auto() => Interop.mkSunburstAttr("insidetextorientation", "auto");
+            public static Box<ISunburstProperty> horizontal() => Interop.mkSunburstAttr("insidetextorientation", "horizontal");
+            public static Box<ISunburstProperty> radial() => Interop.mkSunburstAttr("insidetextorientation", "radial");
+            public static Box<ISunburstProperty> tangential() => Interop.mkSunburstAttr("insidetextorientation", "tangential");
         }
     }
 }

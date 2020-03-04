@@ -338,6 +338,28 @@ namespace PlotlyBridge
         public static Box<IScattergeoProperty> locations(IEnumerable<int?> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
         public static Box<IScattergeoProperty> locations(IEnumerable<float?> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(bool val) => Interop.mkScattergeoAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(params bool[] values) => Interop.mkScattergeoAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(System.DateTime val) => Interop.mkScattergeoAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(params System.DateTime[] values) => Interop.mkScattergeoAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(int val) => Interop.mkScattergeoAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(params int[] values) => Interop.mkScattergeoAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(float val) => Interop.mkScattergeoAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(params float[] values) => Interop.mkScattergeoAttr("geojson", values);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(string val) => Interop.mkScattergeoAttr("geojson", val);
+        /// Sets optional GeoJSON data associated with this trace. If not given, the features on the base map are used when `locations` is set. It can be set as a valid GeoJSON object or as a URL string. Note that we only accept GeoJSONs of type *FeatureCollection* or *Feature* with geometries of type *Polygon* or *MultiPolygon*.
+        public static Box<IScattergeoProperty> geojson(params string[] values) => Interop.mkScattergeoAttr("geojson", values);
+        /// Sets the key in GeoJSON features which is used as id to match the items included in the `locations` array. Only has an effect when `geojson` is set. Support nested property, for example *properties.name*.
+        public static Box<IScattergeoProperty> featureidkey(string val) => Interop.mkScattergeoAttr("featureidkey", val);
         /// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
         public static Box<IScattergeoProperty> mode(params Box<IScattergeoProperty>[] properties) => Interop.mkScattergeoAttr("mode", Bindings.joinEnumProperties(properties));
         /// Sets text elements associated with each (lon,lat) pair or item in `locations`. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) or `locations` coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
@@ -410,12 +432,13 @@ namespace PlotlyBridge
             public static Box<IScattergeoProperty> _true() => Interop.mkScattergeoAttr("visible", true);
         }
 
-        /// Determines the set of locations used to match entries in `locations` to regions on the map.
+        /// Determines the set of locations used to match entries in `locations` to regions on the map. Values *ISO-3*, *USA-states*, *country names* correspond to features on the base map and value *geojson-id* corresponds to features from a custom GeoJSON linked to the `geojson` attribute.
         public static partial class Locationmode
         {
             public static Box<IScattergeoProperty> ISO3() => Interop.mkScattergeoAttr("locationmode", "ISO-3");
             public static Box<IScattergeoProperty> USAStates() => Interop.mkScattergeoAttr("locationmode", "USA-states");
             public static Box<IScattergeoProperty> countryNames() => Interop.mkScattergeoAttr("locationmode", "country names");
+            public static Box<IScattergeoProperty> geojsonId() => Interop.mkScattergeoAttr("locationmode", "geojson-id");
         }
 
         /// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.

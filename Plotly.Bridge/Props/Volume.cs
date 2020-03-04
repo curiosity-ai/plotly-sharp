@@ -13,6 +13,8 @@ namespace PlotlyBridge
 
     public static partial class Volume
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<IVolumeProperty> legendgroup(string val) => Interop.mkVolumeAttr("legendgroup", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IVolumeProperty> name(string val) => Interop.mkVolumeAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -447,6 +449,8 @@ namespace PlotlyBridge
         public static Box<IVolumeProperty> contour(params Box<IContourProperty>[] properties) => Interop.mkVolumeAttr("contour", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IVolumeProperty> hoverinfo(params Box<IVolumeProperty>[] properties) => Interop.mkVolumeAttr("hoverinfo", Bindings.joinEnumProperties(properties));
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<IVolumeProperty> showlegend(bool val) => Interop.mkVolumeAttr("showlegend", val);
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IVolumeProperty> scene(int anchorId) => Interop.mkVolumeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

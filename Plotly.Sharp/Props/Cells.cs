@@ -133,7 +133,7 @@ namespace Plotly
         public static Box<ICellsProperty> height(int val) => Interop.mkCellsAttr("height", val);
         /// The height of cells.
         public static Box<ICellsProperty> height(float val) => Interop.mkCellsAttr("height", val);
-        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans more two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
         public static Box<ICellsProperty> align(IEnumerable<Box<ICellsProperty>> properties) => Interop.mkCellsAttr("align", Bindings.flattenProperties(properties));
         public static Box<ICellsProperty> line(params Box<ILineProperty>[] properties) => Interop.mkCellsAttr("line", Bindings.flattenProperties(properties));
         public static Box<ICellsProperty> fill(params Box<IFillProperty>[] properties) => Interop.mkCellsAttr("fill", Bindings.flattenProperties(properties));
@@ -152,7 +152,7 @@ namespace Plotly
 
     public static partial class Cells
     {
-        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans more two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
+        /// Sets the horizontal alignment of the `text` within the box. Has an effect only if `text` spans two or more lines (i.e. `text` contains one or more <br> HTML tags) or if an explicit width is set to override the text width.
         public static partial class Align
         {
             public static Box<ICellsProperty> center() => Interop.mkCellsAttr("align", "center");

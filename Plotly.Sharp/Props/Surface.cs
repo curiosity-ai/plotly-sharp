@@ -13,6 +13,8 @@ namespace Plotly
 
     public static partial class Surface
     {
+        /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
+        public static Box<ISurfaceProperty> legendgroup(string val) => Interop.mkSurfaceAttr("legendgroup", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<ISurfaceProperty> name(string val) => Interop.mkSurfaceAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -417,6 +419,8 @@ namespace Plotly
         public static Box<ISurfaceProperty> opacity(float val) => Interop.mkSurfaceAttr("opacity", val);
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<ISurfaceProperty> hoverinfo(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("hoverinfo", Bindings.joinEnumProperties(properties));
+        /// Determines whether or not an item corresponding to this trace is shown in the legend.
+        public static Box<ISurfaceProperty> showlegend(bool val) => Interop.mkSurfaceAttr("showlegend", val);
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<ISurfaceProperty> scene(int anchorId) => Interop.mkSurfaceAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.

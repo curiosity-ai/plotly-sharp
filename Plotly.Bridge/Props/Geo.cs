@@ -16,6 +16,8 @@ namespace PlotlyBridge
         public static Box<IGeoProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkGeoAttr("domain", Bindings.flattenProperties(properties));
         public static Box<IGeoProperty> projection(params Box<IProjectionProperty>[] properties) => Interop.mkGeoAttr("projection", Bindings.flattenProperties(properties));
         public static Box<IGeoProperty> center(params Box<ICenterProperty>[] properties) => Interop.mkGeoAttr("center", Bindings.flattenProperties(properties));
+        /// Sets the default visibility of the base layers.
+        public static Box<IGeoProperty> visible(bool val) => Interop.mkGeoAttr("visible", val);
         /// Sets whether or not the coastlines are drawn.
         public static Box<IGeoProperty> showcoastlines(bool val) => Interop.mkGeoAttr("showcoastlines", val);
         /// Sets the coastline color.
@@ -96,6 +98,14 @@ namespace PlotlyBridge
 
     public static partial class Geo
     {
+        /// Determines if this subplot's view settings are auto-computed to fit trace data. On scoped maps, setting `fitbounds` leads to `center.lon` and `center.lat` getting auto-filled. On maps with a non-clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, and `projection.rotation.lon` getting auto-filled. On maps with a clipped projection, setting `fitbounds` leads to `center.lon`, `center.lat`, `projection.rotation.lon`, `projection.rotation.lat`, `lonaxis.range` and `lonaxis.range` getting auto-filled. If *locations*, only the trace's visible locations are considered in the `fitbounds` computations. If *geojson*, the entire trace input `geojson` (if provided) is considered in the `fitbounds` computations, Defaults to *false*.
+        public static partial class Fitbounds
+        {
+            public static Box<IGeoProperty> geojson() => Interop.mkGeoAttr("fitbounds", "geojson");
+            public static Box<IGeoProperty> locations() => Interop.mkGeoAttr("fitbounds", "locations");
+            public static Box<IGeoProperty> _false() => Interop.mkGeoAttr("fitbounds", false);
+        }
+
         /// Sets the resolution of the base layers. The values have units of km/mm e.g. 110 corresponds to a scale ratio of 1:110,000,000.
         public static partial class Resolution
         {
