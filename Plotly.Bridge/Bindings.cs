@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Bridge;
+    using PlotlyBridge.Types;
     using Types;
     using static Retyped.dom;
 
@@ -34,9 +35,11 @@
         }
     }
 
-    public interface IPlot
+    internal interface IPlot
     {
         HTMLElement Render();
+
+        void Update(params Box<IPlotProperty>[] props);
     }
 
     [ObjectLiteral(ObjectCreateMode.Constructor)]
@@ -52,7 +55,7 @@
     {
         public static bool Debug { get; set; } = false;
         
-        public static IPlot createPlot(params Box<IPlotProperty>[] props)
+        internal static IPlot createPlot(params Box<IPlotProperty>[] props)
         {
             CheckForPlotlyOrLoadFromCDN();
             return new PlotlyPlot(props);
@@ -83,9 +86,9 @@
             return values.Count() == 1 ? (object)(values.First().ToArray()) : values.Select(a => a.ToArray()).ToArray();
         }
 
-        internal static object flattenProperties<T>(IEnumerable<Box<T>> properties)
+        internal static object flattenProperties<T>(IEnumerable<Box<T>> properties, object initial = null)
         {
-            object result = new object();
+            object result = initial ?? new object();
             foreach (var prop in properties)
             {
                 Script.Write("result = Object.assign(result, {0})", prop);
@@ -143,11 +146,16 @@
                 Props = flattenProperties(props);
             }
 
-            public object Props { get; }
+            public object Props { get; private set; }
 
             private bool IsRendered;
             private HTMLElement Container;
             private bool ResizeEventIsActive;
+
+            public void Update(params Box<IPlotProperty>[] props)
+            {
+                Props = flattenProperties(props, Props);
+            }
 
             public HTMLElement Render()
             {
@@ -156,7 +164,7 @@
                 Container.style.height = "100%";
                 Container.style.width = "100%";
 
-                object data = Props["data"] ?? new object();
+                object data   = Props["data"] ?? new object();
                 object layout = Props["layout"] ?? new object();
                 object config = Props["config"] ?? new object();
 
