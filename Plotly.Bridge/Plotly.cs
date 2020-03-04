@@ -17,6 +17,8 @@ namespace PlotlyBridge
         private IPlot plot;
         ///Render the plot
         public HTMLElement Render() => plot.Render();
+        ///Update the plot
+        public void Update(params Box<IPlotProperty>[] props) => plot.Update(props);
         ///Create the plotly traces
         public static Box<IPlotProperty> traces(params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);
         ///Create the plotly config
