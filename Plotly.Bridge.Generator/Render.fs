@@ -161,7 +161,7 @@ module Render =
         /// Builds the interop strings from a `Component list`
         let buildInterops (comps: Component list) =
             let baseInteropStr s =
-                sprintf "public static Box<I%sProperty> mk%sAttr(string key, object value) =>  new Box<I%sProperty>(key, value);" s s s
+                sprintf "public static Box<I%sProperty> mk%sAttr(string key, object value) =>  Box<I%sProperty>.For(key, value);" s s s
                 |> indent 1
 
             comps
@@ -185,7 +185,7 @@ module Render =
           ""
           "internal static class Interop"
           "{"
-          sprintf "public static Box<I%sProperty> mk%sAttr(string key, object value) =>  new Box<I%sProperty>(key, value);"
+          sprintf "public static Box<I%sProperty> mk%sAttr(string key, object value) =>  Box<I%sProperty>.For(key, value);"
               api.ComponentContainerTypeName api.ComponentContainerTypeName api.ComponentContainerTypeName |> indent 1
           yield! GetLines.buildInterops api.Components
           "}"

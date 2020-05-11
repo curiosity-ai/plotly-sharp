@@ -42,14 +42,17 @@
         void Update(params Box<IPlotProperty>[] props);
     }
 
-    [ObjectLiteral(ObjectInitializationMode.Ignore, ObjectCreateMode.Constructor)]
+    [ObjectLiteral()]
     public class Box<T>
     {
-        public Box(string key, object value)
+        public static Box<T> For(string key, object value)
         {
-            Script.Write("{0}[{1}] = {2}", this, key, value);
+            var b = new Box<T>();
+            Script.Write("{0}[{1}] = {2}", b, key, value);
+            return b;
         }
     }
+
 
     public static class Bindings
     {

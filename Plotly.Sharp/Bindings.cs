@@ -69,10 +69,12 @@ namespace Plotly
     {
         public dynamic THIS;
         public IDictionary<string, object> DICT => THIS as IDictionary<string, object>;
-        public Box(string key, dynamic value)
+        public static Box<T> For(string key, dynamic value)
         {
-            THIS = new ExpandoObject();
-            Bindings.SetProperty(THIS, key, value);
+            var box = new Box<T>();
+            box.THIS = new ExpandoObject();
+            Bindings.SetProperty(box.THIS, key, value);
+            return box;
         }
     }
 
