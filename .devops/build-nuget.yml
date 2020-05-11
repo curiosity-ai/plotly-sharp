@@ -2,7 +2,7 @@ variables:
   projectBridge:  './Plotly.Bridge/Plotly.Bridge.csproj'
   projectH5:  './Plotly.H5/Plotly.H5.csproj'
   projectSharp:  './Plotly.Sharp/Plotly.Sharp.csproj'
-  buildPlatform: 'AnyCPU'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 trigger:
