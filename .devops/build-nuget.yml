@@ -36,17 +36,17 @@ steps:
     displayName: 'restore nuget'
 
 - task: VSBuild@1
-  displayName: 'build projectBridge'
+  displayName: 'build projectH5'
   inputs:
-    solution: '$(projectBridge)'
+    solution: '$(projectH5)'
     msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
+    
 - task: VSBuild@1
   displayName: 'build projectBridge'
   inputs:
-    solution: '$(projectH5)'
+    solution: '$(projectBridge)'
     msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
