@@ -42,7 +42,7 @@
         void Update(params Box<IPlotProperty>[] props);
     }
 
-    [ObjectLiteral(ObjectCreateMode.Constructor)]
+    [ObjectLiteral(ObjectInitializationMode.Ignore, ObjectCreateMode.Constructor)]
     public class Box<T>
     {
         public Box(string key, object value)
