@@ -6,7 +6,7 @@
     using H5;
     using PlotlyH5.Types;
     using Types;
-    using static Retyped.dom;
+    using static H5.Core.dom;
 
     public static class data
     {

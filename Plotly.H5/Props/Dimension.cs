@@ -9,7 +9,7 @@ namespace PlotlyH5
     using System.Linq;
     using Types;
     using H5;
-    using static Retyped.dom;
+    using static H5.Core.dom;
 
     public static partial class Dimension
     {

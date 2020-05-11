@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plotly.Bridge.Demo.UsingNuG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plotly.Sharp", "Plotly.Sharp\Plotly.Sharp.csproj", "{E70320D9-3325-4788-9795-B2AAA93E760D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plotly.Sharp.Demo", "Plotly.Sharp.Demo\Plotly.Sharp.Demo.csproj", "{36176F0E-823C-48CA-A3C9-49F5458D266D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plotly.Sharp.Demo", "Plotly.Sharp.Demo\Plotly.Sharp.Demo.csproj", "{36176F0E-823C-48CA-A3C9-49F5458D266D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plotly.H5", "Plotly.H5\Plotly.H5.csproj", "{B81B71AB-7C09-47A6-9701-AC208850F3E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{36176F0E-823C-48CA-A3C9-49F5458D266D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36176F0E-823C-48CA-A3C9-49F5458D266D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36176F0E-823C-48CA-A3C9-49F5458D266D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B81B71AB-7C09-47A6-9701-AC208850F3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B81B71AB-7C09-47A6-9701-AC208850F3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B81B71AB-7C09-47A6-9701-AC208850F3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B81B71AB-7C09-47A6-9701-AC208850F3E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

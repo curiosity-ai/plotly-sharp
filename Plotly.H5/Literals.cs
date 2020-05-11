@@ -1,5 +1,5 @@
 ﻿using H5;
-using static Retyped.dom;
+using static H5.Core.dom;
 
 namespace PlotlyH5
 {

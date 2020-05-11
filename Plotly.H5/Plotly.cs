@@ -8,7 +8,7 @@ namespace PlotlyH5
     using System.Collections.Generic;
     using Types;
     using H5;
-    using static Retyped.dom;
+    using static H5.Core.dom;
 
     public sealed partial class Plot
     {
