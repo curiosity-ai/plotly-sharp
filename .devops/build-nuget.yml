@@ -14,6 +14,36 @@ pool:
 steps:
 - task: NuGetToolInstaller@0
 
+  
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
+  inputs:
+    packageType: sdk
+    version: 3.1.201
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- task: DotNetCoreCLI@2
+  displayName: 'restore nuget'
+  inputs:
+    command: 'restore'
+    projects: '$(projectH5)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'build'
+  inputs:
+    command: 'build'
+    projects: '$(projectH5)'
+    arguments: '-c $(buildConfiguration) /p:Version=0.0.$(build.buildId)  /p:AllowUnsafeBlocks=True /p:LangVersion=latest'
+
+- task: DotNetCoreCLI@2
+  displayName: 'pack nuget'
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(projectH5)'
+    configuration: '$(buildConfiguration)'
+    versioningScheme: 'off'
+    buildProperties: 'Version="0.0.$(build.buildId)";AllowUnsafeBlocks="True";LangVersion="latest"'
+
 - task: DotNetCoreCLI@2
   displayName: 'restore projectBridge'
   inputs:
@@ -21,12 +51,6 @@ steps:
     projects: '$(projectBridge)'
     displayName: 'restore nuget'
 
-- task: DotNetCoreCLI@2
-  displayName: 'restore projectH5'
-  inputs:
-    command: 'restore'
-    projects: '$(projectH5)'
-    displayName: 'restore nuget'
 
 - task: DotNetCoreCLI@2
   displayName: 'restore projectSharp'
@@ -35,13 +59,6 @@ steps:
     projects: '$(projectSharp)'
     displayName: 'restore nuget'
 
-- task: VSBuild@1
-  displayName: 'build projectH5'
-  inputs:
-    solution: '$(projectH5)'
-    msbuildArgs: '/t:pack /p:Version=0.0.$(build.buildId)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
     
 - task: VSBuild@1
   displayName: 'build projectBridge'
