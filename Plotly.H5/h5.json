@@ -1,0 +1,44 @@
+// See all h5.json configuration options at https://github.com/bridgedotnet/H5/wiki/global-configuration
+{
+  "sourceMap": { "enabled": false },
+  "html": { "disabled": true },
+  "resources": [
+
+    // Include the JS that is compiled from the C# in this project - be sure to include non-minified AND minified version (and to include the meta data files required for reflection)
+    // because H5 will only include ".min.js" versions of resources when a project that references this is built in Release and will only include NON-".min.js" versions when built
+    // in Debug (this is the default behaviour for projects that don't have any external resources to build into the binary but when a "resources" section is present in a bridge.json
+    // file then that default behaviour is lost and must be opted back into - see suggestion 1 at the bottom of he opening comment on https://github.com/bridgedotnet/H5/issues/3991).
+    {
+      "name": "Plotly.H5.js",
+      "files": [ "$(OutDir)h5/Plotly.H5.js" ]
+    },
+    {
+      "name": "Plotly.H5.min.js",
+      "files": [ "$(OutDir)h5/Plotly.H5.min.js" ]
+    },
+    {
+      "name": "plotly.js",
+      "files": [ "h5/plotly.js" ]
+    },
+    {
+      "name": "plotly.min.js",
+      "files": [ "h5/plotly.min.js" ]
+    }
+  ],
+  "outputFormatting": "Both",
+  "cleanOutputFolderBeforeBuildPattern": "*.*",
+  "loader": { "type": "Global" },
+  "rules": {
+    "anonymousType": "Plain",
+    "arrayIndex": "Managed",
+    "autoProperty": "Plain",
+    "boxing": "Managed",
+    "externalCast": "Plain",
+    "inlineComment": "Plain",
+    "integer": "Managed",
+    "lambda": "Plain"
+  },
+  "reflection": {
+    "disabled": true
+  }
+}

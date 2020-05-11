@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets/1.0.40">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ExcludeMscorlibFacade>true</ExcludeMscorlibFacade>
+    <NoStdLib>true</NoStdLib>
+    <NoCompilerStandardLib>true</NoCompilerStandardLib>
+    <NoExplicitReferenceToStdLib>true</NoExplicitReferenceToStdLib>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="h5" Version="0.0.7699" />
+    <PackageReference Include="h5.core" Version="0.0.7701" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>(c) Copyright 2020 Curiosity GmbH - all right reserved</Copyright>
+    <Company>Curiosity GmbH</Company>
+    <Authors>Curiosity GmbH</Authors>
+    <LangVersion>7.1</LangVersion>
+    <PackageProjectUrl>https://github.com/curiosity-ai/tesserae</PackageProjectUrl>
+    <AssemblyName>Plotly.H5</AssemblyName>
+    <RootNamespace>PlotlyH5</RootNamespace>
+    <PackageId>Plotly.H5</PackageId>
+    <Description>Plotly.H5 provides a strongly-typed binding to use Plotly on H5 applications.</Description>
+    <PackageTags>Plotly, H5, Graphs, Charts, HTML</PackageTags>
+    <PackageIcon>plotly-h5-logo.png</PackageIcon>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  
+  <Target Name="RunTool" AfterTargets="Build">
+    <Message Importance="high" Text="Installing (or updating) the h5 compiler" />
+    <Exec Command="dotnet tool update --global h5-compiler" />
+    <Message Importance="high" Text="H5 compilation begins now... " />
+    <Exec Command="pushd $(ProjectDir)&#xD;&#xA;h5 --rebuild -p &quot;$(ProjectPath)&quot; -cfg &quot;$(Configuration)&quot; --platform &quot;$(Platform)&quot;&#xD;&#xA;popd" />
+    <Message Importance="high" Text="... H5 compilation finished!" />
+  </Target>
+</Project>

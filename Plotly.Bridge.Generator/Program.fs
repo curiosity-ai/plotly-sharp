@@ -12,17 +12,24 @@ module Program =
 
 
         // only embedd the javascript files on the Plotly.Bridge project
-        let libMinFile  = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.min.js"
-        let libFile     = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.js"
+        let libMinFileBridge  = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.min.js"
+        let libFileBridge     = __SOURCE_DIRECTORY__ @@ "../Plotly.Bridge/bridge/plotly.js"
 
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFile
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js")     |> File.writeString false libFile
+        let libMinFileH5  = __SOURCE_DIRECTORY__ @@ "../Plotly.H5/h5/plotly.min.js"
+        let libFileH5     = __SOURCE_DIRECTORY__ @@ "../Plotly.H5/h5/plotly.js"
 
-        let projects = ["Plotly.Bridge"; "Plotly.Sharp"]
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFileBridge
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js")     |> File.writeString false libFileBridge
+
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFileH5
+        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js")     |> File.writeString false libFileH5
+
+        let projects = ["Plotly.Bridge"; "Plotly.H5"; "Plotly.Sharp"]
 
         for proj in projects do
             let api = match proj with
                       | "Plotly.Bridge" -> "PlotlyBridge" |> ApiParser.parseApi
+                      | "Plotly.H5"     -> "PlotlyH5"     |> ApiParser.parseApi
                       | "Plotly.Sharp"  -> "Plotly"       |> ApiParser.parseApi
             
             let plotlyFile  = __SOURCE_DIRECTORY__ @@ sprintf "../%s/Plotly.cs" proj
