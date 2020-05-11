@@ -1,13 +1,12 @@
-﻿namespace PlotlyH5
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using H5;
-    using PlotlyH5.Types;
-    using Types;
-    using static H5.Core.dom;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using H5;
+using PlotlyH5.Types;
+using static H5.Core.dom;
 
+namespace PlotlyH5
+{
     public static class data
     {
         /// <summary>
@@ -42,7 +41,7 @@
         void Update(params Box<IPlotProperty>[] props);
     }
 
-    [ObjectLiteral(ObjectCreateMode.Constructor)]
+    [ObjectLiteral(ObjectInitializationMode.Ignore, ObjectCreateMode.Constructor)]
     public class Box<T>
     {
         public Box(string key, object value)

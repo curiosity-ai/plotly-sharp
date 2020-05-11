@@ -108,7 +108,7 @@ namespace PlotlyH5
             _elementsToTrackRemovalOf.Add((element, callback));
         }
 
-        private static bool IsEqualToOrIsChildOf(HTMLElement ele, Retyped.dom.Node possibleSelfOrParentEle)
+        private static bool IsEqualToOrIsChildOf(HTMLElement ele, H5.Core.dom.Node possibleSelfOrParentEle)
         {
             while (ele != null)
             {
