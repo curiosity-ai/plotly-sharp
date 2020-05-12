@@ -1,20 +1,15 @@
-﻿<Project Sdk="Microsoft.Build.NoTargets/1.0.40">
+﻿<Project Sdk="h5.Target/0.0.7793">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <ExcludeMscorlibFacade>true</ExcludeMscorlibFacade>
-    <NoStdLib>true</NoStdLib>
-    <NoCompilerStandardLib>true</NoCompilerStandardLib>
-    <NoExplicitReferenceToStdLib>true</NoExplicitReferenceToStdLib>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
   </PropertyGroup>
+    
   <ItemGroup>
-    <None Include="plotly-h5-logo.png" Pack="true" PackagePath=""/>
+    <None Include="plotly-h5-logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="h5" Version="0.0.7699" />
-    <PackageReference Include="h5.core" Version="0.0.7701" />
+    <PackageReference Include="h5" Version="0.0.7799" />
+    <PackageReference Include="h5.core" Version="0.0.7797" />
   </ItemGroup>
 
   <PropertyGroup>
