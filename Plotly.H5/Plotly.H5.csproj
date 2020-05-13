@@ -8,8 +8,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="h5" Version="0.0.7799" />
-    <PackageReference Include="h5.core" Version="0.0.7797" />
+    <PackageReference Include="h5" Version="0.0.7862" />
+    <PackageReference Include="h5.core" Version="0.0.7872" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -30,12 +30,4 @@
     <PackageIcon>plotly-h5-logo.png</PackageIcon>
     <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
-  
-  <Target Name="RunTool" AfterTargets="Build">
-    <Message Importance="high" Text="Installing (or updating) the h5 compiler" />
-    <Exec Command="dotnet tool update --global h5-compiler" />
-    <Message Importance="high" Text="H5 compilation begins now... " />
-    <Exec Command="pushd $(ProjectDir)&#xD;&#xA;h5 --rebuild -p &quot;$(ProjectPath)&quot; -cfg &quot;$(Configuration)&quot; --platform &quot;$(Platform)&quot;&#xD;&#xA;popd" />
-    <Message Importance="high" Text="... H5 compilation finished!" />
-  </Target>
 </Project>
