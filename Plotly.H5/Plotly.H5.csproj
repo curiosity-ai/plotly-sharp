@@ -1,33 +1,36 @@
-﻿<Project Sdk="h5.Target/0.0.7793">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-    
-  <ItemGroup>
-    <None Include="plotly-h5-logo.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="h5" Version="0.0.8001" />
-    <PackageReference Include="h5.core" Version="0.0.8002" />
-  </ItemGroup>
+﻿<Project Sdk="h5.Target/0.0.8062">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<SkipResourcesExtraction>true</SkipResourcesExtraction>
+		<LangVersion>7.2</LangVersion>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<DebugType>None</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <DebugType>None</DebugType>
-    <DebugSymbols>false</DebugSymbols>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>(c) Copyright 2020 Curiosity GmbH - all right reserved</Copyright>
-    <Company>Curiosity GmbH</Company>
-    <Authors>Curiosity GmbH</Authors>
-    <LangVersion>7.1</LangVersion>
-    <PackageProjectUrl>https://github.com/curiosity-ai/tesserae</PackageProjectUrl>
-    <AssemblyName>Plotly.H5</AssemblyName>
-    <RootNamespace>PlotlyH5</RootNamespace>
-    <PackageId>Plotly.H5</PackageId>
-    <Description>Plotly.H5 provides a strongly-typed binding to use Plotly on H5 applications.</Description>
-    <PackageTags>Plotly, H5, Graphs, Charts, HTML</PackageTags>
-    <PackageIcon>plotly-h5-logo.png</PackageIcon>
-    <NoWarn>1701;1702;1591</NoWarn>
-  </PropertyGroup>
+	<ItemGroup>
+		<None Include="plotly-h5-logo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="h5" Version="0.0.8032" />
+		<PackageReference Include="h5.core" Version="0.0.8007" />
+	</ItemGroup>
+
+	<PropertyGroup>
+
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<Copyright>(c) Copyright 2020 Curiosity GmbH - all right reserved</Copyright>
+		<Company>Curiosity GmbH</Company>
+		<Authors>Curiosity GmbH</Authors>
+
+		<PackageProjectUrl>https://github.com/curiosity-ai/tesserae</PackageProjectUrl>
+		<AssemblyName>Plotly.H5</AssemblyName>
+		<RootNamespace>PlotlyH5</RootNamespace>
+		<PackageId>Plotly.H5</PackageId>
+		<Description>Plotly.H5 provides a strongly-typed binding to use Plotly on H5 applications.</Description>
+		<PackageTags>Plotly, H5, Graphs, Charts, HTML</PackageTags>
+		<PackageIcon>plotly-h5-logo.png</PackageIcon>
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
 </Project>
