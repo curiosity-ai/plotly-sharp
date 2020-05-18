@@ -23,6 +23,11 @@ steps:
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
 - task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: 'tool update --global h5-compiler'
+
+- task: DotNetCoreCLI@2
   displayName: 'restore nuget'
   inputs:
     command: 'restore'
