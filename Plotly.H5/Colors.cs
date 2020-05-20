@@ -108,7 +108,7 @@ namespace PlotlyH5
     public static class color
     {
         public static string hsl(float hue, float saturation, float lightness) => $"hsl({hue}, {saturation}%, {lightness}%)";
-        public static string rgb(float r, float g, float b) => $"rgb({r}, {g}%, {b}%)";
+        public static string rgb(float r, float g, float b) => $"rgb({r}, {g}, {b})";
         public static string rgba(float r, float g, float b, float a) => $"rgba({r}, {g}, {b}, {a})";
 
         public const string indianRed = "#CD5C5C";
