@@ -16,6 +16,7 @@
     <Description>Plotly.Sharp provides a strongly-typed binding that generates embedded HTML using Plotly.</Description>
     <PackageTags>Plotly, Graphs, Charts, HTML</PackageTags>
     <PackageIcon>plotly-sharp-logo.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   
   <ItemGroup>
