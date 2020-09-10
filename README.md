@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/curiosity-ai/plotly.bridge/master/Plotly.Bridge/plotly-bridge-logo.png"/>
 
-<a href="https://curiosity.ai"><img src="https://curiosity.ai/assets/images/logos/curiosity.png" width="100" height="100" align="right" /></a>
+<a href="https://curiosity.ai"><img src="https://curiosity.ai/media/cat.color.square.svg" width="100" height="100" align="right" /></a>
 
 _**Plotly.Sharp**_ provides a strongly-typed binding to generate embedded HTML using  [Plotly](https://plot.ly/javascript/).
 
