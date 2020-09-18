@@ -9,17 +9,16 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NuGetToolInstaller@0
 
-  
 - task: UseDotNet@2
   displayName: 'Use .NET Core sdk'
   inputs:
     packageType: sdk
-    version: 3.1.201
+    version: 3.1.401
     installationPath: $(Agent.ToolsDirectory)/dotnet
     
 - task: CmdLine@2
@@ -53,7 +52,6 @@ steps:
   inputs:
     command: 'restore'
     projects: '$(projectBridge)'
-    displayName: 'restore nuget'
 
 
 - task: DotNetCoreCLI@2
@@ -61,7 +59,6 @@ steps:
   inputs:
     command: 'restore'
     projects: '$(projectSharp)'
-    displayName: 'restore nuget'
 
     
 - task: VSBuild@1
