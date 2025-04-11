@@ -15,8 +15,9 @@ module Program =
         let libMinFileH5  = __SOURCE_DIRECTORY__ @@ "../Plotly.H5/h5/plotly.min.js"
         let libFileH5     = __SOURCE_DIRECTORY__ @@ "../Plotly.H5/h5/plotly.js"
 
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFileH5
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js")     |> File.writeString false libFileH5
+        //Uncomment here to update plotly 
+        //Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.min.js") |> File.writeString false libMinFileH5
+        //Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly.js")     |> File.writeString false libFileH5
 
         let projects = ["Plotly.H5"; "Plotly.Sharp"]
 
