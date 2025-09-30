@@ -58,10 +58,10 @@ module Common =
     let mapOperatorsToNames (s: string) = 
         match s with
         | ""   -> "empty"
-        | "/"  -> "ldivide"
-        | "\\" -> "rdivide"
-        | "-"  -> "minus"
-        | "|"  -> "pipe"
+        | "/"  -> "rightSlant"
+        | "\\" -> "leftSlant"
+        | "-"  -> "dash"
+        | "|"  -> "straight"
         | "+"  -> "plus"
         | "."  -> "dot"
         | _    -> s

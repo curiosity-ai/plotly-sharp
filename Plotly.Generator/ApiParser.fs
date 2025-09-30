@@ -266,13 +266,13 @@ module rec ApiParser =
                     v
                     |> emptStringToNone
                     |> trimJson
+                    |> mapOperatorsToNames
                     |> replaceAddSymbol
                     |> fixMethodNameOperators propMethodName
                     |> dashStringToDash
                     |> spaceCaseTokebabCase
                     |> kebabCaseToCamelCase
                     |> snakeCaseToCamelCase
-                    |> mapOperatorsToNames
                     |> prefixUnderscoreOrNegativeToNumbers
                     |> appendApostropheToReservedKeywords
 

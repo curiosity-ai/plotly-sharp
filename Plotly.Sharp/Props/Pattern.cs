@@ -69,12 +69,12 @@ namespace Plotly
         public static partial class Shape
         {
             public static Box<IPatternProperty> none() => Interop.mkPatternAttr("shape", "");
-            public static Box<IPatternProperty> empty() => Interop.mkPatternAttr("shape", "+");
+            public static Box<IPatternProperty> plus() => Interop.mkPatternAttr("shape", "+");
             public static Box<IPatternProperty> dash() => Interop.mkPatternAttr("shape", "-");
             public static Box<IPatternProperty> dot() => Interop.mkPatternAttr("shape", ".");
-            public static Box<IPatternProperty> ldivide() => Interop.mkPatternAttr("shape", "/");
+            public static Box<IPatternProperty> rightSlant() => Interop.mkPatternAttr("shape", "/");
             public static Box<IPatternProperty> \ \ () =>  Interop.mkPatternAttr( "shape" ,  "\\" ) ; public static Box<IPatternProperty> x() => Interop.mkPatternAttr("shape", "x");
-            public static Box<IPatternProperty> pipe() => Interop.mkPatternAttr("shape", "|");
+            public static Box<IPatternProperty> straight() => Interop.mkPatternAttr("shape", "|");
         }
 
         /// Determines whether `marker.color` should be used as a default to `bgcolor` or a `fgcolor`.
