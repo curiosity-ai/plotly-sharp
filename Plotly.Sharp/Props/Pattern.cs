@@ -73,7 +73,7 @@ namespace Plotly
             public static Box<IPatternProperty> dash() => Interop.mkPatternAttr("shape", "-");
             public static Box<IPatternProperty> dot() => Interop.mkPatternAttr("shape", ".");
             public static Box<IPatternProperty> rightSlant() => Interop.mkPatternAttr("shape", "/");
-            public static Box<IPatternProperty> \ \ () =>  Interop.mkPatternAttr( "shape" ,  "\\" ) ; public static Box<IPatternProperty> x() => Interop.mkPatternAttr("shape", "x");
+            public static Box<IPatternProperty> leftSlant () =>  Interop.mkPatternAttr( "shape" ,  "\\" ) ; public static Box<IPatternProperty> x() => Interop.mkPatternAttr("shape", "x");
             public static Box<IPatternProperty> straight() => Interop.mkPatternAttr("shape", "|");
         }
 
