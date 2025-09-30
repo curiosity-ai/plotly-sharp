@@ -74,12 +74,12 @@ steps:
     projects: '$(projectH5)'
     arguments: '-c $(buildConfiguration) /p:Version=$(buildVersion) /p:AssemblyVersion=$(buildVersion) /p:AllowUnsafeBlocks=True /p:WarningLevel=0 /p:AnalysisLevel=0'
 
-- task: DotNetCoreCLI@2
-  displayName: 'build projectSharp'
-  inputs:
-    command: 'build'
-    projects: '$(projectSharp)'
-    arguments: '-c $(buildConfiguration) /p:Version=$(buildVersion) /p:AssemblyVersion=$(buildVersion) /p:AllowUnsafeBlocks=True /p:WarningLevel=0 /p:AnalysisLevel=0'
+# - task: DotNetCoreCLI@2
+#   displayName: 'build projectSharp'
+#   inputs:
+#     command: 'build'
+#     projects: '$(projectSharp)'
+#     arguments: '-c $(buildConfiguration) /p:Version=$(buildVersion) /p:AssemblyVersion=$(buildVersion) /p:AllowUnsafeBlocks=True /p:WarningLevel=0 /p:AnalysisLevel=0'
 
 - task: CmdLine@2
   inputs:
@@ -94,11 +94,11 @@ steps:
     publishFeedCredentials: 'nuget-curiosity'
 
 
-- task: NuGetCommand@2
-  displayName: 'push Plotly.Sharp to nuget'
-  inputs:
-    command: 'push'
-    packagesToPush: '**/Plotly.Sharp.$(buildVersion).nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'nuget-curiosity-org'
+# - task: NuGetCommand@2
+#   displayName: 'push Plotly.Sharp to nuget'
+#   inputs:
+#     command: 'push'
+#     packagesToPush: '**/Plotly.Sharp.$(buildVersion).nupkg'
+#     nuGetFeedType: 'external'
+#     publishFeedCredentials: 'nuget-curiosity-org'
 
