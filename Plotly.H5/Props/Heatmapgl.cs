@@ -13,6 +13,11 @@ namespace PlotlyH5
 
     public static partial class Heatmapgl
     {
+        public static Box<IHeatmapglProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkHeatmapglAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHeatmapglProperty> legendrank(int val) => Interop.mkHeatmapglAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHeatmapglProperty> legendrank(float val) => Interop.mkHeatmapglAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IHeatmapglProperty> opacity(int val) => Interop.mkHeatmapglAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -22,25 +27,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IHeatmapglProperty> uid(string val) => Interop.mkHeatmapglAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(bool val) => Interop.mkHeatmapglAttr("ids", new[]{val});
+        public static Box<IHeatmapglProperty> ids(bool val) => Interop.mkHeatmapglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(params bool[] values) => Interop.mkHeatmapglAttr("ids", values);
+        public static Box<IHeatmapglProperty> ids(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(System.DateTime val) => Interop.mkHeatmapglAttr("ids", new[]{val});
+        public static Box<IHeatmapglProperty> ids(System.DateTime val) => Interop.mkHeatmapglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(params System.DateTime[] values) => Interop.mkHeatmapglAttr("ids", values);
+        public static Box<IHeatmapglProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(float val) => Interop.mkHeatmapglAttr("ids", new[]{val});
+        public static Box<IHeatmapglProperty> ids(float val) => Interop.mkHeatmapglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(params float[] values) => Interop.mkHeatmapglAttr("ids", values);
+        public static Box<IHeatmapglProperty> ids(IEnumerable<float> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(int val) => Interop.mkHeatmapglAttr("ids", new[]{val});
+        public static Box<IHeatmapglProperty> ids(int val) => Interop.mkHeatmapglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(params int[] values) => Interop.mkHeatmapglAttr("ids", values);
+        public static Box<IHeatmapglProperty> ids(IEnumerable<int> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(string val) => Interop.mkHeatmapglAttr("ids", new[]{val});
+        public static Box<IHeatmapglProperty> ids(string val) => Interop.mkHeatmapglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHeatmapglProperty> ids(params string[] values) => Interop.mkHeatmapglAttr("ids", values);
+        public static Box<IHeatmapglProperty> ids(IEnumerable<string> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHeatmapglProperty> ids(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -76,25 +81,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHeatmapglProperty> ids(IEnumerable<float?> values) => Interop.mkHeatmapglAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(bool val) => Interop.mkHeatmapglAttr("customdata", new[]{val});
+        public static Box<IHeatmapglProperty> customdata(bool val) => Interop.mkHeatmapglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(params bool[] values) => Interop.mkHeatmapglAttr("customdata", values);
+        public static Box<IHeatmapglProperty> customdata(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(System.DateTime val) => Interop.mkHeatmapglAttr("customdata", new[]{val});
+        public static Box<IHeatmapglProperty> customdata(System.DateTime val) => Interop.mkHeatmapglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(params System.DateTime[] values) => Interop.mkHeatmapglAttr("customdata", values);
+        public static Box<IHeatmapglProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(float val) => Interop.mkHeatmapglAttr("customdata", new[]{val});
+        public static Box<IHeatmapglProperty> customdata(float val) => Interop.mkHeatmapglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(params float[] values) => Interop.mkHeatmapglAttr("customdata", values);
+        public static Box<IHeatmapglProperty> customdata(IEnumerable<float> values) => Interop.mkHeatmapglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(int val) => Interop.mkHeatmapglAttr("customdata", new[]{val});
+        public static Box<IHeatmapglProperty> customdata(int val) => Interop.mkHeatmapglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(params int[] values) => Interop.mkHeatmapglAttr("customdata", values);
+        public static Box<IHeatmapglProperty> customdata(IEnumerable<int> values) => Interop.mkHeatmapglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(string val) => Interop.mkHeatmapglAttr("customdata", new[]{val});
+        public static Box<IHeatmapglProperty> customdata(string val) => Interop.mkHeatmapglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHeatmapglProperty> customdata(params string[] values) => Interop.mkHeatmapglAttr("customdata", values);
+        public static Box<IHeatmapglProperty> customdata(IEnumerable<string> values) => Interop.mkHeatmapglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IHeatmapglProperty> customdata(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -155,25 +160,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IHeatmapglProperty> uirevision(params string[] values) => Interop.mkHeatmapglAttr("uirevision", values);
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(bool val) => Interop.mkHeatmapglAttr("z", new[]{val});
+        public static Box<IHeatmapglProperty> z(bool val) => Interop.mkHeatmapglAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(params bool[] values) => Interop.mkHeatmapglAttr("z", values);
+        public static Box<IHeatmapglProperty> z(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(System.DateTime val) => Interop.mkHeatmapglAttr("z", new[]{val});
+        public static Box<IHeatmapglProperty> z(System.DateTime val) => Interop.mkHeatmapglAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(params System.DateTime[] values) => Interop.mkHeatmapglAttr("z", values);
+        public static Box<IHeatmapglProperty> z(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(float val) => Interop.mkHeatmapglAttr("z", new[]{val});
+        public static Box<IHeatmapglProperty> z(float val) => Interop.mkHeatmapglAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(params float[] values) => Interop.mkHeatmapglAttr("z", values);
+        public static Box<IHeatmapglProperty> z(IEnumerable<float> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(int val) => Interop.mkHeatmapglAttr("z", new[]{val});
+        public static Box<IHeatmapglProperty> z(int val) => Interop.mkHeatmapglAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(params int[] values) => Interop.mkHeatmapglAttr("z", values);
+        public static Box<IHeatmapglProperty> z(IEnumerable<int> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(string val) => Interop.mkHeatmapglAttr("z", new[]{val});
+        public static Box<IHeatmapglProperty> z(string val) => Interop.mkHeatmapglAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IHeatmapglProperty> z(params string[] values) => Interop.mkHeatmapglAttr("z", values);
+        public static Box<IHeatmapglProperty> z(IEnumerable<string> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the z data.
         public static Box<IHeatmapglProperty> z(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the z data.
@@ -209,25 +214,25 @@ namespace PlotlyH5
         /// Sets the z data.
         public static Box<IHeatmapglProperty> z(IEnumerable<float?> values) => Interop.mkHeatmapglAttr("z", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(bool val) => Interop.mkHeatmapglAttr("x", new[]{val});
+        public static Box<IHeatmapglProperty> x(bool val) => Interop.mkHeatmapglAttr("x", new[] { val });
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(params bool[] values) => Interop.mkHeatmapglAttr("x", values);
+        public static Box<IHeatmapglProperty> x(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(System.DateTime val) => Interop.mkHeatmapglAttr("x", new[]{val});
+        public static Box<IHeatmapglProperty> x(System.DateTime val) => Interop.mkHeatmapglAttr("x", new[] { val });
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(params System.DateTime[] values) => Interop.mkHeatmapglAttr("x", values);
+        public static Box<IHeatmapglProperty> x(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(float val) => Interop.mkHeatmapglAttr("x", new[]{val});
+        public static Box<IHeatmapglProperty> x(float val) => Interop.mkHeatmapglAttr("x", new[] { val });
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(params float[] values) => Interop.mkHeatmapglAttr("x", values);
+        public static Box<IHeatmapglProperty> x(IEnumerable<float> values) => Interop.mkHeatmapglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(int val) => Interop.mkHeatmapglAttr("x", new[]{val});
+        public static Box<IHeatmapglProperty> x(int val) => Interop.mkHeatmapglAttr("x", new[] { val });
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(params int[] values) => Interop.mkHeatmapglAttr("x", values);
+        public static Box<IHeatmapglProperty> x(IEnumerable<int> values) => Interop.mkHeatmapglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(string val) => Interop.mkHeatmapglAttr("x", new[]{val});
+        public static Box<IHeatmapglProperty> x(string val) => Interop.mkHeatmapglAttr("x", new[] { val });
         /// Sets the x coordinates.
-        public static Box<IHeatmapglProperty> x(params string[] values) => Interop.mkHeatmapglAttr("x", values);
+        public static Box<IHeatmapglProperty> x(IEnumerable<string> values) => Interop.mkHeatmapglAttr("x", values.ToArray());
         /// Sets the x coordinates.
         public static Box<IHeatmapglProperty> x(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("x", Bindings.flatten2DArrayIf1D(values));
         /// Sets the x coordinates.
@@ -287,25 +292,25 @@ namespace PlotlyH5
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IHeatmapglProperty> dx(float val) => Interop.mkHeatmapglAttr("dx", val);
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(bool val) => Interop.mkHeatmapglAttr("y", new[]{val});
+        public static Box<IHeatmapglProperty> y(bool val) => Interop.mkHeatmapglAttr("y", new[] { val });
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(params bool[] values) => Interop.mkHeatmapglAttr("y", values);
+        public static Box<IHeatmapglProperty> y(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(System.DateTime val) => Interop.mkHeatmapglAttr("y", new[]{val});
+        public static Box<IHeatmapglProperty> y(System.DateTime val) => Interop.mkHeatmapglAttr("y", new[] { val });
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(params System.DateTime[] values) => Interop.mkHeatmapglAttr("y", values);
+        public static Box<IHeatmapglProperty> y(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(float val) => Interop.mkHeatmapglAttr("y", new[]{val});
+        public static Box<IHeatmapglProperty> y(float val) => Interop.mkHeatmapglAttr("y", new[] { val });
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(params float[] values) => Interop.mkHeatmapglAttr("y", values);
+        public static Box<IHeatmapglProperty> y(IEnumerable<float> values) => Interop.mkHeatmapglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(int val) => Interop.mkHeatmapglAttr("y", new[]{val});
+        public static Box<IHeatmapglProperty> y(int val) => Interop.mkHeatmapglAttr("y", new[] { val });
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(params int[] values) => Interop.mkHeatmapglAttr("y", values);
+        public static Box<IHeatmapglProperty> y(IEnumerable<int> values) => Interop.mkHeatmapglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(string val) => Interop.mkHeatmapglAttr("y", new[]{val});
+        public static Box<IHeatmapglProperty> y(string val) => Interop.mkHeatmapglAttr("y", new[] { val });
         /// Sets the y coordinates.
-        public static Box<IHeatmapglProperty> y(params string[] values) => Interop.mkHeatmapglAttr("y", values);
+        public static Box<IHeatmapglProperty> y(IEnumerable<string> values) => Interop.mkHeatmapglAttr("y", values.ToArray());
         /// Sets the y coordinates.
         public static Box<IHeatmapglProperty> y(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("y", Bindings.flatten2DArrayIf1D(values));
         /// Sets the y coordinates.
@@ -365,25 +370,25 @@ namespace PlotlyH5
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IHeatmapglProperty> dy(float val) => Interop.mkHeatmapglAttr("dy", val);
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(bool val) => Interop.mkHeatmapglAttr("text", new[]{val});
+        public static Box<IHeatmapglProperty> text(bool val) => Interop.mkHeatmapglAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(params bool[] values) => Interop.mkHeatmapglAttr("text", values);
+        public static Box<IHeatmapglProperty> text(IEnumerable<bool> values) => Interop.mkHeatmapglAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(System.DateTime val) => Interop.mkHeatmapglAttr("text", new[]{val});
+        public static Box<IHeatmapglProperty> text(System.DateTime val) => Interop.mkHeatmapglAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(params System.DateTime[] values) => Interop.mkHeatmapglAttr("text", values);
+        public static Box<IHeatmapglProperty> text(IEnumerable<System.DateTime> values) => Interop.mkHeatmapglAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(float val) => Interop.mkHeatmapglAttr("text", new[]{val});
+        public static Box<IHeatmapglProperty> text(float val) => Interop.mkHeatmapglAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(params float[] values) => Interop.mkHeatmapglAttr("text", values);
+        public static Box<IHeatmapglProperty> text(IEnumerable<float> values) => Interop.mkHeatmapglAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(int val) => Interop.mkHeatmapglAttr("text", new[]{val});
+        public static Box<IHeatmapglProperty> text(int val) => Interop.mkHeatmapglAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(params int[] values) => Interop.mkHeatmapglAttr("text", values);
+        public static Box<IHeatmapglProperty> text(IEnumerable<int> values) => Interop.mkHeatmapglAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(string val) => Interop.mkHeatmapglAttr("text", new[]{val});
+        public static Box<IHeatmapglProperty> text(string val) => Interop.mkHeatmapglAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IHeatmapglProperty> text(params string[] values) => Interop.mkHeatmapglAttr("text", values);
+        public static Box<IHeatmapglProperty> text(IEnumerable<string> values) => Interop.mkHeatmapglAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
         public static Box<IHeatmapglProperty> text(IEnumerable<bool[]> values) => Interop.mkHeatmapglAttr("text", Bindings.flatten2DArrayIf1D(values));
         /// Sets the text elements associated with each z value.
@@ -457,21 +462,21 @@ namespace PlotlyH5
         public static Box<IHeatmapglProperty> yaxis(int anchorId) => Interop.mkHeatmapglAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IHeatmapglProperty> yaxis(string val) => Interop.mkHeatmapglAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IHeatmapglProperty> idssrc(string val) => Interop.mkHeatmapglAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IHeatmapglProperty> customdatasrc(string val) => Interop.mkHeatmapglAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IHeatmapglProperty> metasrc(string val) => Interop.mkHeatmapglAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IHeatmapglProperty> hoverinfosrc(string val) => Interop.mkHeatmapglAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IHeatmapglProperty> zsrc(string val) => Interop.mkHeatmapglAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IHeatmapglProperty> xsrc(string val) => Interop.mkHeatmapglAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IHeatmapglProperty> ysrc(string val) => Interop.mkHeatmapglAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IHeatmapglProperty> textsrc(string val) => Interop.mkHeatmapglAttr("textsrc", val);
     }
 
@@ -510,6 +515,13 @@ namespace PlotlyH5
         {
             public static Box<IHeatmapglProperty> array() => Interop.mkHeatmapglAttr("ytype", "array");
             public static Box<IHeatmapglProperty> scaled() => Interop.mkHeatmapglAttr("ytype", "scaled");
+        }
+
+        /// Picks a smoothing algorithm use to smooth `z` data.
+        public static partial class Zsmooth
+        {
+            public static Box<IHeatmapglProperty> fast() => Interop.mkHeatmapglAttr("zsmooth", "fast");
+            public static Box<IHeatmapglProperty> _false() => Interop.mkHeatmapglAttr("zsmooth", false);
         }
     }
 }

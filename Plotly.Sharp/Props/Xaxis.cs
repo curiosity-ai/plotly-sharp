@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Xaxis
     {
@@ -19,23 +19,23 @@ namespace Plotly
         public static Box<IXaxisProperty> color(string val) => Interop.mkXaxisAttr("color", val);
         public static Box<IXaxisProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkXaxisAttr("title", Bindings.flattenProperties(properties));
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IXaxisProperty> range(bool val) => Interop.mkXaxisAttr("range", new[]{val});
+        public static Box<IXaxisProperty> range(bool val) => Interop.mkXaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IXaxisProperty> range(IEnumerable<bool> values) => Interop.mkXaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IXaxisProperty> range(System.DateTime val) => Interop.mkXaxisAttr("range", new[]{val});
+        public static Box<IXaxisProperty> range(System.DateTime val) => Interop.mkXaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IXaxisProperty> range(IEnumerable<System.DateTime> values) => Interop.mkXaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IXaxisProperty> range(float val) => Interop.mkXaxisAttr("range", new[]{val});
+        public static Box<IXaxisProperty> range(float val) => Interop.mkXaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IXaxisProperty> range(IEnumerable<float> values) => Interop.mkXaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IXaxisProperty> range(int val) => Interop.mkXaxisAttr("range", new[]{val});
+        public static Box<IXaxisProperty> range(int val) => Interop.mkXaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IXaxisProperty> range(IEnumerable<int> values) => Interop.mkXaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IXaxisProperty> range(string val) => Interop.mkXaxisAttr("range", new[]{val});
+        public static Box<IXaxisProperty> range(string val) => Interop.mkXaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IXaxisProperty> range(IEnumerable<string> values) => Interop.mkXaxisAttr("range", values.ToArray());
         /// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
@@ -46,6 +46,7 @@ namespace Plotly
         public static Box<IXaxisProperty> scaleratio(float val) => Interop.mkXaxisAttr("scaleratio", val);
         /// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
         public static Box<IXaxisProperty> matches(string val) => Interop.mkXaxisAttr("matches", val);
+        public static Box<IXaxisProperty> rangebreaks(params Box<IRangebreaksProperty>[] properties) => Interop.mkXaxisAttr("rangebreaks", Bindings.flattenProperties(properties));
         /// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
         public static Box<IXaxisProperty> nticks(int val) => Interop.mkXaxisAttr("nticks", val);
         /// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
@@ -89,23 +90,23 @@ namespace Plotly
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IXaxisProperty> dtick(params string[] values) => Interop.mkXaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IXaxisProperty> tickvals(bool val) => Interop.mkXaxisAttr("tickvals", new[]{val});
+        public static Box<IXaxisProperty> tickvals(bool val) => Interop.mkXaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IXaxisProperty> tickvals(System.DateTime val) => Interop.mkXaxisAttr("tickvals", new[]{val});
+        public static Box<IXaxisProperty> tickvals(System.DateTime val) => Interop.mkXaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IXaxisProperty> tickvals(float val) => Interop.mkXaxisAttr("tickvals", new[]{val});
+        public static Box<IXaxisProperty> tickvals(float val) => Interop.mkXaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IXaxisProperty> tickvals(int val) => Interop.mkXaxisAttr("tickvals", new[]{val});
+        public static Box<IXaxisProperty> tickvals(int val) => Interop.mkXaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IXaxisProperty> tickvals(string val) => Interop.mkXaxisAttr("tickvals", new[]{val});
+        public static Box<IXaxisProperty> tickvals(string val) => Interop.mkXaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -143,23 +144,23 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IXaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkXaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IXaxisProperty> ticktext(bool val) => Interop.mkXaxisAttr("ticktext", new[]{val});
+        public static Box<IXaxisProperty> ticktext(bool val) => Interop.mkXaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IXaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkXaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IXaxisProperty> ticktext(System.DateTime val) => Interop.mkXaxisAttr("ticktext", new[]{val});
+        public static Box<IXaxisProperty> ticktext(System.DateTime val) => Interop.mkXaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IXaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkXaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IXaxisProperty> ticktext(float val) => Interop.mkXaxisAttr("ticktext", new[]{val});
+        public static Box<IXaxisProperty> ticktext(float val) => Interop.mkXaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IXaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkXaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IXaxisProperty> ticktext(int val) => Interop.mkXaxisAttr("ticktext", new[]{val});
+        public static Box<IXaxisProperty> ticktext(int val) => Interop.mkXaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IXaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkXaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IXaxisProperty> ticktext(string val) => Interop.mkXaxisAttr("ticktext", new[]{val});
+        public static Box<IXaxisProperty> ticktext(string val) => Interop.mkXaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IXaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkXaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -230,12 +231,16 @@ namespace Plotly
         public static Box<IXaxisProperty> tickprefix(string val) => Interop.mkXaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IXaxisProperty> ticksuffix(string val) => Interop.mkXaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IXaxisProperty> minexponent(int val) => Interop.mkXaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IXaxisProperty> minexponent(float val) => Interop.mkXaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IXaxisProperty> separatethousands(bool val) => Interop.mkXaxisAttr("separatethousands", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IXaxisProperty> tickformat(string val) => Interop.mkXaxisAttr("tickformat", val);
         public static Box<IXaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkXaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IXaxisProperty> hoverformat(string val) => Interop.mkXaxisAttr("hoverformat", val);
         /// Determines whether or not a line bounding this axis is drawn.
         public static Box<IXaxisProperty> showline(bool val) => Interop.mkXaxisAttr("showline", val);
@@ -270,11 +275,11 @@ namespace Plotly
         /// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
         public static Box<IXaxisProperty> dividerwidth(float val) => Interop.mkXaxisAttr("dividerwidth", val);
         /// Sets the domain of this axis (in plot fraction).
-        public static Box<IXaxisProperty> domain(int val) => Interop.mkXaxisAttr("domain", new[]{val});
+        public static Box<IXaxisProperty> domain(int val) => Interop.mkXaxisAttr("domain", new[] { val });
         /// Sets the domain of this axis (in plot fraction).
         public static Box<IXaxisProperty> domain(IEnumerable<int> values) => Interop.mkXaxisAttr("domain", values.ToArray());
         /// Sets the domain of this axis (in plot fraction).
-        public static Box<IXaxisProperty> domain(float val) => Interop.mkXaxisAttr("domain", new[]{val});
+        public static Box<IXaxisProperty> domain(float val) => Interop.mkXaxisAttr("domain", new[] { val });
         /// Sets the domain of this axis (in plot fraction).
         public static Box<IXaxisProperty> domain(IEnumerable<float> values) => Interop.mkXaxisAttr("domain", values.ToArray());
         /// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
@@ -282,25 +287,25 @@ namespace Plotly
         /// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
         public static Box<IXaxisProperty> position(float val) => Interop.mkXaxisAttr("position", val);
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(bool val) => Interop.mkXaxisAttr("categoryarray", new[]{val});
+        public static Box<IXaxisProperty> categoryarray(bool val) => Interop.mkXaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(params bool[] values) => Interop.mkXaxisAttr("categoryarray", values);
+        public static Box<IXaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkXaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(System.DateTime val) => Interop.mkXaxisAttr("categoryarray", new[]{val});
+        public static Box<IXaxisProperty> categoryarray(System.DateTime val) => Interop.mkXaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(params System.DateTime[] values) => Interop.mkXaxisAttr("categoryarray", values);
+        public static Box<IXaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkXaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(float val) => Interop.mkXaxisAttr("categoryarray", new[]{val});
+        public static Box<IXaxisProperty> categoryarray(float val) => Interop.mkXaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(params float[] values) => Interop.mkXaxisAttr("categoryarray", values);
+        public static Box<IXaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkXaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(int val) => Interop.mkXaxisAttr("categoryarray", new[]{val});
+        public static Box<IXaxisProperty> categoryarray(int val) => Interop.mkXaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(params int[] values) => Interop.mkXaxisAttr("categoryarray", values);
+        public static Box<IXaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkXaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(string val) => Interop.mkXaxisAttr("categoryarray", new[]{val});
+        public static Box<IXaxisProperty> categoryarray(string val) => Interop.mkXaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IXaxisProperty> categoryarray(params string[] values) => Interop.mkXaxisAttr("categoryarray", values);
+        public static Box<IXaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkXaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IXaxisProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkXaxisAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -357,11 +362,11 @@ namespace Plotly
         public static Box<IXaxisProperty> uirevision(params string[] values) => Interop.mkXaxisAttr("uirevision", values);
         public static Box<IXaxisProperty> rangeslider(params Box<IRangesliderProperty>[] properties) => Interop.mkXaxisAttr("rangeslider", Bindings.flattenProperties(properties));
         public static Box<IXaxisProperty> rangeselector(params Box<IRangeselectorProperty>[] properties) => Interop.mkXaxisAttr("rangeselector", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IXaxisProperty> tickvalssrc(string val) => Interop.mkXaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IXaxisProperty> ticktextsrc(string val) => Interop.mkXaxisAttr("ticktextsrc", val);
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IXaxisProperty> categoryarraysrc(string val) => Interop.mkXaxisAttr("categoryarraysrc", val);
         /// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
         public static Box<IXaxisProperty> spikesides(bool val) => Interop.mkXaxisAttr("spikesides", val);
@@ -384,6 +389,13 @@ namespace Plotly
             public static Box<IXaxisProperty> linear() => Interop.mkXaxisAttr("type", "linear");
             public static Box<IXaxisProperty> log() => Interop.mkXaxisAttr("type", "log");
             public static Box<IXaxisProperty> multicategory() => Interop.mkXaxisAttr("type", "multicategory");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IXaxisProperty> convertTypes() => Interop.mkXaxisAttr("autotypenumbers", "convert types");
+            public static Box<IXaxisProperty> strict() => Interop.mkXaxisAttr("autotypenumbers", "strict");
         }
 
         /// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
@@ -410,7 +422,7 @@ namespace Plotly
             public static Box<IXaxisProperty> y(int anchorId) => Interop.mkXaxisAttr("scaleanchor", anchorId > 1 ? $"y{anchorId}" : "");
         }
 
-        /// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
+        /// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
         public static partial class Constrain
         {
             public static Box<IXaxisProperty> domain() => Interop.mkXaxisAttr("constrain", "domain");
@@ -451,6 +463,36 @@ namespace Plotly
             public static Box<IXaxisProperty> labels() => Interop.mkXaxisAttr("tickson", "labels");
         }
 
+        /// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+        public static partial class Ticklabelmode
+        {
+            public static Box<IXaxisProperty> instant() => Interop.mkXaxisAttr("ticklabelmode", "instant");
+            public static Box<IXaxisProperty> period() => Interop.mkXaxisAttr("ticklabelmode", "period");
+        }
+
+        /// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+        public static partial class Ticklabelposition
+        {
+            public static Box<IXaxisProperty> insideBottom() => Interop.mkXaxisAttr("ticklabelposition", "inside bottom");
+            public static Box<IXaxisProperty> insideLeft() => Interop.mkXaxisAttr("ticklabelposition", "inside left");
+            public static Box<IXaxisProperty> insideRight() => Interop.mkXaxisAttr("ticklabelposition", "inside right");
+            public static Box<IXaxisProperty> insideTop() => Interop.mkXaxisAttr("ticklabelposition", "inside top");
+            public static Box<IXaxisProperty> inside() => Interop.mkXaxisAttr("ticklabelposition", "inside");
+            public static Box<IXaxisProperty> outsideBottom() => Interop.mkXaxisAttr("ticklabelposition", "outside bottom");
+            public static Box<IXaxisProperty> outsideLeft() => Interop.mkXaxisAttr("ticklabelposition", "outside left");
+            public static Box<IXaxisProperty> outsideRight() => Interop.mkXaxisAttr("ticklabelposition", "outside right");
+            public static Box<IXaxisProperty> outsideTop() => Interop.mkXaxisAttr("ticklabelposition", "outside top");
+            public static Box<IXaxisProperty> outside() => Interop.mkXaxisAttr("ticklabelposition", "outside");
+        }
+
+        /// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+        public static partial class Ticklabeloverflow
+        {
+            public static Box<IXaxisProperty> allow() => Interop.mkXaxisAttr("ticklabeloverflow", "allow");
+            public static Box<IXaxisProperty> hidePastDiv() => Interop.mkXaxisAttr("ticklabeloverflow", "hide past div");
+            public static Box<IXaxisProperty> hidePastDomain() => Interop.mkXaxisAttr("ticklabeloverflow", "hide past domain");
+        }
+
         /// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
         public static partial class Mirror
         {
@@ -486,6 +528,7 @@ namespace Plotly
         {
             public static Box<IXaxisProperty> cursor() => Interop.mkXaxisAttr("spikesnap", "cursor");
             public static Box<IXaxisProperty> data() => Interop.mkXaxisAttr("spikesnap", "data");
+            public static Box<IXaxisProperty> hoveredData() => Interop.mkXaxisAttr("spikesnap", "hovered data");
         }
 
         /// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.

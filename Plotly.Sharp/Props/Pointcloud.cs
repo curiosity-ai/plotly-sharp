@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Pointcloud
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IPointcloudProperty> showlegend(bool val) => Interop.mkPointcloudAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IPointcloudProperty> legendgroup(string val) => Interop.mkPointcloudAttr("legendgroup", val);
+        public static Box<IPointcloudProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkPointcloudAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IPointcloudProperty> legendrank(int val) => Interop.mkPointcloudAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IPointcloudProperty> legendrank(float val) => Interop.mkPointcloudAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IPointcloudProperty> opacity(int val) => Interop.mkPointcloudAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IPointcloudProperty> uid(string val) => Interop.mkPointcloudAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(bool val) => Interop.mkPointcloudAttr("ids", new[]{val});
+        public static Box<IPointcloudProperty> ids(bool val) => Interop.mkPointcloudAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(params bool[] values) => Interop.mkPointcloudAttr("ids", values);
+        public static Box<IPointcloudProperty> ids(IEnumerable<bool> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(System.DateTime val) => Interop.mkPointcloudAttr("ids", new[]{val});
+        public static Box<IPointcloudProperty> ids(System.DateTime val) => Interop.mkPointcloudAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(params System.DateTime[] values) => Interop.mkPointcloudAttr("ids", values);
+        public static Box<IPointcloudProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(float val) => Interop.mkPointcloudAttr("ids", new[]{val});
+        public static Box<IPointcloudProperty> ids(float val) => Interop.mkPointcloudAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(params float[] values) => Interop.mkPointcloudAttr("ids", values);
+        public static Box<IPointcloudProperty> ids(IEnumerable<float> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(int val) => Interop.mkPointcloudAttr("ids", new[]{val});
+        public static Box<IPointcloudProperty> ids(int val) => Interop.mkPointcloudAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(params int[] values) => Interop.mkPointcloudAttr("ids", values);
+        public static Box<IPointcloudProperty> ids(IEnumerable<int> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(string val) => Interop.mkPointcloudAttr("ids", new[]{val});
+        public static Box<IPointcloudProperty> ids(string val) => Interop.mkPointcloudAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IPointcloudProperty> ids(params string[] values) => Interop.mkPointcloudAttr("ids", values);
+        public static Box<IPointcloudProperty> ids(IEnumerable<string> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IPointcloudProperty> ids(IEnumerable<bool[]> values) => Interop.mkPointcloudAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IPointcloudProperty> ids(IEnumerable<float?> values) => Interop.mkPointcloudAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(bool val) => Interop.mkPointcloudAttr("customdata", new[]{val});
+        public static Box<IPointcloudProperty> customdata(bool val) => Interop.mkPointcloudAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(params bool[] values) => Interop.mkPointcloudAttr("customdata", values);
+        public static Box<IPointcloudProperty> customdata(IEnumerable<bool> values) => Interop.mkPointcloudAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(System.DateTime val) => Interop.mkPointcloudAttr("customdata", new[]{val});
+        public static Box<IPointcloudProperty> customdata(System.DateTime val) => Interop.mkPointcloudAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(params System.DateTime[] values) => Interop.mkPointcloudAttr("customdata", values);
+        public static Box<IPointcloudProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(float val) => Interop.mkPointcloudAttr("customdata", new[]{val});
+        public static Box<IPointcloudProperty> customdata(float val) => Interop.mkPointcloudAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(params float[] values) => Interop.mkPointcloudAttr("customdata", values);
+        public static Box<IPointcloudProperty> customdata(IEnumerable<float> values) => Interop.mkPointcloudAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(int val) => Interop.mkPointcloudAttr("customdata", new[]{val});
+        public static Box<IPointcloudProperty> customdata(int val) => Interop.mkPointcloudAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(params int[] values) => Interop.mkPointcloudAttr("customdata", values);
+        public static Box<IPointcloudProperty> customdata(IEnumerable<int> values) => Interop.mkPointcloudAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(string val) => Interop.mkPointcloudAttr("customdata", new[]{val});
+        public static Box<IPointcloudProperty> customdata(string val) => Interop.mkPointcloudAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IPointcloudProperty> customdata(params string[] values) => Interop.mkPointcloudAttr("customdata", values);
+        public static Box<IPointcloudProperty> customdata(IEnumerable<string> values) => Interop.mkPointcloudAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IPointcloudProperty> customdata(IEnumerable<bool[]> values) => Interop.mkPointcloudAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -158,23 +163,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IPointcloudProperty> uirevision(params string[] values) => Interop.mkPointcloudAttr("uirevision", values);
         /// Sets the x coordinates.
-        public static Box<IPointcloudProperty> x(bool val) => Interop.mkPointcloudAttr("x", new[]{val});
+        public static Box<IPointcloudProperty> x(bool val) => Interop.mkPointcloudAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<bool> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IPointcloudProperty> x(System.DateTime val) => Interop.mkPointcloudAttr("x", new[]{val});
+        public static Box<IPointcloudProperty> x(System.DateTime val) => Interop.mkPointcloudAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IPointcloudProperty> x(float val) => Interop.mkPointcloudAttr("x", new[]{val});
+        public static Box<IPointcloudProperty> x(float val) => Interop.mkPointcloudAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<float> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IPointcloudProperty> x(int val) => Interop.mkPointcloudAttr("x", new[]{val});
+        public static Box<IPointcloudProperty> x(int val) => Interop.mkPointcloudAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<int> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IPointcloudProperty> x(string val) => Interop.mkPointcloudAttr("x", new[]{val});
+        public static Box<IPointcloudProperty> x(string val) => Interop.mkPointcloudAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<string> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -212,23 +217,23 @@ namespace Plotly
         /// Sets the x coordinates.
         public static Box<IPointcloudProperty> x(IEnumerable<float?> values) => Interop.mkPointcloudAttr("x", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IPointcloudProperty> y(bool val) => Interop.mkPointcloudAttr("y", new[]{val});
+        public static Box<IPointcloudProperty> y(bool val) => Interop.mkPointcloudAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IPointcloudProperty> y(IEnumerable<bool> values) => Interop.mkPointcloudAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IPointcloudProperty> y(System.DateTime val) => Interop.mkPointcloudAttr("y", new[]{val});
+        public static Box<IPointcloudProperty> y(System.DateTime val) => Interop.mkPointcloudAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IPointcloudProperty> y(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IPointcloudProperty> y(float val) => Interop.mkPointcloudAttr("y", new[]{val});
+        public static Box<IPointcloudProperty> y(float val) => Interop.mkPointcloudAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IPointcloudProperty> y(IEnumerable<float> values) => Interop.mkPointcloudAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IPointcloudProperty> y(int val) => Interop.mkPointcloudAttr("y", new[]{val});
+        public static Box<IPointcloudProperty> y(int val) => Interop.mkPointcloudAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IPointcloudProperty> y(IEnumerable<int> values) => Interop.mkPointcloudAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IPointcloudProperty> y(string val) => Interop.mkPointcloudAttr("y", new[]{val});
+        public static Box<IPointcloudProperty> y(string val) => Interop.mkPointcloudAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IPointcloudProperty> y(IEnumerable<string> values) => Interop.mkPointcloudAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -270,25 +275,25 @@ namespace Plotly
         /// Faster alternative to specifying `x` and `y` separately. If supplied, it must be a typed `Float32Array` array that represents points such that `xy[i * 2] = x[i]` and `xy[i * 2 + 1] = y[i]`
         public static Box<IPointcloudProperty> xy(float[] values) => Interop.mkPointcloudAttr("xy", values);
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(bool val) => Interop.mkPointcloudAttr("indices", new[]{val});
+        public static Box<IPointcloudProperty> indices(bool val) => Interop.mkPointcloudAttr("indices", new[] { val });
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(params bool[] values) => Interop.mkPointcloudAttr("indices", values);
+        public static Box<IPointcloudProperty> indices(IEnumerable<bool> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(System.DateTime val) => Interop.mkPointcloudAttr("indices", new[]{val});
+        public static Box<IPointcloudProperty> indices(System.DateTime val) => Interop.mkPointcloudAttr("indices", new[] { val });
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(params System.DateTime[] values) => Interop.mkPointcloudAttr("indices", values);
+        public static Box<IPointcloudProperty> indices(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(float val) => Interop.mkPointcloudAttr("indices", new[]{val});
+        public static Box<IPointcloudProperty> indices(float val) => Interop.mkPointcloudAttr("indices", new[] { val });
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(params float[] values) => Interop.mkPointcloudAttr("indices", values);
+        public static Box<IPointcloudProperty> indices(IEnumerable<float> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(int val) => Interop.mkPointcloudAttr("indices", new[]{val});
+        public static Box<IPointcloudProperty> indices(int val) => Interop.mkPointcloudAttr("indices", new[] { val });
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(params int[] values) => Interop.mkPointcloudAttr("indices", values);
+        public static Box<IPointcloudProperty> indices(IEnumerable<int> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(string val) => Interop.mkPointcloudAttr("indices", new[]{val});
+        public static Box<IPointcloudProperty> indices(string val) => Interop.mkPointcloudAttr("indices", new[] { val });
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
-        public static Box<IPointcloudProperty> indices(params string[] values) => Interop.mkPointcloudAttr("indices", values);
+        public static Box<IPointcloudProperty> indices(IEnumerable<string> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
         public static Box<IPointcloudProperty> indices(IEnumerable<bool[]> values) => Interop.mkPointcloudAttr("indices", Bindings.flatten2DArrayIf1D(values));
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
@@ -324,25 +329,25 @@ namespace Plotly
         /// A sequential value, 0..n, supply it to avoid creating this array inside plotting. If specified, it must be a typed `Int32Array` array. Its length must be equal to or greater than the number of points. For the best performance and memory use, create one large `indices` typed array that is guaranteed to be at least as long as the largest number of points during use, and reuse it on each `Plotly.restyle()` call.
         public static Box<IPointcloudProperty> indices(IEnumerable<float?> values) => Interop.mkPointcloudAttr("indices", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(bool val) => Interop.mkPointcloudAttr("xbounds", new[]{val});
+        public static Box<IPointcloudProperty> xbounds(bool val) => Interop.mkPointcloudAttr("xbounds", new[] { val });
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(params bool[] values) => Interop.mkPointcloudAttr("xbounds", values);
+        public static Box<IPointcloudProperty> xbounds(IEnumerable<bool> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(System.DateTime val) => Interop.mkPointcloudAttr("xbounds", new[]{val});
+        public static Box<IPointcloudProperty> xbounds(System.DateTime val) => Interop.mkPointcloudAttr("xbounds", new[] { val });
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(params System.DateTime[] values) => Interop.mkPointcloudAttr("xbounds", values);
+        public static Box<IPointcloudProperty> xbounds(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(float val) => Interop.mkPointcloudAttr("xbounds", new[]{val});
+        public static Box<IPointcloudProperty> xbounds(float val) => Interop.mkPointcloudAttr("xbounds", new[] { val });
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(params float[] values) => Interop.mkPointcloudAttr("xbounds", values);
+        public static Box<IPointcloudProperty> xbounds(IEnumerable<float> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(int val) => Interop.mkPointcloudAttr("xbounds", new[]{val});
+        public static Box<IPointcloudProperty> xbounds(int val) => Interop.mkPointcloudAttr("xbounds", new[] { val });
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(params int[] values) => Interop.mkPointcloudAttr("xbounds", values);
+        public static Box<IPointcloudProperty> xbounds(IEnumerable<int> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(string val) => Interop.mkPointcloudAttr("xbounds", new[]{val});
+        public static Box<IPointcloudProperty> xbounds(string val) => Interop.mkPointcloudAttr("xbounds", new[] { val });
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
-        public static Box<IPointcloudProperty> xbounds(params string[] values) => Interop.mkPointcloudAttr("xbounds", values);
+        public static Box<IPointcloudProperty> xbounds(IEnumerable<string> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
         public static Box<IPointcloudProperty> xbounds(IEnumerable<bool[]> values) => Interop.mkPointcloudAttr("xbounds", Bindings.flatten2DArrayIf1D(values));
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
@@ -378,25 +383,25 @@ namespace Plotly
         /// Specify `xbounds` in the shape of `[xMin, xMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `ybounds` for the performance benefits.
         public static Box<IPointcloudProperty> xbounds(IEnumerable<float?> values) => Interop.mkPointcloudAttr("xbounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(bool val) => Interop.mkPointcloudAttr("ybounds", new[]{val});
+        public static Box<IPointcloudProperty> ybounds(bool val) => Interop.mkPointcloudAttr("ybounds", new[] { val });
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(params bool[] values) => Interop.mkPointcloudAttr("ybounds", values);
+        public static Box<IPointcloudProperty> ybounds(IEnumerable<bool> values) => Interop.mkPointcloudAttr("ybounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(System.DateTime val) => Interop.mkPointcloudAttr("ybounds", new[]{val});
+        public static Box<IPointcloudProperty> ybounds(System.DateTime val) => Interop.mkPointcloudAttr("ybounds", new[] { val });
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(params System.DateTime[] values) => Interop.mkPointcloudAttr("ybounds", values);
+        public static Box<IPointcloudProperty> ybounds(IEnumerable<System.DateTime> values) => Interop.mkPointcloudAttr("ybounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(float val) => Interop.mkPointcloudAttr("ybounds", new[]{val});
+        public static Box<IPointcloudProperty> ybounds(float val) => Interop.mkPointcloudAttr("ybounds", new[] { val });
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(params float[] values) => Interop.mkPointcloudAttr("ybounds", values);
+        public static Box<IPointcloudProperty> ybounds(IEnumerable<float> values) => Interop.mkPointcloudAttr("ybounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(int val) => Interop.mkPointcloudAttr("ybounds", new[]{val});
+        public static Box<IPointcloudProperty> ybounds(int val) => Interop.mkPointcloudAttr("ybounds", new[] { val });
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(params int[] values) => Interop.mkPointcloudAttr("ybounds", values);
+        public static Box<IPointcloudProperty> ybounds(IEnumerable<int> values) => Interop.mkPointcloudAttr("ybounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(string val) => Interop.mkPointcloudAttr("ybounds", new[]{val});
+        public static Box<IPointcloudProperty> ybounds(string val) => Interop.mkPointcloudAttr("ybounds", new[] { val });
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
-        public static Box<IPointcloudProperty> ybounds(params string[] values) => Interop.mkPointcloudAttr("ybounds", values);
+        public static Box<IPointcloudProperty> ybounds(IEnumerable<string> values) => Interop.mkPointcloudAttr("ybounds", values.ToArray());
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
         public static Box<IPointcloudProperty> ybounds(IEnumerable<bool[]> values) => Interop.mkPointcloudAttr("ybounds", Bindings.flatten2DArrayIf1D(values));
         /// Specify `ybounds` in the shape of `[yMin, yMax] to avoid looping through the `xy` typed array. Use it in conjunction with `xy` and `xbounds` for the performance benefits.
@@ -444,27 +449,27 @@ namespace Plotly
         public static Box<IPointcloudProperty> yaxis(int anchorId) => Interop.mkPointcloudAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IPointcloudProperty> yaxis(string val) => Interop.mkPointcloudAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IPointcloudProperty> idssrc(string val) => Interop.mkPointcloudAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IPointcloudProperty> customdatasrc(string val) => Interop.mkPointcloudAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IPointcloudProperty> metasrc(string val) => Interop.mkPointcloudAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IPointcloudProperty> hoverinfosrc(string val) => Interop.mkPointcloudAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IPointcloudProperty> xsrc(string val) => Interop.mkPointcloudAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IPointcloudProperty> ysrc(string val) => Interop.mkPointcloudAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  xy .
+        /// Sets the source reference on Chart Studio Cloud for  xy .
         public static Box<IPointcloudProperty> xysrc(string val) => Interop.mkPointcloudAttr("xysrc", val);
-        /// Sets the source reference on plot.ly for  indices .
+        /// Sets the source reference on Chart Studio Cloud for  indices .
         public static Box<IPointcloudProperty> indicessrc(string val) => Interop.mkPointcloudAttr("indicessrc", val);
-        /// Sets the source reference on plot.ly for  xbounds .
+        /// Sets the source reference on Chart Studio Cloud for  xbounds .
         public static Box<IPointcloudProperty> xboundssrc(string val) => Interop.mkPointcloudAttr("xboundssrc", val);
-        /// Sets the source reference on plot.ly for  ybounds .
+        /// Sets the source reference on Chart Studio Cloud for  ybounds .
         public static Box<IPointcloudProperty> yboundssrc(string val) => Interop.mkPointcloudAttr("yboundssrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IPointcloudProperty> textsrc(string val) => Interop.mkPointcloudAttr("textsrc", val);
     }
 

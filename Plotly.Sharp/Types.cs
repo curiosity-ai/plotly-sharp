@@ -6,7 +6,7 @@ namespace Plotly
     ////////////////////////////////*/
     namespace Types
     {
-        using Bridge;
+        using H5;
 
         [ObjectLiteral]
         public interface IPlotProperty
@@ -15,6 +15,11 @@ namespace Plotly
 
         [ObjectLiteral]
         public interface IAaxisProperty
+        {
+        }
+
+        [ObjectLiteral]
+        public interface IActiveshapeProperty
         {
         }
 
@@ -50,11 +55,6 @@ namespace Plotly
 
         [ObjectLiteral]
         public interface IAnnotationsProperty
-        {
-        }
-
-        [ObjectLiteral]
-        public interface IAreaProperty
         {
         }
 
@@ -379,6 +379,11 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface IIcicleProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IImageProperty
         {
         }
@@ -444,6 +449,11 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface ILegendgrouptitleProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface ILightingProperty
         {
         }
@@ -499,6 +509,11 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface INewshapeProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface INodeProperty
         {
         }
@@ -539,6 +554,11 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface IPatternProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IPieProperty
         {
         }
@@ -569,6 +589,16 @@ namespace Plotly
         }
 
         [ObjectLiteral]
+        public interface IRangebreakProperty
+        {
+        }
+
+        [ObjectLiteral]
+        public interface IRangebreaksProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IRangefontProperty
         {
         }
@@ -580,6 +610,11 @@ namespace Plotly
 
         [ObjectLiteral]
         public interface IRangesliderProperty
+        {
+        }
+
+        [ObjectLiteral]
+        public interface IRootProperty
         {
         }
 

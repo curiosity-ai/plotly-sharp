@@ -8,31 +8,31 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Tickformatstop
     {
         /// Determines whether or not this stop is used. If `false`, this stop is ignored even within its `dtickrange`.
         public static Box<ITickformatstopProperty> enabled(bool val) => Interop.mkTickformatstopAttr("enabled", val);
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
-        public static Box<ITickformatstopProperty> dtickrange(bool val) => Interop.mkTickformatstopAttr("dtickrange", new[]{val});
+        public static Box<ITickformatstopProperty> dtickrange(bool val) => Interop.mkTickformatstopAttr("dtickrange", new[] { val });
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
         public static Box<ITickformatstopProperty> dtickrange(IEnumerable<bool> values) => Interop.mkTickformatstopAttr("dtickrange", values.ToArray());
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
-        public static Box<ITickformatstopProperty> dtickrange(System.DateTime val) => Interop.mkTickformatstopAttr("dtickrange", new[]{val});
+        public static Box<ITickformatstopProperty> dtickrange(System.DateTime val) => Interop.mkTickformatstopAttr("dtickrange", new[] { val });
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
         public static Box<ITickformatstopProperty> dtickrange(IEnumerable<System.DateTime> values) => Interop.mkTickformatstopAttr("dtickrange", values.ToArray());
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
-        public static Box<ITickformatstopProperty> dtickrange(float val) => Interop.mkTickformatstopAttr("dtickrange", new[]{val});
+        public static Box<ITickformatstopProperty> dtickrange(float val) => Interop.mkTickformatstopAttr("dtickrange", new[] { val });
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
         public static Box<ITickformatstopProperty> dtickrange(IEnumerable<float> values) => Interop.mkTickformatstopAttr("dtickrange", values.ToArray());
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
-        public static Box<ITickformatstopProperty> dtickrange(int val) => Interop.mkTickformatstopAttr("dtickrange", new[]{val});
+        public static Box<ITickformatstopProperty> dtickrange(int val) => Interop.mkTickformatstopAttr("dtickrange", new[] { val });
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
         public static Box<ITickformatstopProperty> dtickrange(IEnumerable<int> values) => Interop.mkTickformatstopAttr("dtickrange", values.ToArray());
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
-        public static Box<ITickformatstopProperty> dtickrange(string val) => Interop.mkTickformatstopAttr("dtickrange", new[]{val});
+        public static Box<ITickformatstopProperty> dtickrange(string val) => Interop.mkTickformatstopAttr("dtickrange", new[] { val });
         /// range [*min*, *max*], where *min*, *max* - dtick values which describe some zoom level, it is possible to omit *min* or *max* value by passing *null*
         public static Box<ITickformatstopProperty> dtickrange(IEnumerable<string> values) => Interop.mkTickformatstopAttr("dtickrange", values.ToArray());
         /// string - dtickformat for described zoom level, the same as *tickformat*

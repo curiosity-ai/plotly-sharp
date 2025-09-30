@@ -50,11 +50,11 @@ namespace PlotlyH5
         /// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
         public static Box<IMarkerProperty> color(params string[] values) => Interop.mkMarkerAttr("color", values);
         /// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-        public static Box<IMarkerProperty> color(int val) => Interop.mkMarkerAttr("color", new[]{val});
+        public static Box<IMarkerProperty> color(int val) => Interop.mkMarkerAttr("color", new[] { val });
         /// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
         public static Box<IMarkerProperty> color(params int[] values) => Interop.mkMarkerAttr("color", values);
         /// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
-        public static Box<IMarkerProperty> color(float val) => Interop.mkMarkerAttr("color", new[]{val});
+        public static Box<IMarkerProperty> color(float val) => Interop.mkMarkerAttr("color", new[] { val });
         /// Sets themarkercolor. It accepts either a specific color or an array of numbers that are mapped to the colorscale relative to the max and min values of the array or relative to `marker.cmin` and `marker.cmax` if set.
         public static Box<IMarkerProperty> color(params float[] values) => Interop.mkMarkerAttr("color", values);
         /// Determines whether or not the color domain is computed with respect to the input data (here in `marker.color`) or the bounds set in `marker.cmin` and `marker.cmax`  Has an effect only if in `marker.color`is set to a numerical array. Defaults to `false` when `marker.cmin` and `marker.cmax` are set by the user.
@@ -86,36 +86,38 @@ namespace PlotlyH5
         public static Box<IMarkerProperty> coloraxis(int anchorId) => Interop.mkMarkerAttr("coloraxis", anchorId > 1 ? $"coloraxis{anchorId}" : "");
         /// Sets a reference to a shared color axis. References to these shared color axes are *coloraxis*, *coloraxis2*, *coloraxis3*, etc. Settings for these shared color axes are set in the layout, under `layout.coloraxis`, `layout.coloraxis2`, etc. Note that multiple color scales can be linked to the same color axis.
         public static Box<IMarkerProperty> coloraxis(string val) => Interop.mkMarkerAttr("coloraxis", val);
-        /// Sets the source reference on plot.ly for  symbol .
+        /// Sets the source reference on Chart Studio Cloud for  symbol .
         public static Box<IMarkerProperty> symbolsrc(string val) => Interop.mkMarkerAttr("symbolsrc", val);
-        /// Sets the source reference on plot.ly for  opacity .
+        /// Sets the source reference on Chart Studio Cloud for  opacity .
         public static Box<IMarkerProperty> opacitysrc(string val) => Interop.mkMarkerAttr("opacitysrc", val);
-        /// Sets the source reference on plot.ly for  size .
+        /// Sets the source reference on Chart Studio Cloud for  size .
         public static Box<IMarkerProperty> sizesrc(string val) => Interop.mkMarkerAttr("sizesrc", val);
-        /// Sets the source reference on plot.ly for  color .
+        /// Sets the source reference on Chart Studio Cloud for  color .
         public static Box<IMarkerProperty> colorsrc(string val) => Interop.mkMarkerAttr("colorsrc", val);
+        /// Sets the pattern within the marker.
+        public static Box<IMarkerProperty> pattern(params Box<IPatternProperty>[] properties) => Interop.mkMarkerAttr("pattern", Bindings.flattenProperties(properties));
         /// Sets the color of the outlier sample points.
         public static Box<IMarkerProperty> outliercolor(string val) => Interop.mkMarkerAttr("outliercolor", val);
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(bool val) => Interop.mkMarkerAttr("colors", new[]{val});
+        public static Box<IMarkerProperty> colors(bool val) => Interop.mkMarkerAttr("colors", new[] { val });
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(params bool[] values) => Interop.mkMarkerAttr("colors", values);
+        public static Box<IMarkerProperty> colors(IEnumerable<bool> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(System.DateTime val) => Interop.mkMarkerAttr("colors", new[]{val});
+        public static Box<IMarkerProperty> colors(System.DateTime val) => Interop.mkMarkerAttr("colors", new[] { val });
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(params System.DateTime[] values) => Interop.mkMarkerAttr("colors", values);
+        public static Box<IMarkerProperty> colors(IEnumerable<System.DateTime> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(float val) => Interop.mkMarkerAttr("colors", new[]{val});
+        public static Box<IMarkerProperty> colors(float val) => Interop.mkMarkerAttr("colors", new[] { val });
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(params float[] values) => Interop.mkMarkerAttr("colors", values);
+        public static Box<IMarkerProperty> colors(IEnumerable<float> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(int val) => Interop.mkMarkerAttr("colors", new[]{val});
+        public static Box<IMarkerProperty> colors(int val) => Interop.mkMarkerAttr("colors", new[] { val });
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(params int[] values) => Interop.mkMarkerAttr("colors", values);
+        public static Box<IMarkerProperty> colors(IEnumerable<int> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(string val) => Interop.mkMarkerAttr("colors", new[]{val});
+        public static Box<IMarkerProperty> colors(string val) => Interop.mkMarkerAttr("colors", new[] { val });
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
-        public static Box<IMarkerProperty> colors(params string[] values) => Interop.mkMarkerAttr("colors", values);
+        public static Box<IMarkerProperty> colors(IEnumerable<string> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
         public static Box<IMarkerProperty> colors(IEnumerable<bool[]> values) => Interop.mkMarkerAttr("colors", Bindings.flatten2DArrayIf1D(values));
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
@@ -150,7 +152,7 @@ namespace PlotlyH5
         public static Box<IMarkerProperty> colors(IEnumerable<int?> values) => Interop.mkMarkerAttr("colors", values.ToArray());
         /// Sets the color of each sector. If not specified, the default trace color set is used to pick the sector colors.
         public static Box<IMarkerProperty> colors(IEnumerable<float?> values) => Interop.mkMarkerAttr("colors", values.ToArray());
-        /// Sets the source reference on plot.ly for  colors .
+        /// Sets the source reference on Chart Studio Cloud for  colors .
         public static Box<IMarkerProperty> colorssrc(string val) => Interop.mkMarkerAttr("colorssrc", val);
         public static Box<IMarkerProperty> pad(params Box<IPadProperty>[] properties) => Interop.mkMarkerAttr("pad", Bindings.flattenProperties(properties));
         /// Determines if colors are blended together for a translucency effect in case `opacity` is specified as a value less then `1`. Setting `blend` to `true` reduces zoom/pan speed if used with large numbers of points.
@@ -160,6 +162,18 @@ namespace PlotlyH5
         /// Sets the maximum size (in px) of the rendered marker points. Effective when the `pointcloud` shows only few points.
         public static Box<IMarkerProperty> sizemax(float val) => Interop.mkMarkerAttr("sizemax", val);
         public static Box<IMarkerProperty> border(params Box<IBorderProperty>[] properties) => Interop.mkMarkerAttr("border", Bindings.flattenProperties(properties));
+        /// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
+        public static Box<IMarkerProperty> angle(int val) => Interop.mkMarkerAttr("angle", val);
+        /// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
+        public static Box<IMarkerProperty> angle(float val) => Interop.mkMarkerAttr("angle", val);
+        /// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
+        public static Box<IMarkerProperty> angle(IEnumerable<int> values) => Interop.mkMarkerAttr("angle", values.ToArray());
+        /// Sets the marker orientation from true North, in degrees clockwise. When using the *auto* default, no rotation would be applied in perspective views which is different from using a zero angle.
+        public static Box<IMarkerProperty> angle(IEnumerable<float> values) => Interop.mkMarkerAttr("angle", values.ToArray());
+        /// Flag to draw all symbols, even if they overlap.
+        public static Box<IMarkerProperty> allowoverlap(bool val) => Interop.mkMarkerAttr("allowoverlap", val);
+        /// Sets the source reference on Chart Studio Cloud for  angle .
+        public static Box<IMarkerProperty> anglesrc(string val) => Interop.mkMarkerAttr("anglesrc", val);
     }
 
     public static partial class Marker
@@ -167,6 +181,180 @@ namespace PlotlyH5
         /// Sets the marker symbol type. Adding 100 is equivalent to appending *-open* to a symbol name. Adding 200 is equivalent to appending *-dot* to a symbol name. Adding 300 is equivalent to appending *-open-dot* or *dot-open* to a symbol name.
         public static partial class Symbol
         {
+            public static Box<IMarkerProperty> _0() => Interop.mkMarkerAttr("symbol", "0");
+            public static Box<IMarkerProperty> _1() => Interop.mkMarkerAttr("symbol", "1");
+            public static Box<IMarkerProperty> _10() => Interop.mkMarkerAttr("symbol", "10");
+            public static Box<IMarkerProperty> _100() => Interop.mkMarkerAttr("symbol", "100");
+            public static Box<IMarkerProperty> _101() => Interop.mkMarkerAttr("symbol", "101");
+            public static Box<IMarkerProperty> _102() => Interop.mkMarkerAttr("symbol", "102");
+            public static Box<IMarkerProperty> _103() => Interop.mkMarkerAttr("symbol", "103");
+            public static Box<IMarkerProperty> _104() => Interop.mkMarkerAttr("symbol", "104");
+            public static Box<IMarkerProperty> _105() => Interop.mkMarkerAttr("symbol", "105");
+            public static Box<IMarkerProperty> _106() => Interop.mkMarkerAttr("symbol", "106");
+            public static Box<IMarkerProperty> _107() => Interop.mkMarkerAttr("symbol", "107");
+            public static Box<IMarkerProperty> _108() => Interop.mkMarkerAttr("symbol", "108");
+            public static Box<IMarkerProperty> _109() => Interop.mkMarkerAttr("symbol", "109");
+            public static Box<IMarkerProperty> _11() => Interop.mkMarkerAttr("symbol", "11");
+            public static Box<IMarkerProperty> _110() => Interop.mkMarkerAttr("symbol", "110");
+            public static Box<IMarkerProperty> _111() => Interop.mkMarkerAttr("symbol", "111");
+            public static Box<IMarkerProperty> _112() => Interop.mkMarkerAttr("symbol", "112");
+            public static Box<IMarkerProperty> _113() => Interop.mkMarkerAttr("symbol", "113");
+            public static Box<IMarkerProperty> _114() => Interop.mkMarkerAttr("symbol", "114");
+            public static Box<IMarkerProperty> _115() => Interop.mkMarkerAttr("symbol", "115");
+            public static Box<IMarkerProperty> _116() => Interop.mkMarkerAttr("symbol", "116");
+            public static Box<IMarkerProperty> _117() => Interop.mkMarkerAttr("symbol", "117");
+            public static Box<IMarkerProperty> _118() => Interop.mkMarkerAttr("symbol", "118");
+            public static Box<IMarkerProperty> _119() => Interop.mkMarkerAttr("symbol", "119");
+            public static Box<IMarkerProperty> _12() => Interop.mkMarkerAttr("symbol", "12");
+            public static Box<IMarkerProperty> _120() => Interop.mkMarkerAttr("symbol", "120");
+            public static Box<IMarkerProperty> _121() => Interop.mkMarkerAttr("symbol", "121");
+            public static Box<IMarkerProperty> _122() => Interop.mkMarkerAttr("symbol", "122");
+            public static Box<IMarkerProperty> _123() => Interop.mkMarkerAttr("symbol", "123");
+            public static Box<IMarkerProperty> _124() => Interop.mkMarkerAttr("symbol", "124");
+            public static Box<IMarkerProperty> _125() => Interop.mkMarkerAttr("symbol", "125");
+            public static Box<IMarkerProperty> _126() => Interop.mkMarkerAttr("symbol", "126");
+            public static Box<IMarkerProperty> _127() => Interop.mkMarkerAttr("symbol", "127");
+            public static Box<IMarkerProperty> _128() => Interop.mkMarkerAttr("symbol", "128");
+            public static Box<IMarkerProperty> _129() => Interop.mkMarkerAttr("symbol", "129");
+            public static Box<IMarkerProperty> _13() => Interop.mkMarkerAttr("symbol", "13");
+            public static Box<IMarkerProperty> _130() => Interop.mkMarkerAttr("symbol", "130");
+            public static Box<IMarkerProperty> _131() => Interop.mkMarkerAttr("symbol", "131");
+            public static Box<IMarkerProperty> _132() => Interop.mkMarkerAttr("symbol", "132");
+            public static Box<IMarkerProperty> _133() => Interop.mkMarkerAttr("symbol", "133");
+            public static Box<IMarkerProperty> _134() => Interop.mkMarkerAttr("symbol", "134");
+            public static Box<IMarkerProperty> _135() => Interop.mkMarkerAttr("symbol", "135");
+            public static Box<IMarkerProperty> _136() => Interop.mkMarkerAttr("symbol", "136");
+            public static Box<IMarkerProperty> _137() => Interop.mkMarkerAttr("symbol", "137");
+            public static Box<IMarkerProperty> _138() => Interop.mkMarkerAttr("symbol", "138");
+            public static Box<IMarkerProperty> _139() => Interop.mkMarkerAttr("symbol", "139");
+            public static Box<IMarkerProperty> _14() => Interop.mkMarkerAttr("symbol", "14");
+            public static Box<IMarkerProperty> _140() => Interop.mkMarkerAttr("symbol", "140");
+            public static Box<IMarkerProperty> _141() => Interop.mkMarkerAttr("symbol", "141");
+            public static Box<IMarkerProperty> _142() => Interop.mkMarkerAttr("symbol", "142");
+            public static Box<IMarkerProperty> _143() => Interop.mkMarkerAttr("symbol", "143");
+            public static Box<IMarkerProperty> _144() => Interop.mkMarkerAttr("symbol", "144");
+            public static Box<IMarkerProperty> _145() => Interop.mkMarkerAttr("symbol", "145");
+            public static Box<IMarkerProperty> _146() => Interop.mkMarkerAttr("symbol", "146");
+            public static Box<IMarkerProperty> _147() => Interop.mkMarkerAttr("symbol", "147");
+            public static Box<IMarkerProperty> _148() => Interop.mkMarkerAttr("symbol", "148");
+            public static Box<IMarkerProperty> _149() => Interop.mkMarkerAttr("symbol", "149");
+            public static Box<IMarkerProperty> _15() => Interop.mkMarkerAttr("symbol", "15");
+            public static Box<IMarkerProperty> _150() => Interop.mkMarkerAttr("symbol", "150");
+            public static Box<IMarkerProperty> _151() => Interop.mkMarkerAttr("symbol", "151");
+            public static Box<IMarkerProperty> _152() => Interop.mkMarkerAttr("symbol", "152");
+            public static Box<IMarkerProperty> _16() => Interop.mkMarkerAttr("symbol", "16");
+            public static Box<IMarkerProperty> _17() => Interop.mkMarkerAttr("symbol", "17");
+            public static Box<IMarkerProperty> _18() => Interop.mkMarkerAttr("symbol", "18");
+            public static Box<IMarkerProperty> _19() => Interop.mkMarkerAttr("symbol", "19");
+            public static Box<IMarkerProperty> _2() => Interop.mkMarkerAttr("symbol", "2");
+            public static Box<IMarkerProperty> _20() => Interop.mkMarkerAttr("symbol", "20");
+            public static Box<IMarkerProperty> _200() => Interop.mkMarkerAttr("symbol", "200");
+            public static Box<IMarkerProperty> _201() => Interop.mkMarkerAttr("symbol", "201");
+            public static Box<IMarkerProperty> _202() => Interop.mkMarkerAttr("symbol", "202");
+            public static Box<IMarkerProperty> _203() => Interop.mkMarkerAttr("symbol", "203");
+            public static Box<IMarkerProperty> _204() => Interop.mkMarkerAttr("symbol", "204");
+            public static Box<IMarkerProperty> _205() => Interop.mkMarkerAttr("symbol", "205");
+            public static Box<IMarkerProperty> _206() => Interop.mkMarkerAttr("symbol", "206");
+            public static Box<IMarkerProperty> _207() => Interop.mkMarkerAttr("symbol", "207");
+            public static Box<IMarkerProperty> _208() => Interop.mkMarkerAttr("symbol", "208");
+            public static Box<IMarkerProperty> _209() => Interop.mkMarkerAttr("symbol", "209");
+            public static Box<IMarkerProperty> _21() => Interop.mkMarkerAttr("symbol", "21");
+            public static Box<IMarkerProperty> _210() => Interop.mkMarkerAttr("symbol", "210");
+            public static Box<IMarkerProperty> _211() => Interop.mkMarkerAttr("symbol", "211");
+            public static Box<IMarkerProperty> _212() => Interop.mkMarkerAttr("symbol", "212");
+            public static Box<IMarkerProperty> _213() => Interop.mkMarkerAttr("symbol", "213");
+            public static Box<IMarkerProperty> _214() => Interop.mkMarkerAttr("symbol", "214");
+            public static Box<IMarkerProperty> _215() => Interop.mkMarkerAttr("symbol", "215");
+            public static Box<IMarkerProperty> _216() => Interop.mkMarkerAttr("symbol", "216");
+            public static Box<IMarkerProperty> _217() => Interop.mkMarkerAttr("symbol", "217");
+            public static Box<IMarkerProperty> _218() => Interop.mkMarkerAttr("symbol", "218");
+            public static Box<IMarkerProperty> _219() => Interop.mkMarkerAttr("symbol", "219");
+            public static Box<IMarkerProperty> _22() => Interop.mkMarkerAttr("symbol", "22");
+            public static Box<IMarkerProperty> _220() => Interop.mkMarkerAttr("symbol", "220");
+            public static Box<IMarkerProperty> _221() => Interop.mkMarkerAttr("symbol", "221");
+            public static Box<IMarkerProperty> _222() => Interop.mkMarkerAttr("symbol", "222");
+            public static Box<IMarkerProperty> _223() => Interop.mkMarkerAttr("symbol", "223");
+            public static Box<IMarkerProperty> _224() => Interop.mkMarkerAttr("symbol", "224");
+            public static Box<IMarkerProperty> _23() => Interop.mkMarkerAttr("symbol", "23");
+            public static Box<IMarkerProperty> _236() => Interop.mkMarkerAttr("symbol", "236");
+            public static Box<IMarkerProperty> _24() => Interop.mkMarkerAttr("symbol", "24");
+            public static Box<IMarkerProperty> _25() => Interop.mkMarkerAttr("symbol", "25");
+            public static Box<IMarkerProperty> _26() => Interop.mkMarkerAttr("symbol", "26");
+            public static Box<IMarkerProperty> _27() => Interop.mkMarkerAttr("symbol", "27");
+            public static Box<IMarkerProperty> _28() => Interop.mkMarkerAttr("symbol", "28");
+            public static Box<IMarkerProperty> _29() => Interop.mkMarkerAttr("symbol", "29");
+            public static Box<IMarkerProperty> _3() => Interop.mkMarkerAttr("symbol", "3");
+            public static Box<IMarkerProperty> _30() => Interop.mkMarkerAttr("symbol", "30");
+            public static Box<IMarkerProperty> _300() => Interop.mkMarkerAttr("symbol", "300");
+            public static Box<IMarkerProperty> _301() => Interop.mkMarkerAttr("symbol", "301");
+            public static Box<IMarkerProperty> _302() => Interop.mkMarkerAttr("symbol", "302");
+            public static Box<IMarkerProperty> _303() => Interop.mkMarkerAttr("symbol", "303");
+            public static Box<IMarkerProperty> _304() => Interop.mkMarkerAttr("symbol", "304");
+            public static Box<IMarkerProperty> _305() => Interop.mkMarkerAttr("symbol", "305");
+            public static Box<IMarkerProperty> _306() => Interop.mkMarkerAttr("symbol", "306");
+            public static Box<IMarkerProperty> _307() => Interop.mkMarkerAttr("symbol", "307");
+            public static Box<IMarkerProperty> _308() => Interop.mkMarkerAttr("symbol", "308");
+            public static Box<IMarkerProperty> _309() => Interop.mkMarkerAttr("symbol", "309");
+            public static Box<IMarkerProperty> _31() => Interop.mkMarkerAttr("symbol", "31");
+            public static Box<IMarkerProperty> _310() => Interop.mkMarkerAttr("symbol", "310");
+            public static Box<IMarkerProperty> _311() => Interop.mkMarkerAttr("symbol", "311");
+            public static Box<IMarkerProperty> _312() => Interop.mkMarkerAttr("symbol", "312");
+            public static Box<IMarkerProperty> _313() => Interop.mkMarkerAttr("symbol", "313");
+            public static Box<IMarkerProperty> _314() => Interop.mkMarkerAttr("symbol", "314");
+            public static Box<IMarkerProperty> _315() => Interop.mkMarkerAttr("symbol", "315");
+            public static Box<IMarkerProperty> _316() => Interop.mkMarkerAttr("symbol", "316");
+            public static Box<IMarkerProperty> _317() => Interop.mkMarkerAttr("symbol", "317");
+            public static Box<IMarkerProperty> _318() => Interop.mkMarkerAttr("symbol", "318");
+            public static Box<IMarkerProperty> _319() => Interop.mkMarkerAttr("symbol", "319");
+            public static Box<IMarkerProperty> _32() => Interop.mkMarkerAttr("symbol", "32");
+            public static Box<IMarkerProperty> _320() => Interop.mkMarkerAttr("symbol", "320");
+            public static Box<IMarkerProperty> _321() => Interop.mkMarkerAttr("symbol", "321");
+            public static Box<IMarkerProperty> _322() => Interop.mkMarkerAttr("symbol", "322");
+            public static Box<IMarkerProperty> _323() => Interop.mkMarkerAttr("symbol", "323");
+            public static Box<IMarkerProperty> _324() => Interop.mkMarkerAttr("symbol", "324");
+            public static Box<IMarkerProperty> _33() => Interop.mkMarkerAttr("symbol", "33");
+            public static Box<IMarkerProperty> _336() => Interop.mkMarkerAttr("symbol", "336");
+            public static Box<IMarkerProperty> _34() => Interop.mkMarkerAttr("symbol", "34");
+            public static Box<IMarkerProperty> _35() => Interop.mkMarkerAttr("symbol", "35");
+            public static Box<IMarkerProperty> _36() => Interop.mkMarkerAttr("symbol", "36");
+            public static Box<IMarkerProperty> _37() => Interop.mkMarkerAttr("symbol", "37");
+            public static Box<IMarkerProperty> _38() => Interop.mkMarkerAttr("symbol", "38");
+            public static Box<IMarkerProperty> _39() => Interop.mkMarkerAttr("symbol", "39");
+            public static Box<IMarkerProperty> _4() => Interop.mkMarkerAttr("symbol", "4");
+            public static Box<IMarkerProperty> _40() => Interop.mkMarkerAttr("symbol", "40");
+            public static Box<IMarkerProperty> _41() => Interop.mkMarkerAttr("symbol", "41");
+            public static Box<IMarkerProperty> _42() => Interop.mkMarkerAttr("symbol", "42");
+            public static Box<IMarkerProperty> _43() => Interop.mkMarkerAttr("symbol", "43");
+            public static Box<IMarkerProperty> _44() => Interop.mkMarkerAttr("symbol", "44");
+            public static Box<IMarkerProperty> _45() => Interop.mkMarkerAttr("symbol", "45");
+            public static Box<IMarkerProperty> _46() => Interop.mkMarkerAttr("symbol", "46");
+            public static Box<IMarkerProperty> _47() => Interop.mkMarkerAttr("symbol", "47");
+            public static Box<IMarkerProperty> _48() => Interop.mkMarkerAttr("symbol", "48");
+            public static Box<IMarkerProperty> _49() => Interop.mkMarkerAttr("symbol", "49");
+            public static Box<IMarkerProperty> _5() => Interop.mkMarkerAttr("symbol", "5");
+            public static Box<IMarkerProperty> _50() => Interop.mkMarkerAttr("symbol", "50");
+            public static Box<IMarkerProperty> _51() => Interop.mkMarkerAttr("symbol", "51");
+            public static Box<IMarkerProperty> _52() => Interop.mkMarkerAttr("symbol", "52");
+            public static Box<IMarkerProperty> _6() => Interop.mkMarkerAttr("symbol", "6");
+            public static Box<IMarkerProperty> _7() => Interop.mkMarkerAttr("symbol", "7");
+            public static Box<IMarkerProperty> _8() => Interop.mkMarkerAttr("symbol", "8");
+            public static Box<IMarkerProperty> _9() => Interop.mkMarkerAttr("symbol", "9");
+            public static Box<IMarkerProperty> arrowBarDown() => Interop.mkMarkerAttr("symbol", "arrow-bar-down");
+            public static Box<IMarkerProperty> arrowBarDownOpen() => Interop.mkMarkerAttr("symbol", "arrow-bar-down-open");
+            public static Box<IMarkerProperty> arrowBarLeft() => Interop.mkMarkerAttr("symbol", "arrow-bar-left");
+            public static Box<IMarkerProperty> arrowBarLeftOpen() => Interop.mkMarkerAttr("symbol", "arrow-bar-left-open");
+            public static Box<IMarkerProperty> arrowBarRight() => Interop.mkMarkerAttr("symbol", "arrow-bar-right");
+            public static Box<IMarkerProperty> arrowBarRightOpen() => Interop.mkMarkerAttr("symbol", "arrow-bar-right-open");
+            public static Box<IMarkerProperty> arrowBarUp() => Interop.mkMarkerAttr("symbol", "arrow-bar-up");
+            public static Box<IMarkerProperty> arrowBarUpOpen() => Interop.mkMarkerAttr("symbol", "arrow-bar-up-open");
+            public static Box<IMarkerProperty> arrowDown() => Interop.mkMarkerAttr("symbol", "arrow-down");
+            public static Box<IMarkerProperty> arrowDownOpen() => Interop.mkMarkerAttr("symbol", "arrow-down-open");
+            public static Box<IMarkerProperty> arrowLeft() => Interop.mkMarkerAttr("symbol", "arrow-left");
+            public static Box<IMarkerProperty> arrowLeftOpen() => Interop.mkMarkerAttr("symbol", "arrow-left-open");
+            public static Box<IMarkerProperty> arrowRight() => Interop.mkMarkerAttr("symbol", "arrow-right");
+            public static Box<IMarkerProperty> arrowRightOpen() => Interop.mkMarkerAttr("symbol", "arrow-right-open");
+            public static Box<IMarkerProperty> arrowUp() => Interop.mkMarkerAttr("symbol", "arrow-up");
+            public static Box<IMarkerProperty> arrowUpOpen() => Interop.mkMarkerAttr("symbol", "arrow-up-open");
             public static Box<IMarkerProperty> asterisk() => Interop.mkMarkerAttr("symbol", "asterisk");
             public static Box<IMarkerProperty> asteriskOpen() => Interop.mkMarkerAttr("symbol", "asterisk-open");
             public static Box<IMarkerProperty> bowtie() => Interop.mkMarkerAttr("symbol", "bowtie");
@@ -309,148 +497,6 @@ namespace PlotlyH5
             public static Box<IMarkerProperty> yRightOpen() => Interop.mkMarkerAttr("symbol", "y-right-open");
             public static Box<IMarkerProperty> yUp() => Interop.mkMarkerAttr("symbol", "y-up");
             public static Box<IMarkerProperty> yUpOpen() => Interop.mkMarkerAttr("symbol", "y-up-open");
-            public static Box<IMarkerProperty> _0() => Interop.mkMarkerAttr("symbol", "0");
-            public static Box<IMarkerProperty> _1() => Interop.mkMarkerAttr("symbol", "1");
-            public static Box<IMarkerProperty> _10() => Interop.mkMarkerAttr("symbol", "10");
-            public static Box<IMarkerProperty> _100() => Interop.mkMarkerAttr("symbol", "100");
-            public static Box<IMarkerProperty> _101() => Interop.mkMarkerAttr("symbol", "101");
-            public static Box<IMarkerProperty> _102() => Interop.mkMarkerAttr("symbol", "102");
-            public static Box<IMarkerProperty> _103() => Interop.mkMarkerAttr("symbol", "103");
-            public static Box<IMarkerProperty> _104() => Interop.mkMarkerAttr("symbol", "104");
-            public static Box<IMarkerProperty> _105() => Interop.mkMarkerAttr("symbol", "105");
-            public static Box<IMarkerProperty> _106() => Interop.mkMarkerAttr("symbol", "106");
-            public static Box<IMarkerProperty> _107() => Interop.mkMarkerAttr("symbol", "107");
-            public static Box<IMarkerProperty> _108() => Interop.mkMarkerAttr("symbol", "108");
-            public static Box<IMarkerProperty> _109() => Interop.mkMarkerAttr("symbol", "109");
-            public static Box<IMarkerProperty> _11() => Interop.mkMarkerAttr("symbol", "11");
-            public static Box<IMarkerProperty> _110() => Interop.mkMarkerAttr("symbol", "110");
-            public static Box<IMarkerProperty> _111() => Interop.mkMarkerAttr("symbol", "111");
-            public static Box<IMarkerProperty> _112() => Interop.mkMarkerAttr("symbol", "112");
-            public static Box<IMarkerProperty> _113() => Interop.mkMarkerAttr("symbol", "113");
-            public static Box<IMarkerProperty> _114() => Interop.mkMarkerAttr("symbol", "114");
-            public static Box<IMarkerProperty> _115() => Interop.mkMarkerAttr("symbol", "115");
-            public static Box<IMarkerProperty> _116() => Interop.mkMarkerAttr("symbol", "116");
-            public static Box<IMarkerProperty> _117() => Interop.mkMarkerAttr("symbol", "117");
-            public static Box<IMarkerProperty> _118() => Interop.mkMarkerAttr("symbol", "118");
-            public static Box<IMarkerProperty> _119() => Interop.mkMarkerAttr("symbol", "119");
-            public static Box<IMarkerProperty> _12() => Interop.mkMarkerAttr("symbol", "12");
-            public static Box<IMarkerProperty> _120() => Interop.mkMarkerAttr("symbol", "120");
-            public static Box<IMarkerProperty> _121() => Interop.mkMarkerAttr("symbol", "121");
-            public static Box<IMarkerProperty> _122() => Interop.mkMarkerAttr("symbol", "122");
-            public static Box<IMarkerProperty> _123() => Interop.mkMarkerAttr("symbol", "123");
-            public static Box<IMarkerProperty> _124() => Interop.mkMarkerAttr("symbol", "124");
-            public static Box<IMarkerProperty> _125() => Interop.mkMarkerAttr("symbol", "125");
-            public static Box<IMarkerProperty> _126() => Interop.mkMarkerAttr("symbol", "126");
-            public static Box<IMarkerProperty> _127() => Interop.mkMarkerAttr("symbol", "127");
-            public static Box<IMarkerProperty> _128() => Interop.mkMarkerAttr("symbol", "128");
-            public static Box<IMarkerProperty> _129() => Interop.mkMarkerAttr("symbol", "129");
-            public static Box<IMarkerProperty> _13() => Interop.mkMarkerAttr("symbol", "13");
-            public static Box<IMarkerProperty> _130() => Interop.mkMarkerAttr("symbol", "130");
-            public static Box<IMarkerProperty> _131() => Interop.mkMarkerAttr("symbol", "131");
-            public static Box<IMarkerProperty> _132() => Interop.mkMarkerAttr("symbol", "132");
-            public static Box<IMarkerProperty> _133() => Interop.mkMarkerAttr("symbol", "133");
-            public static Box<IMarkerProperty> _134() => Interop.mkMarkerAttr("symbol", "134");
-            public static Box<IMarkerProperty> _135() => Interop.mkMarkerAttr("symbol", "135");
-            public static Box<IMarkerProperty> _136() => Interop.mkMarkerAttr("symbol", "136");
-            public static Box<IMarkerProperty> _137() => Interop.mkMarkerAttr("symbol", "137");
-            public static Box<IMarkerProperty> _138() => Interop.mkMarkerAttr("symbol", "138");
-            public static Box<IMarkerProperty> _139() => Interop.mkMarkerAttr("symbol", "139");
-            public static Box<IMarkerProperty> _14() => Interop.mkMarkerAttr("symbol", "14");
-            public static Box<IMarkerProperty> _140() => Interop.mkMarkerAttr("symbol", "140");
-            public static Box<IMarkerProperty> _141() => Interop.mkMarkerAttr("symbol", "141");
-            public static Box<IMarkerProperty> _142() => Interop.mkMarkerAttr("symbol", "142");
-            public static Box<IMarkerProperty> _143() => Interop.mkMarkerAttr("symbol", "143");
-            public static Box<IMarkerProperty> _144() => Interop.mkMarkerAttr("symbol", "144");
-            public static Box<IMarkerProperty> _15() => Interop.mkMarkerAttr("symbol", "15");
-            public static Box<IMarkerProperty> _16() => Interop.mkMarkerAttr("symbol", "16");
-            public static Box<IMarkerProperty> _17() => Interop.mkMarkerAttr("symbol", "17");
-            public static Box<IMarkerProperty> _18() => Interop.mkMarkerAttr("symbol", "18");
-            public static Box<IMarkerProperty> _19() => Interop.mkMarkerAttr("symbol", "19");
-            public static Box<IMarkerProperty> _2() => Interop.mkMarkerAttr("symbol", "2");
-            public static Box<IMarkerProperty> _20() => Interop.mkMarkerAttr("symbol", "20");
-            public static Box<IMarkerProperty> _200() => Interop.mkMarkerAttr("symbol", "200");
-            public static Box<IMarkerProperty> _201() => Interop.mkMarkerAttr("symbol", "201");
-            public static Box<IMarkerProperty> _202() => Interop.mkMarkerAttr("symbol", "202");
-            public static Box<IMarkerProperty> _203() => Interop.mkMarkerAttr("symbol", "203");
-            public static Box<IMarkerProperty> _204() => Interop.mkMarkerAttr("symbol", "204");
-            public static Box<IMarkerProperty> _205() => Interop.mkMarkerAttr("symbol", "205");
-            public static Box<IMarkerProperty> _206() => Interop.mkMarkerAttr("symbol", "206");
-            public static Box<IMarkerProperty> _207() => Interop.mkMarkerAttr("symbol", "207");
-            public static Box<IMarkerProperty> _208() => Interop.mkMarkerAttr("symbol", "208");
-            public static Box<IMarkerProperty> _209() => Interop.mkMarkerAttr("symbol", "209");
-            public static Box<IMarkerProperty> _21() => Interop.mkMarkerAttr("symbol", "21");
-            public static Box<IMarkerProperty> _210() => Interop.mkMarkerAttr("symbol", "210");
-            public static Box<IMarkerProperty> _211() => Interop.mkMarkerAttr("symbol", "211");
-            public static Box<IMarkerProperty> _212() => Interop.mkMarkerAttr("symbol", "212");
-            public static Box<IMarkerProperty> _213() => Interop.mkMarkerAttr("symbol", "213");
-            public static Box<IMarkerProperty> _214() => Interop.mkMarkerAttr("symbol", "214");
-            public static Box<IMarkerProperty> _215() => Interop.mkMarkerAttr("symbol", "215");
-            public static Box<IMarkerProperty> _216() => Interop.mkMarkerAttr("symbol", "216");
-            public static Box<IMarkerProperty> _217() => Interop.mkMarkerAttr("symbol", "217");
-            public static Box<IMarkerProperty> _218() => Interop.mkMarkerAttr("symbol", "218");
-            public static Box<IMarkerProperty> _219() => Interop.mkMarkerAttr("symbol", "219");
-            public static Box<IMarkerProperty> _22() => Interop.mkMarkerAttr("symbol", "22");
-            public static Box<IMarkerProperty> _220() => Interop.mkMarkerAttr("symbol", "220");
-            public static Box<IMarkerProperty> _221() => Interop.mkMarkerAttr("symbol", "221");
-            public static Box<IMarkerProperty> _222() => Interop.mkMarkerAttr("symbol", "222");
-            public static Box<IMarkerProperty> _223() => Interop.mkMarkerAttr("symbol", "223");
-            public static Box<IMarkerProperty> _224() => Interop.mkMarkerAttr("symbol", "224");
-            public static Box<IMarkerProperty> _23() => Interop.mkMarkerAttr("symbol", "23");
-            public static Box<IMarkerProperty> _236() => Interop.mkMarkerAttr("symbol", "236");
-            public static Box<IMarkerProperty> _24() => Interop.mkMarkerAttr("symbol", "24");
-            public static Box<IMarkerProperty> _25() => Interop.mkMarkerAttr("symbol", "25");
-            public static Box<IMarkerProperty> _26() => Interop.mkMarkerAttr("symbol", "26");
-            public static Box<IMarkerProperty> _27() => Interop.mkMarkerAttr("symbol", "27");
-            public static Box<IMarkerProperty> _28() => Interop.mkMarkerAttr("symbol", "28");
-            public static Box<IMarkerProperty> _29() => Interop.mkMarkerAttr("symbol", "29");
-            public static Box<IMarkerProperty> _3() => Interop.mkMarkerAttr("symbol", "3");
-            public static Box<IMarkerProperty> _30() => Interop.mkMarkerAttr("symbol", "30");
-            public static Box<IMarkerProperty> _300() => Interop.mkMarkerAttr("symbol", "300");
-            public static Box<IMarkerProperty> _301() => Interop.mkMarkerAttr("symbol", "301");
-            public static Box<IMarkerProperty> _302() => Interop.mkMarkerAttr("symbol", "302");
-            public static Box<IMarkerProperty> _303() => Interop.mkMarkerAttr("symbol", "303");
-            public static Box<IMarkerProperty> _304() => Interop.mkMarkerAttr("symbol", "304");
-            public static Box<IMarkerProperty> _305() => Interop.mkMarkerAttr("symbol", "305");
-            public static Box<IMarkerProperty> _306() => Interop.mkMarkerAttr("symbol", "306");
-            public static Box<IMarkerProperty> _307() => Interop.mkMarkerAttr("symbol", "307");
-            public static Box<IMarkerProperty> _308() => Interop.mkMarkerAttr("symbol", "308");
-            public static Box<IMarkerProperty> _309() => Interop.mkMarkerAttr("symbol", "309");
-            public static Box<IMarkerProperty> _31() => Interop.mkMarkerAttr("symbol", "31");
-            public static Box<IMarkerProperty> _310() => Interop.mkMarkerAttr("symbol", "310");
-            public static Box<IMarkerProperty> _311() => Interop.mkMarkerAttr("symbol", "311");
-            public static Box<IMarkerProperty> _312() => Interop.mkMarkerAttr("symbol", "312");
-            public static Box<IMarkerProperty> _313() => Interop.mkMarkerAttr("symbol", "313");
-            public static Box<IMarkerProperty> _314() => Interop.mkMarkerAttr("symbol", "314");
-            public static Box<IMarkerProperty> _315() => Interop.mkMarkerAttr("symbol", "315");
-            public static Box<IMarkerProperty> _316() => Interop.mkMarkerAttr("symbol", "316");
-            public static Box<IMarkerProperty> _317() => Interop.mkMarkerAttr("symbol", "317");
-            public static Box<IMarkerProperty> _318() => Interop.mkMarkerAttr("symbol", "318");
-            public static Box<IMarkerProperty> _319() => Interop.mkMarkerAttr("symbol", "319");
-            public static Box<IMarkerProperty> _32() => Interop.mkMarkerAttr("symbol", "32");
-            public static Box<IMarkerProperty> _320() => Interop.mkMarkerAttr("symbol", "320");
-            public static Box<IMarkerProperty> _321() => Interop.mkMarkerAttr("symbol", "321");
-            public static Box<IMarkerProperty> _322() => Interop.mkMarkerAttr("symbol", "322");
-            public static Box<IMarkerProperty> _323() => Interop.mkMarkerAttr("symbol", "323");
-            public static Box<IMarkerProperty> _324() => Interop.mkMarkerAttr("symbol", "324");
-            public static Box<IMarkerProperty> _33() => Interop.mkMarkerAttr("symbol", "33");
-            public static Box<IMarkerProperty> _336() => Interop.mkMarkerAttr("symbol", "336");
-            public static Box<IMarkerProperty> _34() => Interop.mkMarkerAttr("symbol", "34");
-            public static Box<IMarkerProperty> _35() => Interop.mkMarkerAttr("symbol", "35");
-            public static Box<IMarkerProperty> _36() => Interop.mkMarkerAttr("symbol", "36");
-            public static Box<IMarkerProperty> _37() => Interop.mkMarkerAttr("symbol", "37");
-            public static Box<IMarkerProperty> _38() => Interop.mkMarkerAttr("symbol", "38");
-            public static Box<IMarkerProperty> _39() => Interop.mkMarkerAttr("symbol", "39");
-            public static Box<IMarkerProperty> _4() => Interop.mkMarkerAttr("symbol", "4");
-            public static Box<IMarkerProperty> _40() => Interop.mkMarkerAttr("symbol", "40");
-            public static Box<IMarkerProperty> _41() => Interop.mkMarkerAttr("symbol", "41");
-            public static Box<IMarkerProperty> _42() => Interop.mkMarkerAttr("symbol", "42");
-            public static Box<IMarkerProperty> _43() => Interop.mkMarkerAttr("symbol", "43");
-            public static Box<IMarkerProperty> _44() => Interop.mkMarkerAttr("symbol", "44");
-            public static Box<IMarkerProperty> _5() => Interop.mkMarkerAttr("symbol", "5");
-            public static Box<IMarkerProperty> _6() => Interop.mkMarkerAttr("symbol", "6");
-            public static Box<IMarkerProperty> _7() => Interop.mkMarkerAttr("symbol", "7");
-            public static Box<IMarkerProperty> _8() => Interop.mkMarkerAttr("symbol", "8");
-            public static Box<IMarkerProperty> _9() => Interop.mkMarkerAttr("symbol", "9");
         }
 
         /// Has an effect only if `marker.size` is set to a numerical array. Sets the rule for which the data in `size` is converted to pixels.

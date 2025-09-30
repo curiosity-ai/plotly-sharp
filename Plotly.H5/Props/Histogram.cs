@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IHistogramProperty> showlegend(bool val) => Interop.mkHistogramAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IHistogramProperty> legendgroup(string val) => Interop.mkHistogramAttr("legendgroup", val);
+        public static Box<IHistogramProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkHistogramAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHistogramProperty> legendrank(int val) => Interop.mkHistogramAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHistogramProperty> legendrank(float val) => Interop.mkHistogramAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IHistogramProperty> opacity(int val) => Interop.mkHistogramAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IHistogramProperty> uid(string val) => Interop.mkHistogramAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(bool val) => Interop.mkHistogramAttr("ids", new[]{val});
+        public static Box<IHistogramProperty> ids(bool val) => Interop.mkHistogramAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(params bool[] values) => Interop.mkHistogramAttr("ids", values);
+        public static Box<IHistogramProperty> ids(IEnumerable<bool> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(System.DateTime val) => Interop.mkHistogramAttr("ids", new[]{val});
+        public static Box<IHistogramProperty> ids(System.DateTime val) => Interop.mkHistogramAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(params System.DateTime[] values) => Interop.mkHistogramAttr("ids", values);
+        public static Box<IHistogramProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(float val) => Interop.mkHistogramAttr("ids", new[]{val});
+        public static Box<IHistogramProperty> ids(float val) => Interop.mkHistogramAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(params float[] values) => Interop.mkHistogramAttr("ids", values);
+        public static Box<IHistogramProperty> ids(IEnumerable<float> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(int val) => Interop.mkHistogramAttr("ids", new[]{val});
+        public static Box<IHistogramProperty> ids(int val) => Interop.mkHistogramAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(params int[] values) => Interop.mkHistogramAttr("ids", values);
+        public static Box<IHistogramProperty> ids(IEnumerable<int> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(string val) => Interop.mkHistogramAttr("ids", new[]{val});
+        public static Box<IHistogramProperty> ids(string val) => Interop.mkHistogramAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogramProperty> ids(params string[] values) => Interop.mkHistogramAttr("ids", values);
+        public static Box<IHistogramProperty> ids(IEnumerable<string> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHistogramProperty> ids(IEnumerable<bool[]> values) => Interop.mkHistogramAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHistogramProperty> ids(IEnumerable<float?> values) => Interop.mkHistogramAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(bool val) => Interop.mkHistogramAttr("customdata", new[]{val});
+        public static Box<IHistogramProperty> customdata(bool val) => Interop.mkHistogramAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(params bool[] values) => Interop.mkHistogramAttr("customdata", values);
+        public static Box<IHistogramProperty> customdata(IEnumerable<bool> values) => Interop.mkHistogramAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(System.DateTime val) => Interop.mkHistogramAttr("customdata", new[]{val});
+        public static Box<IHistogramProperty> customdata(System.DateTime val) => Interop.mkHistogramAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(params System.DateTime[] values) => Interop.mkHistogramAttr("customdata", values);
+        public static Box<IHistogramProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkHistogramAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(float val) => Interop.mkHistogramAttr("customdata", new[]{val});
+        public static Box<IHistogramProperty> customdata(float val) => Interop.mkHistogramAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(params float[] values) => Interop.mkHistogramAttr("customdata", values);
+        public static Box<IHistogramProperty> customdata(IEnumerable<float> values) => Interop.mkHistogramAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(int val) => Interop.mkHistogramAttr("customdata", new[]{val});
+        public static Box<IHistogramProperty> customdata(int val) => Interop.mkHistogramAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(params int[] values) => Interop.mkHistogramAttr("customdata", values);
+        public static Box<IHistogramProperty> customdata(IEnumerable<int> values) => Interop.mkHistogramAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(string val) => Interop.mkHistogramAttr("customdata", new[]{val});
+        public static Box<IHistogramProperty> customdata(string val) => Interop.mkHistogramAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogramProperty> customdata(params string[] values) => Interop.mkHistogramAttr("customdata", values);
+        public static Box<IHistogramProperty> customdata(IEnumerable<string> values) => Interop.mkHistogramAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IHistogramProperty> customdata(IEnumerable<bool[]> values) => Interop.mkHistogramAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -179,23 +184,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IHistogramProperty> uirevision(params string[] values) => Interop.mkHistogramAttr("uirevision", values);
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogramProperty> x(bool val) => Interop.mkHistogramAttr("x", new[]{val});
+        public static Box<IHistogramProperty> x(bool val) => Interop.mkHistogramAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<bool> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogramProperty> x(System.DateTime val) => Interop.mkHistogramAttr("x", new[]{val});
+        public static Box<IHistogramProperty> x(System.DateTime val) => Interop.mkHistogramAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<System.DateTime> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogramProperty> x(float val) => Interop.mkHistogramAttr("x", new[]{val});
+        public static Box<IHistogramProperty> x(float val) => Interop.mkHistogramAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<float> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogramProperty> x(int val) => Interop.mkHistogramAttr("x", new[]{val});
+        public static Box<IHistogramProperty> x(int val) => Interop.mkHistogramAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<int> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogramProperty> x(string val) => Interop.mkHistogramAttr("x", new[]{val});
+        public static Box<IHistogramProperty> x(string val) => Interop.mkHistogramAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<string> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
@@ -233,23 +238,23 @@ namespace PlotlyH5
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogramProperty> x(IEnumerable<float?> values) => Interop.mkHistogramAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogramProperty> y(bool val) => Interop.mkHistogramAttr("y", new[]{val});
+        public static Box<IHistogramProperty> y(bool val) => Interop.mkHistogramAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<bool> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogramProperty> y(System.DateTime val) => Interop.mkHistogramAttr("y", new[]{val});
+        public static Box<IHistogramProperty> y(System.DateTime val) => Interop.mkHistogramAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<System.DateTime> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogramProperty> y(float val) => Interop.mkHistogramAttr("y", new[]{val});
+        public static Box<IHistogramProperty> y(float val) => Interop.mkHistogramAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<float> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogramProperty> y(int val) => Interop.mkHistogramAttr("y", new[]{val});
+        public static Box<IHistogramProperty> y(int val) => Interop.mkHistogramAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<int> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogramProperty> y(string val) => Interop.mkHistogramAttr("y", new[]{val});
+        public static Box<IHistogramProperty> y(string val) => Interop.mkHistogramAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<string> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
@@ -286,6 +291,10 @@ namespace PlotlyH5
         public static Box<IHistogramProperty> y(IEnumerable<int?> values) => Interop.mkHistogramAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogramProperty> y(IEnumerable<float?> values) => Interop.mkHistogramAttr("y", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IHistogramProperty> xhoverformat(string val) => Interop.mkHistogramAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IHistogramProperty> yhoverformat(string val) => Interop.mkHistogramAttr("yhoverformat", val);
         /// Sets hover text elements associated with each bar. If a single string, the same string appears over all bars. If an array of string, the items are mapped in order to the this trace's coordinates.
         public static Box<IHistogramProperty> text(string val) => Interop.mkHistogramAttr("text", val);
         /// Sets hover text elements associated with each bar. If a single string, the same string appears over all bars. If an array of string, the items are mapped in order to the this trace's coordinates.
@@ -307,9 +316,9 @@ namespace PlotlyH5
         public static Box<IHistogramProperty> autobiny(bool val) => Interop.mkHistogramAttr("autobiny", val);
         /// Set a group of histogram traces which will have compatible bin settings. Note that traces on the same subplot and with the same *orientation* under `barmode` *stack*, *relative* and *group* are forced into the same bingroup, Using `bingroup`, traces under `barmode` *overlay* and on different axes (of the same axis type) can have compatible bin settings. Note that histogram and histogram2d* trace can share the same `bingroup`
         public static Box<IHistogramProperty> bingroup(string val) => Interop.mkHistogramAttr("bingroup", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `binNumber` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `binNumber` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IHistogramProperty> hovertemplate(string val) => Interop.mkHistogramAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `binNumber` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `binNumber` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IHistogramProperty> hovertemplate(IEnumerable<string> values) => Interop.mkHistogramAttr("hovertemplate", values.ToArray());
         public static Box<IHistogramProperty> marker(params Box<IMarkerProperty>[] properties) => Interop.mkHistogramAttr("marker", Bindings.flattenProperties(properties));
         /// Set several traces linked to the same position axis or matching axes to the same offsetgroup where bars of the same position coordinate will line up.
@@ -328,23 +337,23 @@ namespace PlotlyH5
         public static Box<IHistogramProperty> yaxis(int anchorId) => Interop.mkHistogramAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IHistogramProperty> yaxis(string val) => Interop.mkHistogramAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IHistogramProperty> idssrc(string val) => Interop.mkHistogramAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IHistogramProperty> customdatasrc(string val) => Interop.mkHistogramAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IHistogramProperty> metasrc(string val) => Interop.mkHistogramAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IHistogramProperty> hoverinfosrc(string val) => Interop.mkHistogramAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IHistogramProperty> xsrc(string val) => Interop.mkHistogramAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IHistogramProperty> ysrc(string val) => Interop.mkHistogramAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IHistogramProperty> textsrc(string val) => Interop.mkHistogramAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IHistogramProperty> hovertextsrc(string val) => Interop.mkHistogramAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IHistogramProperty> hovertemplatesrc(string val) => Interop.mkHistogramAttr("hovertemplatesrc", val);
     }
 

@@ -13,30 +13,35 @@ namespace PlotlyH5
 
     public static partial class Table
     {
+        public static Box<ITableProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkTableAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ITableProperty> legendrank(int val) => Interop.mkTableAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ITableProperty> legendrank(float val) => Interop.mkTableAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<ITableProperty> name(string val) => Interop.mkTableAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<ITableProperty> uid(string val) => Interop.mkTableAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(bool val) => Interop.mkTableAttr("ids", new[]{val});
+        public static Box<ITableProperty> ids(bool val) => Interop.mkTableAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(params bool[] values) => Interop.mkTableAttr("ids", values);
+        public static Box<ITableProperty> ids(IEnumerable<bool> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(System.DateTime val) => Interop.mkTableAttr("ids", new[]{val});
+        public static Box<ITableProperty> ids(System.DateTime val) => Interop.mkTableAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(params System.DateTime[] values) => Interop.mkTableAttr("ids", values);
+        public static Box<ITableProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(float val) => Interop.mkTableAttr("ids", new[]{val});
+        public static Box<ITableProperty> ids(float val) => Interop.mkTableAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(params float[] values) => Interop.mkTableAttr("ids", values);
+        public static Box<ITableProperty> ids(IEnumerable<float> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(int val) => Interop.mkTableAttr("ids", new[]{val});
+        public static Box<ITableProperty> ids(int val) => Interop.mkTableAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(params int[] values) => Interop.mkTableAttr("ids", values);
+        public static Box<ITableProperty> ids(IEnumerable<int> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(string val) => Interop.mkTableAttr("ids", new[]{val});
+        public static Box<ITableProperty> ids(string val) => Interop.mkTableAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ITableProperty> ids(params string[] values) => Interop.mkTableAttr("ids", values);
+        public static Box<ITableProperty> ids(IEnumerable<string> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ITableProperty> ids(IEnumerable<bool[]> values) => Interop.mkTableAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -72,25 +77,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ITableProperty> ids(IEnumerable<float?> values) => Interop.mkTableAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(bool val) => Interop.mkTableAttr("customdata", new[]{val});
+        public static Box<ITableProperty> customdata(bool val) => Interop.mkTableAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(params bool[] values) => Interop.mkTableAttr("customdata", values);
+        public static Box<ITableProperty> customdata(IEnumerable<bool> values) => Interop.mkTableAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(System.DateTime val) => Interop.mkTableAttr("customdata", new[]{val});
+        public static Box<ITableProperty> customdata(System.DateTime val) => Interop.mkTableAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(params System.DateTime[] values) => Interop.mkTableAttr("customdata", values);
+        public static Box<ITableProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkTableAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(float val) => Interop.mkTableAttr("customdata", new[]{val});
+        public static Box<ITableProperty> customdata(float val) => Interop.mkTableAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(params float[] values) => Interop.mkTableAttr("customdata", values);
+        public static Box<ITableProperty> customdata(IEnumerable<float> values) => Interop.mkTableAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(int val) => Interop.mkTableAttr("customdata", new[]{val});
+        public static Box<ITableProperty> customdata(int val) => Interop.mkTableAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(params int[] values) => Interop.mkTableAttr("customdata", values);
+        public static Box<ITableProperty> customdata(IEnumerable<int> values) => Interop.mkTableAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(string val) => Interop.mkTableAttr("customdata", new[]{val});
+        public static Box<ITableProperty> customdata(string val) => Interop.mkTableAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ITableProperty> customdata(params string[] values) => Interop.mkTableAttr("customdata", values);
+        public static Box<ITableProperty> customdata(IEnumerable<string> values) => Interop.mkTableAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<ITableProperty> customdata(IEnumerable<bool[]> values) => Interop.mkTableAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -159,25 +164,25 @@ namespace PlotlyH5
         /// The width of columns expressed as a ratio. Columns fill the available width in proportion of their specified column widths.
         public static Box<ITableProperty> columnwidth(IEnumerable<float> values) => Interop.mkTableAttr("columnwidth", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(bool val) => Interop.mkTableAttr("columnorder", new[]{val});
+        public static Box<ITableProperty> columnorder(bool val) => Interop.mkTableAttr("columnorder", new[] { val });
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(params bool[] values) => Interop.mkTableAttr("columnorder", values);
+        public static Box<ITableProperty> columnorder(IEnumerable<bool> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(System.DateTime val) => Interop.mkTableAttr("columnorder", new[]{val});
+        public static Box<ITableProperty> columnorder(System.DateTime val) => Interop.mkTableAttr("columnorder", new[] { val });
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(params System.DateTime[] values) => Interop.mkTableAttr("columnorder", values);
+        public static Box<ITableProperty> columnorder(IEnumerable<System.DateTime> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(float val) => Interop.mkTableAttr("columnorder", new[]{val});
+        public static Box<ITableProperty> columnorder(float val) => Interop.mkTableAttr("columnorder", new[] { val });
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(params float[] values) => Interop.mkTableAttr("columnorder", values);
+        public static Box<ITableProperty> columnorder(IEnumerable<float> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(int val) => Interop.mkTableAttr("columnorder", new[]{val});
+        public static Box<ITableProperty> columnorder(int val) => Interop.mkTableAttr("columnorder", new[] { val });
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(params int[] values) => Interop.mkTableAttr("columnorder", values);
+        public static Box<ITableProperty> columnorder(IEnumerable<int> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(string val) => Interop.mkTableAttr("columnorder", new[]{val});
+        public static Box<ITableProperty> columnorder(string val) => Interop.mkTableAttr("columnorder", new[] { val });
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
-        public static Box<ITableProperty> columnorder(params string[] values) => Interop.mkTableAttr("columnorder", values);
+        public static Box<ITableProperty> columnorder(IEnumerable<string> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
         public static Box<ITableProperty> columnorder(IEnumerable<bool[]> values) => Interop.mkTableAttr("columnorder", Bindings.flatten2DArrayIf1D(values));
         /// Specifies the rendered order of the data columns; for example, a value `2` at position `0` means that column index `0` in the data will be rendered as the third column, as columns have an index base of zero.
@@ -214,17 +219,17 @@ namespace PlotlyH5
         public static Box<ITableProperty> columnorder(IEnumerable<float?> values) => Interop.mkTableAttr("columnorder", values.ToArray());
         public static Box<ITableProperty> header(params Box<IHeaderProperty>[] properties) => Interop.mkTableAttr("header", Bindings.flattenProperties(properties));
         public static Box<ITableProperty> cells(params Box<ICellsProperty>[] properties) => Interop.mkTableAttr("cells", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<ITableProperty> idssrc(string val) => Interop.mkTableAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<ITableProperty> customdatasrc(string val) => Interop.mkTableAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ITableProperty> metasrc(string val) => Interop.mkTableAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<ITableProperty> hoverinfosrc(string val) => Interop.mkTableAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  columnwidth .
+        /// Sets the source reference on Chart Studio Cloud for  columnwidth .
         public static Box<ITableProperty> columnwidthsrc(string val) => Interop.mkTableAttr("columnwidthsrc", val);
-        /// Sets the source reference on plot.ly for  columnorder .
+        /// Sets the source reference on Chart Studio Cloud for  columnorder .
         public static Box<ITableProperty> columnordersrc(string val) => Interop.mkTableAttr("columnordersrc", val);
     }
 

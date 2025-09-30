@@ -15,11 +15,11 @@ namespace PlotlyH5
     {
         public static Box<IPolarProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkPolarAttr("domain", Bindings.flattenProperties(properties));
         /// Sets angular span of this polar subplot with two angles (in degrees). Sector are assumed to be spanned in the counterclockwise direction with *0* corresponding to rightmost limit of the polar subplot.
-        public static Box<IPolarProperty> sector(int val) => Interop.mkPolarAttr("sector", new[]{val});
+        public static Box<IPolarProperty> sector(int val) => Interop.mkPolarAttr("sector", new[] { val });
         /// Sets angular span of this polar subplot with two angles (in degrees). Sector are assumed to be spanned in the counterclockwise direction with *0* corresponding to rightmost limit of the polar subplot.
         public static Box<IPolarProperty> sector(IEnumerable<int> values) => Interop.mkPolarAttr("sector", values.ToArray());
         /// Sets angular span of this polar subplot with two angles (in degrees). Sector are assumed to be spanned in the counterclockwise direction with *0* corresponding to rightmost limit of the polar subplot.
-        public static Box<IPolarProperty> sector(float val) => Interop.mkPolarAttr("sector", new[]{val});
+        public static Box<IPolarProperty> sector(float val) => Interop.mkPolarAttr("sector", new[] { val });
         /// Sets angular span of this polar subplot with two angles (in degrees). Sector are assumed to be spanned in the counterclockwise direction with *0* corresponding to rightmost limit of the polar subplot.
         public static Box<IPolarProperty> sector(IEnumerable<float> values) => Interop.mkPolarAttr("sector", values.ToArray());
         /// Sets the fraction of the radius to cut out of the polar subplot.

@@ -17,30 +17,35 @@ namespace PlotlyH5
         public static Box<IScatterglProperty> showlegend(bool val) => Interop.mkScatterglAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScatterglProperty> legendgroup(string val) => Interop.mkScatterglAttr("legendgroup", val);
+        public static Box<IScatterglProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScatterglAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatterglProperty> legendrank(int val) => Interop.mkScatterglAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatterglProperty> legendrank(float val) => Interop.mkScatterglAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IScatterglProperty> name(string val) => Interop.mkScatterglAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScatterglProperty> uid(string val) => Interop.mkScatterglAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(bool val) => Interop.mkScatterglAttr("ids", new[]{val});
+        public static Box<IScatterglProperty> ids(bool val) => Interop.mkScatterglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(params bool[] values) => Interop.mkScatterglAttr("ids", values);
+        public static Box<IScatterglProperty> ids(IEnumerable<bool> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(System.DateTime val) => Interop.mkScatterglAttr("ids", new[]{val});
+        public static Box<IScatterglProperty> ids(System.DateTime val) => Interop.mkScatterglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(params System.DateTime[] values) => Interop.mkScatterglAttr("ids", values);
+        public static Box<IScatterglProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(float val) => Interop.mkScatterglAttr("ids", new[]{val});
+        public static Box<IScatterglProperty> ids(float val) => Interop.mkScatterglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(params float[] values) => Interop.mkScatterglAttr("ids", values);
+        public static Box<IScatterglProperty> ids(IEnumerable<float> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(int val) => Interop.mkScatterglAttr("ids", new[]{val});
+        public static Box<IScatterglProperty> ids(int val) => Interop.mkScatterglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(params int[] values) => Interop.mkScatterglAttr("ids", values);
+        public static Box<IScatterglProperty> ids(IEnumerable<int> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(string val) => Interop.mkScatterglAttr("ids", new[]{val});
+        public static Box<IScatterglProperty> ids(string val) => Interop.mkScatterglAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterglProperty> ids(params string[] values) => Interop.mkScatterglAttr("ids", values);
+        public static Box<IScatterglProperty> ids(IEnumerable<string> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatterglProperty> ids(IEnumerable<bool[]> values) => Interop.mkScatterglAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -76,25 +81,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatterglProperty> ids(IEnumerable<float?> values) => Interop.mkScatterglAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(bool val) => Interop.mkScatterglAttr("customdata", new[]{val});
+        public static Box<IScatterglProperty> customdata(bool val) => Interop.mkScatterglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(params bool[] values) => Interop.mkScatterglAttr("customdata", values);
+        public static Box<IScatterglProperty> customdata(IEnumerable<bool> values) => Interop.mkScatterglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(System.DateTime val) => Interop.mkScatterglAttr("customdata", new[]{val});
+        public static Box<IScatterglProperty> customdata(System.DateTime val) => Interop.mkScatterglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(params System.DateTime[] values) => Interop.mkScatterglAttr("customdata", values);
+        public static Box<IScatterglProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScatterglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(float val) => Interop.mkScatterglAttr("customdata", new[]{val});
+        public static Box<IScatterglProperty> customdata(float val) => Interop.mkScatterglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(params float[] values) => Interop.mkScatterglAttr("customdata", values);
+        public static Box<IScatterglProperty> customdata(IEnumerable<float> values) => Interop.mkScatterglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(int val) => Interop.mkScatterglAttr("customdata", new[]{val});
+        public static Box<IScatterglProperty> customdata(int val) => Interop.mkScatterglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(params int[] values) => Interop.mkScatterglAttr("customdata", values);
+        public static Box<IScatterglProperty> customdata(IEnumerable<int> values) => Interop.mkScatterglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(string val) => Interop.mkScatterglAttr("customdata", new[]{val});
+        public static Box<IScatterglProperty> customdata(string val) => Interop.mkScatterglAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterglProperty> customdata(params string[] values) => Interop.mkScatterglAttr("customdata", values);
+        public static Box<IScatterglProperty> customdata(IEnumerable<string> values) => Interop.mkScatterglAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScatterglProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScatterglAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -175,23 +180,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScatterglProperty> uirevision(params string[] values) => Interop.mkScatterglAttr("uirevision", values);
         /// Sets the x coordinates.
-        public static Box<IScatterglProperty> x(bool val) => Interop.mkScatterglAttr("x", new[]{val});
+        public static Box<IScatterglProperty> x(bool val) => Interop.mkScatterglAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatterglProperty> x(IEnumerable<bool> values) => Interop.mkScatterglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatterglProperty> x(System.DateTime val) => Interop.mkScatterglAttr("x", new[]{val});
+        public static Box<IScatterglProperty> x(System.DateTime val) => Interop.mkScatterglAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatterglProperty> x(IEnumerable<System.DateTime> values) => Interop.mkScatterglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatterglProperty> x(float val) => Interop.mkScatterglAttr("x", new[]{val});
+        public static Box<IScatterglProperty> x(float val) => Interop.mkScatterglAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatterglProperty> x(IEnumerable<float> values) => Interop.mkScatterglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatterglProperty> x(int val) => Interop.mkScatterglAttr("x", new[]{val});
+        public static Box<IScatterglProperty> x(int val) => Interop.mkScatterglAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatterglProperty> x(IEnumerable<int> values) => Interop.mkScatterglAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatterglProperty> x(string val) => Interop.mkScatterglAttr("x", new[]{val});
+        public static Box<IScatterglProperty> x(string val) => Interop.mkScatterglAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatterglProperty> x(IEnumerable<string> values) => Interop.mkScatterglAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -253,23 +258,23 @@ namespace PlotlyH5
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IScatterglProperty> dx(float val) => Interop.mkScatterglAttr("dx", val);
         /// Sets the y coordinates.
-        public static Box<IScatterglProperty> y(bool val) => Interop.mkScatterglAttr("y", new[]{val});
+        public static Box<IScatterglProperty> y(bool val) => Interop.mkScatterglAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatterglProperty> y(IEnumerable<bool> values) => Interop.mkScatterglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatterglProperty> y(System.DateTime val) => Interop.mkScatterglAttr("y", new[]{val});
+        public static Box<IScatterglProperty> y(System.DateTime val) => Interop.mkScatterglAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatterglProperty> y(IEnumerable<System.DateTime> values) => Interop.mkScatterglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatterglProperty> y(float val) => Interop.mkScatterglAttr("y", new[]{val});
+        public static Box<IScatterglProperty> y(float val) => Interop.mkScatterglAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatterglProperty> y(IEnumerable<float> values) => Interop.mkScatterglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatterglProperty> y(int val) => Interop.mkScatterglAttr("y", new[]{val});
+        public static Box<IScatterglProperty> y(int val) => Interop.mkScatterglAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatterglProperty> y(IEnumerable<int> values) => Interop.mkScatterglAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatterglProperty> y(string val) => Interop.mkScatterglAttr("y", new[]{val});
+        public static Box<IScatterglProperty> y(string val) => Interop.mkScatterglAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatterglProperty> y(IEnumerable<string> values) => Interop.mkScatterglAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -330,6 +335,90 @@ namespace PlotlyH5
         public static Box<IScatterglProperty> dy(int val) => Interop.mkScatterglAttr("dy", val);
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IScatterglProperty> dy(float val) => Interop.mkScatterglAttr("dy", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(bool val) => Interop.mkScatterglAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(params bool[] values) => Interop.mkScatterglAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(System.DateTime val) => Interop.mkScatterglAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(params System.DateTime[] values) => Interop.mkScatterglAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(int val) => Interop.mkScatterglAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(params int[] values) => Interop.mkScatterglAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(float val) => Interop.mkScatterglAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(params float[] values) => Interop.mkScatterglAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(string val) => Interop.mkScatterglAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> xperiod(params string[] values) => Interop.mkScatterglAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(bool val) => Interop.mkScatterglAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(params bool[] values) => Interop.mkScatterglAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(System.DateTime val) => Interop.mkScatterglAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(params System.DateTime[] values) => Interop.mkScatterglAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(int val) => Interop.mkScatterglAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(params int[] values) => Interop.mkScatterglAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(float val) => Interop.mkScatterglAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(params float[] values) => Interop.mkScatterglAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(string val) => Interop.mkScatterglAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IScatterglProperty> yperiod(params string[] values) => Interop.mkScatterglAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(bool val) => Interop.mkScatterglAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(params bool[] values) => Interop.mkScatterglAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(System.DateTime val) => Interop.mkScatterglAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(params System.DateTime[] values) => Interop.mkScatterglAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(int val) => Interop.mkScatterglAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(params int[] values) => Interop.mkScatterglAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(float val) => Interop.mkScatterglAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(params float[] values) => Interop.mkScatterglAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(string val) => Interop.mkScatterglAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> xperiod0(params string[] values) => Interop.mkScatterglAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(bool val) => Interop.mkScatterglAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(params bool[] values) => Interop.mkScatterglAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(System.DateTime val) => Interop.mkScatterglAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(params System.DateTime[] values) => Interop.mkScatterglAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(int val) => Interop.mkScatterglAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(params int[] values) => Interop.mkScatterglAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(float val) => Interop.mkScatterglAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(params float[] values) => Interop.mkScatterglAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(string val) => Interop.mkScatterglAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IScatterglProperty> yperiod0(params string[] values) => Interop.mkScatterglAttr("yperiod0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IScatterglProperty> xhoverformat(string val) => Interop.mkScatterglAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IScatterglProperty> yhoverformat(string val) => Interop.mkScatterglAttr("yhoverformat", val);
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScatterglProperty> text(string val) => Interop.mkScatterglAttr("text", val);
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
@@ -356,13 +445,13 @@ namespace PlotlyH5
         public static Box<IScatterglProperty> opacity(int val) => Interop.mkScatterglAttr("opacity", val);
         /// Sets the opacity of the trace.
         public static Box<IScatterglProperty> opacity(float val) => Interop.mkScatterglAttr("opacity", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatterglProperty> hovertemplate(string val) => Interop.mkScatterglAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatterglProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScatterglAttr("hovertemplate", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
         public static Box<IScatterglProperty> texttemplate(string val) => Interop.mkScatterglAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
         public static Box<IScatterglProperty> texttemplate(IEnumerable<string> values) => Interop.mkScatterglAttr("texttemplate", values.ToArray());
         public static Box<IScatterglProperty> errorX(params Box<IErrorXProperty>[] properties) => Interop.mkScatterglAttr("error_x", Bindings.flattenProperties(properties));
         public static Box<IScatterglProperty> errorY(params Box<IErrorYProperty>[] properties) => Interop.mkScatterglAttr("error_y", Bindings.flattenProperties(properties));
@@ -374,27 +463,27 @@ namespace PlotlyH5
         public static Box<IScatterglProperty> yaxis(int anchorId) => Interop.mkScatterglAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IScatterglProperty> yaxis(string val) => Interop.mkScatterglAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScatterglProperty> idssrc(string val) => Interop.mkScatterglAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScatterglProperty> customdatasrc(string val) => Interop.mkScatterglAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScatterglProperty> metasrc(string val) => Interop.mkScatterglAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScatterglProperty> hoverinfosrc(string val) => Interop.mkScatterglAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IScatterglProperty> xsrc(string val) => Interop.mkScatterglAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IScatterglProperty> ysrc(string val) => Interop.mkScatterglAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScatterglProperty> textsrc(string val) => Interop.mkScatterglAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScatterglProperty> hovertextsrc(string val) => Interop.mkScatterglAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IScatterglProperty> textpositionsrc(string val) => Interop.mkScatterglAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScatterglProperty> hovertemplatesrc(string val) => Interop.mkScatterglAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScatterglProperty> texttemplatesrc(string val) => Interop.mkScatterglAttr("texttemplatesrc", val);
     }
 
@@ -419,6 +508,22 @@ namespace PlotlyH5
             public static Box<IScatterglProperty> x() => Interop.mkScatterglAttr("hoverinfo", "x");
             public static Box<IScatterglProperty> y() => Interop.mkScatterglAttr("hoverinfo", "y");
             public static Box<IScatterglProperty> z() => Interop.mkScatterglAttr("hoverinfo", "z");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IScatterglProperty> _end() => Interop.mkScatterglAttr("xperiodalignment", "end");
+            public static Box<IScatterglProperty> middle() => Interop.mkScatterglAttr("xperiodalignment", "middle");
+            public static Box<IScatterglProperty> start() => Interop.mkScatterglAttr("xperiodalignment", "start");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+        public static partial class Yperiodalignment
+        {
+            public static Box<IScatterglProperty> _end() => Interop.mkScatterglAttr("yperiodalignment", "end");
+            public static Box<IScatterglProperty> middle() => Interop.mkScatterglAttr("yperiodalignment", "middle");
+            public static Box<IScatterglProperty> start() => Interop.mkScatterglAttr("yperiodalignment", "start");
         }
 
         /// Sets the positions of the `text` elements with respects to the (x,y) coordinates.

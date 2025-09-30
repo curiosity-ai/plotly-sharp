@@ -142,8 +142,10 @@ namespace PlotlyH5
         /// Sets the opacity of the shape.
         public static Box<IShapeProperty> opacity(float val) => Interop.mkShapeAttr("opacity", val);
         public static Box<IShapeProperty> line(params Box<ILineProperty>[] properties) => Interop.mkShapeAttr("line", Bindings.flattenProperties(properties));
-        /// Sets the color filling the shape's interior.
+        /// Sets the color filling the shape's interior. Only applies to closed shapes.
         public static Box<IShapeProperty> fillcolor(string val) => Interop.mkShapeAttr("fillcolor", val);
+        /// Determines whether the shape could be activated for edit or not. Has no effect when the older editable shapes mode is enabled via `config.editable` or `config.edits.shapePosition`.
+        public static Box<IShapeProperty> editable(bool val) => Interop.mkShapeAttr("editable", val);
         /// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
         public static Box<IShapeProperty> name(string val) => Interop.mkShapeAttr("name", val);
         /// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
@@ -168,7 +170,7 @@ namespace PlotlyH5
             public static Box<IShapeProperty> below() => Interop.mkShapeAttr("layer", "below");
         }
 
-        /// Sets the shape's x coordinate axis. If set to an x axis id (e.g. *x* or *x2*), the `x` position refers to an x coordinate. If set to *paper*, the `x` position refers to the distance from the left side of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right) side. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, then you must convert the date to unix time in milliseconds.
+        /// Sets the shape's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis. If the axis `type` is *log*, then you must take the log of your desired range. If the axis `type` is *date*, then you must convert the date to unix time in milliseconds.
         public static partial class Xref
         {
             public static Box<IShapeProperty> paper() => Interop.mkShapeAttr("xref", "paper");
@@ -183,7 +185,7 @@ namespace PlotlyH5
             public static Box<IShapeProperty> scaled() => Interop.mkShapeAttr("xsizemode", "scaled");
         }
 
-        /// Sets the annotation's y coordinate axis. If set to an y axis id (e.g. *y* or *y2*), the `y` position refers to an y coordinate If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top).
+        /// Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
         public static partial class Yref
         {
             public static Box<IShapeProperty> paper() => Interop.mkShapeAttr("yref", "paper");
@@ -196,6 +198,13 @@ namespace PlotlyH5
         {
             public static Box<IShapeProperty> pixel() => Interop.mkShapeAttr("ysizemode", "pixel");
             public static Box<IShapeProperty> scaled() => Interop.mkShapeAttr("ysizemode", "scaled");
+        }
+
+        /// Determines which regions of complex paths constitute the interior. For more info please visit https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+        public static partial class Fillrule
+        {
+            public static Box<IShapeProperty> evenodd() => Interop.mkShapeAttr("fillrule", "evenodd");
+            public static Box<IShapeProperty> nonzero() => Interop.mkShapeAttr("fillrule", "nonzero");
         }
     }
 }

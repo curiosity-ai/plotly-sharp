@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IBarProperty> showlegend(bool val) => Interop.mkBarAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IBarProperty> legendgroup(string val) => Interop.mkBarAttr("legendgroup", val);
+        public static Box<IBarProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkBarAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBarProperty> legendrank(int val) => Interop.mkBarAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBarProperty> legendrank(float val) => Interop.mkBarAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IBarProperty> opacity(int val) => Interop.mkBarAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IBarProperty> uid(string val) => Interop.mkBarAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(bool val) => Interop.mkBarAttr("ids", new[]{val});
+        public static Box<IBarProperty> ids(bool val) => Interop.mkBarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(params bool[] values) => Interop.mkBarAttr("ids", values);
+        public static Box<IBarProperty> ids(IEnumerable<bool> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(System.DateTime val) => Interop.mkBarAttr("ids", new[]{val});
+        public static Box<IBarProperty> ids(System.DateTime val) => Interop.mkBarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(params System.DateTime[] values) => Interop.mkBarAttr("ids", values);
+        public static Box<IBarProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(float val) => Interop.mkBarAttr("ids", new[]{val});
+        public static Box<IBarProperty> ids(float val) => Interop.mkBarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(params float[] values) => Interop.mkBarAttr("ids", values);
+        public static Box<IBarProperty> ids(IEnumerable<float> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(int val) => Interop.mkBarAttr("ids", new[]{val});
+        public static Box<IBarProperty> ids(int val) => Interop.mkBarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(params int[] values) => Interop.mkBarAttr("ids", values);
+        public static Box<IBarProperty> ids(IEnumerable<int> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(string val) => Interop.mkBarAttr("ids", new[]{val});
+        public static Box<IBarProperty> ids(string val) => Interop.mkBarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarProperty> ids(params string[] values) => Interop.mkBarAttr("ids", values);
+        public static Box<IBarProperty> ids(IEnumerable<string> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBarProperty> ids(IEnumerable<bool[]> values) => Interop.mkBarAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBarProperty> ids(IEnumerable<float?> values) => Interop.mkBarAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(bool val) => Interop.mkBarAttr("customdata", new[]{val});
+        public static Box<IBarProperty> customdata(bool val) => Interop.mkBarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(params bool[] values) => Interop.mkBarAttr("customdata", values);
+        public static Box<IBarProperty> customdata(IEnumerable<bool> values) => Interop.mkBarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(System.DateTime val) => Interop.mkBarAttr("customdata", new[]{val});
+        public static Box<IBarProperty> customdata(System.DateTime val) => Interop.mkBarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(params System.DateTime[] values) => Interop.mkBarAttr("customdata", values);
+        public static Box<IBarProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkBarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(float val) => Interop.mkBarAttr("customdata", new[]{val});
+        public static Box<IBarProperty> customdata(float val) => Interop.mkBarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(params float[] values) => Interop.mkBarAttr("customdata", values);
+        public static Box<IBarProperty> customdata(IEnumerable<float> values) => Interop.mkBarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(int val) => Interop.mkBarAttr("customdata", new[]{val});
+        public static Box<IBarProperty> customdata(int val) => Interop.mkBarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(params int[] values) => Interop.mkBarAttr("customdata", values);
+        public static Box<IBarProperty> customdata(IEnumerable<int> values) => Interop.mkBarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(string val) => Interop.mkBarAttr("customdata", new[]{val});
+        public static Box<IBarProperty> customdata(string val) => Interop.mkBarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarProperty> customdata(params string[] values) => Interop.mkBarAttr("customdata", values);
+        public static Box<IBarProperty> customdata(IEnumerable<string> values) => Interop.mkBarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IBarProperty> customdata(IEnumerable<bool[]> values) => Interop.mkBarAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -179,23 +184,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IBarProperty> uirevision(params string[] values) => Interop.mkBarAttr("uirevision", values);
         /// Sets the x coordinates.
-        public static Box<IBarProperty> x(bool val) => Interop.mkBarAttr("x", new[]{val});
+        public static Box<IBarProperty> x(bool val) => Interop.mkBarAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IBarProperty> x(IEnumerable<bool> values) => Interop.mkBarAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IBarProperty> x(System.DateTime val) => Interop.mkBarAttr("x", new[]{val});
+        public static Box<IBarProperty> x(System.DateTime val) => Interop.mkBarAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IBarProperty> x(IEnumerable<System.DateTime> values) => Interop.mkBarAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IBarProperty> x(float val) => Interop.mkBarAttr("x", new[]{val});
+        public static Box<IBarProperty> x(float val) => Interop.mkBarAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IBarProperty> x(IEnumerable<float> values) => Interop.mkBarAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IBarProperty> x(int val) => Interop.mkBarAttr("x", new[]{val});
+        public static Box<IBarProperty> x(int val) => Interop.mkBarAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IBarProperty> x(IEnumerable<int> values) => Interop.mkBarAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IBarProperty> x(string val) => Interop.mkBarAttr("x", new[]{val});
+        public static Box<IBarProperty> x(string val) => Interop.mkBarAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IBarProperty> x(IEnumerable<string> values) => Interop.mkBarAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -257,23 +262,23 @@ namespace PlotlyH5
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IBarProperty> dx(float val) => Interop.mkBarAttr("dx", val);
         /// Sets the y coordinates.
-        public static Box<IBarProperty> y(bool val) => Interop.mkBarAttr("y", new[]{val});
+        public static Box<IBarProperty> y(bool val) => Interop.mkBarAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IBarProperty> y(IEnumerable<bool> values) => Interop.mkBarAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IBarProperty> y(System.DateTime val) => Interop.mkBarAttr("y", new[]{val});
+        public static Box<IBarProperty> y(System.DateTime val) => Interop.mkBarAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IBarProperty> y(IEnumerable<System.DateTime> values) => Interop.mkBarAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IBarProperty> y(float val) => Interop.mkBarAttr("y", new[]{val});
+        public static Box<IBarProperty> y(float val) => Interop.mkBarAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IBarProperty> y(IEnumerable<float> values) => Interop.mkBarAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IBarProperty> y(int val) => Interop.mkBarAttr("y", new[]{val});
+        public static Box<IBarProperty> y(int val) => Interop.mkBarAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IBarProperty> y(IEnumerable<int> values) => Interop.mkBarAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IBarProperty> y(string val) => Interop.mkBarAttr("y", new[]{val});
+        public static Box<IBarProperty> y(string val) => Interop.mkBarAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IBarProperty> y(IEnumerable<string> values) => Interop.mkBarAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -334,23 +339,107 @@ namespace PlotlyH5
         public static Box<IBarProperty> dy(int val) => Interop.mkBarAttr("dy", val);
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IBarProperty> dy(float val) => Interop.mkBarAttr("dy", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(bool val) => Interop.mkBarAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(params bool[] values) => Interop.mkBarAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(System.DateTime val) => Interop.mkBarAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(params System.DateTime[] values) => Interop.mkBarAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(int val) => Interop.mkBarAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(params int[] values) => Interop.mkBarAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(float val) => Interop.mkBarAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(params float[] values) => Interop.mkBarAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(string val) => Interop.mkBarAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> xperiod(params string[] values) => Interop.mkBarAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(bool val) => Interop.mkBarAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(params bool[] values) => Interop.mkBarAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(System.DateTime val) => Interop.mkBarAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(params System.DateTime[] values) => Interop.mkBarAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(int val) => Interop.mkBarAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(params int[] values) => Interop.mkBarAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(float val) => Interop.mkBarAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(params float[] values) => Interop.mkBarAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(string val) => Interop.mkBarAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBarProperty> yperiod(params string[] values) => Interop.mkBarAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(bool val) => Interop.mkBarAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(params bool[] values) => Interop.mkBarAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(System.DateTime val) => Interop.mkBarAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(params System.DateTime[] values) => Interop.mkBarAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(int val) => Interop.mkBarAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(params int[] values) => Interop.mkBarAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(float val) => Interop.mkBarAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(params float[] values) => Interop.mkBarAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(string val) => Interop.mkBarAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> xperiod0(params string[] values) => Interop.mkBarAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(bool val) => Interop.mkBarAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(params bool[] values) => Interop.mkBarAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(System.DateTime val) => Interop.mkBarAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(params System.DateTime[] values) => Interop.mkBarAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(int val) => Interop.mkBarAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(params int[] values) => Interop.mkBarAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(float val) => Interop.mkBarAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(params float[] values) => Interop.mkBarAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(string val) => Interop.mkBarAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBarProperty> yperiod0(params string[] values) => Interop.mkBarAttr("yperiod0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IBarProperty> xhoverformat(string val) => Interop.mkBarAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IBarProperty> yhoverformat(string val) => Interop.mkBarAttr("yhoverformat", val);
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IBarProperty> text(string val) => Interop.mkBarAttr("text", val);
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IBarProperty> text(IEnumerable<string> values) => Interop.mkBarAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
         public static Box<IBarProperty> texttemplate(string val) => Interop.mkBarAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`.
         public static Box<IBarProperty> texttemplate(IEnumerable<string> values) => Interop.mkBarAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IBarProperty> hovertext(string val) => Interop.mkBarAttr("hovertext", val);
         /// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IBarProperty> hovertext(IEnumerable<string> values) => Interop.mkBarAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBarProperty> hovertemplate(string val) => Interop.mkBarAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `value` and `label`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBarProperty> hovertemplate(IEnumerable<string> values) => Interop.mkBarAttr("hovertemplate", values.ToArray());
-        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside.
+        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
         public static Box<IBarProperty> textposition(IEnumerable<Box<IBarProperty>> properties) => Interop.mkBarAttr("textposition", Bindings.flattenProperties(properties));
         /// Sets the angle of the tick labels with respect to the bar. For example, a `tickangle` of -90 draws the tick labels vertically. With *auto* the texts may automatically be rotated to fit with the maximum size in bars.
         public static Box<IBarProperty> textangle(int val) => Interop.mkBarAttr("textangle", val);
@@ -417,38 +506,34 @@ namespace PlotlyH5
         public static Box<IBarProperty> yaxis(int anchorId) => Interop.mkBarAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IBarProperty> yaxis(string val) => Interop.mkBarAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IBarProperty> idssrc(string val) => Interop.mkBarAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IBarProperty> customdatasrc(string val) => Interop.mkBarAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IBarProperty> metasrc(string val) => Interop.mkBarAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IBarProperty> hoverinfosrc(string val) => Interop.mkBarAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IBarProperty> xsrc(string val) => Interop.mkBarAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IBarProperty> ysrc(string val) => Interop.mkBarAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IBarProperty> textsrc(string val) => Interop.mkBarAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IBarProperty> texttemplatesrc(string val) => Interop.mkBarAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IBarProperty> hovertextsrc(string val) => Interop.mkBarAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IBarProperty> hovertemplatesrc(string val) => Interop.mkBarAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IBarProperty> textpositionsrc(string val) => Interop.mkBarAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  base .
+        /// Sets the source reference on Chart Studio Cloud for  base .
         public static Box<IBarProperty> basesrc(string val) => Interop.mkBarAttr("basesrc", val);
-        /// Sets the source reference on plot.ly for  offset .
+        /// Sets the source reference on Chart Studio Cloud for  offset .
         public static Box<IBarProperty> offsetsrc(string val) => Interop.mkBarAttr("offsetsrc", val);
-        /// Sets the source reference on plot.ly for  width .
+        /// Sets the source reference on Chart Studio Cloud for  width .
         public static Box<IBarProperty> widthsrc(string val) => Interop.mkBarAttr("widthsrc", val);
-        /// Sets the source reference on plot.ly for  r .
-        public static Box<IBarProperty> rsrc(string val) => Interop.mkBarAttr("rsrc", val);
-        /// Sets the source reference on plot.ly for  t .
-        public static Box<IBarProperty> tsrc(string val) => Interop.mkBarAttr("tsrc", val);
         /// Sets the background color of the arc.
         public static Box<IBarProperty> color(string val) => Interop.mkBarAttr("color", val);
         public static Box<IBarProperty> line(params Box<ILineProperty>[] properties) => Interop.mkBarAttr("line", Bindings.flattenProperties(properties));
@@ -481,7 +566,23 @@ namespace PlotlyH5
             public static Box<IBarProperty> z() => Interop.mkBarAttr("hoverinfo", "z");
         }
 
-        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside.
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IBarProperty> _end() => Interop.mkBarAttr("xperiodalignment", "end");
+            public static Box<IBarProperty> middle() => Interop.mkBarAttr("xperiodalignment", "middle");
+            public static Box<IBarProperty> start() => Interop.mkBarAttr("xperiodalignment", "start");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+        public static partial class Yperiodalignment
+        {
+            public static Box<IBarProperty> _end() => Interop.mkBarAttr("yperiodalignment", "end");
+            public static Box<IBarProperty> middle() => Interop.mkBarAttr("yperiodalignment", "middle");
+            public static Box<IBarProperty> start() => Interop.mkBarAttr("yperiodalignment", "start");
+        }
+
+        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
         public static partial class Textposition
         {
             public static Box<IBarProperty> auto() => Interop.mkBarAttr("textposition", "auto");

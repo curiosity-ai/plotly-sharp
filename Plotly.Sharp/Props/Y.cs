@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Y
     {
@@ -53,25 +53,25 @@ namespace Plotly
         /// Sets the width of the highlighted contour lines.
         public static Box<IYProperty> highlightwidth(float val) => Interop.mkYAttr("highlightwidth", val);
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(bool val) => Interop.mkYAttr("locations", new[]{val});
+        public static Box<IYProperty> locations(bool val) => Interop.mkYAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(params bool[] values) => Interop.mkYAttr("locations", values);
+        public static Box<IYProperty> locations(IEnumerable<bool> values) => Interop.mkYAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(System.DateTime val) => Interop.mkYAttr("locations", new[]{val});
+        public static Box<IYProperty> locations(System.DateTime val) => Interop.mkYAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(params System.DateTime[] values) => Interop.mkYAttr("locations", values);
+        public static Box<IYProperty> locations(IEnumerable<System.DateTime> values) => Interop.mkYAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(float val) => Interop.mkYAttr("locations", new[]{val});
+        public static Box<IYProperty> locations(float val) => Interop.mkYAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(params float[] values) => Interop.mkYAttr("locations", values);
+        public static Box<IYProperty> locations(IEnumerable<float> values) => Interop.mkYAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(int val) => Interop.mkYAttr("locations", new[]{val});
+        public static Box<IYProperty> locations(int val) => Interop.mkYAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(params int[] values) => Interop.mkYAttr("locations", values);
+        public static Box<IYProperty> locations(IEnumerable<int> values) => Interop.mkYAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(string val) => Interop.mkYAttr("locations", new[]{val});
+        public static Box<IYProperty> locations(string val) => Interop.mkYAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
-        public static Box<IYProperty> locations(params string[] values) => Interop.mkYAttr("locations", values);
+        public static Box<IYProperty> locations(IEnumerable<string> values) => Interop.mkYAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
         public static Box<IYProperty> locations(IEnumerable<bool[]> values) => Interop.mkYAttr("locations", Bindings.flatten2DArrayIf1D(values));
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis y except start and end.
@@ -110,7 +110,7 @@ namespace Plotly
         public static Box<IYProperty> fill(int val) => Interop.mkYAttr("fill", val);
         /// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
         public static Box<IYProperty> fill(float val) => Interop.mkYAttr("fill", val);
-        /// Sets the source reference on plot.ly for  locations .
+        /// Sets the source reference on Chart Studio Cloud for  locations .
         public static Box<IYProperty> locationssrc(string val) => Interop.mkYAttr("locationssrc", val);
     }
 }

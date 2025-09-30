@@ -8,35 +8,40 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Indicator
     {
+        public static Box<IIndicatorProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkIndicatorAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IIndicatorProperty> legendrank(int val) => Interop.mkIndicatorAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IIndicatorProperty> legendrank(float val) => Interop.mkIndicatorAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IIndicatorProperty> name(string val) => Interop.mkIndicatorAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IIndicatorProperty> uid(string val) => Interop.mkIndicatorAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(bool val) => Interop.mkIndicatorAttr("ids", new[]{val});
+        public static Box<IIndicatorProperty> ids(bool val) => Interop.mkIndicatorAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(params bool[] values) => Interop.mkIndicatorAttr("ids", values);
+        public static Box<IIndicatorProperty> ids(IEnumerable<bool> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(System.DateTime val) => Interop.mkIndicatorAttr("ids", new[]{val});
+        public static Box<IIndicatorProperty> ids(System.DateTime val) => Interop.mkIndicatorAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(params System.DateTime[] values) => Interop.mkIndicatorAttr("ids", values);
+        public static Box<IIndicatorProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(float val) => Interop.mkIndicatorAttr("ids", new[]{val});
+        public static Box<IIndicatorProperty> ids(float val) => Interop.mkIndicatorAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(params float[] values) => Interop.mkIndicatorAttr("ids", values);
+        public static Box<IIndicatorProperty> ids(IEnumerable<float> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(int val) => Interop.mkIndicatorAttr("ids", new[]{val});
+        public static Box<IIndicatorProperty> ids(int val) => Interop.mkIndicatorAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(params int[] values) => Interop.mkIndicatorAttr("ids", values);
+        public static Box<IIndicatorProperty> ids(IEnumerable<int> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(string val) => Interop.mkIndicatorAttr("ids", new[]{val});
+        public static Box<IIndicatorProperty> ids(string val) => Interop.mkIndicatorAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIndicatorProperty> ids(params string[] values) => Interop.mkIndicatorAttr("ids", values);
+        public static Box<IIndicatorProperty> ids(IEnumerable<string> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IIndicatorProperty> ids(IEnumerable<bool[]> values) => Interop.mkIndicatorAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -72,25 +77,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IIndicatorProperty> ids(IEnumerable<float?> values) => Interop.mkIndicatorAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(bool val) => Interop.mkIndicatorAttr("customdata", new[]{val});
+        public static Box<IIndicatorProperty> customdata(bool val) => Interop.mkIndicatorAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(params bool[] values) => Interop.mkIndicatorAttr("customdata", values);
+        public static Box<IIndicatorProperty> customdata(IEnumerable<bool> values) => Interop.mkIndicatorAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(System.DateTime val) => Interop.mkIndicatorAttr("customdata", new[]{val});
+        public static Box<IIndicatorProperty> customdata(System.DateTime val) => Interop.mkIndicatorAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(params System.DateTime[] values) => Interop.mkIndicatorAttr("customdata", values);
+        public static Box<IIndicatorProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkIndicatorAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(float val) => Interop.mkIndicatorAttr("customdata", new[]{val});
+        public static Box<IIndicatorProperty> customdata(float val) => Interop.mkIndicatorAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(params float[] values) => Interop.mkIndicatorAttr("customdata", values);
+        public static Box<IIndicatorProperty> customdata(IEnumerable<float> values) => Interop.mkIndicatorAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(int val) => Interop.mkIndicatorAttr("customdata", new[]{val});
+        public static Box<IIndicatorProperty> customdata(int val) => Interop.mkIndicatorAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(params int[] values) => Interop.mkIndicatorAttr("customdata", values);
+        public static Box<IIndicatorProperty> customdata(IEnumerable<int> values) => Interop.mkIndicatorAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(string val) => Interop.mkIndicatorAttr("customdata", new[]{val});
+        public static Box<IIndicatorProperty> customdata(string val) => Interop.mkIndicatorAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIndicatorProperty> customdata(params string[] values) => Interop.mkIndicatorAttr("customdata", values);
+        public static Box<IIndicatorProperty> customdata(IEnumerable<string> values) => Interop.mkIndicatorAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IIndicatorProperty> customdata(IEnumerable<bool[]> values) => Interop.mkIndicatorAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -159,11 +164,11 @@ namespace Plotly
         public static Box<IIndicatorProperty> delta(params Box<IDeltaProperty>[] properties) => Interop.mkIndicatorAttr("delta", Bindings.flattenProperties(properties));
         /// The gauge of the Indicator plot.
         public static Box<IIndicatorProperty> gauge(params Box<IGaugeProperty>[] properties) => Interop.mkIndicatorAttr("gauge", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IIndicatorProperty> idssrc(string val) => Interop.mkIndicatorAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IIndicatorProperty> customdatasrc(string val) => Interop.mkIndicatorAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IIndicatorProperty> metasrc(string val) => Interop.mkIndicatorAttr("metasrc", val);
     }
 

@@ -19,6 +19,11 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface IActiveshapeProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IAggregateProperty
         {
         }
@@ -50,11 +55,6 @@ namespace PlotlyH5
 
         [ObjectLiteral]
         public interface IAnnotationsProperty
-        {
-        }
-
-        [ObjectLiteral]
-        public interface IAreaProperty
         {
         }
 
@@ -379,6 +379,11 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface IIcicleProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IImageProperty
         {
         }
@@ -444,6 +449,11 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface ILegendgrouptitleProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface ILightingProperty
         {
         }
@@ -499,6 +509,11 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface INewshapeProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface INodeProperty
         {
         }
@@ -539,6 +554,11 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface IPatternProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IPieProperty
         {
         }
@@ -569,6 +589,16 @@ namespace PlotlyH5
         }
 
         [ObjectLiteral]
+        public interface IRangebreakProperty
+        {
+        }
+
+        [ObjectLiteral]
+        public interface IRangebreaksProperty
+        {
+        }
+
+        [ObjectLiteral]
         public interface IRangefontProperty
         {
         }
@@ -580,6 +610,11 @@ namespace PlotlyH5
 
         [ObjectLiteral]
         public interface IRangesliderProperty
+        {
+        }
+
+        [ObjectLiteral]
+        public interface IRootProperty
         {
         }
 

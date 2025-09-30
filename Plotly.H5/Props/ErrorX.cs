@@ -18,25 +18,25 @@ namespace PlotlyH5
         /// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
         public static Box<IErrorXProperty> symmetric(bool val) => Interop.mkErrorXAttr("symmetric", val);
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(bool val) => Interop.mkErrorXAttr("array", new[]{val});
+        public static Box<IErrorXProperty> array(bool val) => Interop.mkErrorXAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(params bool[] values) => Interop.mkErrorXAttr("array", values);
+        public static Box<IErrorXProperty> array(IEnumerable<bool> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(System.DateTime val) => Interop.mkErrorXAttr("array", new[]{val});
+        public static Box<IErrorXProperty> array(System.DateTime val) => Interop.mkErrorXAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(params System.DateTime[] values) => Interop.mkErrorXAttr("array", values);
+        public static Box<IErrorXProperty> array(IEnumerable<System.DateTime> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(float val) => Interop.mkErrorXAttr("array", new[]{val});
+        public static Box<IErrorXProperty> array(float val) => Interop.mkErrorXAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(params float[] values) => Interop.mkErrorXAttr("array", values);
+        public static Box<IErrorXProperty> array(IEnumerable<float> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(int val) => Interop.mkErrorXAttr("array", new[]{val});
+        public static Box<IErrorXProperty> array(int val) => Interop.mkErrorXAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(params int[] values) => Interop.mkErrorXAttr("array", values);
+        public static Box<IErrorXProperty> array(IEnumerable<int> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(string val) => Interop.mkErrorXAttr("array", new[]{val});
+        public static Box<IErrorXProperty> array(string val) => Interop.mkErrorXAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> array(params string[] values) => Interop.mkErrorXAttr("array", values);
+        public static Box<IErrorXProperty> array(IEnumerable<string> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
         public static Box<IErrorXProperty> array(IEnumerable<bool[]> values) => Interop.mkErrorXAttr("array", Bindings.flatten2DArrayIf1D(values));
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -72,25 +72,25 @@ namespace PlotlyH5
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
         public static Box<IErrorXProperty> array(IEnumerable<float?> values) => Interop.mkErrorXAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(bool val) => Interop.mkErrorXAttr("arrayminus", new[]{val});
+        public static Box<IErrorXProperty> arrayminus(bool val) => Interop.mkErrorXAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(params bool[] values) => Interop.mkErrorXAttr("arrayminus", values);
+        public static Box<IErrorXProperty> arrayminus(IEnumerable<bool> values) => Interop.mkErrorXAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(System.DateTime val) => Interop.mkErrorXAttr("arrayminus", new[]{val});
+        public static Box<IErrorXProperty> arrayminus(System.DateTime val) => Interop.mkErrorXAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(params System.DateTime[] values) => Interop.mkErrorXAttr("arrayminus", values);
+        public static Box<IErrorXProperty> arrayminus(IEnumerable<System.DateTime> values) => Interop.mkErrorXAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(float val) => Interop.mkErrorXAttr("arrayminus", new[]{val});
+        public static Box<IErrorXProperty> arrayminus(float val) => Interop.mkErrorXAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(params float[] values) => Interop.mkErrorXAttr("arrayminus", values);
+        public static Box<IErrorXProperty> arrayminus(IEnumerable<float> values) => Interop.mkErrorXAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(int val) => Interop.mkErrorXAttr("arrayminus", new[]{val});
+        public static Box<IErrorXProperty> arrayminus(int val) => Interop.mkErrorXAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(params int[] values) => Interop.mkErrorXAttr("arrayminus", values);
+        public static Box<IErrorXProperty> arrayminus(IEnumerable<int> values) => Interop.mkErrorXAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(string val) => Interop.mkErrorXAttr("arrayminus", new[]{val});
+        public static Box<IErrorXProperty> arrayminus(string val) => Interop.mkErrorXAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorXProperty> arrayminus(params string[] values) => Interop.mkErrorXAttr("arrayminus", values);
+        public static Box<IErrorXProperty> arrayminus(IEnumerable<string> values) => Interop.mkErrorXAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
         public static Box<IErrorXProperty> arrayminus(IEnumerable<bool[]> values) => Interop.mkErrorXAttr("arrayminus", Bindings.flatten2DArrayIf1D(values));
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
@@ -146,16 +146,16 @@ namespace PlotlyH5
         public static Box<IErrorXProperty> width(int val) => Interop.mkErrorXAttr("width", val);
         /// Sets the width (in px) of the cross-bar at both ends of the error bars.
         public static Box<IErrorXProperty> width(float val) => Interop.mkErrorXAttr("width", val);
-        /// Sets the source reference on plot.ly for  array .
+        /// Sets the source reference on Chart Studio Cloud for  array .
         public static Box<IErrorXProperty> arraysrc(string val) => Interop.mkErrorXAttr("arraysrc", val);
-        /// Sets the source reference on plot.ly for  arrayminus .
+        /// Sets the source reference on Chart Studio Cloud for  arrayminus .
         public static Box<IErrorXProperty> arrayminussrc(string val) => Interop.mkErrorXAttr("arrayminussrc", val);
         public static Box<IErrorXProperty> copyZstyle(bool val) => Interop.mkErrorXAttr("copy_zstyle", val);
     }
 
     public static partial class ErrorX
     {
-        /// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+        /// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
         public static partial class _type
         {
             public static Box<IErrorXProperty> constant() => Interop.mkErrorXAttr("type", "constant");

@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Zaxis
     {
@@ -34,23 +34,23 @@ namespace Plotly
         /// Sets default for all colors associated with this axis all at once: line, font, tick, and grid colors. Grid color is lightened by blending this with the plot background Individual pieces can override this.
         public static Box<IZaxisProperty> color(string val) => Interop.mkZaxisAttr("color", val);
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IZaxisProperty> categoryarray(bool val) => Interop.mkZaxisAttr("categoryarray", new[]{val});
+        public static Box<IZaxisProperty> categoryarray(bool val) => Interop.mkZaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IZaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IZaxisProperty> categoryarray(System.DateTime val) => Interop.mkZaxisAttr("categoryarray", new[]{val});
+        public static Box<IZaxisProperty> categoryarray(System.DateTime val) => Interop.mkZaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IZaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IZaxisProperty> categoryarray(float val) => Interop.mkZaxisAttr("categoryarray", new[]{val});
+        public static Box<IZaxisProperty> categoryarray(float val) => Interop.mkZaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IZaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IZaxisProperty> categoryarray(int val) => Interop.mkZaxisAttr("categoryarray", new[]{val});
+        public static Box<IZaxisProperty> categoryarray(int val) => Interop.mkZaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IZaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IZaxisProperty> categoryarray(string val) => Interop.mkZaxisAttr("categoryarray", new[]{val});
+        public static Box<IZaxisProperty> categoryarray(string val) => Interop.mkZaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IZaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -89,23 +89,23 @@ namespace Plotly
         public static Box<IZaxisProperty> categoryarray(IEnumerable<float?> values) => Interop.mkZaxisAttr("categoryarray", values.ToArray());
         public static Box<IZaxisProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkZaxisAttr("title", Bindings.flattenProperties(properties));
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IZaxisProperty> range(bool val) => Interop.mkZaxisAttr("range", new[]{val});
+        public static Box<IZaxisProperty> range(bool val) => Interop.mkZaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IZaxisProperty> range(IEnumerable<bool> values) => Interop.mkZaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IZaxisProperty> range(System.DateTime val) => Interop.mkZaxisAttr("range", new[]{val});
+        public static Box<IZaxisProperty> range(System.DateTime val) => Interop.mkZaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IZaxisProperty> range(IEnumerable<System.DateTime> values) => Interop.mkZaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IZaxisProperty> range(float val) => Interop.mkZaxisAttr("range", new[]{val});
+        public static Box<IZaxisProperty> range(float val) => Interop.mkZaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IZaxisProperty> range(IEnumerable<float> values) => Interop.mkZaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IZaxisProperty> range(int val) => Interop.mkZaxisAttr("range", new[]{val});
+        public static Box<IZaxisProperty> range(int val) => Interop.mkZaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IZaxisProperty> range(IEnumerable<int> values) => Interop.mkZaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IZaxisProperty> range(string val) => Interop.mkZaxisAttr("range", new[]{val});
+        public static Box<IZaxisProperty> range(string val) => Interop.mkZaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IZaxisProperty> range(IEnumerable<string> values) => Interop.mkZaxisAttr("range", values.ToArray());
         /// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
@@ -151,23 +151,23 @@ namespace Plotly
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IZaxisProperty> dtick(params string[] values) => Interop.mkZaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IZaxisProperty> tickvals(bool val) => Interop.mkZaxisAttr("tickvals", new[]{val});
+        public static Box<IZaxisProperty> tickvals(bool val) => Interop.mkZaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IZaxisProperty> tickvals(System.DateTime val) => Interop.mkZaxisAttr("tickvals", new[]{val});
+        public static Box<IZaxisProperty> tickvals(System.DateTime val) => Interop.mkZaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IZaxisProperty> tickvals(float val) => Interop.mkZaxisAttr("tickvals", new[]{val});
+        public static Box<IZaxisProperty> tickvals(float val) => Interop.mkZaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IZaxisProperty> tickvals(int val) => Interop.mkZaxisAttr("tickvals", new[]{val});
+        public static Box<IZaxisProperty> tickvals(int val) => Interop.mkZaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IZaxisProperty> tickvals(string val) => Interop.mkZaxisAttr("tickvals", new[]{val});
+        public static Box<IZaxisProperty> tickvals(string val) => Interop.mkZaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -205,23 +205,23 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IZaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkZaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IZaxisProperty> ticktext(bool val) => Interop.mkZaxisAttr("ticktext", new[]{val});
+        public static Box<IZaxisProperty> ticktext(bool val) => Interop.mkZaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IZaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkZaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IZaxisProperty> ticktext(System.DateTime val) => Interop.mkZaxisAttr("ticktext", new[]{val});
+        public static Box<IZaxisProperty> ticktext(System.DateTime val) => Interop.mkZaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IZaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkZaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IZaxisProperty> ticktext(float val) => Interop.mkZaxisAttr("ticktext", new[]{val});
+        public static Box<IZaxisProperty> ticktext(float val) => Interop.mkZaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IZaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkZaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IZaxisProperty> ticktext(int val) => Interop.mkZaxisAttr("ticktext", new[]{val});
+        public static Box<IZaxisProperty> ticktext(int val) => Interop.mkZaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IZaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkZaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IZaxisProperty> ticktext(string val) => Interop.mkZaxisAttr("ticktext", new[]{val});
+        public static Box<IZaxisProperty> ticktext(string val) => Interop.mkZaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IZaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkZaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -280,12 +280,16 @@ namespace Plotly
         public static Box<IZaxisProperty> tickprefix(string val) => Interop.mkZaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IZaxisProperty> ticksuffix(string val) => Interop.mkZaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IZaxisProperty> minexponent(int val) => Interop.mkZaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IZaxisProperty> minexponent(float val) => Interop.mkZaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IZaxisProperty> separatethousands(bool val) => Interop.mkZaxisAttr("separatethousands", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IZaxisProperty> tickformat(string val) => Interop.mkZaxisAttr("tickformat", val);
         public static Box<IZaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkZaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IZaxisProperty> hoverformat(string val) => Interop.mkZaxisAttr("hoverformat", val);
         /// Determines whether or not a line bounding this axis is drawn.
         public static Box<IZaxisProperty> showline(bool val) => Interop.mkZaxisAttr("showline", val);
@@ -311,11 +315,11 @@ namespace Plotly
         public static Box<IZaxisProperty> zerolinewidth(int val) => Interop.mkZaxisAttr("zerolinewidth", val);
         /// Sets the width (in px) of the zero line.
         public static Box<IZaxisProperty> zerolinewidth(float val) => Interop.mkZaxisAttr("zerolinewidth", val);
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IZaxisProperty> categoryarraysrc(string val) => Interop.mkZaxisAttr("categoryarraysrc", val);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IZaxisProperty> tickvalssrc(string val) => Interop.mkZaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IZaxisProperty> ticktextsrc(string val) => Interop.mkZaxisAttr("ticktextsrc", val);
     }
 
@@ -350,6 +354,13 @@ namespace Plotly
             public static Box<IZaxisProperty> date() => Interop.mkZaxisAttr("type", "date");
             public static Box<IZaxisProperty> linear() => Interop.mkZaxisAttr("type", "linear");
             public static Box<IZaxisProperty> log() => Interop.mkZaxisAttr("type", "log");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IZaxisProperty> convertTypes() => Interop.mkZaxisAttr("autotypenumbers", "convert types");
+            public static Box<IZaxisProperty> strict() => Interop.mkZaxisAttr("autotypenumbers", "strict");
         }
 
         /// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.

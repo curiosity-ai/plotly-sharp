@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IContourcarpetProperty> showlegend(bool val) => Interop.mkContourcarpetAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IContourcarpetProperty> legendgroup(string val) => Interop.mkContourcarpetAttr("legendgroup", val);
+        public static Box<IContourcarpetProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkContourcarpetAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IContourcarpetProperty> legendrank(int val) => Interop.mkContourcarpetAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IContourcarpetProperty> legendrank(float val) => Interop.mkContourcarpetAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IContourcarpetProperty> opacity(int val) => Interop.mkContourcarpetAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IContourcarpetProperty> uid(string val) => Interop.mkContourcarpetAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(bool val) => Interop.mkContourcarpetAttr("ids", new[]{val});
+        public static Box<IContourcarpetProperty> ids(bool val) => Interop.mkContourcarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(params bool[] values) => Interop.mkContourcarpetAttr("ids", values);
+        public static Box<IContourcarpetProperty> ids(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(System.DateTime val) => Interop.mkContourcarpetAttr("ids", new[]{val});
+        public static Box<IContourcarpetProperty> ids(System.DateTime val) => Interop.mkContourcarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(params System.DateTime[] values) => Interop.mkContourcarpetAttr("ids", values);
+        public static Box<IContourcarpetProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(float val) => Interop.mkContourcarpetAttr("ids", new[]{val});
+        public static Box<IContourcarpetProperty> ids(float val) => Interop.mkContourcarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(params float[] values) => Interop.mkContourcarpetAttr("ids", values);
+        public static Box<IContourcarpetProperty> ids(IEnumerable<float> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(int val) => Interop.mkContourcarpetAttr("ids", new[]{val});
+        public static Box<IContourcarpetProperty> ids(int val) => Interop.mkContourcarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(params int[] values) => Interop.mkContourcarpetAttr("ids", values);
+        public static Box<IContourcarpetProperty> ids(IEnumerable<int> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(string val) => Interop.mkContourcarpetAttr("ids", new[]{val});
+        public static Box<IContourcarpetProperty> ids(string val) => Interop.mkContourcarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourcarpetProperty> ids(params string[] values) => Interop.mkContourcarpetAttr("ids", values);
+        public static Box<IContourcarpetProperty> ids(IEnumerable<string> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IContourcarpetProperty> ids(IEnumerable<bool[]> values) => Interop.mkContourcarpetAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IContourcarpetProperty> ids(IEnumerable<float?> values) => Interop.mkContourcarpetAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(bool val) => Interop.mkContourcarpetAttr("customdata", new[]{val});
+        public static Box<IContourcarpetProperty> customdata(bool val) => Interop.mkContourcarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(params bool[] values) => Interop.mkContourcarpetAttr("customdata", values);
+        public static Box<IContourcarpetProperty> customdata(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(System.DateTime val) => Interop.mkContourcarpetAttr("customdata", new[]{val});
+        public static Box<IContourcarpetProperty> customdata(System.DateTime val) => Interop.mkContourcarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(params System.DateTime[] values) => Interop.mkContourcarpetAttr("customdata", values);
+        public static Box<IContourcarpetProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(float val) => Interop.mkContourcarpetAttr("customdata", new[]{val});
+        public static Box<IContourcarpetProperty> customdata(float val) => Interop.mkContourcarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(params float[] values) => Interop.mkContourcarpetAttr("customdata", values);
+        public static Box<IContourcarpetProperty> customdata(IEnumerable<float> values) => Interop.mkContourcarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(int val) => Interop.mkContourcarpetAttr("customdata", new[]{val});
+        public static Box<IContourcarpetProperty> customdata(int val) => Interop.mkContourcarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(params int[] values) => Interop.mkContourcarpetAttr("customdata", values);
+        public static Box<IContourcarpetProperty> customdata(IEnumerable<int> values) => Interop.mkContourcarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(string val) => Interop.mkContourcarpetAttr("customdata", new[]{val});
+        public static Box<IContourcarpetProperty> customdata(string val) => Interop.mkContourcarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourcarpetProperty> customdata(params string[] values) => Interop.mkContourcarpetAttr("customdata", values);
+        public static Box<IContourcarpetProperty> customdata(IEnumerable<string> values) => Interop.mkContourcarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IContourcarpetProperty> customdata(IEnumerable<bool[]> values) => Interop.mkContourcarpetAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -157,25 +162,25 @@ namespace PlotlyH5
         /// The `carpet` of the carpet axes on which this contour trace lies
         public static Box<IContourcarpetProperty> carpet(string val) => Interop.mkContourcarpetAttr("carpet", val);
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(bool val) => Interop.mkContourcarpetAttr("z", new[]{val});
+        public static Box<IContourcarpetProperty> z(bool val) => Interop.mkContourcarpetAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(params bool[] values) => Interop.mkContourcarpetAttr("z", values);
+        public static Box<IContourcarpetProperty> z(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(System.DateTime val) => Interop.mkContourcarpetAttr("z", new[]{val});
+        public static Box<IContourcarpetProperty> z(System.DateTime val) => Interop.mkContourcarpetAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(params System.DateTime[] values) => Interop.mkContourcarpetAttr("z", values);
+        public static Box<IContourcarpetProperty> z(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(float val) => Interop.mkContourcarpetAttr("z", new[]{val});
+        public static Box<IContourcarpetProperty> z(float val) => Interop.mkContourcarpetAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(params float[] values) => Interop.mkContourcarpetAttr("z", values);
+        public static Box<IContourcarpetProperty> z(IEnumerable<float> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(int val) => Interop.mkContourcarpetAttr("z", new[]{val});
+        public static Box<IContourcarpetProperty> z(int val) => Interop.mkContourcarpetAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(params int[] values) => Interop.mkContourcarpetAttr("z", values);
+        public static Box<IContourcarpetProperty> z(IEnumerable<int> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(string val) => Interop.mkContourcarpetAttr("z", new[]{val});
+        public static Box<IContourcarpetProperty> z(string val) => Interop.mkContourcarpetAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourcarpetProperty> z(params string[] values) => Interop.mkContourcarpetAttr("z", values);
+        public static Box<IContourcarpetProperty> z(IEnumerable<string> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the z data.
         public static Box<IContourcarpetProperty> z(IEnumerable<bool[]> values) => Interop.mkContourcarpetAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the z data.
@@ -211,23 +216,23 @@ namespace PlotlyH5
         /// Sets the z data.
         public static Box<IContourcarpetProperty> z(IEnumerable<float?> values) => Interop.mkContourcarpetAttr("z", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourcarpetProperty> a(bool val) => Interop.mkContourcarpetAttr("a", new[]{val});
+        public static Box<IContourcarpetProperty> a(bool val) => Interop.mkContourcarpetAttr("a", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourcarpetProperty> a(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("a", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourcarpetProperty> a(System.DateTime val) => Interop.mkContourcarpetAttr("a", new[]{val});
+        public static Box<IContourcarpetProperty> a(System.DateTime val) => Interop.mkContourcarpetAttr("a", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourcarpetProperty> a(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("a", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourcarpetProperty> a(float val) => Interop.mkContourcarpetAttr("a", new[]{val});
+        public static Box<IContourcarpetProperty> a(float val) => Interop.mkContourcarpetAttr("a", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourcarpetProperty> a(IEnumerable<float> values) => Interop.mkContourcarpetAttr("a", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourcarpetProperty> a(int val) => Interop.mkContourcarpetAttr("a", new[]{val});
+        public static Box<IContourcarpetProperty> a(int val) => Interop.mkContourcarpetAttr("a", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourcarpetProperty> a(IEnumerable<int> values) => Interop.mkContourcarpetAttr("a", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourcarpetProperty> a(string val) => Interop.mkContourcarpetAttr("a", new[]{val});
+        public static Box<IContourcarpetProperty> a(string val) => Interop.mkContourcarpetAttr("a", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourcarpetProperty> a(IEnumerable<string> values) => Interop.mkContourcarpetAttr("a", values.ToArray());
         /// Sets the x coordinates.
@@ -289,23 +294,23 @@ namespace PlotlyH5
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IContourcarpetProperty> da(float val) => Interop.mkContourcarpetAttr("da", val);
         /// Sets the y coordinates.
-        public static Box<IContourcarpetProperty> b(bool val) => Interop.mkContourcarpetAttr("b", new[]{val});
+        public static Box<IContourcarpetProperty> b(bool val) => Interop.mkContourcarpetAttr("b", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourcarpetProperty> b(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("b", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourcarpetProperty> b(System.DateTime val) => Interop.mkContourcarpetAttr("b", new[]{val});
+        public static Box<IContourcarpetProperty> b(System.DateTime val) => Interop.mkContourcarpetAttr("b", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourcarpetProperty> b(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("b", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourcarpetProperty> b(float val) => Interop.mkContourcarpetAttr("b", new[]{val});
+        public static Box<IContourcarpetProperty> b(float val) => Interop.mkContourcarpetAttr("b", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourcarpetProperty> b(IEnumerable<float> values) => Interop.mkContourcarpetAttr("b", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourcarpetProperty> b(int val) => Interop.mkContourcarpetAttr("b", new[]{val});
+        public static Box<IContourcarpetProperty> b(int val) => Interop.mkContourcarpetAttr("b", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourcarpetProperty> b(IEnumerable<int> values) => Interop.mkContourcarpetAttr("b", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourcarpetProperty> b(string val) => Interop.mkContourcarpetAttr("b", new[]{val});
+        public static Box<IContourcarpetProperty> b(string val) => Interop.mkContourcarpetAttr("b", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourcarpetProperty> b(IEnumerable<string> values) => Interop.mkContourcarpetAttr("b", values.ToArray());
         /// Sets the y coordinates.
@@ -367,25 +372,25 @@ namespace PlotlyH5
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IContourcarpetProperty> db(float val) => Interop.mkContourcarpetAttr("db", val);
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(bool val) => Interop.mkContourcarpetAttr("text", new[]{val});
+        public static Box<IContourcarpetProperty> text(bool val) => Interop.mkContourcarpetAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(params bool[] values) => Interop.mkContourcarpetAttr("text", values);
+        public static Box<IContourcarpetProperty> text(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(System.DateTime val) => Interop.mkContourcarpetAttr("text", new[]{val});
+        public static Box<IContourcarpetProperty> text(System.DateTime val) => Interop.mkContourcarpetAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(params System.DateTime[] values) => Interop.mkContourcarpetAttr("text", values);
+        public static Box<IContourcarpetProperty> text(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(float val) => Interop.mkContourcarpetAttr("text", new[]{val});
+        public static Box<IContourcarpetProperty> text(float val) => Interop.mkContourcarpetAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(params float[] values) => Interop.mkContourcarpetAttr("text", values);
+        public static Box<IContourcarpetProperty> text(IEnumerable<float> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(int val) => Interop.mkContourcarpetAttr("text", new[]{val});
+        public static Box<IContourcarpetProperty> text(int val) => Interop.mkContourcarpetAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(params int[] values) => Interop.mkContourcarpetAttr("text", values);
+        public static Box<IContourcarpetProperty> text(IEnumerable<int> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(string val) => Interop.mkContourcarpetAttr("text", new[]{val});
+        public static Box<IContourcarpetProperty> text(string val) => Interop.mkContourcarpetAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourcarpetProperty> text(params string[] values) => Interop.mkContourcarpetAttr("text", values);
+        public static Box<IContourcarpetProperty> text(IEnumerable<string> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
         public static Box<IContourcarpetProperty> text(IEnumerable<bool[]> values) => Interop.mkContourcarpetAttr("text", Bindings.flatten2DArrayIf1D(values));
         /// Sets the text elements associated with each z value.
@@ -421,25 +426,25 @@ namespace PlotlyH5
         /// Sets the text elements associated with each z value.
         public static Box<IContourcarpetProperty> text(IEnumerable<float?> values) => Interop.mkContourcarpetAttr("text", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(bool val) => Interop.mkContourcarpetAttr("hovertext", new[]{val});
+        public static Box<IContourcarpetProperty> hovertext(bool val) => Interop.mkContourcarpetAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(params bool[] values) => Interop.mkContourcarpetAttr("hovertext", values);
+        public static Box<IContourcarpetProperty> hovertext(IEnumerable<bool> values) => Interop.mkContourcarpetAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(System.DateTime val) => Interop.mkContourcarpetAttr("hovertext", new[]{val});
+        public static Box<IContourcarpetProperty> hovertext(System.DateTime val) => Interop.mkContourcarpetAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(params System.DateTime[] values) => Interop.mkContourcarpetAttr("hovertext", values);
+        public static Box<IContourcarpetProperty> hovertext(IEnumerable<System.DateTime> values) => Interop.mkContourcarpetAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(float val) => Interop.mkContourcarpetAttr("hovertext", new[]{val});
+        public static Box<IContourcarpetProperty> hovertext(float val) => Interop.mkContourcarpetAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(params float[] values) => Interop.mkContourcarpetAttr("hovertext", values);
+        public static Box<IContourcarpetProperty> hovertext(IEnumerable<float> values) => Interop.mkContourcarpetAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(int val) => Interop.mkContourcarpetAttr("hovertext", new[]{val});
+        public static Box<IContourcarpetProperty> hovertext(int val) => Interop.mkContourcarpetAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(params int[] values) => Interop.mkContourcarpetAttr("hovertext", values);
+        public static Box<IContourcarpetProperty> hovertext(IEnumerable<int> values) => Interop.mkContourcarpetAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(string val) => Interop.mkContourcarpetAttr("hovertext", new[]{val});
+        public static Box<IContourcarpetProperty> hovertext(string val) => Interop.mkContourcarpetAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourcarpetProperty> hovertext(params string[] values) => Interop.mkContourcarpetAttr("hovertext", values);
+        public static Box<IContourcarpetProperty> hovertext(IEnumerable<string> values) => Interop.mkContourcarpetAttr("hovertext", values.ToArray());
         /// Same as `text`.
         public static Box<IContourcarpetProperty> hovertext(IEnumerable<bool[]> values) => Interop.mkContourcarpetAttr("hovertext", Bindings.flatten2DArrayIf1D(values));
         /// Same as `text`.
@@ -521,21 +526,21 @@ namespace PlotlyH5
         public static Box<IContourcarpetProperty> yaxis(int anchorId) => Interop.mkContourcarpetAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IContourcarpetProperty> yaxis(string val) => Interop.mkContourcarpetAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IContourcarpetProperty> idssrc(string val) => Interop.mkContourcarpetAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IContourcarpetProperty> customdatasrc(string val) => Interop.mkContourcarpetAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IContourcarpetProperty> metasrc(string val) => Interop.mkContourcarpetAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IContourcarpetProperty> zsrc(string val) => Interop.mkContourcarpetAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  a .
+        /// Sets the source reference on Chart Studio Cloud for  a .
         public static Box<IContourcarpetProperty> asrc(string val) => Interop.mkContourcarpetAttr("asrc", val);
-        /// Sets the source reference on plot.ly for  b .
+        /// Sets the source reference on Chart Studio Cloud for  b .
         public static Box<IContourcarpetProperty> bsrc(string val) => Interop.mkContourcarpetAttr("bsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IContourcarpetProperty> textsrc(string val) => Interop.mkContourcarpetAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IContourcarpetProperty> hovertextsrc(string val) => Interop.mkContourcarpetAttr("hovertextsrc", val);
     }
 

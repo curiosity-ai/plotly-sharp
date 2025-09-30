@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Scatter3d
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IScatter3dProperty> showlegend(bool val) => Interop.mkScatter3dAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScatter3dProperty> legendgroup(string val) => Interop.mkScatter3dAttr("legendgroup", val);
+        public static Box<IScatter3dProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScatter3dAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatter3dProperty> legendrank(int val) => Interop.mkScatter3dAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatter3dProperty> legendrank(float val) => Interop.mkScatter3dAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IScatter3dProperty> opacity(int val) => Interop.mkScatter3dAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScatter3dProperty> uid(string val) => Interop.mkScatter3dAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(bool val) => Interop.mkScatter3dAttr("ids", new[]{val});
+        public static Box<IScatter3dProperty> ids(bool val) => Interop.mkScatter3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(params bool[] values) => Interop.mkScatter3dAttr("ids", values);
+        public static Box<IScatter3dProperty> ids(IEnumerable<bool> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(System.DateTime val) => Interop.mkScatter3dAttr("ids", new[]{val});
+        public static Box<IScatter3dProperty> ids(System.DateTime val) => Interop.mkScatter3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(params System.DateTime[] values) => Interop.mkScatter3dAttr("ids", values);
+        public static Box<IScatter3dProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(float val) => Interop.mkScatter3dAttr("ids", new[]{val});
+        public static Box<IScatter3dProperty> ids(float val) => Interop.mkScatter3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(params float[] values) => Interop.mkScatter3dAttr("ids", values);
+        public static Box<IScatter3dProperty> ids(IEnumerable<float> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(int val) => Interop.mkScatter3dAttr("ids", new[]{val});
+        public static Box<IScatter3dProperty> ids(int val) => Interop.mkScatter3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(params int[] values) => Interop.mkScatter3dAttr("ids", values);
+        public static Box<IScatter3dProperty> ids(IEnumerable<int> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(string val) => Interop.mkScatter3dAttr("ids", new[]{val});
+        public static Box<IScatter3dProperty> ids(string val) => Interop.mkScatter3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatter3dProperty> ids(params string[] values) => Interop.mkScatter3dAttr("ids", values);
+        public static Box<IScatter3dProperty> ids(IEnumerable<string> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatter3dProperty> ids(IEnumerable<bool[]> values) => Interop.mkScatter3dAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatter3dProperty> ids(IEnumerable<float?> values) => Interop.mkScatter3dAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(bool val) => Interop.mkScatter3dAttr("customdata", new[]{val});
+        public static Box<IScatter3dProperty> customdata(bool val) => Interop.mkScatter3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(params bool[] values) => Interop.mkScatter3dAttr("customdata", values);
+        public static Box<IScatter3dProperty> customdata(IEnumerable<bool> values) => Interop.mkScatter3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(System.DateTime val) => Interop.mkScatter3dAttr("customdata", new[]{val});
+        public static Box<IScatter3dProperty> customdata(System.DateTime val) => Interop.mkScatter3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(params System.DateTime[] values) => Interop.mkScatter3dAttr("customdata", values);
+        public static Box<IScatter3dProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScatter3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(float val) => Interop.mkScatter3dAttr("customdata", new[]{val});
+        public static Box<IScatter3dProperty> customdata(float val) => Interop.mkScatter3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(params float[] values) => Interop.mkScatter3dAttr("customdata", values);
+        public static Box<IScatter3dProperty> customdata(IEnumerable<float> values) => Interop.mkScatter3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(int val) => Interop.mkScatter3dAttr("customdata", new[]{val});
+        public static Box<IScatter3dProperty> customdata(int val) => Interop.mkScatter3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(params int[] values) => Interop.mkScatter3dAttr("customdata", values);
+        public static Box<IScatter3dProperty> customdata(IEnumerable<int> values) => Interop.mkScatter3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(string val) => Interop.mkScatter3dAttr("customdata", new[]{val});
+        public static Box<IScatter3dProperty> customdata(string val) => Interop.mkScatter3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatter3dProperty> customdata(params string[] values) => Interop.mkScatter3dAttr("customdata", values);
+        public static Box<IScatter3dProperty> customdata(IEnumerable<string> values) => Interop.mkScatter3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScatter3dProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScatter3dAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -157,23 +162,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScatter3dProperty> uirevision(params string[] values) => Interop.mkScatter3dAttr("uirevision", values);
         /// Sets the x coordinates.
-        public static Box<IScatter3dProperty> x(bool val) => Interop.mkScatter3dAttr("x", new[]{val});
+        public static Box<IScatter3dProperty> x(bool val) => Interop.mkScatter3dAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<bool> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatter3dProperty> x(System.DateTime val) => Interop.mkScatter3dAttr("x", new[]{val});
+        public static Box<IScatter3dProperty> x(System.DateTime val) => Interop.mkScatter3dAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<System.DateTime> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatter3dProperty> x(float val) => Interop.mkScatter3dAttr("x", new[]{val});
+        public static Box<IScatter3dProperty> x(float val) => Interop.mkScatter3dAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<float> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatter3dProperty> x(int val) => Interop.mkScatter3dAttr("x", new[]{val});
+        public static Box<IScatter3dProperty> x(int val) => Interop.mkScatter3dAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<int> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IScatter3dProperty> x(string val) => Interop.mkScatter3dAttr("x", new[]{val});
+        public static Box<IScatter3dProperty> x(string val) => Interop.mkScatter3dAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<string> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -211,23 +216,23 @@ namespace Plotly
         /// Sets the x coordinates.
         public static Box<IScatter3dProperty> x(IEnumerable<float?> values) => Interop.mkScatter3dAttr("x", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatter3dProperty> y(bool val) => Interop.mkScatter3dAttr("y", new[]{val});
+        public static Box<IScatter3dProperty> y(bool val) => Interop.mkScatter3dAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<bool> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatter3dProperty> y(System.DateTime val) => Interop.mkScatter3dAttr("y", new[]{val});
+        public static Box<IScatter3dProperty> y(System.DateTime val) => Interop.mkScatter3dAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<System.DateTime> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatter3dProperty> y(float val) => Interop.mkScatter3dAttr("y", new[]{val});
+        public static Box<IScatter3dProperty> y(float val) => Interop.mkScatter3dAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<float> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatter3dProperty> y(int val) => Interop.mkScatter3dAttr("y", new[]{val});
+        public static Box<IScatter3dProperty> y(int val) => Interop.mkScatter3dAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<int> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IScatter3dProperty> y(string val) => Interop.mkScatter3dAttr("y", new[]{val});
+        public static Box<IScatter3dProperty> y(string val) => Interop.mkScatter3dAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<string> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -265,23 +270,23 @@ namespace Plotly
         /// Sets the y coordinates.
         public static Box<IScatter3dProperty> y(IEnumerable<float?> values) => Interop.mkScatter3dAttr("y", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<IScatter3dProperty> z(bool val) => Interop.mkScatter3dAttr("z", new[]{val});
+        public static Box<IScatter3dProperty> z(bool val) => Interop.mkScatter3dAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<IScatter3dProperty> z(IEnumerable<bool> values) => Interop.mkScatter3dAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<IScatter3dProperty> z(System.DateTime val) => Interop.mkScatter3dAttr("z", new[]{val});
+        public static Box<IScatter3dProperty> z(System.DateTime val) => Interop.mkScatter3dAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<IScatter3dProperty> z(IEnumerable<System.DateTime> values) => Interop.mkScatter3dAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<IScatter3dProperty> z(float val) => Interop.mkScatter3dAttr("z", new[]{val});
+        public static Box<IScatter3dProperty> z(float val) => Interop.mkScatter3dAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<IScatter3dProperty> z(IEnumerable<float> values) => Interop.mkScatter3dAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<IScatter3dProperty> z(int val) => Interop.mkScatter3dAttr("z", new[]{val});
+        public static Box<IScatter3dProperty> z(int val) => Interop.mkScatter3dAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<IScatter3dProperty> z(IEnumerable<int> values) => Interop.mkScatter3dAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<IScatter3dProperty> z(string val) => Interop.mkScatter3dAttr("z", new[]{val});
+        public static Box<IScatter3dProperty> z(string val) => Interop.mkScatter3dAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<IScatter3dProperty> z(IEnumerable<string> values) => Interop.mkScatter3dAttr("z", values.ToArray());
         /// Sets the z coordinates.
@@ -322,18 +327,24 @@ namespace Plotly
         public static Box<IScatter3dProperty> text(string val) => Interop.mkScatter3dAttr("text", val);
         /// Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScatter3dProperty> text(IEnumerable<string> values) => Interop.mkScatter3dAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
         public static Box<IScatter3dProperty> texttemplate(string val) => Interop.mkScatter3dAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.
         public static Box<IScatter3dProperty> texttemplate(IEnumerable<string> values) => Interop.mkScatter3dAttr("texttemplate", values.ToArray());
         /// Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScatter3dProperty> hovertext(string val) => Interop.mkScatter3dAttr("hovertext", val);
         /// Sets text elements associated with each (x,y,z) triplet. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y,z) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScatter3dProperty> hovertext(IEnumerable<string> values) => Interop.mkScatter3dAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatter3dProperty> hovertemplate(string val) => Interop.mkScatter3dAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatter3dProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScatter3dAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IScatter3dProperty> xhoverformat(string val) => Interop.mkScatter3dAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IScatter3dProperty> yhoverformat(string val) => Interop.mkScatter3dAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<IScatter3dProperty> zhoverformat(string val) => Interop.mkScatter3dAttr("zhoverformat", val);
         /// Determines the drawing mode for this scatter trace. If the provided `mode` includes *text* then the `text` elements appear at the coordinates. Otherwise, the `text` elements appear on hover. If there are less than 20 points and the trace is not stacked then the default is *lines+markers*. Otherwise, *lines*.
         public static Box<IScatter3dProperty> mode(params Box<IScatter3dProperty>[] properties) => Interop.mkScatter3dAttr("mode", Bindings.joinEnumProperties(properties));
         /// Sets the surface fill color.
@@ -355,29 +366,29 @@ namespace Plotly
         public static Box<IScatter3dProperty> scene(int anchorId) => Interop.mkScatter3dAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IScatter3dProperty> scene(string val) => Interop.mkScatter3dAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScatter3dProperty> idssrc(string val) => Interop.mkScatter3dAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScatter3dProperty> customdatasrc(string val) => Interop.mkScatter3dAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScatter3dProperty> metasrc(string val) => Interop.mkScatter3dAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IScatter3dProperty> xsrc(string val) => Interop.mkScatter3dAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IScatter3dProperty> ysrc(string val) => Interop.mkScatter3dAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IScatter3dProperty> zsrc(string val) => Interop.mkScatter3dAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScatter3dProperty> textsrc(string val) => Interop.mkScatter3dAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScatter3dProperty> texttemplatesrc(string val) => Interop.mkScatter3dAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScatter3dProperty> hovertextsrc(string val) => Interop.mkScatter3dAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScatter3dProperty> hovertemplatesrc(string val) => Interop.mkScatter3dAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IScatter3dProperty> textpositionsrc(string val) => Interop.mkScatter3dAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScatter3dProperty> hoverinfosrc(string val) => Interop.mkScatter3dAttr("hoverinfosrc", val);
     }
 

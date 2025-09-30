@@ -8,35 +8,40 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Parcoords
     {
+        public static Box<IParcoordsProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkParcoordsAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IParcoordsProperty> legendrank(int val) => Interop.mkParcoordsAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IParcoordsProperty> legendrank(float val) => Interop.mkParcoordsAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IParcoordsProperty> name(string val) => Interop.mkParcoordsAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IParcoordsProperty> uid(string val) => Interop.mkParcoordsAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(bool val) => Interop.mkParcoordsAttr("ids", new[]{val});
+        public static Box<IParcoordsProperty> ids(bool val) => Interop.mkParcoordsAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(params bool[] values) => Interop.mkParcoordsAttr("ids", values);
+        public static Box<IParcoordsProperty> ids(IEnumerable<bool> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(System.DateTime val) => Interop.mkParcoordsAttr("ids", new[]{val});
+        public static Box<IParcoordsProperty> ids(System.DateTime val) => Interop.mkParcoordsAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(params System.DateTime[] values) => Interop.mkParcoordsAttr("ids", values);
+        public static Box<IParcoordsProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(float val) => Interop.mkParcoordsAttr("ids", new[]{val});
+        public static Box<IParcoordsProperty> ids(float val) => Interop.mkParcoordsAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(params float[] values) => Interop.mkParcoordsAttr("ids", values);
+        public static Box<IParcoordsProperty> ids(IEnumerable<float> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(int val) => Interop.mkParcoordsAttr("ids", new[]{val});
+        public static Box<IParcoordsProperty> ids(int val) => Interop.mkParcoordsAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(params int[] values) => Interop.mkParcoordsAttr("ids", values);
+        public static Box<IParcoordsProperty> ids(IEnumerable<int> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(string val) => Interop.mkParcoordsAttr("ids", new[]{val});
+        public static Box<IParcoordsProperty> ids(string val) => Interop.mkParcoordsAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IParcoordsProperty> ids(params string[] values) => Interop.mkParcoordsAttr("ids", values);
+        public static Box<IParcoordsProperty> ids(IEnumerable<string> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IParcoordsProperty> ids(IEnumerable<bool[]> values) => Interop.mkParcoordsAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -72,25 +77,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IParcoordsProperty> ids(IEnumerable<float?> values) => Interop.mkParcoordsAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(bool val) => Interop.mkParcoordsAttr("customdata", new[]{val});
+        public static Box<IParcoordsProperty> customdata(bool val) => Interop.mkParcoordsAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(params bool[] values) => Interop.mkParcoordsAttr("customdata", values);
+        public static Box<IParcoordsProperty> customdata(IEnumerable<bool> values) => Interop.mkParcoordsAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(System.DateTime val) => Interop.mkParcoordsAttr("customdata", new[]{val});
+        public static Box<IParcoordsProperty> customdata(System.DateTime val) => Interop.mkParcoordsAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(params System.DateTime[] values) => Interop.mkParcoordsAttr("customdata", values);
+        public static Box<IParcoordsProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkParcoordsAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(float val) => Interop.mkParcoordsAttr("customdata", new[]{val});
+        public static Box<IParcoordsProperty> customdata(float val) => Interop.mkParcoordsAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(params float[] values) => Interop.mkParcoordsAttr("customdata", values);
+        public static Box<IParcoordsProperty> customdata(IEnumerable<float> values) => Interop.mkParcoordsAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(int val) => Interop.mkParcoordsAttr("customdata", new[]{val});
+        public static Box<IParcoordsProperty> customdata(int val) => Interop.mkParcoordsAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(params int[] values) => Interop.mkParcoordsAttr("customdata", values);
+        public static Box<IParcoordsProperty> customdata(IEnumerable<int> values) => Interop.mkParcoordsAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(string val) => Interop.mkParcoordsAttr("customdata", new[]{val});
+        public static Box<IParcoordsProperty> customdata(string val) => Interop.mkParcoordsAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IParcoordsProperty> customdata(params string[] values) => Interop.mkParcoordsAttr("customdata", values);
+        public static Box<IParcoordsProperty> customdata(IEnumerable<string> values) => Interop.mkParcoordsAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IParcoordsProperty> customdata(IEnumerable<bool[]> values) => Interop.mkParcoordsAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -160,11 +165,11 @@ namespace Plotly
         public static Box<IParcoordsProperty> rangefont(params Box<IRangefontProperty>[] properties) => Interop.mkParcoordsAttr("rangefont", Bindings.flattenProperties(properties));
         public static Box<IParcoordsProperty> dimensions(params Box<IDimensionsProperty>[] properties) => Interop.mkParcoordsAttr("dimensions", Bindings.flattenPropertiesToArray(properties));
         public static Box<IParcoordsProperty> line(params Box<ILineProperty>[] properties) => Interop.mkParcoordsAttr("line", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IParcoordsProperty> idssrc(string val) => Interop.mkParcoordsAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IParcoordsProperty> customdatasrc(string val) => Interop.mkParcoordsAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IParcoordsProperty> metasrc(string val) => Interop.mkParcoordsAttr("metasrc", val);
     }
 

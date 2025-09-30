@@ -13,6 +13,7 @@ namespace Plotly
     {
         public static Box<IPlotProperty> mkPlotAttr(string key, object value) => Box<IPlotProperty>.For(key, value);
         public static Box<IAaxisProperty> mkAaxisAttr(string key, object value) => Box<IAaxisProperty>.For(key, value);
+        public static Box<IActiveshapeProperty> mkActiveshapeAttr(string key, object value) => Box<IActiveshapeProperty>.For(key, value);
         public static Box<IAggregateProperty> mkAggregateAttr(string key, object value) => Box<IAggregateProperty>.For(key, value);
         public static Box<IAggregationProperty> mkAggregationAttr(string key, object value) => Box<IAggregationProperty>.For(key, value);
         public static Box<IAggregationsProperty> mkAggregationsAttr(string key, object value) => Box<IAggregationsProperty>.For(key, value);
@@ -20,7 +21,6 @@ namespace Plotly
         public static Box<IAnimationProperty> mkAnimationAttr(string key, object value) => Box<IAnimationProperty>.For(key, value);
         public static Box<IAnnotationProperty> mkAnnotationAttr(string key, object value) => Box<IAnnotationProperty>.For(key, value);
         public static Box<IAnnotationsProperty> mkAnnotationsAttr(string key, object value) => Box<IAnnotationsProperty>.For(key, value);
-        public static Box<IAreaProperty> mkAreaAttr(string key, object value) => Box<IAreaProperty>.For(key, value);
         public static Box<IAspectratioProperty> mkAspectratioAttr(string key, object value) => Box<IAspectratioProperty>.For(key, value);
         public static Box<IAxisProperty> mkAxisAttr(string key, object value) => Box<IAxisProperty>.For(key, value);
         public static Box<IBarProperty> mkBarAttr(string key, object value) => Box<IBarProperty>.For(key, value);
@@ -85,6 +85,7 @@ namespace Plotly
         public static Box<IHistogram2dcontourProperty> mkHistogram2dcontourAttr(string key, object value) => Box<IHistogram2dcontourProperty>.For(key, value);
         public static Box<IHistogramProperty> mkHistogramAttr(string key, object value) => Box<IHistogramProperty>.For(key, value);
         public static Box<IHoverlabelProperty> mkHoverlabelAttr(string key, object value) => Box<IHoverlabelProperty>.For(key, value);
+        public static Box<IIcicleProperty> mkIcicleAttr(string key, object value) => Box<IIcicleProperty>.For(key, value);
         public static Box<IImageProperty> mkImageAttr(string key, object value) => Box<IImageProperty>.For(key, value);
         public static Box<IImagesProperty> mkImagesAttr(string key, object value) => Box<IImagesProperty>.For(key, value);
         public static Box<IIncreasingProperty> mkIncreasingAttr(string key, object value) => Box<IIncreasingProperty>.For(key, value);
@@ -98,6 +99,7 @@ namespace Plotly
         public static Box<ILayoutProperty> mkLayoutAttr(string key, object value) => Box<ILayoutProperty>.For(key, value);
         public static Box<ILeafProperty> mkLeafAttr(string key, object value) => Box<ILeafProperty>.For(key, value);
         public static Box<ILegendProperty> mkLegendAttr(string key, object value) => Box<ILegendProperty>.For(key, value);
+        public static Box<ILegendgrouptitleProperty> mkLegendgrouptitleAttr(string key, object value) => Box<ILegendgrouptitleProperty>.For(key, value);
         public static Box<ILightingProperty> mkLightingAttr(string key, object value) => Box<ILightingProperty>.For(key, value);
         public static Box<ILightpositionProperty> mkLightpositionAttr(string key, object value) => Box<ILightpositionProperty>.For(key, value);
         public static Box<ILineProperty> mkLineAttr(string key, object value) => Box<ILineProperty>.For(key, value);
@@ -109,6 +111,7 @@ namespace Plotly
         public static Box<IMeanlineProperty> mkMeanlineAttr(string key, object value) => Box<IMeanlineProperty>.For(key, value);
         public static Box<IMesh3dProperty> mkMesh3dAttr(string key, object value) => Box<IMesh3dProperty>.For(key, value);
         public static Box<IModebarProperty> mkModebarAttr(string key, object value) => Box<IModebarProperty>.For(key, value);
+        public static Box<INewshapeProperty> mkNewshapeAttr(string key, object value) => Box<INewshapeProperty>.For(key, value);
         public static Box<INodeProperty> mkNodeAttr(string key, object value) => Box<INodeProperty>.For(key, value);
         public static Box<INumberProperty> mkNumberAttr(string key, object value) => Box<INumberProperty>.For(key, value);
         public static Box<IOhlcProperty> mkOhlcAttr(string key, object value) => Box<IOhlcProperty>.For(key, value);
@@ -117,15 +120,19 @@ namespace Plotly
         public static Box<IParcatsProperty> mkParcatsAttr(string key, object value) => Box<IParcatsProperty>.For(key, value);
         public static Box<IParcoordsProperty> mkParcoordsAttr(string key, object value) => Box<IParcoordsProperty>.For(key, value);
         public static Box<IPathbarProperty> mkPathbarAttr(string key, object value) => Box<IPathbarProperty>.For(key, value);
+        public static Box<IPatternProperty> mkPatternAttr(string key, object value) => Box<IPatternProperty>.For(key, value);
         public static Box<IPieProperty> mkPieAttr(string key, object value) => Box<IPieProperty>.For(key, value);
         public static Box<IPointcloudProperty> mkPointcloudAttr(string key, object value) => Box<IPointcloudProperty>.For(key, value);
         public static Box<IPolarProperty> mkPolarAttr(string key, object value) => Box<IPolarProperty>.For(key, value);
         public static Box<IProjectProperty> mkProjectAttr(string key, object value) => Box<IProjectProperty>.For(key, value);
         public static Box<IProjectionProperty> mkProjectionAttr(string key, object value) => Box<IProjectionProperty>.For(key, value);
         public static Box<IRadialaxisProperty> mkRadialaxisAttr(string key, object value) => Box<IRadialaxisProperty>.For(key, value);
+        public static Box<IRangebreakProperty> mkRangebreakAttr(string key, object value) => Box<IRangebreakProperty>.For(key, value);
+        public static Box<IRangebreaksProperty> mkRangebreaksAttr(string key, object value) => Box<IRangebreaksProperty>.For(key, value);
         public static Box<IRangefontProperty> mkRangefontAttr(string key, object value) => Box<IRangefontProperty>.For(key, value);
         public static Box<IRangeselectorProperty> mkRangeselectorAttr(string key, object value) => Box<IRangeselectorProperty>.For(key, value);
         public static Box<IRangesliderProperty> mkRangesliderAttr(string key, object value) => Box<IRangesliderProperty>.For(key, value);
+        public static Box<IRootProperty> mkRootAttr(string key, object value) => Box<IRootProperty>.For(key, value);
         public static Box<IRotationProperty> mkRotationAttr(string key, object value) => Box<IRotationProperty>.For(key, value);
         public static Box<ISankeyProperty> mkSankeyAttr(string key, object value) => Box<ISankeyProperty>.For(key, value);
         public static Box<IScatter3dProperty> mkScatter3dAttr(string key, object value) => Box<IScatter3dProperty>.For(key, value);

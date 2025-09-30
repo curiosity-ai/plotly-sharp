@@ -13,36 +13,28 @@ namespace PlotlyH5
 
     public static partial class Angularaxis
     {
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IAngularaxisProperty> domain(int val) => Interop.mkAngularaxisAttr("domain", new[]{val});
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IAngularaxisProperty> domain(IEnumerable<int> values) => Interop.mkAngularaxisAttr("domain", values.ToArray());
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IAngularaxisProperty> domain(float val) => Interop.mkAngularaxisAttr("domain", new[]{val});
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IAngularaxisProperty> domain(IEnumerable<float> values) => Interop.mkAngularaxisAttr("domain", values.ToArray());
         /// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
         public static Box<IAngularaxisProperty> visible(bool val) => Interop.mkAngularaxisAttr("visible", val);
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(bool val) => Interop.mkAngularaxisAttr("categoryarray", new[]{val});
+        public static Box<IAngularaxisProperty> categoryarray(bool val) => Interop.mkAngularaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(params bool[] values) => Interop.mkAngularaxisAttr("categoryarray", values);
+        public static Box<IAngularaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkAngularaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(System.DateTime val) => Interop.mkAngularaxisAttr("categoryarray", new[]{val});
+        public static Box<IAngularaxisProperty> categoryarray(System.DateTime val) => Interop.mkAngularaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(params System.DateTime[] values) => Interop.mkAngularaxisAttr("categoryarray", values);
+        public static Box<IAngularaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkAngularaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(float val) => Interop.mkAngularaxisAttr("categoryarray", new[]{val});
+        public static Box<IAngularaxisProperty> categoryarray(float val) => Interop.mkAngularaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(params float[] values) => Interop.mkAngularaxisAttr("categoryarray", values);
+        public static Box<IAngularaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkAngularaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(int val) => Interop.mkAngularaxisAttr("categoryarray", new[]{val});
+        public static Box<IAngularaxisProperty> categoryarray(int val) => Interop.mkAngularaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(params int[] values) => Interop.mkAngularaxisAttr("categoryarray", values);
+        public static Box<IAngularaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkAngularaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(string val) => Interop.mkAngularaxisAttr("categoryarray", new[]{val});
+        public static Box<IAngularaxisProperty> categoryarray(string val) => Interop.mkAngularaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAngularaxisProperty> categoryarray(params string[] values) => Interop.mkAngularaxisAttr("categoryarray", values);
+        public static Box<IAngularaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkAngularaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IAngularaxisProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkAngularaxisAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -85,7 +77,7 @@ namespace PlotlyH5
         public static Box<IAngularaxisProperty> rotation(int val) => Interop.mkAngularaxisAttr("rotation", val);
         /// Sets that start position (in degrees) of the angular axis By default, polar subplots with `direction` set to *counterclockwise* get a `rotation` of *0* which corresponds to due East (like what mathematicians prefer). In turn, polar with `direction` set to *clockwise* get a rotation of *90* which corresponds to due North (like on a compass),
         public static Box<IAngularaxisProperty> rotation(float val) => Interop.mkAngularaxisAttr("rotation", val);
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IAngularaxisProperty> hoverformat(string val) => Interop.mkAngularaxisAttr("hoverformat", val);
         /// Controls persistence of user-driven changes in axis `rotation`. Defaults to `polar<N>.uirevision`.
         public static Box<IAngularaxisProperty> uirevision(bool val) => Interop.mkAngularaxisAttr("uirevision", val);
@@ -168,23 +160,23 @@ namespace PlotlyH5
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IAngularaxisProperty> dtick(params string[] values) => Interop.mkAngularaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAngularaxisProperty> tickvals(bool val) => Interop.mkAngularaxisAttr("tickvals", new[]{val});
+        public static Box<IAngularaxisProperty> tickvals(bool val) => Interop.mkAngularaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAngularaxisProperty> tickvals(System.DateTime val) => Interop.mkAngularaxisAttr("tickvals", new[]{val});
+        public static Box<IAngularaxisProperty> tickvals(System.DateTime val) => Interop.mkAngularaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAngularaxisProperty> tickvals(float val) => Interop.mkAngularaxisAttr("tickvals", new[]{val});
+        public static Box<IAngularaxisProperty> tickvals(float val) => Interop.mkAngularaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAngularaxisProperty> tickvals(int val) => Interop.mkAngularaxisAttr("tickvals", new[]{val});
+        public static Box<IAngularaxisProperty> tickvals(int val) => Interop.mkAngularaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAngularaxisProperty> tickvals(string val) => Interop.mkAngularaxisAttr("tickvals", new[]{val});
+        public static Box<IAngularaxisProperty> tickvals(string val) => Interop.mkAngularaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -222,23 +214,23 @@ namespace PlotlyH5
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAngularaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkAngularaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAngularaxisProperty> ticktext(bool val) => Interop.mkAngularaxisAttr("ticktext", new[]{val});
+        public static Box<IAngularaxisProperty> ticktext(bool val) => Interop.mkAngularaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAngularaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkAngularaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAngularaxisProperty> ticktext(System.DateTime val) => Interop.mkAngularaxisAttr("ticktext", new[]{val});
+        public static Box<IAngularaxisProperty> ticktext(System.DateTime val) => Interop.mkAngularaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAngularaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkAngularaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAngularaxisProperty> ticktext(float val) => Interop.mkAngularaxisAttr("ticktext", new[]{val});
+        public static Box<IAngularaxisProperty> ticktext(float val) => Interop.mkAngularaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAngularaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkAngularaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAngularaxisProperty> ticktext(int val) => Interop.mkAngularaxisAttr("ticktext", new[]{val});
+        public static Box<IAngularaxisProperty> ticktext(int val) => Interop.mkAngularaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAngularaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkAngularaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAngularaxisProperty> ticktext(string val) => Interop.mkAngularaxisAttr("ticktext", new[]{val});
+        public static Box<IAngularaxisProperty> ticktext(string val) => Interop.mkAngularaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAngularaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkAngularaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -291,6 +283,10 @@ namespace PlotlyH5
         public static Box<IAngularaxisProperty> tickprefix(string val) => Interop.mkAngularaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IAngularaxisProperty> ticksuffix(string val) => Interop.mkAngularaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IAngularaxisProperty> minexponent(int val) => Interop.mkAngularaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IAngularaxisProperty> minexponent(float val) => Interop.mkAngularaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IAngularaxisProperty> separatethousands(bool val) => Interop.mkAngularaxisAttr("separatethousands", val);
         /// Sets the tick font.
@@ -299,14 +295,14 @@ namespace PlotlyH5
         public static Box<IAngularaxisProperty> tickangle(int val) => Interop.mkAngularaxisAttr("tickangle", val);
         /// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
         public static Box<IAngularaxisProperty> tickangle(float val) => Interop.mkAngularaxisAttr("tickangle", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IAngularaxisProperty> tickformat(string val) => Interop.mkAngularaxisAttr("tickformat", val);
         public static Box<IAngularaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkAngularaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IAngularaxisProperty> categoryarraysrc(string val) => Interop.mkAngularaxisAttr("categoryarraysrc", val);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IAngularaxisProperty> tickvalssrc(string val) => Interop.mkAngularaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IAngularaxisProperty> ticktextsrc(string val) => Interop.mkAngularaxisAttr("ticktextsrc", val);
     }
 
@@ -318,6 +314,13 @@ namespace PlotlyH5
             public static Box<IAngularaxisProperty> dash() => Interop.mkAngularaxisAttr("type", "-");
             public static Box<IAngularaxisProperty> category() => Interop.mkAngularaxisAttr("type", "category");
             public static Box<IAngularaxisProperty> linear() => Interop.mkAngularaxisAttr("type", "linear");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IAngularaxisProperty> convertTypes() => Interop.mkAngularaxisAttr("autotypenumbers", "convert types");
+            public static Box<IAngularaxisProperty> strict() => Interop.mkAngularaxisAttr("autotypenumbers", "strict");
         }
 
         /// Specifies the ordering logic for the case of categorical variables. By default, plotly uses *trace*, which specifies the order that is present in the data supplied. Set `categoryorder` to *category ascending* or *category descending* if order should be determined by the alphanumerical order of the category names. Set `categoryorder` to *array* to derive the ordering from the attribute `categoryarray`. If a category is not found in the `categoryarray` array, the sorting behavior for that attribute will be identical to the *trace* mode. The unspecified categories will follow the categories in `categoryarray`. Set `categoryorder` to *total ascending* or *total descending* if order should be determined by the numerical order of the values. Similarly, the order can be determined by the min, max, sum, mean or median of all the values.

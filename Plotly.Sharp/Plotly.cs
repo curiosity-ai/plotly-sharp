@@ -7,8 +7,8 @@ namespace Plotly
     using System;
     using System.Collections.Generic;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public sealed partial class Plot
     {
@@ -17,7 +17,7 @@ namespace Plotly
         private IPlot plot;
         ///Render the plot
         public HTMLElement Render() => plot.Render();
-        ///Update the plot
+        ///Updates an existing plot
         public void Update(params Box<IPlotProperty>[] props) => plot.Update(props);
         ///Create the plotly traces
         public static Box<IPlotProperty> traces(params Box<ITracesProperty>[] properties) => Bindings.extractTraces(properties);

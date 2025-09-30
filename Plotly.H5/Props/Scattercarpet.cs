@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IScattercarpetProperty> showlegend(bool val) => Interop.mkScattercarpetAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScattercarpetProperty> legendgroup(string val) => Interop.mkScattercarpetAttr("legendgroup", val);
+        public static Box<IScattercarpetProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScattercarpetAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattercarpetProperty> legendrank(int val) => Interop.mkScattercarpetAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattercarpetProperty> legendrank(float val) => Interop.mkScattercarpetAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IScattercarpetProperty> opacity(int val) => Interop.mkScattercarpetAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScattercarpetProperty> uid(string val) => Interop.mkScattercarpetAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(bool val) => Interop.mkScattercarpetAttr("ids", new[]{val});
+        public static Box<IScattercarpetProperty> ids(bool val) => Interop.mkScattercarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(params bool[] values) => Interop.mkScattercarpetAttr("ids", values);
+        public static Box<IScattercarpetProperty> ids(IEnumerable<bool> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(System.DateTime val) => Interop.mkScattercarpetAttr("ids", new[]{val});
+        public static Box<IScattercarpetProperty> ids(System.DateTime val) => Interop.mkScattercarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(params System.DateTime[] values) => Interop.mkScattercarpetAttr("ids", values);
+        public static Box<IScattercarpetProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(float val) => Interop.mkScattercarpetAttr("ids", new[]{val});
+        public static Box<IScattercarpetProperty> ids(float val) => Interop.mkScattercarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(params float[] values) => Interop.mkScattercarpetAttr("ids", values);
+        public static Box<IScattercarpetProperty> ids(IEnumerable<float> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(int val) => Interop.mkScattercarpetAttr("ids", new[]{val});
+        public static Box<IScattercarpetProperty> ids(int val) => Interop.mkScattercarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(params int[] values) => Interop.mkScattercarpetAttr("ids", values);
+        public static Box<IScattercarpetProperty> ids(IEnumerable<int> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(string val) => Interop.mkScattercarpetAttr("ids", new[]{val});
+        public static Box<IScattercarpetProperty> ids(string val) => Interop.mkScattercarpetAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattercarpetProperty> ids(params string[] values) => Interop.mkScattercarpetAttr("ids", values);
+        public static Box<IScattercarpetProperty> ids(IEnumerable<string> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattercarpetProperty> ids(IEnumerable<bool[]> values) => Interop.mkScattercarpetAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattercarpetProperty> ids(IEnumerable<float?> values) => Interop.mkScattercarpetAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(bool val) => Interop.mkScattercarpetAttr("customdata", new[]{val});
+        public static Box<IScattercarpetProperty> customdata(bool val) => Interop.mkScattercarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(params bool[] values) => Interop.mkScattercarpetAttr("customdata", values);
+        public static Box<IScattercarpetProperty> customdata(IEnumerable<bool> values) => Interop.mkScattercarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(System.DateTime val) => Interop.mkScattercarpetAttr("customdata", new[]{val});
+        public static Box<IScattercarpetProperty> customdata(System.DateTime val) => Interop.mkScattercarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(params System.DateTime[] values) => Interop.mkScattercarpetAttr("customdata", values);
+        public static Box<IScattercarpetProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScattercarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(float val) => Interop.mkScattercarpetAttr("customdata", new[]{val});
+        public static Box<IScattercarpetProperty> customdata(float val) => Interop.mkScattercarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(params float[] values) => Interop.mkScattercarpetAttr("customdata", values);
+        public static Box<IScattercarpetProperty> customdata(IEnumerable<float> values) => Interop.mkScattercarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(int val) => Interop.mkScattercarpetAttr("customdata", new[]{val});
+        public static Box<IScattercarpetProperty> customdata(int val) => Interop.mkScattercarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(params int[] values) => Interop.mkScattercarpetAttr("customdata", values);
+        public static Box<IScattercarpetProperty> customdata(IEnumerable<int> values) => Interop.mkScattercarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(string val) => Interop.mkScattercarpetAttr("customdata", new[]{val});
+        public static Box<IScattercarpetProperty> customdata(string val) => Interop.mkScattercarpetAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattercarpetProperty> customdata(params string[] values) => Interop.mkScattercarpetAttr("customdata", values);
+        public static Box<IScattercarpetProperty> customdata(IEnumerable<string> values) => Interop.mkScattercarpetAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScattercarpetProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScattercarpetAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -179,25 +184,25 @@ namespace PlotlyH5
         /// An identifier for this carpet, so that `scattercarpet` and `contourcarpet` traces can specify a carpet plot on which they lie
         public static Box<IScattercarpetProperty> carpet(string val) => Interop.mkScattercarpetAttr("carpet", val);
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(bool val) => Interop.mkScattercarpetAttr("a", new[]{val});
+        public static Box<IScattercarpetProperty> a(bool val) => Interop.mkScattercarpetAttr("a", new[] { val });
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(params bool[] values) => Interop.mkScattercarpetAttr("a", values);
+        public static Box<IScattercarpetProperty> a(IEnumerable<bool> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(System.DateTime val) => Interop.mkScattercarpetAttr("a", new[]{val});
+        public static Box<IScattercarpetProperty> a(System.DateTime val) => Interop.mkScattercarpetAttr("a", new[] { val });
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(params System.DateTime[] values) => Interop.mkScattercarpetAttr("a", values);
+        public static Box<IScattercarpetProperty> a(IEnumerable<System.DateTime> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(float val) => Interop.mkScattercarpetAttr("a", new[]{val});
+        public static Box<IScattercarpetProperty> a(float val) => Interop.mkScattercarpetAttr("a", new[] { val });
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(params float[] values) => Interop.mkScattercarpetAttr("a", values);
+        public static Box<IScattercarpetProperty> a(IEnumerable<float> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(int val) => Interop.mkScattercarpetAttr("a", new[]{val});
+        public static Box<IScattercarpetProperty> a(int val) => Interop.mkScattercarpetAttr("a", new[] { val });
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(params int[] values) => Interop.mkScattercarpetAttr("a", values);
+        public static Box<IScattercarpetProperty> a(IEnumerable<int> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(string val) => Interop.mkScattercarpetAttr("a", new[]{val});
+        public static Box<IScattercarpetProperty> a(string val) => Interop.mkScattercarpetAttr("a", new[] { val });
         /// Sets the a-axis coordinates.
-        public static Box<IScattercarpetProperty> a(params string[] values) => Interop.mkScattercarpetAttr("a", values);
+        public static Box<IScattercarpetProperty> a(IEnumerable<string> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the a-axis coordinates.
         public static Box<IScattercarpetProperty> a(IEnumerable<bool[]> values) => Interop.mkScattercarpetAttr("a", Bindings.flatten2DArrayIf1D(values));
         /// Sets the a-axis coordinates.
@@ -233,25 +238,25 @@ namespace PlotlyH5
         /// Sets the a-axis coordinates.
         public static Box<IScattercarpetProperty> a(IEnumerable<float?> values) => Interop.mkScattercarpetAttr("a", values.ToArray());
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(bool val) => Interop.mkScattercarpetAttr("b", new[]{val});
+        public static Box<IScattercarpetProperty> b(bool val) => Interop.mkScattercarpetAttr("b", new[] { val });
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(params bool[] values) => Interop.mkScattercarpetAttr("b", values);
+        public static Box<IScattercarpetProperty> b(IEnumerable<bool> values) => Interop.mkScattercarpetAttr("b", values.ToArray());
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(System.DateTime val) => Interop.mkScattercarpetAttr("b", new[]{val});
+        public static Box<IScattercarpetProperty> b(System.DateTime val) => Interop.mkScattercarpetAttr("b", new[] { val });
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(params System.DateTime[] values) => Interop.mkScattercarpetAttr("b", values);
+        public static Box<IScattercarpetProperty> b(IEnumerable<System.DateTime> values) => Interop.mkScattercarpetAttr("b", values.ToArray());
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(float val) => Interop.mkScattercarpetAttr("b", new[]{val});
+        public static Box<IScattercarpetProperty> b(float val) => Interop.mkScattercarpetAttr("b", new[] { val });
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(params float[] values) => Interop.mkScattercarpetAttr("b", values);
+        public static Box<IScattercarpetProperty> b(IEnumerable<float> values) => Interop.mkScattercarpetAttr("b", values.ToArray());
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(int val) => Interop.mkScattercarpetAttr("b", new[]{val});
+        public static Box<IScattercarpetProperty> b(int val) => Interop.mkScattercarpetAttr("b", new[] { val });
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(params int[] values) => Interop.mkScattercarpetAttr("b", values);
+        public static Box<IScattercarpetProperty> b(IEnumerable<int> values) => Interop.mkScattercarpetAttr("b", values.ToArray());
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(string val) => Interop.mkScattercarpetAttr("b", new[]{val});
+        public static Box<IScattercarpetProperty> b(string val) => Interop.mkScattercarpetAttr("b", new[] { val });
         /// Sets the b-axis coordinates.
-        public static Box<IScattercarpetProperty> b(params string[] values) => Interop.mkScattercarpetAttr("b", values);
+        public static Box<IScattercarpetProperty> b(IEnumerable<string> values) => Interop.mkScattercarpetAttr("b", values.ToArray());
         /// Sets the b-axis coordinates.
         public static Box<IScattercarpetProperty> b(IEnumerable<bool[]> values) => Interop.mkScattercarpetAttr("b", Bindings.flatten2DArrayIf1D(values));
         /// Sets the b-axis coordinates.
@@ -292,9 +297,9 @@ namespace PlotlyH5
         public static Box<IScattercarpetProperty> text(string val) => Interop.mkScattercarpetAttr("text", val);
         /// Sets text elements associated with each (a,b) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b). If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScattercarpetProperty> text(IEnumerable<string> values) => Interop.mkScattercarpetAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b` and `text`.
         public static Box<IScattercarpetProperty> texttemplate(string val) => Interop.mkScattercarpetAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b` and `text`.
         public static Box<IScattercarpetProperty> texttemplate(IEnumerable<string> values) => Interop.mkScattercarpetAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each (a,b) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b). To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScattercarpetProperty> hovertext(string val) => Interop.mkScattercarpetAttr("hovertext", val);
@@ -316,9 +321,9 @@ namespace PlotlyH5
         public static Box<IScattercarpetProperty> hoverinfo(params Box<IScattercarpetProperty>[] properties) => Interop.mkScattercarpetAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Do the hover effects highlight individual points (markers or line points) or do they highlight filled regions? If the fill is *toself* or *tonext* and there are no markers or text, then the default is *fills*, otherwise it is *points*.
         public static Box<IScattercarpetProperty> hoveron(params Box<IScattercarpetProperty>[] properties) => Interop.mkScattercarpetAttr("hoveron", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattercarpetProperty> hovertemplate(string val) => Interop.mkScattercarpetAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattercarpetProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScattercarpetAttr("hovertemplate", values.ToArray());
         /// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
         public static Box<IScattercarpetProperty> xaxis(int anchorId) => Interop.mkScattercarpetAttr("xaxis", anchorId > 1 ? $"x{anchorId}" : "");
@@ -328,27 +333,27 @@ namespace PlotlyH5
         public static Box<IScattercarpetProperty> yaxis(int anchorId) => Interop.mkScattercarpetAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IScattercarpetProperty> yaxis(string val) => Interop.mkScattercarpetAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScattercarpetProperty> idssrc(string val) => Interop.mkScattercarpetAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScattercarpetProperty> customdatasrc(string val) => Interop.mkScattercarpetAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScattercarpetProperty> metasrc(string val) => Interop.mkScattercarpetAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  a .
+        /// Sets the source reference on Chart Studio Cloud for  a .
         public static Box<IScattercarpetProperty> asrc(string val) => Interop.mkScattercarpetAttr("asrc", val);
-        /// Sets the source reference on plot.ly for  b .
+        /// Sets the source reference on Chart Studio Cloud for  b .
         public static Box<IScattercarpetProperty> bsrc(string val) => Interop.mkScattercarpetAttr("bsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScattercarpetProperty> textsrc(string val) => Interop.mkScattercarpetAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScattercarpetProperty> texttemplatesrc(string val) => Interop.mkScattercarpetAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScattercarpetProperty> hovertextsrc(string val) => Interop.mkScattercarpetAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IScattercarpetProperty> textpositionsrc(string val) => Interop.mkScattercarpetAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScattercarpetProperty> hoverinfosrc(string val) => Interop.mkScattercarpetAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScattercarpetProperty> hovertemplatesrc(string val) => Interop.mkScattercarpetAttr("hovertemplatesrc", val);
     }
 

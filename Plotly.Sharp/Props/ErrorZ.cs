@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class ErrorZ
     {
@@ -18,25 +18,25 @@ namespace Plotly
         /// Determines whether or not the error bars have the same length in both direction (top/bottom for vertical bars, left/right for horizontal bars.
         public static Box<IErrorZProperty> symmetric(bool val) => Interop.mkErrorZAttr("symmetric", val);
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(bool val) => Interop.mkErrorZAttr("array", new[]{val});
+        public static Box<IErrorZProperty> array(bool val) => Interop.mkErrorZAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(params bool[] values) => Interop.mkErrorZAttr("array", values);
+        public static Box<IErrorZProperty> array(IEnumerable<bool> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(System.DateTime val) => Interop.mkErrorZAttr("array", new[]{val});
+        public static Box<IErrorZProperty> array(System.DateTime val) => Interop.mkErrorZAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(params System.DateTime[] values) => Interop.mkErrorZAttr("array", values);
+        public static Box<IErrorZProperty> array(IEnumerable<System.DateTime> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(float val) => Interop.mkErrorZAttr("array", new[]{val});
+        public static Box<IErrorZProperty> array(float val) => Interop.mkErrorZAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(params float[] values) => Interop.mkErrorZAttr("array", values);
+        public static Box<IErrorZProperty> array(IEnumerable<float> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(int val) => Interop.mkErrorZAttr("array", new[]{val});
+        public static Box<IErrorZProperty> array(int val) => Interop.mkErrorZAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(params int[] values) => Interop.mkErrorZAttr("array", values);
+        public static Box<IErrorZProperty> array(IEnumerable<int> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(string val) => Interop.mkErrorZAttr("array", new[]{val});
+        public static Box<IErrorZProperty> array(string val) => Interop.mkErrorZAttr("array", new[] { val });
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> array(params string[] values) => Interop.mkErrorZAttr("array", values);
+        public static Box<IErrorZProperty> array(IEnumerable<string> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
         public static Box<IErrorZProperty> array(IEnumerable<bool[]> values) => Interop.mkErrorZAttr("array", Bindings.flatten2DArrayIf1D(values));
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
@@ -72,25 +72,25 @@ namespace Plotly
         /// Sets the data corresponding the length of each error bar. Values are plotted relative to the underlying data.
         public static Box<IErrorZProperty> array(IEnumerable<float?> values) => Interop.mkErrorZAttr("array", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(bool val) => Interop.mkErrorZAttr("arrayminus", new[]{val});
+        public static Box<IErrorZProperty> arrayminus(bool val) => Interop.mkErrorZAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(params bool[] values) => Interop.mkErrorZAttr("arrayminus", values);
+        public static Box<IErrorZProperty> arrayminus(IEnumerable<bool> values) => Interop.mkErrorZAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(System.DateTime val) => Interop.mkErrorZAttr("arrayminus", new[]{val});
+        public static Box<IErrorZProperty> arrayminus(System.DateTime val) => Interop.mkErrorZAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(params System.DateTime[] values) => Interop.mkErrorZAttr("arrayminus", values);
+        public static Box<IErrorZProperty> arrayminus(IEnumerable<System.DateTime> values) => Interop.mkErrorZAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(float val) => Interop.mkErrorZAttr("arrayminus", new[]{val});
+        public static Box<IErrorZProperty> arrayminus(float val) => Interop.mkErrorZAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(params float[] values) => Interop.mkErrorZAttr("arrayminus", values);
+        public static Box<IErrorZProperty> arrayminus(IEnumerable<float> values) => Interop.mkErrorZAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(int val) => Interop.mkErrorZAttr("arrayminus", new[]{val});
+        public static Box<IErrorZProperty> arrayminus(int val) => Interop.mkErrorZAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(params int[] values) => Interop.mkErrorZAttr("arrayminus", values);
+        public static Box<IErrorZProperty> arrayminus(IEnumerable<int> values) => Interop.mkErrorZAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(string val) => Interop.mkErrorZAttr("arrayminus", new[]{val});
+        public static Box<IErrorZProperty> arrayminus(string val) => Interop.mkErrorZAttr("arrayminus", new[] { val });
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
-        public static Box<IErrorZProperty> arrayminus(params string[] values) => Interop.mkErrorZAttr("arrayminus", values);
+        public static Box<IErrorZProperty> arrayminus(IEnumerable<string> values) => Interop.mkErrorZAttr("arrayminus", values.ToArray());
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
         public static Box<IErrorZProperty> arrayminus(IEnumerable<bool[]> values) => Interop.mkErrorZAttr("arrayminus", Bindings.flatten2DArrayIf1D(values));
         /// Sets the data corresponding the length of each error bar in the bottom (left) direction for vertical (horizontal) bars Values are plotted relative to the underlying data.
@@ -145,15 +145,15 @@ namespace Plotly
         public static Box<IErrorZProperty> width(int val) => Interop.mkErrorZAttr("width", val);
         /// Sets the width (in px) of the cross-bar at both ends of the error bars.
         public static Box<IErrorZProperty> width(float val) => Interop.mkErrorZAttr("width", val);
-        /// Sets the source reference on plot.ly for  array .
+        /// Sets the source reference on Chart Studio Cloud for  array .
         public static Box<IErrorZProperty> arraysrc(string val) => Interop.mkErrorZAttr("arraysrc", val);
-        /// Sets the source reference on plot.ly for  arrayminus .
+        /// Sets the source reference on Chart Studio Cloud for  arrayminus .
         public static Box<IErrorZProperty> arrayminussrc(string val) => Interop.mkErrorZAttr("arrayminussrc", val);
     }
 
     public static partial class ErrorZ
     {
-        /// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the sqaure of the underlying data. If *data*, the bar lengths are set with data set `array`.
+        /// Determines the rule used to generate the error bars. If *constant`, the bar lengths are of a constant value. Set this constant in `value`. If *percent*, the bar lengths correspond to a percentage of underlying data. Set this percentage in `value`. If *sqrt*, the bar lengths correspond to the square of the underlying data. If *data*, the bar lengths are set with data set `array`.
         public static partial class _type
         {
             public static Box<IErrorZProperty> constant() => Interop.mkErrorZAttr("type", "constant");

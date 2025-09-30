@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Legend
     {
@@ -29,6 +29,10 @@ namespace Plotly
         public static Box<ILegendProperty> tracegroupgap(int val) => Interop.mkLegendAttr("tracegroupgap", val);
         /// Sets the amount of vertical space (in px) between legend groups.
         public static Box<ILegendProperty> tracegroupgap(float val) => Interop.mkLegendAttr("tracegroupgap", val);
+        /// Sets the width (in px) of the legend item symbols (the part other than the title.text).
+        public static Box<ILegendProperty> itemwidth(int val) => Interop.mkLegendAttr("itemwidth", val);
+        /// Sets the width (in px) of the legend item symbols (the part other than the title.text).
+        public static Box<ILegendProperty> itemwidth(float val) => Interop.mkLegendAttr("itemwidth", val);
         /// Sets the x position (in normalized coordinates) of the legend. Defaults to *1.02* for vertical legends and defaults to *0* for horizontal legends.
         public static Box<ILegendProperty> x(int val) => Interop.mkLegendAttr("x", val);
         /// Sets the x position (in normalized coordinates) of the legend. Defaults to *1.02* for vertical legends and defaults to *0* for horizontal legends.

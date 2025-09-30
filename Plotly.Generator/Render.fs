@@ -204,7 +204,7 @@ module Render =
           ""
           "namespace Types"
           "{"
-          "using Bridge;"
+          "using H5;"
           sprintf "[ObjectLiteral] public interface I%sProperty { }" api.ComponentContainerTypeName |> indent 1
           yield! (GetLines.buildInterfaces api.Components |> List.distinct)
           ""
@@ -225,8 +225,8 @@ module Render =
           "using System;"
           "using System.Collections.Generic;"
           "using Types;"
-          "using Bridge;"
-          "using static Retyped.dom;"
+          "using H5;"
+          "using static H5.Core.dom;"
           ""
           if not api.ComponentsPrelude.IsEmpty then
               sprintf "public partial class %sHelpers " api.ComponentContainerTypeName
@@ -281,8 +281,8 @@ module Render =
               "using System.Collections.Generic;"
               "using System.Linq;"
               "using Types;"
-              "using Bridge;"
-              "using static Retyped.dom;"
+              "using H5;"
+              "using static H5.Core.dom;"
               ""
               if not api.PropsPrelude.IsEmpty then
                   yield! api.PropsPrelude

@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Hoverlabel
     {
@@ -37,13 +37,13 @@ namespace Plotly
         public static Box<IHoverlabelProperty> namelength(int val) => Interop.mkHoverlabelAttr("namelength", val);
         /// Sets the default length (in number of characters) of the trace name in the hover labels for all traces. -1 shows the whole name regardless of length. 0-3 shows the first 0-3 characters, and an integer >3 will show the whole name if it is less than that many characters, but if it is longer, will truncate to `namelength - 3` characters and add an ellipsis.
         public static Box<IHoverlabelProperty> namelength(IEnumerable<int> values) => Interop.mkHoverlabelAttr("namelength", values.ToArray());
-        /// Sets the source reference on plot.ly for  bgcolor .
+        /// Sets the source reference on Chart Studio Cloud for  bgcolor .
         public static Box<IHoverlabelProperty> bgcolorsrc(string val) => Interop.mkHoverlabelAttr("bgcolorsrc", val);
-        /// Sets the source reference on plot.ly for  bordercolor .
+        /// Sets the source reference on Chart Studio Cloud for  bordercolor .
         public static Box<IHoverlabelProperty> bordercolorsrc(string val) => Interop.mkHoverlabelAttr("bordercolorsrc", val);
-        /// Sets the source reference on plot.ly for  align .
+        /// Sets the source reference on Chart Studio Cloud for  align .
         public static Box<IHoverlabelProperty> alignsrc(string val) => Interop.mkHoverlabelAttr("alignsrc", val);
-        /// Sets the source reference on plot.ly for  namelength .
+        /// Sets the source reference on Chart Studio Cloud for  namelength .
         public static Box<IHoverlabelProperty> namelengthsrc(string val) => Interop.mkHoverlabelAttr("namelengthsrc", val);
         /// Show hover information (open, close, high, low) in separate labels.
         public static Box<IHoverlabelProperty> split(bool val) => Interop.mkHoverlabelAttr("split", val);

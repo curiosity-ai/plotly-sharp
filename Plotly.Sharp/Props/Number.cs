@@ -8,12 +8,12 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Number
     {
-        /// Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.
         public static Box<INumberProperty> valueformat(string val) => Interop.mkNumberAttr("valueformat", val);
         /// Set the font used to display main number
         public static Box<INumberProperty> font(params Box<IFontProperty>[] properties) => Interop.mkNumberAttr("font", Bindings.flattenProperties(properties));

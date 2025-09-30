@@ -13,6 +13,11 @@ namespace PlotlyH5
 
     public static partial class Sunburst
     {
+        public static Box<ISunburstProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkSunburstAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISunburstProperty> legendrank(int val) => Interop.mkSunburstAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISunburstProperty> legendrank(float val) => Interop.mkSunburstAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<ISunburstProperty> opacity(int val) => Interop.mkSunburstAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -22,25 +27,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<ISunburstProperty> uid(string val) => Interop.mkSunburstAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(bool val) => Interop.mkSunburstAttr("ids", new[]{val});
+        public static Box<ISunburstProperty> ids(bool val) => Interop.mkSunburstAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(params bool[] values) => Interop.mkSunburstAttr("ids", values);
+        public static Box<ISunburstProperty> ids(IEnumerable<bool> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(System.DateTime val) => Interop.mkSunburstAttr("ids", new[]{val});
+        public static Box<ISunburstProperty> ids(System.DateTime val) => Interop.mkSunburstAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(params System.DateTime[] values) => Interop.mkSunburstAttr("ids", values);
+        public static Box<ISunburstProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(float val) => Interop.mkSunburstAttr("ids", new[]{val});
+        public static Box<ISunburstProperty> ids(float val) => Interop.mkSunburstAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(params float[] values) => Interop.mkSunburstAttr("ids", values);
+        public static Box<ISunburstProperty> ids(IEnumerable<float> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(int val) => Interop.mkSunburstAttr("ids", new[]{val});
+        public static Box<ISunburstProperty> ids(int val) => Interop.mkSunburstAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(params int[] values) => Interop.mkSunburstAttr("ids", values);
+        public static Box<ISunburstProperty> ids(IEnumerable<int> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(string val) => Interop.mkSunburstAttr("ids", new[]{val});
+        public static Box<ISunburstProperty> ids(string val) => Interop.mkSunburstAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISunburstProperty> ids(params string[] values) => Interop.mkSunburstAttr("ids", values);
+        public static Box<ISunburstProperty> ids(IEnumerable<string> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISunburstProperty> ids(IEnumerable<bool[]> values) => Interop.mkSunburstAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -76,25 +81,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISunburstProperty> ids(IEnumerable<float?> values) => Interop.mkSunburstAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(bool val) => Interop.mkSunburstAttr("customdata", new[]{val});
+        public static Box<ISunburstProperty> customdata(bool val) => Interop.mkSunburstAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(params bool[] values) => Interop.mkSunburstAttr("customdata", values);
+        public static Box<ISunburstProperty> customdata(IEnumerable<bool> values) => Interop.mkSunburstAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(System.DateTime val) => Interop.mkSunburstAttr("customdata", new[]{val});
+        public static Box<ISunburstProperty> customdata(System.DateTime val) => Interop.mkSunburstAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(params System.DateTime[] values) => Interop.mkSunburstAttr("customdata", values);
+        public static Box<ISunburstProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(float val) => Interop.mkSunburstAttr("customdata", new[]{val});
+        public static Box<ISunburstProperty> customdata(float val) => Interop.mkSunburstAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(params float[] values) => Interop.mkSunburstAttr("customdata", values);
+        public static Box<ISunburstProperty> customdata(IEnumerable<float> values) => Interop.mkSunburstAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(int val) => Interop.mkSunburstAttr("customdata", new[]{val});
+        public static Box<ISunburstProperty> customdata(int val) => Interop.mkSunburstAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(params int[] values) => Interop.mkSunburstAttr("customdata", values);
+        public static Box<ISunburstProperty> customdata(IEnumerable<int> values) => Interop.mkSunburstAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(string val) => Interop.mkSunburstAttr("customdata", new[]{val});
+        public static Box<ISunburstProperty> customdata(string val) => Interop.mkSunburstAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISunburstProperty> customdata(params string[] values) => Interop.mkSunburstAttr("customdata", values);
+        public static Box<ISunburstProperty> customdata(IEnumerable<string> values) => Interop.mkSunburstAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<ISunburstProperty> customdata(IEnumerable<bool[]> values) => Interop.mkSunburstAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -153,25 +158,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<ISunburstProperty> uirevision(params string[] values) => Interop.mkSunburstAttr("uirevision", values);
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(bool val) => Interop.mkSunburstAttr("labels", new[]{val});
+        public static Box<ISunburstProperty> labels(bool val) => Interop.mkSunburstAttr("labels", new[] { val });
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(params bool[] values) => Interop.mkSunburstAttr("labels", values);
+        public static Box<ISunburstProperty> labels(IEnumerable<bool> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(System.DateTime val) => Interop.mkSunburstAttr("labels", new[]{val});
+        public static Box<ISunburstProperty> labels(System.DateTime val) => Interop.mkSunburstAttr("labels", new[] { val });
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(params System.DateTime[] values) => Interop.mkSunburstAttr("labels", values);
+        public static Box<ISunburstProperty> labels(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(float val) => Interop.mkSunburstAttr("labels", new[]{val});
+        public static Box<ISunburstProperty> labels(float val) => Interop.mkSunburstAttr("labels", new[] { val });
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(params float[] values) => Interop.mkSunburstAttr("labels", values);
+        public static Box<ISunburstProperty> labels(IEnumerable<float> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(int val) => Interop.mkSunburstAttr("labels", new[]{val});
+        public static Box<ISunburstProperty> labels(int val) => Interop.mkSunburstAttr("labels", new[] { val });
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(params int[] values) => Interop.mkSunburstAttr("labels", values);
+        public static Box<ISunburstProperty> labels(IEnumerable<int> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(string val) => Interop.mkSunburstAttr("labels", new[]{val});
+        public static Box<ISunburstProperty> labels(string val) => Interop.mkSunburstAttr("labels", new[] { val });
         /// Sets the labels of each of the sectors.
-        public static Box<ISunburstProperty> labels(params string[] values) => Interop.mkSunburstAttr("labels", values);
+        public static Box<ISunburstProperty> labels(IEnumerable<string> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the labels of each of the sectors.
         public static Box<ISunburstProperty> labels(IEnumerable<bool[]> values) => Interop.mkSunburstAttr("labels", Bindings.flatten2DArrayIf1D(values));
         /// Sets the labels of each of the sectors.
@@ -207,25 +212,25 @@ namespace PlotlyH5
         /// Sets the labels of each of the sectors.
         public static Box<ISunburstProperty> labels(IEnumerable<float?> values) => Interop.mkSunburstAttr("labels", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(bool val) => Interop.mkSunburstAttr("parents", new[]{val});
+        public static Box<ISunburstProperty> parents(bool val) => Interop.mkSunburstAttr("parents", new[] { val });
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(params bool[] values) => Interop.mkSunburstAttr("parents", values);
+        public static Box<ISunburstProperty> parents(IEnumerable<bool> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(System.DateTime val) => Interop.mkSunburstAttr("parents", new[]{val});
+        public static Box<ISunburstProperty> parents(System.DateTime val) => Interop.mkSunburstAttr("parents", new[] { val });
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(params System.DateTime[] values) => Interop.mkSunburstAttr("parents", values);
+        public static Box<ISunburstProperty> parents(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(float val) => Interop.mkSunburstAttr("parents", new[]{val});
+        public static Box<ISunburstProperty> parents(float val) => Interop.mkSunburstAttr("parents", new[] { val });
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(params float[] values) => Interop.mkSunburstAttr("parents", values);
+        public static Box<ISunburstProperty> parents(IEnumerable<float> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(int val) => Interop.mkSunburstAttr("parents", new[]{val});
+        public static Box<ISunburstProperty> parents(int val) => Interop.mkSunburstAttr("parents", new[] { val });
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(params int[] values) => Interop.mkSunburstAttr("parents", values);
+        public static Box<ISunburstProperty> parents(IEnumerable<int> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(string val) => Interop.mkSunburstAttr("parents", new[]{val});
+        public static Box<ISunburstProperty> parents(string val) => Interop.mkSunburstAttr("parents", new[] { val });
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
-        public static Box<ISunburstProperty> parents(params string[] values) => Interop.mkSunburstAttr("parents", values);
+        public static Box<ISunburstProperty> parents(IEnumerable<string> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
         public static Box<ISunburstProperty> parents(IEnumerable<bool[]> values) => Interop.mkSunburstAttr("parents", Bindings.flatten2DArrayIf1D(values));
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
@@ -261,25 +266,25 @@ namespace PlotlyH5
         /// Sets the parent sectors for each of the sectors. Empty string items '' are understood to reference the root node in the hierarchy. If `ids` is filled, `parents` items are understood to be \"ids\" themselves. When `ids` is not set, plotly attempts to find matching items in `labels`, but beware they must be unique.
         public static Box<ISunburstProperty> parents(IEnumerable<float?> values) => Interop.mkSunburstAttr("parents", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(bool val) => Interop.mkSunburstAttr("values", new[]{val});
+        public static Box<ISunburstProperty> values(bool val) => Interop.mkSunburstAttr("values", new[] { val });
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(params bool[] values) => Interop.mkSunburstAttr("values", values);
+        public static Box<ISunburstProperty> values(IEnumerable<bool> values) => Interop.mkSunburstAttr("values", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(System.DateTime val) => Interop.mkSunburstAttr("values", new[]{val});
+        public static Box<ISunburstProperty> values(System.DateTime val) => Interop.mkSunburstAttr("values", new[] { val });
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(params System.DateTime[] values) => Interop.mkSunburstAttr("values", values);
+        public static Box<ISunburstProperty> values(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("values", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(float val) => Interop.mkSunburstAttr("values", new[]{val});
+        public static Box<ISunburstProperty> values(float val) => Interop.mkSunburstAttr("values", new[] { val });
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(params float[] values) => Interop.mkSunburstAttr("values", values);
+        public static Box<ISunburstProperty> values(IEnumerable<float> values) => Interop.mkSunburstAttr("values", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(int val) => Interop.mkSunburstAttr("values", new[]{val});
+        public static Box<ISunburstProperty> values(int val) => Interop.mkSunburstAttr("values", new[] { val });
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(params int[] values) => Interop.mkSunburstAttr("values", values);
+        public static Box<ISunburstProperty> values(IEnumerable<int> values) => Interop.mkSunburstAttr("values", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(string val) => Interop.mkSunburstAttr("values", new[]{val});
+        public static Box<ISunburstProperty> values(string val) => Interop.mkSunburstAttr("values", new[] { val });
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
-        public static Box<ISunburstProperty> values(params string[] values) => Interop.mkSunburstAttr("values", values);
+        public static Box<ISunburstProperty> values(IEnumerable<string> values) => Interop.mkSunburstAttr("values", values.ToArray());
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
         public static Box<ISunburstProperty> values(IEnumerable<bool[]> values) => Interop.mkSunburstAttr("values", Bindings.flatten2DArrayIf1D(values));
         /// Sets the values associated with each of the sectors. Use with `branchvalues` to determine how the values are summed.
@@ -341,23 +346,23 @@ namespace PlotlyH5
         public static Box<ISunburstProperty> marker(params Box<IMarkerProperty>[] properties) => Interop.mkSunburstAttr("marker", Bindings.flattenProperties(properties));
         public static Box<ISunburstProperty> leaf(params Box<ILeafProperty>[] properties) => Interop.mkSunburstAttr("leaf", Bindings.flattenProperties(properties));
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<ISunburstProperty> text(bool val) => Interop.mkSunburstAttr("text", new[]{val});
+        public static Box<ISunburstProperty> text(bool val) => Interop.mkSunburstAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<ISunburstProperty> text(IEnumerable<bool> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<ISunburstProperty> text(System.DateTime val) => Interop.mkSunburstAttr("text", new[]{val});
+        public static Box<ISunburstProperty> text(System.DateTime val) => Interop.mkSunburstAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<ISunburstProperty> text(IEnumerable<System.DateTime> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<ISunburstProperty> text(float val) => Interop.mkSunburstAttr("text", new[]{val});
+        public static Box<ISunburstProperty> text(float val) => Interop.mkSunburstAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<ISunburstProperty> text(IEnumerable<float> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<ISunburstProperty> text(int val) => Interop.mkSunburstAttr("text", new[]{val});
+        public static Box<ISunburstProperty> text(int val) => Interop.mkSunburstAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<ISunburstProperty> text(IEnumerable<int> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<ISunburstProperty> text(string val) => Interop.mkSunburstAttr("text", new[]{val});
+        public static Box<ISunburstProperty> text(string val) => Interop.mkSunburstAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<ISunburstProperty> text(IEnumerable<string> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
@@ -396,9 +401,9 @@ namespace PlotlyH5
         public static Box<ISunburstProperty> text(IEnumerable<float?> values) => Interop.mkSunburstAttr("text", values.ToArray());
         /// Determines which trace information appear on the graph.
         public static Box<ISunburstProperty> textinfo(params Box<ISunburstProperty>[] properties) => Interop.mkSunburstAttr("textinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
         public static Box<ISunburstProperty> texttemplate(string val) => Interop.mkSunburstAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry`, `percentParent`, `label` and `value`.
         public static Box<ISunburstProperty> texttemplate(IEnumerable<string> values) => Interop.mkSunburstAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each sector. If a single string, the same string appears for all data points. If an array of string, the items are mapped in order of this trace's sectors. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<ISunburstProperty> hovertext(string val) => Interop.mkSunburstAttr("hovertext", val);
@@ -406,9 +411,9 @@ namespace PlotlyH5
         public static Box<ISunburstProperty> hovertext(IEnumerable<string> values) => Interop.mkSunburstAttr("hovertext", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<ISunburstProperty> hoverinfo(params Box<ISunburstProperty>[] properties) => Interop.mkSunburstAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISunburstProperty> hovertemplate(string val) => Interop.mkSunburstAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `currentPath`, `root`, `entry`, `percentRoot`, `percentEntry` and `percentParent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISunburstProperty> hovertemplate(IEnumerable<string> values) => Interop.mkSunburstAttr("hovertemplate", values.ToArray());
         /// Sets the font used for `textinfo`.
         public static Box<ISunburstProperty> textfont(params Box<ITextfontProperty>[] properties) => Interop.mkSunburstAttr("textfont", Bindings.flattenProperties(properties));
@@ -416,28 +421,35 @@ namespace PlotlyH5
         public static Box<ISunburstProperty> insidetextfont(params Box<IInsidetextfontProperty>[] properties) => Interop.mkSunburstAttr("insidetextfont", Bindings.flattenProperties(properties));
         /// Sets the font used for `textinfo` lying outside the sector. This option refers to the root of the hierarchy presented at the center of a sunburst graph. Please note that if a hierarchy has multiple root nodes, this option won't have any effect and `insidetextfont` would be used.
         public static Box<ISunburstProperty> outsidetextfont(params Box<IOutsidetextfontProperty>[] properties) => Interop.mkSunburstAttr("outsidetextfont", Bindings.flattenProperties(properties));
+        /// Rotates the whole diagram counterclockwise by some angle. By default the first slice starts at 3 o'clock.
+        public static Box<ISunburstProperty> rotation(int val) => Interop.mkSunburstAttr("rotation", val);
+        /// Rotates the whole diagram counterclockwise by some angle. By default the first slice starts at 3 o'clock.
+        public static Box<ISunburstProperty> rotation(float val) => Interop.mkSunburstAttr("rotation", val);
+        /// Determines whether or not the sectors are reordered from largest to smallest.
+        public static Box<ISunburstProperty> sort(bool val) => Interop.mkSunburstAttr("sort", val);
+        public static Box<ISunburstProperty> root(params Box<IRootProperty>[] properties) => Interop.mkSunburstAttr("root", Bindings.flattenProperties(properties));
         public static Box<ISunburstProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkSunburstAttr("domain", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<ISunburstProperty> idssrc(string val) => Interop.mkSunburstAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<ISunburstProperty> customdatasrc(string val) => Interop.mkSunburstAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ISunburstProperty> metasrc(string val) => Interop.mkSunburstAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  labels .
+        /// Sets the source reference on Chart Studio Cloud for  labels .
         public static Box<ISunburstProperty> labelssrc(string val) => Interop.mkSunburstAttr("labelssrc", val);
-        /// Sets the source reference on plot.ly for  parents .
+        /// Sets the source reference on Chart Studio Cloud for  parents .
         public static Box<ISunburstProperty> parentssrc(string val) => Interop.mkSunburstAttr("parentssrc", val);
-        /// Sets the source reference on plot.ly for  values .
+        /// Sets the source reference on Chart Studio Cloud for  values .
         public static Box<ISunburstProperty> valuessrc(string val) => Interop.mkSunburstAttr("valuessrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<ISunburstProperty> textsrc(string val) => Interop.mkSunburstAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<ISunburstProperty> texttemplatesrc(string val) => Interop.mkSunburstAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<ISunburstProperty> hovertextsrc(string val) => Interop.mkSunburstAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<ISunburstProperty> hoverinfosrc(string val) => Interop.mkSunburstAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<ISunburstProperty> hovertemplatesrc(string val) => Interop.mkSunburstAttr("hovertemplatesrc", val);
     }
 

@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Yaxis
     {
@@ -19,23 +19,23 @@ namespace Plotly
         public static Box<IYaxisProperty> color(string val) => Interop.mkYaxisAttr("color", val);
         public static Box<IYaxisProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkYaxisAttr("title", Bindings.flattenProperties(properties));
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IYaxisProperty> range(bool val) => Interop.mkYaxisAttr("range", new[]{val});
+        public static Box<IYaxisProperty> range(bool val) => Interop.mkYaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IYaxisProperty> range(IEnumerable<bool> values) => Interop.mkYaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IYaxisProperty> range(System.DateTime val) => Interop.mkYaxisAttr("range", new[]{val});
+        public static Box<IYaxisProperty> range(System.DateTime val) => Interop.mkYaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IYaxisProperty> range(IEnumerable<System.DateTime> values) => Interop.mkYaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IYaxisProperty> range(float val) => Interop.mkYaxisAttr("range", new[]{val});
+        public static Box<IYaxisProperty> range(float val) => Interop.mkYaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IYaxisProperty> range(IEnumerable<float> values) => Interop.mkYaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IYaxisProperty> range(int val) => Interop.mkYaxisAttr("range", new[]{val});
+        public static Box<IYaxisProperty> range(int val) => Interop.mkYaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IYaxisProperty> range(IEnumerable<int> values) => Interop.mkYaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IYaxisProperty> range(string val) => Interop.mkYaxisAttr("range", new[]{val});
+        public static Box<IYaxisProperty> range(string val) => Interop.mkYaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IYaxisProperty> range(IEnumerable<string> values) => Interop.mkYaxisAttr("range", values.ToArray());
         /// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
@@ -46,6 +46,7 @@ namespace Plotly
         public static Box<IYaxisProperty> scaleratio(float val) => Interop.mkYaxisAttr("scaleratio", val);
         /// If set to another axis id (e.g. `x2`, `y`), the range of this axis will match the range of the corresponding axis in data-coordinates space. Moreover, matching axes share auto-range values, category lists and histogram auto-bins. Note that setting axes simultaneously in both a `scaleanchor` and a `matches` constraint is currently forbidden. Moreover, note that matching axes must have the same `type`.
         public static Box<IYaxisProperty> matches(string val) => Interop.mkYaxisAttr("matches", val);
+        public static Box<IYaxisProperty> rangebreaks(params Box<IRangebreaksProperty>[] properties) => Interop.mkYaxisAttr("rangebreaks", Bindings.flattenProperties(properties));
         /// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
         public static Box<IYaxisProperty> nticks(int val) => Interop.mkYaxisAttr("nticks", val);
         /// Sets the placement of the first tick on this axis. Use with `dtick`. If the axis `type` is *log*, then you must take the log of your starting tick (e.g. to set the starting tick to 100, set the `tick0` to 2) except when `dtick`=*L<f>* (see `dtick` for more info). If the axis `type` is *date*, it should be a date string, like date data. If the axis `type` is *category*, it should be a number, using the scale where each category is assigned a serial number from zero in the order it appears.
@@ -89,23 +90,23 @@ namespace Plotly
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IYaxisProperty> dtick(params string[] values) => Interop.mkYaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IYaxisProperty> tickvals(bool val) => Interop.mkYaxisAttr("tickvals", new[]{val});
+        public static Box<IYaxisProperty> tickvals(bool val) => Interop.mkYaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IYaxisProperty> tickvals(System.DateTime val) => Interop.mkYaxisAttr("tickvals", new[]{val});
+        public static Box<IYaxisProperty> tickvals(System.DateTime val) => Interop.mkYaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IYaxisProperty> tickvals(float val) => Interop.mkYaxisAttr("tickvals", new[]{val});
+        public static Box<IYaxisProperty> tickvals(float val) => Interop.mkYaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IYaxisProperty> tickvals(int val) => Interop.mkYaxisAttr("tickvals", new[]{val});
+        public static Box<IYaxisProperty> tickvals(int val) => Interop.mkYaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IYaxisProperty> tickvals(string val) => Interop.mkYaxisAttr("tickvals", new[]{val});
+        public static Box<IYaxisProperty> tickvals(string val) => Interop.mkYaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -143,23 +144,23 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IYaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkYaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IYaxisProperty> ticktext(bool val) => Interop.mkYaxisAttr("ticktext", new[]{val});
+        public static Box<IYaxisProperty> ticktext(bool val) => Interop.mkYaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IYaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkYaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IYaxisProperty> ticktext(System.DateTime val) => Interop.mkYaxisAttr("ticktext", new[]{val});
+        public static Box<IYaxisProperty> ticktext(System.DateTime val) => Interop.mkYaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IYaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkYaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IYaxisProperty> ticktext(float val) => Interop.mkYaxisAttr("ticktext", new[]{val});
+        public static Box<IYaxisProperty> ticktext(float val) => Interop.mkYaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IYaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkYaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IYaxisProperty> ticktext(int val) => Interop.mkYaxisAttr("ticktext", new[]{val});
+        public static Box<IYaxisProperty> ticktext(int val) => Interop.mkYaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IYaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkYaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IYaxisProperty> ticktext(string val) => Interop.mkYaxisAttr("ticktext", new[]{val});
+        public static Box<IYaxisProperty> ticktext(string val) => Interop.mkYaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IYaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkYaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -230,12 +231,16 @@ namespace Plotly
         public static Box<IYaxisProperty> tickprefix(string val) => Interop.mkYaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IYaxisProperty> ticksuffix(string val) => Interop.mkYaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IYaxisProperty> minexponent(int val) => Interop.mkYaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IYaxisProperty> minexponent(float val) => Interop.mkYaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IYaxisProperty> separatethousands(bool val) => Interop.mkYaxisAttr("separatethousands", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IYaxisProperty> tickformat(string val) => Interop.mkYaxisAttr("tickformat", val);
         public static Box<IYaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkYaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IYaxisProperty> hoverformat(string val) => Interop.mkYaxisAttr("hoverformat", val);
         /// Determines whether or not a line bounding this axis is drawn.
         public static Box<IYaxisProperty> showline(bool val) => Interop.mkYaxisAttr("showline", val);
@@ -270,11 +275,11 @@ namespace Plotly
         /// Sets the width (in px) of the dividers Only has an effect on *multicategory* axes.
         public static Box<IYaxisProperty> dividerwidth(float val) => Interop.mkYaxisAttr("dividerwidth", val);
         /// Sets the domain of this axis (in plot fraction).
-        public static Box<IYaxisProperty> domain(int val) => Interop.mkYaxisAttr("domain", new[]{val});
+        public static Box<IYaxisProperty> domain(int val) => Interop.mkYaxisAttr("domain", new[] { val });
         /// Sets the domain of this axis (in plot fraction).
         public static Box<IYaxisProperty> domain(IEnumerable<int> values) => Interop.mkYaxisAttr("domain", values.ToArray());
         /// Sets the domain of this axis (in plot fraction).
-        public static Box<IYaxisProperty> domain(float val) => Interop.mkYaxisAttr("domain", new[]{val});
+        public static Box<IYaxisProperty> domain(float val) => Interop.mkYaxisAttr("domain", new[] { val });
         /// Sets the domain of this axis (in plot fraction).
         public static Box<IYaxisProperty> domain(IEnumerable<float> values) => Interop.mkYaxisAttr("domain", values.ToArray());
         /// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
@@ -282,25 +287,25 @@ namespace Plotly
         /// Sets the position of this axis in the plotting space (in normalized coordinates). Only has an effect if `anchor` is set to *free*.
         public static Box<IYaxisProperty> position(float val) => Interop.mkYaxisAttr("position", val);
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(bool val) => Interop.mkYaxisAttr("categoryarray", new[]{val});
+        public static Box<IYaxisProperty> categoryarray(bool val) => Interop.mkYaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(params bool[] values) => Interop.mkYaxisAttr("categoryarray", values);
+        public static Box<IYaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkYaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(System.DateTime val) => Interop.mkYaxisAttr("categoryarray", new[]{val});
+        public static Box<IYaxisProperty> categoryarray(System.DateTime val) => Interop.mkYaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(params System.DateTime[] values) => Interop.mkYaxisAttr("categoryarray", values);
+        public static Box<IYaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkYaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(float val) => Interop.mkYaxisAttr("categoryarray", new[]{val});
+        public static Box<IYaxisProperty> categoryarray(float val) => Interop.mkYaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(params float[] values) => Interop.mkYaxisAttr("categoryarray", values);
+        public static Box<IYaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkYaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(int val) => Interop.mkYaxisAttr("categoryarray", new[]{val});
+        public static Box<IYaxisProperty> categoryarray(int val) => Interop.mkYaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(params int[] values) => Interop.mkYaxisAttr("categoryarray", values);
+        public static Box<IYaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkYaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(string val) => Interop.mkYaxisAttr("categoryarray", new[]{val});
+        public static Box<IYaxisProperty> categoryarray(string val) => Interop.mkYaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IYaxisProperty> categoryarray(params string[] values) => Interop.mkYaxisAttr("categoryarray", values);
+        public static Box<IYaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkYaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IYaxisProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkYaxisAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -355,11 +360,11 @@ namespace Plotly
         public static Box<IYaxisProperty> uirevision(string val) => Interop.mkYaxisAttr("uirevision", val);
         /// Controls persistence of user-driven changes in axis `range`, `autorange`, and `title` if in `editable: true` configuration. Defaults to `layout.uirevision`.
         public static Box<IYaxisProperty> uirevision(params string[] values) => Interop.mkYaxisAttr("uirevision", values);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IYaxisProperty> tickvalssrc(string val) => Interop.mkYaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IYaxisProperty> ticktextsrc(string val) => Interop.mkYaxisAttr("ticktextsrc", val);
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IYaxisProperty> categoryarraysrc(string val) => Interop.mkYaxisAttr("categoryarraysrc", val);
         /// Sets whether or not spikes extending from the projection data points to this axis' wall boundaries are shown on hover.
         public static Box<IYaxisProperty> spikesides(bool val) => Interop.mkYaxisAttr("spikesides", val);
@@ -382,6 +387,13 @@ namespace Plotly
             public static Box<IYaxisProperty> linear() => Interop.mkYaxisAttr("type", "linear");
             public static Box<IYaxisProperty> log() => Interop.mkYaxisAttr("type", "log");
             public static Box<IYaxisProperty> multicategory() => Interop.mkYaxisAttr("type", "multicategory");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IYaxisProperty> convertTypes() => Interop.mkYaxisAttr("autotypenumbers", "convert types");
+            public static Box<IYaxisProperty> strict() => Interop.mkYaxisAttr("autotypenumbers", "strict");
         }
 
         /// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.
@@ -411,7 +423,7 @@ namespace Plotly
             public static Box<IYaxisProperty> y(int anchorId) => Interop.mkYaxisAttr("scaleanchor", anchorId > 1 ? $"y{anchorId}" : "");
         }
 
-        /// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range* (default), or by decreasing the *domain*.
+        /// If this axis needs to be compressed (either due to its own `scaleanchor` and `scaleratio` or those of the other axis), determines how that happens: by increasing the *range*, or by decreasing the *domain*. Default is *domain* for axes containing image traces, *range* otherwise.
         public static partial class Constrain
         {
             public static Box<IYaxisProperty> domain() => Interop.mkYaxisAttr("constrain", "domain");
@@ -452,6 +464,36 @@ namespace Plotly
             public static Box<IYaxisProperty> labels() => Interop.mkYaxisAttr("tickson", "labels");
         }
 
+        /// Determines where tick labels are drawn with respect to their corresponding ticks and grid lines. Only has an effect for axes of `type` *date* When set to *period*, tick labels are drawn in the middle of the period between ticks.
+        public static partial class Ticklabelmode
+        {
+            public static Box<IYaxisProperty> instant() => Interop.mkYaxisAttr("ticklabelmode", "instant");
+            public static Box<IYaxisProperty> period() => Interop.mkYaxisAttr("ticklabelmode", "period");
+        }
+
+        /// Determines where tick labels are drawn with respect to the axis Please note that top or bottom has no effect on x axes or when `ticklabelmode` is set to *period*. Similarly left or right has no effect on y axes or when `ticklabelmode` is set to *period*. Has no effect on *multicategory* axes or when `tickson` is set to *boundaries*. When used on axes linked by `matches` or `scaleanchor`, no extra padding for inside labels would be added by autorange, so that the scales could match.
+        public static partial class Ticklabelposition
+        {
+            public static Box<IYaxisProperty> insideBottom() => Interop.mkYaxisAttr("ticklabelposition", "inside bottom");
+            public static Box<IYaxisProperty> insideLeft() => Interop.mkYaxisAttr("ticklabelposition", "inside left");
+            public static Box<IYaxisProperty> insideRight() => Interop.mkYaxisAttr("ticklabelposition", "inside right");
+            public static Box<IYaxisProperty> insideTop() => Interop.mkYaxisAttr("ticklabelposition", "inside top");
+            public static Box<IYaxisProperty> inside() => Interop.mkYaxisAttr("ticklabelposition", "inside");
+            public static Box<IYaxisProperty> outsideBottom() => Interop.mkYaxisAttr("ticklabelposition", "outside bottom");
+            public static Box<IYaxisProperty> outsideLeft() => Interop.mkYaxisAttr("ticklabelposition", "outside left");
+            public static Box<IYaxisProperty> outsideRight() => Interop.mkYaxisAttr("ticklabelposition", "outside right");
+            public static Box<IYaxisProperty> outsideTop() => Interop.mkYaxisAttr("ticklabelposition", "outside top");
+            public static Box<IYaxisProperty> outside() => Interop.mkYaxisAttr("ticklabelposition", "outside");
+        }
+
+        /// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. Otherwise on *category* and *multicategory* axes the default is *allow*. In other cases the default is *hide past div*.
+        public static partial class Ticklabeloverflow
+        {
+            public static Box<IYaxisProperty> allow() => Interop.mkYaxisAttr("ticklabeloverflow", "allow");
+            public static Box<IYaxisProperty> hidePastDiv() => Interop.mkYaxisAttr("ticklabeloverflow", "hide past div");
+            public static Box<IYaxisProperty> hidePastDomain() => Interop.mkYaxisAttr("ticklabeloverflow", "hide past domain");
+        }
+
         /// Determines if the axis lines or/and ticks are mirrored to the opposite side of the plotting area. If *true*, the axis lines are mirrored. If *ticks*, the axis lines and ticks are mirrored. If *false*, mirroring is disable. If *all*, axis lines are mirrored on all shared-axes subplots. If *allticks*, axis lines and ticks are mirrored on all shared-axes subplots.
         public static partial class Mirror
         {
@@ -487,6 +529,7 @@ namespace Plotly
         {
             public static Box<IYaxisProperty> cursor() => Interop.mkYaxisAttr("spikesnap", "cursor");
             public static Box<IYaxisProperty> data() => Interop.mkYaxisAttr("spikesnap", "data");
+            public static Box<IYaxisProperty> hoveredData() => Interop.mkYaxisAttr("spikesnap", "hovered data");
         }
 
         /// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.

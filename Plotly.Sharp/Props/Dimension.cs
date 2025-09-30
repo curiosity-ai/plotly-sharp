@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Dimension
     {
@@ -18,23 +18,23 @@ namespace Plotly
         /// Sets the label corresponding to this splom dimension.
         public static Box<IDimensionProperty> label(string val) => Interop.mkDimensionAttr("label", val);
         /// Sets the dimension values to be plotted.
-        public static Box<IDimensionProperty> values(bool val) => Interop.mkDimensionAttr("values", new[]{val});
+        public static Box<IDimensionProperty> values(bool val) => Interop.mkDimensionAttr("values", new[] { val });
         /// Sets the dimension values to be plotted.
         public static Box<IDimensionProperty> values(IEnumerable<bool> values) => Interop.mkDimensionAttr("values", values.ToArray());
         /// Sets the dimension values to be plotted.
-        public static Box<IDimensionProperty> values(System.DateTime val) => Interop.mkDimensionAttr("values", new[]{val});
+        public static Box<IDimensionProperty> values(System.DateTime val) => Interop.mkDimensionAttr("values", new[] { val });
         /// Sets the dimension values to be plotted.
         public static Box<IDimensionProperty> values(IEnumerable<System.DateTime> values) => Interop.mkDimensionAttr("values", values.ToArray());
         /// Sets the dimension values to be plotted.
-        public static Box<IDimensionProperty> values(float val) => Interop.mkDimensionAttr("values", new[]{val});
+        public static Box<IDimensionProperty> values(float val) => Interop.mkDimensionAttr("values", new[] { val });
         /// Sets the dimension values to be plotted.
         public static Box<IDimensionProperty> values(IEnumerable<float> values) => Interop.mkDimensionAttr("values", values.ToArray());
         /// Sets the dimension values to be plotted.
-        public static Box<IDimensionProperty> values(int val) => Interop.mkDimensionAttr("values", new[]{val});
+        public static Box<IDimensionProperty> values(int val) => Interop.mkDimensionAttr("values", new[] { val });
         /// Sets the dimension values to be plotted.
         public static Box<IDimensionProperty> values(IEnumerable<int> values) => Interop.mkDimensionAttr("values", values.ToArray());
         /// Sets the dimension values to be plotted.
-        public static Box<IDimensionProperty> values(string val) => Interop.mkDimensionAttr("values", new[]{val});
+        public static Box<IDimensionProperty> values(string val) => Interop.mkDimensionAttr("values", new[] { val });
         /// Sets the dimension values to be plotted.
         public static Box<IDimensionProperty> values(IEnumerable<string> values) => Interop.mkDimensionAttr("values", values.ToArray());
         /// Sets the dimension values to be plotted.
@@ -76,26 +76,26 @@ namespace Plotly
         public static Box<IDimensionProperty> name(string val) => Interop.mkDimensionAttr("name", val);
         /// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
         public static Box<IDimensionProperty> templateitemname(string val) => Interop.mkDimensionAttr("templateitemname", val);
-        /// Sets the source reference on plot.ly for  values .
+        /// Sets the source reference on Chart Studio Cloud for  values .
         public static Box<IDimensionProperty> valuessrc(string val) => Interop.mkDimensionAttr("valuessrc", val);
         /// Sets the values at which ticks on this axis appear.
-        public static Box<IDimensionProperty> tickvals(bool val) => Interop.mkDimensionAttr("tickvals", new[]{val});
+        public static Box<IDimensionProperty> tickvals(bool val) => Interop.mkDimensionAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<bool> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear.
-        public static Box<IDimensionProperty> tickvals(System.DateTime val) => Interop.mkDimensionAttr("tickvals", new[]{val});
+        public static Box<IDimensionProperty> tickvals(System.DateTime val) => Interop.mkDimensionAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear.
-        public static Box<IDimensionProperty> tickvals(float val) => Interop.mkDimensionAttr("tickvals", new[]{val});
+        public static Box<IDimensionProperty> tickvals(float val) => Interop.mkDimensionAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<float> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear.
-        public static Box<IDimensionProperty> tickvals(int val) => Interop.mkDimensionAttr("tickvals", new[]{val});
+        public static Box<IDimensionProperty> tickvals(int val) => Interop.mkDimensionAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<int> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear.
-        public static Box<IDimensionProperty> tickvals(string val) => Interop.mkDimensionAttr("tickvals", new[]{val});
+        public static Box<IDimensionProperty> tickvals(string val) => Interop.mkDimensionAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<string> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear.
@@ -133,23 +133,23 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear.
         public static Box<IDimensionProperty> tickvals(IEnumerable<float?> values) => Interop.mkDimensionAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
-        public static Box<IDimensionProperty> ticktext(bool val) => Interop.mkDimensionAttr("ticktext", new[]{val});
+        public static Box<IDimensionProperty> ticktext(bool val) => Interop.mkDimensionAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<bool> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
-        public static Box<IDimensionProperty> ticktext(System.DateTime val) => Interop.mkDimensionAttr("ticktext", new[]{val});
+        public static Box<IDimensionProperty> ticktext(System.DateTime val) => Interop.mkDimensionAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
-        public static Box<IDimensionProperty> ticktext(float val) => Interop.mkDimensionAttr("ticktext", new[]{val});
+        public static Box<IDimensionProperty> ticktext(float val) => Interop.mkDimensionAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<float> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
-        public static Box<IDimensionProperty> ticktext(int val) => Interop.mkDimensionAttr("ticktext", new[]{val});
+        public static Box<IDimensionProperty> ticktext(int val) => Interop.mkDimensionAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<int> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
-        public static Box<IDimensionProperty> ticktext(string val) => Interop.mkDimensionAttr("ticktext", new[]{val});
+        public static Box<IDimensionProperty> ticktext(string val) => Interop.mkDimensionAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<string> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
@@ -186,50 +186,50 @@ namespace Plotly
         public static Box<IDimensionProperty> ticktext(IEnumerable<int?> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`.
         public static Box<IDimensionProperty> ticktext(IEnumerable<float?> values) => Interop.mkDimensionAttr("ticktext", values.ToArray());
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IDimensionProperty> tickformat(string val) => Interop.mkDimensionAttr("tickformat", val);
         /// The domain range that represents the full, shown axis extent. Defaults to the `values` extent. Must be an array of `[fromValue, toValue]` with finite numbers as elements.
-        public static Box<IDimensionProperty> range(int val) => Interop.mkDimensionAttr("range", new[]{val});
+        public static Box<IDimensionProperty> range(int val) => Interop.mkDimensionAttr("range", new[] { val });
         /// The domain range that represents the full, shown axis extent. Defaults to the `values` extent. Must be an array of `[fromValue, toValue]` with finite numbers as elements.
         public static Box<IDimensionProperty> range(IEnumerable<int> values) => Interop.mkDimensionAttr("range", values.ToArray());
         /// The domain range that represents the full, shown axis extent. Defaults to the `values` extent. Must be an array of `[fromValue, toValue]` with finite numbers as elements.
-        public static Box<IDimensionProperty> range(float val) => Interop.mkDimensionAttr("range", new[]{val});
+        public static Box<IDimensionProperty> range(float val) => Interop.mkDimensionAttr("range", new[] { val });
         /// The domain range that represents the full, shown axis extent. Defaults to the `values` extent. Must be an array of `[fromValue, toValue]` with finite numbers as elements.
         public static Box<IDimensionProperty> range(IEnumerable<float> values) => Interop.mkDimensionAttr("range", values.ToArray());
         /// The domain range to which the filter on the dimension is constrained. Must be an array of `[fromValue, toValue]` with `fromValue <  =  toValue ` , or  if ` multiselect ` is  not  disabled , you  may  give  an  array  of  arrays , where  each  inner  array  is ` [ fromValue , toValue ] ` . 
-        public static Box<IDimensionProperty> constraintrange(int val) => Interop.mkDimensionAttr("constraintrange", new[]{val});
+        public static Box<IDimensionProperty> constraintrange(int val) => Interop.mkDimensionAttr("constraintrange", new[] { val });
         /// The domain range to which the filter on the dimension is constrained. Must be an array of `[fromValue, toValue]` with `fromValue <  =  toValue ` , or  if ` multiselect ` is  not  disabled , you  may  give  an  array  of  arrays , where  each  inner  array  is ` [ fromValue , toValue ] ` . 
         public static Box<IDimensionProperty> constraintrange(IEnumerable<int> values) => Interop.mkDimensionAttr("constraintrange", values.ToArray());
         /// The domain range to which the filter on the dimension is constrained. Must be an array of `[fromValue, toValue]` with `fromValue <  =  toValue ` , or  if ` multiselect ` is  not  disabled , you  may  give  an  array  of  arrays , where  each  inner  array  is ` [ fromValue , toValue ] ` . 
-        public static Box<IDimensionProperty> constraintrange(float val) => Interop.mkDimensionAttr("constraintrange", new[]{val});
+        public static Box<IDimensionProperty> constraintrange(float val) => Interop.mkDimensionAttr("constraintrange", new[] { val });
         /// The domain range to which the filter on the dimension is constrained. Must be an array of `[fromValue, toValue]` with `fromValue <  =  toValue ` , or  if ` multiselect ` is  not  disabled , you  may  give  an  array  of  arrays , where  each  inner  array  is ` [ fromValue , toValue ] ` . 
         public static Box<IDimensionProperty> constraintrange(IEnumerable<float> values) => Interop.mkDimensionAttr("constraintrange", values.ToArray());
         /// Do we allow multiple selection ranges or just a single range?
         public static Box<IDimensionProperty> multiselect(bool val) => Interop.mkDimensionAttr("multiselect", val);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IDimensionProperty> tickvalssrc(string val) => Interop.mkDimensionAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IDimensionProperty> ticktextsrc(string val) => Interop.mkDimensionAttr("ticktextsrc", val);
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(bool val) => Interop.mkDimensionAttr("categoryarray", new[]{val});
+        public static Box<IDimensionProperty> categoryarray(bool val) => Interop.mkDimensionAttr("categoryarray", new[] { val });
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(params bool[] values) => Interop.mkDimensionAttr("categoryarray", values);
+        public static Box<IDimensionProperty> categoryarray(IEnumerable<bool> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(System.DateTime val) => Interop.mkDimensionAttr("categoryarray", new[]{val});
+        public static Box<IDimensionProperty> categoryarray(System.DateTime val) => Interop.mkDimensionAttr("categoryarray", new[] { val });
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(params System.DateTime[] values) => Interop.mkDimensionAttr("categoryarray", values);
+        public static Box<IDimensionProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(float val) => Interop.mkDimensionAttr("categoryarray", new[]{val});
+        public static Box<IDimensionProperty> categoryarray(float val) => Interop.mkDimensionAttr("categoryarray", new[] { val });
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(params float[] values) => Interop.mkDimensionAttr("categoryarray", values);
+        public static Box<IDimensionProperty> categoryarray(IEnumerable<float> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(int val) => Interop.mkDimensionAttr("categoryarray", new[]{val});
+        public static Box<IDimensionProperty> categoryarray(int val) => Interop.mkDimensionAttr("categoryarray", new[] { val });
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(params int[] values) => Interop.mkDimensionAttr("categoryarray", values);
+        public static Box<IDimensionProperty> categoryarray(IEnumerable<int> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(string val) => Interop.mkDimensionAttr("categoryarray", new[]{val});
+        public static Box<IDimensionProperty> categoryarray(string val) => Interop.mkDimensionAttr("categoryarray", new[] { val });
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IDimensionProperty> categoryarray(params string[] values) => Interop.mkDimensionAttr("categoryarray", values);
+        public static Box<IDimensionProperty> categoryarray(IEnumerable<string> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IDimensionProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkDimensionAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories in this dimension appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -266,7 +266,7 @@ namespace Plotly
         public static Box<IDimensionProperty> categoryarray(IEnumerable<float?> values) => Interop.mkDimensionAttr("categoryarray", values.ToArray());
         /// The display index of dimension, from left to right, zero indexed, defaults to dimension index.
         public static Box<IDimensionProperty> displayindex(int val) => Interop.mkDimensionAttr("displayindex", val);
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IDimensionProperty> categoryarraysrc(string val) => Interop.mkDimensionAttr("categoryarraysrc", val);
     }
 

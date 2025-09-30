@@ -94,23 +94,23 @@ namespace PlotlyH5
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IColorbarProperty> dtick(params string[] values) => Interop.mkColorbarAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IColorbarProperty> tickvals(bool val) => Interop.mkColorbarAttr("tickvals", new[]{val});
+        public static Box<IColorbarProperty> tickvals(bool val) => Interop.mkColorbarAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<bool> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IColorbarProperty> tickvals(System.DateTime val) => Interop.mkColorbarAttr("tickvals", new[]{val});
+        public static Box<IColorbarProperty> tickvals(System.DateTime val) => Interop.mkColorbarAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IColorbarProperty> tickvals(float val) => Interop.mkColorbarAttr("tickvals", new[]{val});
+        public static Box<IColorbarProperty> tickvals(float val) => Interop.mkColorbarAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<float> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IColorbarProperty> tickvals(int val) => Interop.mkColorbarAttr("tickvals", new[]{val});
+        public static Box<IColorbarProperty> tickvals(int val) => Interop.mkColorbarAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<int> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IColorbarProperty> tickvals(string val) => Interop.mkColorbarAttr("tickvals", new[]{val});
+        public static Box<IColorbarProperty> tickvals(string val) => Interop.mkColorbarAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<string> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -148,23 +148,23 @@ namespace PlotlyH5
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IColorbarProperty> tickvals(IEnumerable<float?> values) => Interop.mkColorbarAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IColorbarProperty> ticktext(bool val) => Interop.mkColorbarAttr("ticktext", new[]{val});
+        public static Box<IColorbarProperty> ticktext(bool val) => Interop.mkColorbarAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IColorbarProperty> ticktext(IEnumerable<bool> values) => Interop.mkColorbarAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IColorbarProperty> ticktext(System.DateTime val) => Interop.mkColorbarAttr("ticktext", new[]{val});
+        public static Box<IColorbarProperty> ticktext(System.DateTime val) => Interop.mkColorbarAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IColorbarProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkColorbarAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IColorbarProperty> ticktext(float val) => Interop.mkColorbarAttr("ticktext", new[]{val});
+        public static Box<IColorbarProperty> ticktext(float val) => Interop.mkColorbarAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IColorbarProperty> ticktext(IEnumerable<float> values) => Interop.mkColorbarAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IColorbarProperty> ticktext(int val) => Interop.mkColorbarAttr("ticktext", new[]{val});
+        public static Box<IColorbarProperty> ticktext(int val) => Interop.mkColorbarAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IColorbarProperty> ticktext(IEnumerable<int> values) => Interop.mkColorbarAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IColorbarProperty> ticktext(string val) => Interop.mkColorbarAttr("ticktext", new[]{val});
+        public static Box<IColorbarProperty> ticktext(string val) => Interop.mkColorbarAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IColorbarProperty> ticktext(IEnumerable<string> values) => Interop.mkColorbarAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -219,7 +219,7 @@ namespace PlotlyH5
         public static Box<IColorbarProperty> tickangle(int val) => Interop.mkColorbarAttr("tickangle", val);
         /// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
         public static Box<IColorbarProperty> tickangle(float val) => Interop.mkColorbarAttr("tickangle", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IColorbarProperty> tickformat(string val) => Interop.mkColorbarAttr("tickformat", val);
         public static Box<IColorbarProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkColorbarAttr("tickformatstops", Bindings.flattenProperties(properties));
         /// Sets a tick label prefix.
@@ -228,10 +228,14 @@ namespace PlotlyH5
         public static Box<IColorbarProperty> ticksuffix(string val) => Interop.mkColorbarAttr("ticksuffix", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IColorbarProperty> separatethousands(bool val) => Interop.mkColorbarAttr("separatethousands", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IColorbarProperty> minexponent(int val) => Interop.mkColorbarAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IColorbarProperty> minexponent(float val) => Interop.mkColorbarAttr("minexponent", val);
         public static Box<IColorbarProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkColorbarAttr("title", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IColorbarProperty> tickvalssrc(string val) => Interop.mkColorbarAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IColorbarProperty> ticktextsrc(string val) => Interop.mkColorbarAttr("ticktextsrc", val);
     }
 
@@ -281,6 +285,25 @@ namespace PlotlyH5
             public static Box<IColorbarProperty> none() => Interop.mkColorbarAttr("ticks", "");
             public static Box<IColorbarProperty> inside() => Interop.mkColorbarAttr("ticks", "inside");
             public static Box<IColorbarProperty> outside() => Interop.mkColorbarAttr("ticks", "outside");
+        }
+
+        /// Determines how we handle tick labels that would overflow either the graph div or the domain of the axis. The default value for inside tick labels is *hide past domain*. In other cases the default is *hide past div*.
+        public static partial class Ticklabeloverflow
+        {
+            public static Box<IColorbarProperty> allow() => Interop.mkColorbarAttr("ticklabeloverflow", "allow");
+            public static Box<IColorbarProperty> hidePastDiv() => Interop.mkColorbarAttr("ticklabeloverflow", "hide past div");
+            public static Box<IColorbarProperty> hidePastDomain() => Interop.mkColorbarAttr("ticklabeloverflow", "hide past domain");
+        }
+
+        /// Determines where tick labels are drawn.
+        public static partial class Ticklabelposition
+        {
+            public static Box<IColorbarProperty> insideBottom() => Interop.mkColorbarAttr("ticklabelposition", "inside bottom");
+            public static Box<IColorbarProperty> insideTop() => Interop.mkColorbarAttr("ticklabelposition", "inside top");
+            public static Box<IColorbarProperty> inside() => Interop.mkColorbarAttr("ticklabelposition", "inside");
+            public static Box<IColorbarProperty> outsideBottom() => Interop.mkColorbarAttr("ticklabelposition", "outside bottom");
+            public static Box<IColorbarProperty> outsideTop() => Interop.mkColorbarAttr("ticklabelposition", "outside top");
+            public static Box<IColorbarProperty> outside() => Interop.mkColorbarAttr("ticklabelposition", "outside");
         }
 
         /// If *all*, all tick labels are displayed with a prefix. If *first*, only the first tick is displayed with a prefix. If *last*, only the last tick is displayed with a suffix. If *none*, tick prefixes are hidden.

@@ -8,13 +8,18 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Densitymapbox
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IDensitymapboxProperty> legendgroup(string val) => Interop.mkDensitymapboxAttr("legendgroup", val);
+        public static Box<IDensitymapboxProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkDensitymapboxAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IDensitymapboxProperty> legendrank(int val) => Interop.mkDensitymapboxAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IDensitymapboxProperty> legendrank(float val) => Interop.mkDensitymapboxAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IDensitymapboxProperty> opacity(int val) => Interop.mkDensitymapboxAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -24,25 +29,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IDensitymapboxProperty> uid(string val) => Interop.mkDensitymapboxAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(bool val) => Interop.mkDensitymapboxAttr("ids", new[]{val});
+        public static Box<IDensitymapboxProperty> ids(bool val) => Interop.mkDensitymapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(params bool[] values) => Interop.mkDensitymapboxAttr("ids", values);
+        public static Box<IDensitymapboxProperty> ids(IEnumerable<bool> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(System.DateTime val) => Interop.mkDensitymapboxAttr("ids", new[]{val});
+        public static Box<IDensitymapboxProperty> ids(System.DateTime val) => Interop.mkDensitymapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(params System.DateTime[] values) => Interop.mkDensitymapboxAttr("ids", values);
+        public static Box<IDensitymapboxProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(float val) => Interop.mkDensitymapboxAttr("ids", new[]{val});
+        public static Box<IDensitymapboxProperty> ids(float val) => Interop.mkDensitymapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(params float[] values) => Interop.mkDensitymapboxAttr("ids", values);
+        public static Box<IDensitymapboxProperty> ids(IEnumerable<float> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(int val) => Interop.mkDensitymapboxAttr("ids", new[]{val});
+        public static Box<IDensitymapboxProperty> ids(int val) => Interop.mkDensitymapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(params int[] values) => Interop.mkDensitymapboxAttr("ids", values);
+        public static Box<IDensitymapboxProperty> ids(IEnumerable<int> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(string val) => Interop.mkDensitymapboxAttr("ids", new[]{val});
+        public static Box<IDensitymapboxProperty> ids(string val) => Interop.mkDensitymapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IDensitymapboxProperty> ids(params string[] values) => Interop.mkDensitymapboxAttr("ids", values);
+        public static Box<IDensitymapboxProperty> ids(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IDensitymapboxProperty> ids(IEnumerable<bool[]> values) => Interop.mkDensitymapboxAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -78,25 +83,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IDensitymapboxProperty> ids(IEnumerable<float?> values) => Interop.mkDensitymapboxAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(bool val) => Interop.mkDensitymapboxAttr("customdata", new[]{val});
+        public static Box<IDensitymapboxProperty> customdata(bool val) => Interop.mkDensitymapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(params bool[] values) => Interop.mkDensitymapboxAttr("customdata", values);
+        public static Box<IDensitymapboxProperty> customdata(IEnumerable<bool> values) => Interop.mkDensitymapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(System.DateTime val) => Interop.mkDensitymapboxAttr("customdata", new[]{val});
+        public static Box<IDensitymapboxProperty> customdata(System.DateTime val) => Interop.mkDensitymapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(params System.DateTime[] values) => Interop.mkDensitymapboxAttr("customdata", values);
+        public static Box<IDensitymapboxProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkDensitymapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(float val) => Interop.mkDensitymapboxAttr("customdata", new[]{val});
+        public static Box<IDensitymapboxProperty> customdata(float val) => Interop.mkDensitymapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(params float[] values) => Interop.mkDensitymapboxAttr("customdata", values);
+        public static Box<IDensitymapboxProperty> customdata(IEnumerable<float> values) => Interop.mkDensitymapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(int val) => Interop.mkDensitymapboxAttr("customdata", new[]{val});
+        public static Box<IDensitymapboxProperty> customdata(int val) => Interop.mkDensitymapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(params int[] values) => Interop.mkDensitymapboxAttr("customdata", values);
+        public static Box<IDensitymapboxProperty> customdata(IEnumerable<int> values) => Interop.mkDensitymapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(string val) => Interop.mkDensitymapboxAttr("customdata", new[]{val});
+        public static Box<IDensitymapboxProperty> customdata(string val) => Interop.mkDensitymapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IDensitymapboxProperty> customdata(params string[] values) => Interop.mkDensitymapboxAttr("customdata", values);
+        public static Box<IDensitymapboxProperty> customdata(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IDensitymapboxProperty> customdata(IEnumerable<bool[]> values) => Interop.mkDensitymapboxAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -155,25 +160,25 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IDensitymapboxProperty> uirevision(params string[] values) => Interop.mkDensitymapboxAttr("uirevision", values);
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(bool val) => Interop.mkDensitymapboxAttr("lon", new[]{val});
+        public static Box<IDensitymapboxProperty> lon(bool val) => Interop.mkDensitymapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(params bool[] values) => Interop.mkDensitymapboxAttr("lon", values);
+        public static Box<IDensitymapboxProperty> lon(IEnumerable<bool> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(System.DateTime val) => Interop.mkDensitymapboxAttr("lon", new[]{val});
+        public static Box<IDensitymapboxProperty> lon(System.DateTime val) => Interop.mkDensitymapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(params System.DateTime[] values) => Interop.mkDensitymapboxAttr("lon", values);
+        public static Box<IDensitymapboxProperty> lon(IEnumerable<System.DateTime> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(float val) => Interop.mkDensitymapboxAttr("lon", new[]{val});
+        public static Box<IDensitymapboxProperty> lon(float val) => Interop.mkDensitymapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(params float[] values) => Interop.mkDensitymapboxAttr("lon", values);
+        public static Box<IDensitymapboxProperty> lon(IEnumerable<float> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(int val) => Interop.mkDensitymapboxAttr("lon", new[]{val});
+        public static Box<IDensitymapboxProperty> lon(int val) => Interop.mkDensitymapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(params int[] values) => Interop.mkDensitymapboxAttr("lon", values);
+        public static Box<IDensitymapboxProperty> lon(IEnumerable<int> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(string val) => Interop.mkDensitymapboxAttr("lon", new[]{val});
+        public static Box<IDensitymapboxProperty> lon(string val) => Interop.mkDensitymapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IDensitymapboxProperty> lon(params string[] values) => Interop.mkDensitymapboxAttr("lon", values);
+        public static Box<IDensitymapboxProperty> lon(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IDensitymapboxProperty> lon(IEnumerable<bool[]> values) => Interop.mkDensitymapboxAttr("lon", Bindings.flatten2DArrayIf1D(values));
         /// Sets the longitude coordinates (in degrees East).
@@ -209,25 +214,25 @@ namespace Plotly
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IDensitymapboxProperty> lon(IEnumerable<float?> values) => Interop.mkDensitymapboxAttr("lon", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(bool val) => Interop.mkDensitymapboxAttr("lat", new[]{val});
+        public static Box<IDensitymapboxProperty> lat(bool val) => Interop.mkDensitymapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(params bool[] values) => Interop.mkDensitymapboxAttr("lat", values);
+        public static Box<IDensitymapboxProperty> lat(IEnumerable<bool> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(System.DateTime val) => Interop.mkDensitymapboxAttr("lat", new[]{val});
+        public static Box<IDensitymapboxProperty> lat(System.DateTime val) => Interop.mkDensitymapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(params System.DateTime[] values) => Interop.mkDensitymapboxAttr("lat", values);
+        public static Box<IDensitymapboxProperty> lat(IEnumerable<System.DateTime> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(float val) => Interop.mkDensitymapboxAttr("lat", new[]{val});
+        public static Box<IDensitymapboxProperty> lat(float val) => Interop.mkDensitymapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(params float[] values) => Interop.mkDensitymapboxAttr("lat", values);
+        public static Box<IDensitymapboxProperty> lat(IEnumerable<float> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(int val) => Interop.mkDensitymapboxAttr("lat", new[]{val});
+        public static Box<IDensitymapboxProperty> lat(int val) => Interop.mkDensitymapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(params int[] values) => Interop.mkDensitymapboxAttr("lat", values);
+        public static Box<IDensitymapboxProperty> lat(IEnumerable<int> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(string val) => Interop.mkDensitymapboxAttr("lat", new[]{val});
+        public static Box<IDensitymapboxProperty> lat(string val) => Interop.mkDensitymapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IDensitymapboxProperty> lat(params string[] values) => Interop.mkDensitymapboxAttr("lat", values);
+        public static Box<IDensitymapboxProperty> lat(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
         public static Box<IDensitymapboxProperty> lat(IEnumerable<bool[]> values) => Interop.mkDensitymapboxAttr("lat", Bindings.flatten2DArrayIf1D(values));
         /// Sets the latitude coordinates (in degrees North).
@@ -263,25 +268,25 @@ namespace Plotly
         /// Sets the latitude coordinates (in degrees North).
         public static Box<IDensitymapboxProperty> lat(IEnumerable<float?> values) => Interop.mkDensitymapboxAttr("lat", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(bool val) => Interop.mkDensitymapboxAttr("z", new[]{val});
+        public static Box<IDensitymapboxProperty> z(bool val) => Interop.mkDensitymapboxAttr("z", new[] { val });
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(params bool[] values) => Interop.mkDensitymapboxAttr("z", values);
+        public static Box<IDensitymapboxProperty> z(IEnumerable<bool> values) => Interop.mkDensitymapboxAttr("z", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(System.DateTime val) => Interop.mkDensitymapboxAttr("z", new[]{val});
+        public static Box<IDensitymapboxProperty> z(System.DateTime val) => Interop.mkDensitymapboxAttr("z", new[] { val });
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(params System.DateTime[] values) => Interop.mkDensitymapboxAttr("z", values);
+        public static Box<IDensitymapboxProperty> z(IEnumerable<System.DateTime> values) => Interop.mkDensitymapboxAttr("z", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(float val) => Interop.mkDensitymapboxAttr("z", new[]{val});
+        public static Box<IDensitymapboxProperty> z(float val) => Interop.mkDensitymapboxAttr("z", new[] { val });
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(params float[] values) => Interop.mkDensitymapboxAttr("z", values);
+        public static Box<IDensitymapboxProperty> z(IEnumerable<float> values) => Interop.mkDensitymapboxAttr("z", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(int val) => Interop.mkDensitymapboxAttr("z", new[]{val});
+        public static Box<IDensitymapboxProperty> z(int val) => Interop.mkDensitymapboxAttr("z", new[] { val });
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(params int[] values) => Interop.mkDensitymapboxAttr("z", values);
+        public static Box<IDensitymapboxProperty> z(IEnumerable<int> values) => Interop.mkDensitymapboxAttr("z", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(string val) => Interop.mkDensitymapboxAttr("z", new[]{val});
+        public static Box<IDensitymapboxProperty> z(string val) => Interop.mkDensitymapboxAttr("z", new[] { val });
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
-        public static Box<IDensitymapboxProperty> z(params string[] values) => Interop.mkDensitymapboxAttr("z", values);
+        public static Box<IDensitymapboxProperty> z(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("z", values.ToArray());
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
         public static Box<IDensitymapboxProperty> z(IEnumerable<bool[]> values) => Interop.mkDensitymapboxAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the points' weight. For example, a value of 10 would be equivalent to having 10 points of weight 1 in the same spot
@@ -336,9 +341,9 @@ namespace Plotly
         public static Box<IDensitymapboxProperty> hovertext(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("hovertext", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IDensitymapboxProperty> hoverinfo(params Box<IDensitymapboxProperty>[] properties) => Interop.mkDensitymapboxAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IDensitymapboxProperty> hovertemplate(string val) => Interop.mkDensitymapboxAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IDensitymapboxProperty> hovertemplate(IEnumerable<string> values) => Interop.mkDensitymapboxAttr("hovertemplate", values.ToArray());
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
         public static Box<IDensitymapboxProperty> showlegend(bool val) => Interop.mkDensitymapboxAttr("showlegend", val);
@@ -375,27 +380,27 @@ namespace Plotly
         public static Box<IDensitymapboxProperty> subplot(int anchorId) => Interop.mkDensitymapboxAttr("subplot", anchorId > 1 ? $"mapbox{anchorId}" : "");
         /// Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
         public static Box<IDensitymapboxProperty> subplot(string val) => Interop.mkDensitymapboxAttr("subplot", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IDensitymapboxProperty> idssrc(string val) => Interop.mkDensitymapboxAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IDensitymapboxProperty> customdatasrc(string val) => Interop.mkDensitymapboxAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IDensitymapboxProperty> metasrc(string val) => Interop.mkDensitymapboxAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  lon .
+        /// Sets the source reference on Chart Studio Cloud for  lon .
         public static Box<IDensitymapboxProperty> lonsrc(string val) => Interop.mkDensitymapboxAttr("lonsrc", val);
-        /// Sets the source reference on plot.ly for  lat .
+        /// Sets the source reference on Chart Studio Cloud for  lat .
         public static Box<IDensitymapboxProperty> latsrc(string val) => Interop.mkDensitymapboxAttr("latsrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IDensitymapboxProperty> zsrc(string val) => Interop.mkDensitymapboxAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  radius .
+        /// Sets the source reference on Chart Studio Cloud for  radius .
         public static Box<IDensitymapboxProperty> radiussrc(string val) => Interop.mkDensitymapboxAttr("radiussrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IDensitymapboxProperty> textsrc(string val) => Interop.mkDensitymapboxAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IDensitymapboxProperty> hovertextsrc(string val) => Interop.mkDensitymapboxAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IDensitymapboxProperty> hoverinfosrc(string val) => Interop.mkDensitymapboxAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IDensitymapboxProperty> hovertemplatesrc(string val) => Interop.mkDensitymapboxAttr("hovertemplatesrc", val);
     }
 

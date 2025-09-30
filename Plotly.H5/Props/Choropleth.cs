@@ -15,30 +15,35 @@ namespace PlotlyH5
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IChoroplethProperty> legendgroup(string val) => Interop.mkChoroplethAttr("legendgroup", val);
+        public static Box<IChoroplethProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkChoroplethAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IChoroplethProperty> legendrank(int val) => Interop.mkChoroplethAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IChoroplethProperty> legendrank(float val) => Interop.mkChoroplethAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IChoroplethProperty> name(string val) => Interop.mkChoroplethAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IChoroplethProperty> uid(string val) => Interop.mkChoroplethAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(bool val) => Interop.mkChoroplethAttr("ids", new[]{val});
+        public static Box<IChoroplethProperty> ids(bool val) => Interop.mkChoroplethAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(params bool[] values) => Interop.mkChoroplethAttr("ids", values);
+        public static Box<IChoroplethProperty> ids(IEnumerable<bool> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(System.DateTime val) => Interop.mkChoroplethAttr("ids", new[]{val});
+        public static Box<IChoroplethProperty> ids(System.DateTime val) => Interop.mkChoroplethAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(params System.DateTime[] values) => Interop.mkChoroplethAttr("ids", values);
+        public static Box<IChoroplethProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(float val) => Interop.mkChoroplethAttr("ids", new[]{val});
+        public static Box<IChoroplethProperty> ids(float val) => Interop.mkChoroplethAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(params float[] values) => Interop.mkChoroplethAttr("ids", values);
+        public static Box<IChoroplethProperty> ids(IEnumerable<float> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(int val) => Interop.mkChoroplethAttr("ids", new[]{val});
+        public static Box<IChoroplethProperty> ids(int val) => Interop.mkChoroplethAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(params int[] values) => Interop.mkChoroplethAttr("ids", values);
+        public static Box<IChoroplethProperty> ids(IEnumerable<int> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(string val) => Interop.mkChoroplethAttr("ids", new[]{val});
+        public static Box<IChoroplethProperty> ids(string val) => Interop.mkChoroplethAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IChoroplethProperty> ids(params string[] values) => Interop.mkChoroplethAttr("ids", values);
+        public static Box<IChoroplethProperty> ids(IEnumerable<string> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IChoroplethProperty> ids(IEnumerable<bool[]> values) => Interop.mkChoroplethAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IChoroplethProperty> ids(IEnumerable<float?> values) => Interop.mkChoroplethAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(bool val) => Interop.mkChoroplethAttr("customdata", new[]{val});
+        public static Box<IChoroplethProperty> customdata(bool val) => Interop.mkChoroplethAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(params bool[] values) => Interop.mkChoroplethAttr("customdata", values);
+        public static Box<IChoroplethProperty> customdata(IEnumerable<bool> values) => Interop.mkChoroplethAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(System.DateTime val) => Interop.mkChoroplethAttr("customdata", new[]{val});
+        public static Box<IChoroplethProperty> customdata(System.DateTime val) => Interop.mkChoroplethAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(params System.DateTime[] values) => Interop.mkChoroplethAttr("customdata", values);
+        public static Box<IChoroplethProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkChoroplethAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(float val) => Interop.mkChoroplethAttr("customdata", new[]{val});
+        public static Box<IChoroplethProperty> customdata(float val) => Interop.mkChoroplethAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(params float[] values) => Interop.mkChoroplethAttr("customdata", values);
+        public static Box<IChoroplethProperty> customdata(IEnumerable<float> values) => Interop.mkChoroplethAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(int val) => Interop.mkChoroplethAttr("customdata", new[]{val});
+        public static Box<IChoroplethProperty> customdata(int val) => Interop.mkChoroplethAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(params int[] values) => Interop.mkChoroplethAttr("customdata", values);
+        public static Box<IChoroplethProperty> customdata(IEnumerable<int> values) => Interop.mkChoroplethAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(string val) => Interop.mkChoroplethAttr("customdata", new[]{val});
+        public static Box<IChoroplethProperty> customdata(string val) => Interop.mkChoroplethAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IChoroplethProperty> customdata(params string[] values) => Interop.mkChoroplethAttr("customdata", values);
+        public static Box<IChoroplethProperty> customdata(IEnumerable<string> values) => Interop.mkChoroplethAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IChoroplethProperty> customdata(IEnumerable<bool[]> values) => Interop.mkChoroplethAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -171,25 +176,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IChoroplethProperty> uirevision(params string[] values) => Interop.mkChoroplethAttr("uirevision", values);
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(bool val) => Interop.mkChoroplethAttr("locations", new[]{val});
+        public static Box<IChoroplethProperty> locations(bool val) => Interop.mkChoroplethAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(params bool[] values) => Interop.mkChoroplethAttr("locations", values);
+        public static Box<IChoroplethProperty> locations(IEnumerable<bool> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(System.DateTime val) => Interop.mkChoroplethAttr("locations", new[]{val});
+        public static Box<IChoroplethProperty> locations(System.DateTime val) => Interop.mkChoroplethAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(params System.DateTime[] values) => Interop.mkChoroplethAttr("locations", values);
+        public static Box<IChoroplethProperty> locations(IEnumerable<System.DateTime> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(float val) => Interop.mkChoroplethAttr("locations", new[]{val});
+        public static Box<IChoroplethProperty> locations(float val) => Interop.mkChoroplethAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(params float[] values) => Interop.mkChoroplethAttr("locations", values);
+        public static Box<IChoroplethProperty> locations(IEnumerable<float> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(int val) => Interop.mkChoroplethAttr("locations", new[]{val});
+        public static Box<IChoroplethProperty> locations(int val) => Interop.mkChoroplethAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(params int[] values) => Interop.mkChoroplethAttr("locations", values);
+        public static Box<IChoroplethProperty> locations(IEnumerable<int> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(string val) => Interop.mkChoroplethAttr("locations", new[]{val});
+        public static Box<IChoroplethProperty> locations(string val) => Interop.mkChoroplethAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
-        public static Box<IChoroplethProperty> locations(params string[] values) => Interop.mkChoroplethAttr("locations", values);
+        public static Box<IChoroplethProperty> locations(IEnumerable<string> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
         public static Box<IChoroplethProperty> locations(IEnumerable<bool[]> values) => Interop.mkChoroplethAttr("locations", Bindings.flatten2DArrayIf1D(values));
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
@@ -225,25 +230,25 @@ namespace PlotlyH5
         /// Sets the coordinates via location IDs or names. See `locationmode` for more info.
         public static Box<IChoroplethProperty> locations(IEnumerable<float?> values) => Interop.mkChoroplethAttr("locations", values.ToArray());
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(bool val) => Interop.mkChoroplethAttr("z", new[]{val});
+        public static Box<IChoroplethProperty> z(bool val) => Interop.mkChoroplethAttr("z", new[] { val });
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(params bool[] values) => Interop.mkChoroplethAttr("z", values);
+        public static Box<IChoroplethProperty> z(IEnumerable<bool> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(System.DateTime val) => Interop.mkChoroplethAttr("z", new[]{val});
+        public static Box<IChoroplethProperty> z(System.DateTime val) => Interop.mkChoroplethAttr("z", new[] { val });
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(params System.DateTime[] values) => Interop.mkChoroplethAttr("z", values);
+        public static Box<IChoroplethProperty> z(IEnumerable<System.DateTime> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(float val) => Interop.mkChoroplethAttr("z", new[]{val});
+        public static Box<IChoroplethProperty> z(float val) => Interop.mkChoroplethAttr("z", new[] { val });
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(params float[] values) => Interop.mkChoroplethAttr("z", values);
+        public static Box<IChoroplethProperty> z(IEnumerable<float> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(int val) => Interop.mkChoroplethAttr("z", new[]{val});
+        public static Box<IChoroplethProperty> z(int val) => Interop.mkChoroplethAttr("z", new[] { val });
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(params int[] values) => Interop.mkChoroplethAttr("z", values);
+        public static Box<IChoroplethProperty> z(IEnumerable<int> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(string val) => Interop.mkChoroplethAttr("z", new[]{val});
+        public static Box<IChoroplethProperty> z(string val) => Interop.mkChoroplethAttr("z", new[] { val });
         /// Sets the color values.
-        public static Box<IChoroplethProperty> z(params string[] values) => Interop.mkChoroplethAttr("z", values);
+        public static Box<IChoroplethProperty> z(IEnumerable<string> values) => Interop.mkChoroplethAttr("z", values.ToArray());
         /// Sets the color values.
         public static Box<IChoroplethProperty> z(IEnumerable<bool[]> values) => Interop.mkChoroplethAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the color values.
@@ -313,9 +318,9 @@ namespace PlotlyH5
         public static Box<IChoroplethProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkChoroplethAttr("unselected", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IChoroplethProperty> hoverinfo(params Box<IChoroplethProperty>[] properties) => Interop.mkChoroplethAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IChoroplethProperty> hovertemplate(string val) => Interop.mkChoroplethAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IChoroplethProperty> hovertemplate(IEnumerable<string> values) => Interop.mkChoroplethAttr("hovertemplate", values.ToArray());
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
         public static Box<IChoroplethProperty> showlegend(bool val) => Interop.mkChoroplethAttr("showlegend", val);
@@ -352,23 +357,23 @@ namespace PlotlyH5
         public static Box<IChoroplethProperty> geo(int anchorId) => Interop.mkChoroplethAttr("geo", anchorId > 1 ? $"geo{anchorId}" : "");
         /// Sets a reference between this trace's geospatial coordinates and a geographic map. If *geo* (the default value), the geospatial coordinates refer to `layout.geo`. If *geo2*, the geospatial coordinates refer to `layout.geo2`, and so on.
         public static Box<IChoroplethProperty> geo(string val) => Interop.mkChoroplethAttr("geo", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IChoroplethProperty> idssrc(string val) => Interop.mkChoroplethAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IChoroplethProperty> customdatasrc(string val) => Interop.mkChoroplethAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IChoroplethProperty> metasrc(string val) => Interop.mkChoroplethAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  locations .
+        /// Sets the source reference on Chart Studio Cloud for  locations .
         public static Box<IChoroplethProperty> locationssrc(string val) => Interop.mkChoroplethAttr("locationssrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IChoroplethProperty> zsrc(string val) => Interop.mkChoroplethAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IChoroplethProperty> textsrc(string val) => Interop.mkChoroplethAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IChoroplethProperty> hovertextsrc(string val) => Interop.mkChoroplethAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IChoroplethProperty> hoverinfosrc(string val) => Interop.mkChoroplethAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IChoroplethProperty> hovertemplatesrc(string val) => Interop.mkChoroplethAttr("hovertemplatesrc", val);
     }
 

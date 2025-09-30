@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Filter
     {
@@ -41,7 +41,7 @@ namespace Plotly
         public static Box<IFilterProperty> value(params string[] values) => Interop.mkFilterAttr("value", values);
         /// Determines whether or not gaps in data arrays produced by the filter operation are preserved. Setting this to *true* might be useful when plotting a line chart with `connectgaps` set to *false*.
         public static Box<IFilterProperty> preservegaps(bool val) => Interop.mkFilterAttr("preservegaps", val);
-        /// Sets the source reference on plot.ly for  target .
+        /// Sets the source reference on Chart Studio Cloud for  target .
         public static Box<IFilterProperty> targetsrc(string val) => Interop.mkFilterAttr("targetsrc", val);
     }
 
@@ -67,7 +67,7 @@ namespace Plotly
             public static Box<IFilterProperty> custom(string val) => Interop.mkFilterAttr("operation", val);
         }
 
-        /// Sets the calendar system to use for `value`, if it is a date.
+        /// WARNING: All transforms are deprecated and may be removed from the API in next major version. Sets the calendar system to use for `value`, if it is a date.
         public static partial class Valuecalendar
         {
             public static Box<IFilterProperty> chinese() => Interop.mkFilterAttr("valuecalendar", "chinese");
@@ -88,7 +88,7 @@ namespace Plotly
             public static Box<IFilterProperty> ummalqura() => Interop.mkFilterAttr("valuecalendar", "ummalqura");
         }
 
-        /// Sets the calendar system to use for `target`, if it is an array of dates. If `target` is a string (eg *x*) we use the corresponding trace attribute (eg `xcalendar`) if it exists, even if `targetcalendar` is provided.
+        /// WARNING: All transforms are deprecated and may be removed from the API in next major version. Sets the calendar system to use for `target`, if it is an array of dates. If `target` is a string (eg *x*) we use the corresponding trace attribute (eg `xcalendar`) if it exists, even if `targetcalendar` is provided.
         public static partial class Targetcalendar
         {
             public static Box<IFilterProperty> chinese() => Interop.mkFilterAttr("targetcalendar", "chinese");

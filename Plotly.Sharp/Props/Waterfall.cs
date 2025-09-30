@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Waterfall
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IWaterfallProperty> showlegend(bool val) => Interop.mkWaterfallAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IWaterfallProperty> legendgroup(string val) => Interop.mkWaterfallAttr("legendgroup", val);
+        public static Box<IWaterfallProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkWaterfallAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IWaterfallProperty> legendrank(int val) => Interop.mkWaterfallAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IWaterfallProperty> legendrank(float val) => Interop.mkWaterfallAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IWaterfallProperty> opacity(int val) => Interop.mkWaterfallAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IWaterfallProperty> uid(string val) => Interop.mkWaterfallAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(bool val) => Interop.mkWaterfallAttr("ids", new[]{val});
+        public static Box<IWaterfallProperty> ids(bool val) => Interop.mkWaterfallAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(params bool[] values) => Interop.mkWaterfallAttr("ids", values);
+        public static Box<IWaterfallProperty> ids(IEnumerable<bool> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(System.DateTime val) => Interop.mkWaterfallAttr("ids", new[]{val});
+        public static Box<IWaterfallProperty> ids(System.DateTime val) => Interop.mkWaterfallAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(params System.DateTime[] values) => Interop.mkWaterfallAttr("ids", values);
+        public static Box<IWaterfallProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(float val) => Interop.mkWaterfallAttr("ids", new[]{val});
+        public static Box<IWaterfallProperty> ids(float val) => Interop.mkWaterfallAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(params float[] values) => Interop.mkWaterfallAttr("ids", values);
+        public static Box<IWaterfallProperty> ids(IEnumerable<float> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(int val) => Interop.mkWaterfallAttr("ids", new[]{val});
+        public static Box<IWaterfallProperty> ids(int val) => Interop.mkWaterfallAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(params int[] values) => Interop.mkWaterfallAttr("ids", values);
+        public static Box<IWaterfallProperty> ids(IEnumerable<int> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(string val) => Interop.mkWaterfallAttr("ids", new[]{val});
+        public static Box<IWaterfallProperty> ids(string val) => Interop.mkWaterfallAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IWaterfallProperty> ids(params string[] values) => Interop.mkWaterfallAttr("ids", values);
+        public static Box<IWaterfallProperty> ids(IEnumerable<string> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IWaterfallProperty> ids(IEnumerable<bool[]> values) => Interop.mkWaterfallAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IWaterfallProperty> ids(IEnumerable<float?> values) => Interop.mkWaterfallAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(bool val) => Interop.mkWaterfallAttr("customdata", new[]{val});
+        public static Box<IWaterfallProperty> customdata(bool val) => Interop.mkWaterfallAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(params bool[] values) => Interop.mkWaterfallAttr("customdata", values);
+        public static Box<IWaterfallProperty> customdata(IEnumerable<bool> values) => Interop.mkWaterfallAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(System.DateTime val) => Interop.mkWaterfallAttr("customdata", new[]{val});
+        public static Box<IWaterfallProperty> customdata(System.DateTime val) => Interop.mkWaterfallAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(params System.DateTime[] values) => Interop.mkWaterfallAttr("customdata", values);
+        public static Box<IWaterfallProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkWaterfallAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(float val) => Interop.mkWaterfallAttr("customdata", new[]{val});
+        public static Box<IWaterfallProperty> customdata(float val) => Interop.mkWaterfallAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(params float[] values) => Interop.mkWaterfallAttr("customdata", values);
+        public static Box<IWaterfallProperty> customdata(IEnumerable<float> values) => Interop.mkWaterfallAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(int val) => Interop.mkWaterfallAttr("customdata", new[]{val});
+        public static Box<IWaterfallProperty> customdata(int val) => Interop.mkWaterfallAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(params int[] values) => Interop.mkWaterfallAttr("customdata", values);
+        public static Box<IWaterfallProperty> customdata(IEnumerable<int> values) => Interop.mkWaterfallAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(string val) => Interop.mkWaterfallAttr("customdata", new[]{val});
+        public static Box<IWaterfallProperty> customdata(string val) => Interop.mkWaterfallAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IWaterfallProperty> customdata(params string[] values) => Interop.mkWaterfallAttr("customdata", values);
+        public static Box<IWaterfallProperty> customdata(IEnumerable<string> values) => Interop.mkWaterfallAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IWaterfallProperty> customdata(IEnumerable<bool[]> values) => Interop.mkWaterfallAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,25 +182,25 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IWaterfallProperty> uirevision(params string[] values) => Interop.mkWaterfallAttr("uirevision", values);
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(bool val) => Interop.mkWaterfallAttr("measure", new[]{val});
+        public static Box<IWaterfallProperty> measure(bool val) => Interop.mkWaterfallAttr("measure", new[] { val });
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(params bool[] values) => Interop.mkWaterfallAttr("measure", values);
+        public static Box<IWaterfallProperty> measure(IEnumerable<bool> values) => Interop.mkWaterfallAttr("measure", values.ToArray());
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(System.DateTime val) => Interop.mkWaterfallAttr("measure", new[]{val});
+        public static Box<IWaterfallProperty> measure(System.DateTime val) => Interop.mkWaterfallAttr("measure", new[] { val });
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(params System.DateTime[] values) => Interop.mkWaterfallAttr("measure", values);
+        public static Box<IWaterfallProperty> measure(IEnumerable<System.DateTime> values) => Interop.mkWaterfallAttr("measure", values.ToArray());
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(float val) => Interop.mkWaterfallAttr("measure", new[]{val});
+        public static Box<IWaterfallProperty> measure(float val) => Interop.mkWaterfallAttr("measure", new[] { val });
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(params float[] values) => Interop.mkWaterfallAttr("measure", values);
+        public static Box<IWaterfallProperty> measure(IEnumerable<float> values) => Interop.mkWaterfallAttr("measure", values.ToArray());
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(int val) => Interop.mkWaterfallAttr("measure", new[]{val});
+        public static Box<IWaterfallProperty> measure(int val) => Interop.mkWaterfallAttr("measure", new[] { val });
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(params int[] values) => Interop.mkWaterfallAttr("measure", values);
+        public static Box<IWaterfallProperty> measure(IEnumerable<int> values) => Interop.mkWaterfallAttr("measure", values.ToArray());
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(string val) => Interop.mkWaterfallAttr("measure", new[]{val});
+        public static Box<IWaterfallProperty> measure(string val) => Interop.mkWaterfallAttr("measure", new[] { val });
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
-        public static Box<IWaterfallProperty> measure(params string[] values) => Interop.mkWaterfallAttr("measure", values);
+        public static Box<IWaterfallProperty> measure(IEnumerable<string> values) => Interop.mkWaterfallAttr("measure", values.ToArray());
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
         public static Box<IWaterfallProperty> measure(IEnumerable<bool[]> values) => Interop.mkWaterfallAttr("measure", Bindings.flatten2DArrayIf1D(values));
         /// An array containing types of values. By default the values are considered as 'relative'. However; it is possible to use 'total' to compute the sums. Also 'absolute' could be applied to reset the computed total or to declare an initial value where needed.
@@ -235,23 +240,23 @@ namespace Plotly
         /// Sets where the bar base is drawn (in position axis units).
         public static Box<IWaterfallProperty> _base(float val) => Interop.mkWaterfallAttr("base", val);
         /// Sets the x coordinates.
-        public static Box<IWaterfallProperty> x(bool val) => Interop.mkWaterfallAttr("x", new[]{val});
+        public static Box<IWaterfallProperty> x(bool val) => Interop.mkWaterfallAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IWaterfallProperty> x(IEnumerable<bool> values) => Interop.mkWaterfallAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IWaterfallProperty> x(System.DateTime val) => Interop.mkWaterfallAttr("x", new[]{val});
+        public static Box<IWaterfallProperty> x(System.DateTime val) => Interop.mkWaterfallAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IWaterfallProperty> x(IEnumerable<System.DateTime> values) => Interop.mkWaterfallAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IWaterfallProperty> x(float val) => Interop.mkWaterfallAttr("x", new[]{val});
+        public static Box<IWaterfallProperty> x(float val) => Interop.mkWaterfallAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IWaterfallProperty> x(IEnumerable<float> values) => Interop.mkWaterfallAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IWaterfallProperty> x(int val) => Interop.mkWaterfallAttr("x", new[]{val});
+        public static Box<IWaterfallProperty> x(int val) => Interop.mkWaterfallAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IWaterfallProperty> x(IEnumerable<int> values) => Interop.mkWaterfallAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IWaterfallProperty> x(string val) => Interop.mkWaterfallAttr("x", new[]{val});
+        public static Box<IWaterfallProperty> x(string val) => Interop.mkWaterfallAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IWaterfallProperty> x(IEnumerable<string> values) => Interop.mkWaterfallAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -313,23 +318,23 @@ namespace Plotly
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IWaterfallProperty> dx(float val) => Interop.mkWaterfallAttr("dx", val);
         /// Sets the y coordinates.
-        public static Box<IWaterfallProperty> y(bool val) => Interop.mkWaterfallAttr("y", new[]{val});
+        public static Box<IWaterfallProperty> y(bool val) => Interop.mkWaterfallAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IWaterfallProperty> y(IEnumerable<bool> values) => Interop.mkWaterfallAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IWaterfallProperty> y(System.DateTime val) => Interop.mkWaterfallAttr("y", new[]{val});
+        public static Box<IWaterfallProperty> y(System.DateTime val) => Interop.mkWaterfallAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IWaterfallProperty> y(IEnumerable<System.DateTime> values) => Interop.mkWaterfallAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IWaterfallProperty> y(float val) => Interop.mkWaterfallAttr("y", new[]{val});
+        public static Box<IWaterfallProperty> y(float val) => Interop.mkWaterfallAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IWaterfallProperty> y(IEnumerable<float> values) => Interop.mkWaterfallAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IWaterfallProperty> y(int val) => Interop.mkWaterfallAttr("y", new[]{val});
+        public static Box<IWaterfallProperty> y(int val) => Interop.mkWaterfallAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IWaterfallProperty> y(IEnumerable<int> values) => Interop.mkWaterfallAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IWaterfallProperty> y(string val) => Interop.mkWaterfallAttr("y", new[]{val});
+        public static Box<IWaterfallProperty> y(string val) => Interop.mkWaterfallAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IWaterfallProperty> y(IEnumerable<string> values) => Interop.mkWaterfallAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -390,27 +395,111 @@ namespace Plotly
         public static Box<IWaterfallProperty> dy(int val) => Interop.mkWaterfallAttr("dy", val);
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IWaterfallProperty> dy(float val) => Interop.mkWaterfallAttr("dy", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(bool val) => Interop.mkWaterfallAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(params bool[] values) => Interop.mkWaterfallAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(System.DateTime val) => Interop.mkWaterfallAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(params System.DateTime[] values) => Interop.mkWaterfallAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(int val) => Interop.mkWaterfallAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(params int[] values) => Interop.mkWaterfallAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(float val) => Interop.mkWaterfallAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(params float[] values) => Interop.mkWaterfallAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(string val) => Interop.mkWaterfallAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> xperiod(params string[] values) => Interop.mkWaterfallAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(bool val) => Interop.mkWaterfallAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(params bool[] values) => Interop.mkWaterfallAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(System.DateTime val) => Interop.mkWaterfallAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(params System.DateTime[] values) => Interop.mkWaterfallAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(int val) => Interop.mkWaterfallAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(params int[] values) => Interop.mkWaterfallAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(float val) => Interop.mkWaterfallAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(params float[] values) => Interop.mkWaterfallAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(string val) => Interop.mkWaterfallAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IWaterfallProperty> yperiod(params string[] values) => Interop.mkWaterfallAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(bool val) => Interop.mkWaterfallAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(params bool[] values) => Interop.mkWaterfallAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(System.DateTime val) => Interop.mkWaterfallAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(params System.DateTime[] values) => Interop.mkWaterfallAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(int val) => Interop.mkWaterfallAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(params int[] values) => Interop.mkWaterfallAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(float val) => Interop.mkWaterfallAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(params float[] values) => Interop.mkWaterfallAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(string val) => Interop.mkWaterfallAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> xperiod0(params string[] values) => Interop.mkWaterfallAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(bool val) => Interop.mkWaterfallAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(params bool[] values) => Interop.mkWaterfallAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(System.DateTime val) => Interop.mkWaterfallAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(params System.DateTime[] values) => Interop.mkWaterfallAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(int val) => Interop.mkWaterfallAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(params int[] values) => Interop.mkWaterfallAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(float val) => Interop.mkWaterfallAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(params float[] values) => Interop.mkWaterfallAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(string val) => Interop.mkWaterfallAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IWaterfallProperty> yperiod0(params string[] values) => Interop.mkWaterfallAttr("yperiod0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IWaterfallProperty> xhoverformat(string val) => Interop.mkWaterfallAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IWaterfallProperty> yhoverformat(string val) => Interop.mkWaterfallAttr("yhoverformat", val);
         /// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IWaterfallProperty> hovertext(string val) => Interop.mkWaterfallAttr("hovertext", val);
         /// Sets hover text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IWaterfallProperty> hovertext(IEnumerable<string> values) => Interop.mkWaterfallAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta` and `final`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta` and `final`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IWaterfallProperty> hovertemplate(string val) => Interop.mkWaterfallAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta` and `final`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta` and `final`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IWaterfallProperty> hovertemplate(IEnumerable<string> values) => Interop.mkWaterfallAttr("hovertemplate", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IWaterfallProperty> hoverinfo(params Box<IWaterfallProperty>[] properties) => Interop.mkWaterfallAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Determines which trace information appear on the graph. In the case of having multiple waterfalls, totals are computed separately (per trace).
         public static Box<IWaterfallProperty> textinfo(params Box<IWaterfallProperty>[] properties) => Interop.mkWaterfallAttr("textinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta`, `final` and `label`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta`, `final` and `label`.
         public static Box<IWaterfallProperty> texttemplate(string val) => Interop.mkWaterfallAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta`, `final` and `label`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `initial`, `delta`, `final` and `label`.
         public static Box<IWaterfallProperty> texttemplate(IEnumerable<string> values) => Interop.mkWaterfallAttr("texttemplate", values.ToArray());
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IWaterfallProperty> text(string val) => Interop.mkWaterfallAttr("text", val);
         /// Sets text elements associated with each (x,y) pair. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (x,y) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IWaterfallProperty> text(IEnumerable<string> values) => Interop.mkWaterfallAttr("text", values.ToArray());
-        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside.
+        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
         public static Box<IWaterfallProperty> textposition(IEnumerable<Box<IWaterfallProperty>> properties) => Interop.mkWaterfallAttr("textposition", Bindings.flattenProperties(properties));
         /// Sets the angle of the tick labels with respect to the bar. For example, a `tickangle` of -90 draws the tick labels vertically. With *auto* the texts may automatically be rotated to fit with the maximum size in bars.
         public static Box<IWaterfallProperty> textangle(int val) => Interop.mkWaterfallAttr("textangle", val);
@@ -456,33 +545,33 @@ namespace Plotly
         public static Box<IWaterfallProperty> yaxis(int anchorId) => Interop.mkWaterfallAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IWaterfallProperty> yaxis(string val) => Interop.mkWaterfallAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IWaterfallProperty> idssrc(string val) => Interop.mkWaterfallAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IWaterfallProperty> customdatasrc(string val) => Interop.mkWaterfallAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IWaterfallProperty> metasrc(string val) => Interop.mkWaterfallAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  measure .
+        /// Sets the source reference on Chart Studio Cloud for  measure .
         public static Box<IWaterfallProperty> measuresrc(string val) => Interop.mkWaterfallAttr("measuresrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IWaterfallProperty> xsrc(string val) => Interop.mkWaterfallAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IWaterfallProperty> ysrc(string val) => Interop.mkWaterfallAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IWaterfallProperty> hovertextsrc(string val) => Interop.mkWaterfallAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IWaterfallProperty> hovertemplatesrc(string val) => Interop.mkWaterfallAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IWaterfallProperty> hoverinfosrc(string val) => Interop.mkWaterfallAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IWaterfallProperty> texttemplatesrc(string val) => Interop.mkWaterfallAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IWaterfallProperty> textsrc(string val) => Interop.mkWaterfallAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IWaterfallProperty> textpositionsrc(string val) => Interop.mkWaterfallAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  offset .
+        /// Sets the source reference on Chart Studio Cloud for  offset .
         public static Box<IWaterfallProperty> offsetsrc(string val) => Interop.mkWaterfallAttr("offsetsrc", val);
-        /// Sets the source reference on plot.ly for  width .
+        /// Sets the source reference on Chart Studio Cloud for  width .
         public static Box<IWaterfallProperty> widthsrc(string val) => Interop.mkWaterfallAttr("widthsrc", val);
     }
 
@@ -494,6 +583,22 @@ namespace Plotly
             public static Box<IWaterfallProperty> legendonly() => Interop.mkWaterfallAttr("visible", "legendonly");
             public static Box<IWaterfallProperty> _false() => Interop.mkWaterfallAttr("visible", false);
             public static Box<IWaterfallProperty> _true() => Interop.mkWaterfallAttr("visible", true);
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IWaterfallProperty> _end() => Interop.mkWaterfallAttr("xperiodalignment", "end");
+            public static Box<IWaterfallProperty> middle() => Interop.mkWaterfallAttr("xperiodalignment", "middle");
+            public static Box<IWaterfallProperty> start() => Interop.mkWaterfallAttr("xperiodalignment", "start");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+        public static partial class Yperiodalignment
+        {
+            public static Box<IWaterfallProperty> _end() => Interop.mkWaterfallAttr("yperiodalignment", "end");
+            public static Box<IWaterfallProperty> middle() => Interop.mkWaterfallAttr("yperiodalignment", "middle");
+            public static Box<IWaterfallProperty> start() => Interop.mkWaterfallAttr("yperiodalignment", "start");
         }
 
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -522,7 +627,7 @@ namespace Plotly
             public static Box<IWaterfallProperty> text() => Interop.mkWaterfallAttr("textinfo", "text");
         }
 
-        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside.
+        /// Specifies the location of the `text`. *inside* positions `text` inside, next to the bar end (rotated and scaled if needed). *outside* positions `text` outside, next to the bar end (scaled if needed), unless there is another bar stacked on this one, then the text gets pushed inside. *auto* tries to position `text` inside the bar, but if the bar is too small and no bar is stacked on this one the text is moved outside. If *none*, no text appears.
         public static partial class Textposition
         {
             public static Box<IWaterfallProperty> auto() => Interop.mkWaterfallAttr("textposition", "auto");

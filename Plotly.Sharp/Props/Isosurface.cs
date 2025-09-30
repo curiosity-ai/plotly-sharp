@@ -8,37 +8,42 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Isosurface
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IIsosurfaceProperty> legendgroup(string val) => Interop.mkIsosurfaceAttr("legendgroup", val);
+        public static Box<IIsosurfaceProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkIsosurfaceAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IIsosurfaceProperty> legendrank(int val) => Interop.mkIsosurfaceAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IIsosurfaceProperty> legendrank(float val) => Interop.mkIsosurfaceAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IIsosurfaceProperty> name(string val) => Interop.mkIsosurfaceAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IIsosurfaceProperty> uid(string val) => Interop.mkIsosurfaceAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(bool val) => Interop.mkIsosurfaceAttr("ids", new[]{val});
+        public static Box<IIsosurfaceProperty> ids(bool val) => Interop.mkIsosurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(params bool[] values) => Interop.mkIsosurfaceAttr("ids", values);
+        public static Box<IIsosurfaceProperty> ids(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(System.DateTime val) => Interop.mkIsosurfaceAttr("ids", new[]{val});
+        public static Box<IIsosurfaceProperty> ids(System.DateTime val) => Interop.mkIsosurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(params System.DateTime[] values) => Interop.mkIsosurfaceAttr("ids", values);
+        public static Box<IIsosurfaceProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(float val) => Interop.mkIsosurfaceAttr("ids", new[]{val});
+        public static Box<IIsosurfaceProperty> ids(float val) => Interop.mkIsosurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(params float[] values) => Interop.mkIsosurfaceAttr("ids", values);
+        public static Box<IIsosurfaceProperty> ids(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(int val) => Interop.mkIsosurfaceAttr("ids", new[]{val});
+        public static Box<IIsosurfaceProperty> ids(int val) => Interop.mkIsosurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(params int[] values) => Interop.mkIsosurfaceAttr("ids", values);
+        public static Box<IIsosurfaceProperty> ids(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(string val) => Interop.mkIsosurfaceAttr("ids", new[]{val});
+        public static Box<IIsosurfaceProperty> ids(string val) => Interop.mkIsosurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IIsosurfaceProperty> ids(params string[] values) => Interop.mkIsosurfaceAttr("ids", values);
+        public static Box<IIsosurfaceProperty> ids(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IIsosurfaceProperty> ids(IEnumerable<bool[]> values) => Interop.mkIsosurfaceAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IIsosurfaceProperty> ids(IEnumerable<float?> values) => Interop.mkIsosurfaceAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(bool val) => Interop.mkIsosurfaceAttr("customdata", new[]{val});
+        public static Box<IIsosurfaceProperty> customdata(bool val) => Interop.mkIsosurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(params bool[] values) => Interop.mkIsosurfaceAttr("customdata", values);
+        public static Box<IIsosurfaceProperty> customdata(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(System.DateTime val) => Interop.mkIsosurfaceAttr("customdata", new[]{val});
+        public static Box<IIsosurfaceProperty> customdata(System.DateTime val) => Interop.mkIsosurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(params System.DateTime[] values) => Interop.mkIsosurfaceAttr("customdata", values);
+        public static Box<IIsosurfaceProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(float val) => Interop.mkIsosurfaceAttr("customdata", new[]{val});
+        public static Box<IIsosurfaceProperty> customdata(float val) => Interop.mkIsosurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(params float[] values) => Interop.mkIsosurfaceAttr("customdata", values);
+        public static Box<IIsosurfaceProperty> customdata(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(int val) => Interop.mkIsosurfaceAttr("customdata", new[]{val});
+        public static Box<IIsosurfaceProperty> customdata(int val) => Interop.mkIsosurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(params int[] values) => Interop.mkIsosurfaceAttr("customdata", values);
+        public static Box<IIsosurfaceProperty> customdata(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(string val) => Interop.mkIsosurfaceAttr("customdata", new[]{val});
+        public static Box<IIsosurfaceProperty> customdata(string val) => Interop.mkIsosurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IIsosurfaceProperty> customdata(params string[] values) => Interop.mkIsosurfaceAttr("customdata", values);
+        public static Box<IIsosurfaceProperty> customdata(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IIsosurfaceProperty> customdata(IEnumerable<bool[]> values) => Interop.mkIsosurfaceAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -150,23 +155,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IIsosurfaceProperty> uirevision(params string[] values) => Interop.mkIsosurfaceAttr("uirevision", values);
         /// Sets the X coordinates of the vertices on X axis.
-        public static Box<IIsosurfaceProperty> x(bool val) => Interop.mkIsosurfaceAttr("x", new[]{val});
+        public static Box<IIsosurfaceProperty> x(bool val) => Interop.mkIsosurfaceAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices on X axis.
-        public static Box<IIsosurfaceProperty> x(System.DateTime val) => Interop.mkIsosurfaceAttr("x", new[]{val});
+        public static Box<IIsosurfaceProperty> x(System.DateTime val) => Interop.mkIsosurfaceAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices on X axis.
-        public static Box<IIsosurfaceProperty> x(float val) => Interop.mkIsosurfaceAttr("x", new[]{val});
+        public static Box<IIsosurfaceProperty> x(float val) => Interop.mkIsosurfaceAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices on X axis.
-        public static Box<IIsosurfaceProperty> x(int val) => Interop.mkIsosurfaceAttr("x", new[]{val});
+        public static Box<IIsosurfaceProperty> x(int val) => Interop.mkIsosurfaceAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices on X axis.
-        public static Box<IIsosurfaceProperty> x(string val) => Interop.mkIsosurfaceAttr("x", new[]{val});
+        public static Box<IIsosurfaceProperty> x(string val) => Interop.mkIsosurfaceAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices on X axis.
@@ -204,23 +209,23 @@ namespace Plotly
         /// Sets the X coordinates of the vertices on X axis.
         public static Box<IIsosurfaceProperty> x(IEnumerable<float?> values) => Interop.mkIsosurfaceAttr("x", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
-        public static Box<IIsosurfaceProperty> y(bool val) => Interop.mkIsosurfaceAttr("y", new[]{val});
+        public static Box<IIsosurfaceProperty> y(bool val) => Interop.mkIsosurfaceAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
-        public static Box<IIsosurfaceProperty> y(System.DateTime val) => Interop.mkIsosurfaceAttr("y", new[]{val});
+        public static Box<IIsosurfaceProperty> y(System.DateTime val) => Interop.mkIsosurfaceAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
-        public static Box<IIsosurfaceProperty> y(float val) => Interop.mkIsosurfaceAttr("y", new[]{val});
+        public static Box<IIsosurfaceProperty> y(float val) => Interop.mkIsosurfaceAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
-        public static Box<IIsosurfaceProperty> y(int val) => Interop.mkIsosurfaceAttr("y", new[]{val});
+        public static Box<IIsosurfaceProperty> y(int val) => Interop.mkIsosurfaceAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
-        public static Box<IIsosurfaceProperty> y(string val) => Interop.mkIsosurfaceAttr("y", new[]{val});
+        public static Box<IIsosurfaceProperty> y(string val) => Interop.mkIsosurfaceAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices on Y axis.
@@ -258,23 +263,23 @@ namespace Plotly
         /// Sets the Y coordinates of the vertices on Y axis.
         public static Box<IIsosurfaceProperty> y(IEnumerable<float?> values) => Interop.mkIsosurfaceAttr("y", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
-        public static Box<IIsosurfaceProperty> z(bool val) => Interop.mkIsosurfaceAttr("z", new[]{val});
+        public static Box<IIsosurfaceProperty> z(bool val) => Interop.mkIsosurfaceAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
-        public static Box<IIsosurfaceProperty> z(System.DateTime val) => Interop.mkIsosurfaceAttr("z", new[]{val});
+        public static Box<IIsosurfaceProperty> z(System.DateTime val) => Interop.mkIsosurfaceAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
-        public static Box<IIsosurfaceProperty> z(float val) => Interop.mkIsosurfaceAttr("z", new[]{val});
+        public static Box<IIsosurfaceProperty> z(float val) => Interop.mkIsosurfaceAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
-        public static Box<IIsosurfaceProperty> z(int val) => Interop.mkIsosurfaceAttr("z", new[]{val});
+        public static Box<IIsosurfaceProperty> z(int val) => Interop.mkIsosurfaceAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
-        public static Box<IIsosurfaceProperty> z(string val) => Interop.mkIsosurfaceAttr("z", new[]{val});
+        public static Box<IIsosurfaceProperty> z(string val) => Interop.mkIsosurfaceAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices on Z axis.
@@ -312,23 +317,23 @@ namespace Plotly
         /// Sets the Z coordinates of the vertices on Z axis.
         public static Box<IIsosurfaceProperty> z(IEnumerable<float?> values) => Interop.mkIsosurfaceAttr("z", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
-        public static Box<IIsosurfaceProperty> value(bool val) => Interop.mkIsosurfaceAttr("value", new[]{val});
+        public static Box<IIsosurfaceProperty> value(bool val) => Interop.mkIsosurfaceAttr("value", new[] { val });
         /// Sets the 4th dimension (value) of the vertices.
         public static Box<IIsosurfaceProperty> value(IEnumerable<bool> values) => Interop.mkIsosurfaceAttr("value", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
-        public static Box<IIsosurfaceProperty> value(System.DateTime val) => Interop.mkIsosurfaceAttr("value", new[]{val});
+        public static Box<IIsosurfaceProperty> value(System.DateTime val) => Interop.mkIsosurfaceAttr("value", new[] { val });
         /// Sets the 4th dimension (value) of the vertices.
         public static Box<IIsosurfaceProperty> value(IEnumerable<System.DateTime> values) => Interop.mkIsosurfaceAttr("value", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
-        public static Box<IIsosurfaceProperty> value(float val) => Interop.mkIsosurfaceAttr("value", new[]{val});
+        public static Box<IIsosurfaceProperty> value(float val) => Interop.mkIsosurfaceAttr("value", new[] { val });
         /// Sets the 4th dimension (value) of the vertices.
         public static Box<IIsosurfaceProperty> value(IEnumerable<float> values) => Interop.mkIsosurfaceAttr("value", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
-        public static Box<IIsosurfaceProperty> value(int val) => Interop.mkIsosurfaceAttr("value", new[]{val});
+        public static Box<IIsosurfaceProperty> value(int val) => Interop.mkIsosurfaceAttr("value", new[] { val });
         /// Sets the 4th dimension (value) of the vertices.
         public static Box<IIsosurfaceProperty> value(IEnumerable<int> values) => Interop.mkIsosurfaceAttr("value", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
-        public static Box<IIsosurfaceProperty> value(string val) => Interop.mkIsosurfaceAttr("value", new[]{val});
+        public static Box<IIsosurfaceProperty> value(string val) => Interop.mkIsosurfaceAttr("value", new[] { val });
         /// Sets the 4th dimension (value) of the vertices.
         public static Box<IIsosurfaceProperty> value(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("value", values.ToArray());
         /// Sets the 4th dimension (value) of the vertices.
@@ -385,10 +390,18 @@ namespace Plotly
         public static Box<IIsosurfaceProperty> hovertext(string val) => Interop.mkIsosurfaceAttr("hovertext", val);
         /// Same as `text`.
         public static Box<IIsosurfaceProperty> hovertext(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IIsosurfaceProperty> hovertemplate(string val) => Interop.mkIsosurfaceAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IIsosurfaceProperty> hovertemplate(IEnumerable<string> values) => Interop.mkIsosurfaceAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IIsosurfaceProperty> xhoverformat(string val) => Interop.mkIsosurfaceAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IIsosurfaceProperty> yhoverformat(string val) => Interop.mkIsosurfaceAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<IIsosurfaceProperty> zhoverformat(string val) => Interop.mkIsosurfaceAttr("zhoverformat", val);
+        /// Sets the hover text formatting rulefor `value`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IIsosurfaceProperty> valuehoverformat(string val) => Interop.mkIsosurfaceAttr("valuehoverformat", val);
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
         public static Box<IIsosurfaceProperty> showlegend(bool val) => Interop.mkIsosurfaceAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here `value`) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
@@ -435,27 +448,27 @@ namespace Plotly
         public static Box<IIsosurfaceProperty> scene(int anchorId) => Interop.mkIsosurfaceAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IIsosurfaceProperty> scene(string val) => Interop.mkIsosurfaceAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IIsosurfaceProperty> idssrc(string val) => Interop.mkIsosurfaceAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IIsosurfaceProperty> customdatasrc(string val) => Interop.mkIsosurfaceAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IIsosurfaceProperty> metasrc(string val) => Interop.mkIsosurfaceAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IIsosurfaceProperty> xsrc(string val) => Interop.mkIsosurfaceAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IIsosurfaceProperty> ysrc(string val) => Interop.mkIsosurfaceAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IIsosurfaceProperty> zsrc(string val) => Interop.mkIsosurfaceAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  value .
+        /// Sets the source reference on Chart Studio Cloud for  value .
         public static Box<IIsosurfaceProperty> valuesrc(string val) => Interop.mkIsosurfaceAttr("valuesrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IIsosurfaceProperty> textsrc(string val) => Interop.mkIsosurfaceAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IIsosurfaceProperty> hovertextsrc(string val) => Interop.mkIsosurfaceAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IIsosurfaceProperty> hovertemplatesrc(string val) => Interop.mkIsosurfaceAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IIsosurfaceProperty> hoverinfosrc(string val) => Interop.mkIsosurfaceAttr("hoverinfosrc", val);
     }
 

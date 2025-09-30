@@ -15,30 +15,35 @@ namespace PlotlyH5
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IMesh3dProperty> legendgroup(string val) => Interop.mkMesh3dAttr("legendgroup", val);
+        public static Box<IMesh3dProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkMesh3dAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IMesh3dProperty> legendrank(int val) => Interop.mkMesh3dAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IMesh3dProperty> legendrank(float val) => Interop.mkMesh3dAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IMesh3dProperty> name(string val) => Interop.mkMesh3dAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IMesh3dProperty> uid(string val) => Interop.mkMesh3dAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(bool val) => Interop.mkMesh3dAttr("ids", new[]{val});
+        public static Box<IMesh3dProperty> ids(bool val) => Interop.mkMesh3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(params bool[] values) => Interop.mkMesh3dAttr("ids", values);
+        public static Box<IMesh3dProperty> ids(IEnumerable<bool> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(System.DateTime val) => Interop.mkMesh3dAttr("ids", new[]{val});
+        public static Box<IMesh3dProperty> ids(System.DateTime val) => Interop.mkMesh3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(params System.DateTime[] values) => Interop.mkMesh3dAttr("ids", values);
+        public static Box<IMesh3dProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(float val) => Interop.mkMesh3dAttr("ids", new[]{val});
+        public static Box<IMesh3dProperty> ids(float val) => Interop.mkMesh3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(params float[] values) => Interop.mkMesh3dAttr("ids", values);
+        public static Box<IMesh3dProperty> ids(IEnumerable<float> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(int val) => Interop.mkMesh3dAttr("ids", new[]{val});
+        public static Box<IMesh3dProperty> ids(int val) => Interop.mkMesh3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(params int[] values) => Interop.mkMesh3dAttr("ids", values);
+        public static Box<IMesh3dProperty> ids(IEnumerable<int> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(string val) => Interop.mkMesh3dAttr("ids", new[]{val});
+        public static Box<IMesh3dProperty> ids(string val) => Interop.mkMesh3dAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IMesh3dProperty> ids(params string[] values) => Interop.mkMesh3dAttr("ids", values);
+        public static Box<IMesh3dProperty> ids(IEnumerable<string> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IMesh3dProperty> ids(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IMesh3dProperty> ids(IEnumerable<float?> values) => Interop.mkMesh3dAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(bool val) => Interop.mkMesh3dAttr("customdata", new[]{val});
+        public static Box<IMesh3dProperty> customdata(bool val) => Interop.mkMesh3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(params bool[] values) => Interop.mkMesh3dAttr("customdata", values);
+        public static Box<IMesh3dProperty> customdata(IEnumerable<bool> values) => Interop.mkMesh3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(System.DateTime val) => Interop.mkMesh3dAttr("customdata", new[]{val});
+        public static Box<IMesh3dProperty> customdata(System.DateTime val) => Interop.mkMesh3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(params System.DateTime[] values) => Interop.mkMesh3dAttr("customdata", values);
+        public static Box<IMesh3dProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(float val) => Interop.mkMesh3dAttr("customdata", new[]{val});
+        public static Box<IMesh3dProperty> customdata(float val) => Interop.mkMesh3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(params float[] values) => Interop.mkMesh3dAttr("customdata", values);
+        public static Box<IMesh3dProperty> customdata(IEnumerable<float> values) => Interop.mkMesh3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(int val) => Interop.mkMesh3dAttr("customdata", new[]{val});
+        public static Box<IMesh3dProperty> customdata(int val) => Interop.mkMesh3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(params int[] values) => Interop.mkMesh3dAttr("customdata", values);
+        public static Box<IMesh3dProperty> customdata(IEnumerable<int> values) => Interop.mkMesh3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(string val) => Interop.mkMesh3dAttr("customdata", new[]{val});
+        public static Box<IMesh3dProperty> customdata(string val) => Interop.mkMesh3dAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IMesh3dProperty> customdata(params string[] values) => Interop.mkMesh3dAttr("customdata", values);
+        public static Box<IMesh3dProperty> customdata(IEnumerable<string> values) => Interop.mkMesh3dAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IMesh3dProperty> customdata(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -150,23 +155,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IMesh3dProperty> uirevision(params string[] values) => Interop.mkMesh3dAttr("uirevision", values);
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> x(bool val) => Interop.mkMesh3dAttr("x", new[]{val});
+        public static Box<IMesh3dProperty> x(bool val) => Interop.mkMesh3dAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<bool> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> x(System.DateTime val) => Interop.mkMesh3dAttr("x", new[]{val});
+        public static Box<IMesh3dProperty> x(System.DateTime val) => Interop.mkMesh3dAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> x(float val) => Interop.mkMesh3dAttr("x", new[]{val});
+        public static Box<IMesh3dProperty> x(float val) => Interop.mkMesh3dAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<float> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> x(int val) => Interop.mkMesh3dAttr("x", new[]{val});
+        public static Box<IMesh3dProperty> x(int val) => Interop.mkMesh3dAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<int> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> x(string val) => Interop.mkMesh3dAttr("x", new[]{val});
+        public static Box<IMesh3dProperty> x(string val) => Interop.mkMesh3dAttr("x", new[] { val });
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<string> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
@@ -204,23 +209,23 @@ namespace PlotlyH5
         /// Sets the X coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> x(IEnumerable<float?> values) => Interop.mkMesh3dAttr("x", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> y(bool val) => Interop.mkMesh3dAttr("y", new[]{val});
+        public static Box<IMesh3dProperty> y(bool val) => Interop.mkMesh3dAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<bool> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> y(System.DateTime val) => Interop.mkMesh3dAttr("y", new[]{val});
+        public static Box<IMesh3dProperty> y(System.DateTime val) => Interop.mkMesh3dAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> y(float val) => Interop.mkMesh3dAttr("y", new[]{val});
+        public static Box<IMesh3dProperty> y(float val) => Interop.mkMesh3dAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<float> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> y(int val) => Interop.mkMesh3dAttr("y", new[]{val});
+        public static Box<IMesh3dProperty> y(int val) => Interop.mkMesh3dAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<int> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> y(string val) => Interop.mkMesh3dAttr("y", new[]{val});
+        public static Box<IMesh3dProperty> y(string val) => Interop.mkMesh3dAttr("y", new[] { val });
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<string> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
@@ -258,23 +263,23 @@ namespace PlotlyH5
         /// Sets the Y coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> y(IEnumerable<float?> values) => Interop.mkMesh3dAttr("y", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> z(bool val) => Interop.mkMesh3dAttr("z", new[]{val});
+        public static Box<IMesh3dProperty> z(bool val) => Interop.mkMesh3dAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<bool> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> z(System.DateTime val) => Interop.mkMesh3dAttr("z", new[]{val});
+        public static Box<IMesh3dProperty> z(System.DateTime val) => Interop.mkMesh3dAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> z(float val) => Interop.mkMesh3dAttr("z", new[]{val});
+        public static Box<IMesh3dProperty> z(float val) => Interop.mkMesh3dAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<float> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> z(int val) => Interop.mkMesh3dAttr("z", new[]{val});
+        public static Box<IMesh3dProperty> z(int val) => Interop.mkMesh3dAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<int> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
-        public static Box<IMesh3dProperty> z(string val) => Interop.mkMesh3dAttr("z", new[]{val});
+        public static Box<IMesh3dProperty> z(string val) => Interop.mkMesh3dAttr("z", new[] { val });
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<string> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
@@ -312,25 +317,25 @@ namespace PlotlyH5
         /// Sets the Z coordinates of the vertices. The nth element of vectors `x`, `y` and `z` jointly represent the X, Y and Z coordinates of the nth vertex.
         public static Box<IMesh3dProperty> z(IEnumerable<float?> values) => Interop.mkMesh3dAttr("z", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(bool val) => Interop.mkMesh3dAttr("i", new[]{val});
+        public static Box<IMesh3dProperty> i(bool val) => Interop.mkMesh3dAttr("i", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(params bool[] values) => Interop.mkMesh3dAttr("i", values);
+        public static Box<IMesh3dProperty> i(IEnumerable<bool> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(System.DateTime val) => Interop.mkMesh3dAttr("i", new[]{val});
+        public static Box<IMesh3dProperty> i(System.DateTime val) => Interop.mkMesh3dAttr("i", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(params System.DateTime[] values) => Interop.mkMesh3dAttr("i", values);
+        public static Box<IMesh3dProperty> i(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(float val) => Interop.mkMesh3dAttr("i", new[]{val});
+        public static Box<IMesh3dProperty> i(float val) => Interop.mkMesh3dAttr("i", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(params float[] values) => Interop.mkMesh3dAttr("i", values);
+        public static Box<IMesh3dProperty> i(IEnumerable<float> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(int val) => Interop.mkMesh3dAttr("i", new[]{val});
+        public static Box<IMesh3dProperty> i(int val) => Interop.mkMesh3dAttr("i", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(params int[] values) => Interop.mkMesh3dAttr("i", values);
+        public static Box<IMesh3dProperty> i(IEnumerable<int> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(string val) => Interop.mkMesh3dAttr("i", new[]{val});
+        public static Box<IMesh3dProperty> i(string val) => Interop.mkMesh3dAttr("i", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
-        public static Box<IMesh3dProperty> i(params string[] values) => Interop.mkMesh3dAttr("i", values);
+        public static Box<IMesh3dProperty> i(IEnumerable<string> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
         public static Box<IMesh3dProperty> i(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("i", Bindings.flatten2DArrayIf1D(values));
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
@@ -366,25 +371,25 @@ namespace PlotlyH5
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *first* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `i[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `i` represents a point in space, which is the first vertex of a triangle.
         public static Box<IMesh3dProperty> i(IEnumerable<float?> values) => Interop.mkMesh3dAttr("i", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(bool val) => Interop.mkMesh3dAttr("j", new[]{val});
+        public static Box<IMesh3dProperty> j(bool val) => Interop.mkMesh3dAttr("j", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(params bool[] values) => Interop.mkMesh3dAttr("j", values);
+        public static Box<IMesh3dProperty> j(IEnumerable<bool> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(System.DateTime val) => Interop.mkMesh3dAttr("j", new[]{val});
+        public static Box<IMesh3dProperty> j(System.DateTime val) => Interop.mkMesh3dAttr("j", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(params System.DateTime[] values) => Interop.mkMesh3dAttr("j", values);
+        public static Box<IMesh3dProperty> j(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(float val) => Interop.mkMesh3dAttr("j", new[]{val});
+        public static Box<IMesh3dProperty> j(float val) => Interop.mkMesh3dAttr("j", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(params float[] values) => Interop.mkMesh3dAttr("j", values);
+        public static Box<IMesh3dProperty> j(IEnumerable<float> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(int val) => Interop.mkMesh3dAttr("j", new[]{val});
+        public static Box<IMesh3dProperty> j(int val) => Interop.mkMesh3dAttr("j", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(params int[] values) => Interop.mkMesh3dAttr("j", values);
+        public static Box<IMesh3dProperty> j(IEnumerable<int> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(string val) => Interop.mkMesh3dAttr("j", new[]{val});
+        public static Box<IMesh3dProperty> j(string val) => Interop.mkMesh3dAttr("j", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
-        public static Box<IMesh3dProperty> j(params string[] values) => Interop.mkMesh3dAttr("j", values);
+        public static Box<IMesh3dProperty> j(IEnumerable<string> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
         public static Box<IMesh3dProperty> j(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("j", Bindings.flatten2DArrayIf1D(values));
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
@@ -420,25 +425,25 @@ namespace PlotlyH5
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *second* vertex of a triangle. For example, `{i[m], j[m], k[m]}`  together represent face m (triangle m) in the mesh, where `j[m] = n` points to the triplet `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `j` represents a point in space, which is the second vertex of a triangle.
         public static Box<IMesh3dProperty> j(IEnumerable<float?> values) => Interop.mkMesh3dAttr("j", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(bool val) => Interop.mkMesh3dAttr("k", new[]{val});
+        public static Box<IMesh3dProperty> k(bool val) => Interop.mkMesh3dAttr("k", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(params bool[] values) => Interop.mkMesh3dAttr("k", values);
+        public static Box<IMesh3dProperty> k(IEnumerable<bool> values) => Interop.mkMesh3dAttr("k", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(System.DateTime val) => Interop.mkMesh3dAttr("k", new[]{val});
+        public static Box<IMesh3dProperty> k(System.DateTime val) => Interop.mkMesh3dAttr("k", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(params System.DateTime[] values) => Interop.mkMesh3dAttr("k", values);
+        public static Box<IMesh3dProperty> k(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("k", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(float val) => Interop.mkMesh3dAttr("k", new[]{val});
+        public static Box<IMesh3dProperty> k(float val) => Interop.mkMesh3dAttr("k", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(params float[] values) => Interop.mkMesh3dAttr("k", values);
+        public static Box<IMesh3dProperty> k(IEnumerable<float> values) => Interop.mkMesh3dAttr("k", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(int val) => Interop.mkMesh3dAttr("k", new[]{val});
+        public static Box<IMesh3dProperty> k(int val) => Interop.mkMesh3dAttr("k", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(params int[] values) => Interop.mkMesh3dAttr("k", values);
+        public static Box<IMesh3dProperty> k(IEnumerable<int> values) => Interop.mkMesh3dAttr("k", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(string val) => Interop.mkMesh3dAttr("k", new[]{val});
+        public static Box<IMesh3dProperty> k(string val) => Interop.mkMesh3dAttr("k", new[] { val });
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
-        public static Box<IMesh3dProperty> k(params string[] values) => Interop.mkMesh3dAttr("k", values);
+        public static Box<IMesh3dProperty> k(IEnumerable<string> values) => Interop.mkMesh3dAttr("k", values.ToArray());
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
         public static Box<IMesh3dProperty> k(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("k", Bindings.flatten2DArrayIf1D(values));
         /// A vector of vertex indices, i.e. integer values between 0 and the length of the vertex vectors, representing the *third* vertex of a triangle. For example, `{i[m], j[m], k[m]}` together represent face m (triangle m) in the mesh, where `k[m] = n` points to the triplet  `{x[n], y[n], z[n]}` in the vertex arrays. Therefore, each element in `k` represents a point in space, which is the third vertex of a triangle.
@@ -481,34 +486,40 @@ namespace PlotlyH5
         public static Box<IMesh3dProperty> hovertext(string val) => Interop.mkMesh3dAttr("hovertext", val);
         /// Same as `text`.
         public static Box<IMesh3dProperty> hovertext(IEnumerable<string> values) => Interop.mkMesh3dAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IMesh3dProperty> hovertemplate(string val) => Interop.mkMesh3dAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IMesh3dProperty> hovertemplate(IEnumerable<string> values) => Interop.mkMesh3dAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IMesh3dProperty> xhoverformat(string val) => Interop.mkMesh3dAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IMesh3dProperty> yhoverformat(string val) => Interop.mkMesh3dAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<IMesh3dProperty> zhoverformat(string val) => Interop.mkMesh3dAttr("zhoverformat", val);
         /// Determines how the mesh surface triangles are derived from the set of vertices (points) represented by the `x`, `y` and `z` arrays, if the `i`, `j`, `k` arrays are not supplied. For general use of `mesh3d` it is preferred that `i`, `j`, `k` are supplied. If *-1*, Delaunay triangulation is used, which is mainly suitable if the mesh is a single, more or less layer surface that is perpendicular to `delaunayaxis`. In case the `delaunayaxis` intersects the mesh surface at more than one point it will result triangles that are very long in the dimension of `delaunayaxis`. If *>0*, the alpha-shape algorithm is used. In this case, the positive `alphahull` value signals the use of the alpha-shape algorithm, _and_ its value acts as the parameter for the mesh fitting. If *0*,  the convex-hull algorithm is used. It is suitable for convex bodies or if the intention is to enclose the `x`, `y` and `z` point set into a convex hull.
         public static Box<IMesh3dProperty> alphahull(int val) => Interop.mkMesh3dAttr("alphahull", val);
         /// Determines how the mesh surface triangles are derived from the set of vertices (points) represented by the `x`, `y` and `z` arrays, if the `i`, `j`, `k` arrays are not supplied. For general use of `mesh3d` it is preferred that `i`, `j`, `k` are supplied. If *-1*, Delaunay triangulation is used, which is mainly suitable if the mesh is a single, more or less layer surface that is perpendicular to `delaunayaxis`. In case the `delaunayaxis` intersects the mesh surface at more than one point it will result triangles that are very long in the dimension of `delaunayaxis`. If *>0*, the alpha-shape algorithm is used. In this case, the positive `alphahull` value signals the use of the alpha-shape algorithm, _and_ its value acts as the parameter for the mesh fitting. If *0*,  the convex-hull algorithm is used. It is suitable for convex bodies or if the intention is to enclose the `x`, `y` and `z` point set into a convex hull.
         public static Box<IMesh3dProperty> alphahull(float val) => Interop.mkMesh3dAttr("alphahull", val);
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(bool val) => Interop.mkMesh3dAttr("intensity", new[]{val});
+        public static Box<IMesh3dProperty> intensity(bool val) => Interop.mkMesh3dAttr("intensity", new[] { val });
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(params bool[] values) => Interop.mkMesh3dAttr("intensity", values);
+        public static Box<IMesh3dProperty> intensity(IEnumerable<bool> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(System.DateTime val) => Interop.mkMesh3dAttr("intensity", new[]{val});
+        public static Box<IMesh3dProperty> intensity(System.DateTime val) => Interop.mkMesh3dAttr("intensity", new[] { val });
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(params System.DateTime[] values) => Interop.mkMesh3dAttr("intensity", values);
+        public static Box<IMesh3dProperty> intensity(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(float val) => Interop.mkMesh3dAttr("intensity", new[]{val});
+        public static Box<IMesh3dProperty> intensity(float val) => Interop.mkMesh3dAttr("intensity", new[] { val });
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(params float[] values) => Interop.mkMesh3dAttr("intensity", values);
+        public static Box<IMesh3dProperty> intensity(IEnumerable<float> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(int val) => Interop.mkMesh3dAttr("intensity", new[]{val});
+        public static Box<IMesh3dProperty> intensity(int val) => Interop.mkMesh3dAttr("intensity", new[] { val });
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(params int[] values) => Interop.mkMesh3dAttr("intensity", values);
+        public static Box<IMesh3dProperty> intensity(IEnumerable<int> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(string val) => Interop.mkMesh3dAttr("intensity", new[]{val});
+        public static Box<IMesh3dProperty> intensity(string val) => Interop.mkMesh3dAttr("intensity", new[] { val });
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
-        public static Box<IMesh3dProperty> intensity(params string[] values) => Interop.mkMesh3dAttr("intensity", values);
+        public static Box<IMesh3dProperty> intensity(IEnumerable<string> values) => Interop.mkMesh3dAttr("intensity", values.ToArray());
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
         public static Box<IMesh3dProperty> intensity(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("intensity", Bindings.flatten2DArrayIf1D(values));
         /// Sets the intensity values for vertices or cells as defined by `intensitymode`. It can be used for plotting fields on meshes.
@@ -546,25 +557,25 @@ namespace PlotlyH5
         /// Sets the color of the whole mesh
         public static Box<IMesh3dProperty> color(string val) => Interop.mkMesh3dAttr("color", val);
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(bool val) => Interop.mkMesh3dAttr("vertexcolor", new[]{val});
+        public static Box<IMesh3dProperty> vertexcolor(bool val) => Interop.mkMesh3dAttr("vertexcolor", new[] { val });
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(params bool[] values) => Interop.mkMesh3dAttr("vertexcolor", values);
+        public static Box<IMesh3dProperty> vertexcolor(IEnumerable<bool> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(System.DateTime val) => Interop.mkMesh3dAttr("vertexcolor", new[]{val});
+        public static Box<IMesh3dProperty> vertexcolor(System.DateTime val) => Interop.mkMesh3dAttr("vertexcolor", new[] { val });
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(params System.DateTime[] values) => Interop.mkMesh3dAttr("vertexcolor", values);
+        public static Box<IMesh3dProperty> vertexcolor(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(float val) => Interop.mkMesh3dAttr("vertexcolor", new[]{val});
+        public static Box<IMesh3dProperty> vertexcolor(float val) => Interop.mkMesh3dAttr("vertexcolor", new[] { val });
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(params float[] values) => Interop.mkMesh3dAttr("vertexcolor", values);
+        public static Box<IMesh3dProperty> vertexcolor(IEnumerable<float> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(int val) => Interop.mkMesh3dAttr("vertexcolor", new[]{val});
+        public static Box<IMesh3dProperty> vertexcolor(int val) => Interop.mkMesh3dAttr("vertexcolor", new[] { val });
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(params int[] values) => Interop.mkMesh3dAttr("vertexcolor", values);
+        public static Box<IMesh3dProperty> vertexcolor(IEnumerable<int> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(string val) => Interop.mkMesh3dAttr("vertexcolor", new[]{val});
+        public static Box<IMesh3dProperty> vertexcolor(string val) => Interop.mkMesh3dAttr("vertexcolor", new[] { val });
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
-        public static Box<IMesh3dProperty> vertexcolor(params string[] values) => Interop.mkMesh3dAttr("vertexcolor", values);
+        public static Box<IMesh3dProperty> vertexcolor(IEnumerable<string> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
         public static Box<IMesh3dProperty> vertexcolor(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("vertexcolor", Bindings.flatten2DArrayIf1D(values));
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
@@ -600,25 +611,25 @@ namespace PlotlyH5
         /// Sets the color of each vertex Overrides *color*. While Red, green and blue colors are in the range of 0 and 255; in the case of having vertex color data in RGBA format, the alpha color should be normalized to be between 0 and 1.
         public static Box<IMesh3dProperty> vertexcolor(IEnumerable<float?> values) => Interop.mkMesh3dAttr("vertexcolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(bool val) => Interop.mkMesh3dAttr("facecolor", new[]{val});
+        public static Box<IMesh3dProperty> facecolor(bool val) => Interop.mkMesh3dAttr("facecolor", new[] { val });
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(params bool[] values) => Interop.mkMesh3dAttr("facecolor", values);
+        public static Box<IMesh3dProperty> facecolor(IEnumerable<bool> values) => Interop.mkMesh3dAttr("facecolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(System.DateTime val) => Interop.mkMesh3dAttr("facecolor", new[]{val});
+        public static Box<IMesh3dProperty> facecolor(System.DateTime val) => Interop.mkMesh3dAttr("facecolor", new[] { val });
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(params System.DateTime[] values) => Interop.mkMesh3dAttr("facecolor", values);
+        public static Box<IMesh3dProperty> facecolor(IEnumerable<System.DateTime> values) => Interop.mkMesh3dAttr("facecolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(float val) => Interop.mkMesh3dAttr("facecolor", new[]{val});
+        public static Box<IMesh3dProperty> facecolor(float val) => Interop.mkMesh3dAttr("facecolor", new[] { val });
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(params float[] values) => Interop.mkMesh3dAttr("facecolor", values);
+        public static Box<IMesh3dProperty> facecolor(IEnumerable<float> values) => Interop.mkMesh3dAttr("facecolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(int val) => Interop.mkMesh3dAttr("facecolor", new[]{val});
+        public static Box<IMesh3dProperty> facecolor(int val) => Interop.mkMesh3dAttr("facecolor", new[] { val });
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(params int[] values) => Interop.mkMesh3dAttr("facecolor", values);
+        public static Box<IMesh3dProperty> facecolor(IEnumerable<int> values) => Interop.mkMesh3dAttr("facecolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(string val) => Interop.mkMesh3dAttr("facecolor", new[]{val});
+        public static Box<IMesh3dProperty> facecolor(string val) => Interop.mkMesh3dAttr("facecolor", new[] { val });
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
-        public static Box<IMesh3dProperty> facecolor(params string[] values) => Interop.mkMesh3dAttr("facecolor", values);
+        public static Box<IMesh3dProperty> facecolor(IEnumerable<string> values) => Interop.mkMesh3dAttr("facecolor", values.ToArray());
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
         public static Box<IMesh3dProperty> facecolor(IEnumerable<bool[]> values) => Interop.mkMesh3dAttr("facecolor", Bindings.flatten2DArrayIf1D(values));
         /// Sets the color of each face Overrides *color* and *vertexcolor*.
@@ -699,37 +710,37 @@ namespace PlotlyH5
         public static Box<IMesh3dProperty> scene(int anchorId) => Interop.mkMesh3dAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IMesh3dProperty> scene(string val) => Interop.mkMesh3dAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IMesh3dProperty> idssrc(string val) => Interop.mkMesh3dAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IMesh3dProperty> customdatasrc(string val) => Interop.mkMesh3dAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IMesh3dProperty> metasrc(string val) => Interop.mkMesh3dAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IMesh3dProperty> xsrc(string val) => Interop.mkMesh3dAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IMesh3dProperty> ysrc(string val) => Interop.mkMesh3dAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IMesh3dProperty> zsrc(string val) => Interop.mkMesh3dAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  i .
+        /// Sets the source reference on Chart Studio Cloud for  i .
         public static Box<IMesh3dProperty> isrc(string val) => Interop.mkMesh3dAttr("isrc", val);
-        /// Sets the source reference on plot.ly for  j .
+        /// Sets the source reference on Chart Studio Cloud for  j .
         public static Box<IMesh3dProperty> jsrc(string val) => Interop.mkMesh3dAttr("jsrc", val);
-        /// Sets the source reference on plot.ly for  k .
+        /// Sets the source reference on Chart Studio Cloud for  k .
         public static Box<IMesh3dProperty> ksrc(string val) => Interop.mkMesh3dAttr("ksrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IMesh3dProperty> textsrc(string val) => Interop.mkMesh3dAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IMesh3dProperty> hovertextsrc(string val) => Interop.mkMesh3dAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IMesh3dProperty> hovertemplatesrc(string val) => Interop.mkMesh3dAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  intensity .
+        /// Sets the source reference on Chart Studio Cloud for  intensity .
         public static Box<IMesh3dProperty> intensitysrc(string val) => Interop.mkMesh3dAttr("intensitysrc", val);
-        /// Sets the source reference on plot.ly for  vertexcolor .
+        /// Sets the source reference on Chart Studio Cloud for  vertexcolor .
         public static Box<IMesh3dProperty> vertexcolorsrc(string val) => Interop.mkMesh3dAttr("vertexcolorsrc", val);
-        /// Sets the source reference on plot.ly for  facecolor .
+        /// Sets the source reference on Chart Studio Cloud for  facecolor .
         public static Box<IMesh3dProperty> facecolorsrc(string val) => Interop.mkMesh3dAttr("facecolorsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IMesh3dProperty> hoverinfosrc(string val) => Interop.mkMesh3dAttr("hoverinfosrc", val);
     }
 

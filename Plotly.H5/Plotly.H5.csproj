@@ -11,7 +11,7 @@
     <None Include="plotly-h5-logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="h5" Version="25.3.57184" />
+    <PackageReference Include="h5" Version="25.5.58366" />
     <PackageReference Include="h5.core" Version="24.11.53879" />
   </ItemGroup>
 

@@ -13,6 +13,11 @@ namespace PlotlyH5
 
     public static partial class Image
     {
+        public static Box<IImageProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkImageAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IImageProperty> legendrank(int val) => Interop.mkImageAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IImageProperty> legendrank(float val) => Interop.mkImageAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IImageProperty> opacity(int val) => Interop.mkImageAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -22,25 +27,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IImageProperty> uid(string val) => Interop.mkImageAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(bool val) => Interop.mkImageAttr("ids", new[]{val});
+        public static Box<IImageProperty> ids(bool val) => Interop.mkImageAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(params bool[] values) => Interop.mkImageAttr("ids", values);
+        public static Box<IImageProperty> ids(IEnumerable<bool> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(System.DateTime val) => Interop.mkImageAttr("ids", new[]{val});
+        public static Box<IImageProperty> ids(System.DateTime val) => Interop.mkImageAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(params System.DateTime[] values) => Interop.mkImageAttr("ids", values);
+        public static Box<IImageProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(float val) => Interop.mkImageAttr("ids", new[]{val});
+        public static Box<IImageProperty> ids(float val) => Interop.mkImageAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(params float[] values) => Interop.mkImageAttr("ids", values);
+        public static Box<IImageProperty> ids(IEnumerable<float> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(int val) => Interop.mkImageAttr("ids", new[]{val});
+        public static Box<IImageProperty> ids(int val) => Interop.mkImageAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(params int[] values) => Interop.mkImageAttr("ids", values);
+        public static Box<IImageProperty> ids(IEnumerable<int> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(string val) => Interop.mkImageAttr("ids", new[]{val});
+        public static Box<IImageProperty> ids(string val) => Interop.mkImageAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IImageProperty> ids(params string[] values) => Interop.mkImageAttr("ids", values);
+        public static Box<IImageProperty> ids(IEnumerable<string> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IImageProperty> ids(IEnumerable<bool[]> values) => Interop.mkImageAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -76,25 +81,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IImageProperty> ids(IEnumerable<float?> values) => Interop.mkImageAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(bool val) => Interop.mkImageAttr("customdata", new[]{val});
+        public static Box<IImageProperty> customdata(bool val) => Interop.mkImageAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(params bool[] values) => Interop.mkImageAttr("customdata", values);
+        public static Box<IImageProperty> customdata(IEnumerable<bool> values) => Interop.mkImageAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(System.DateTime val) => Interop.mkImageAttr("customdata", new[]{val});
+        public static Box<IImageProperty> customdata(System.DateTime val) => Interop.mkImageAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(params System.DateTime[] values) => Interop.mkImageAttr("customdata", values);
+        public static Box<IImageProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkImageAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(float val) => Interop.mkImageAttr("customdata", new[]{val});
+        public static Box<IImageProperty> customdata(float val) => Interop.mkImageAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(params float[] values) => Interop.mkImageAttr("customdata", values);
+        public static Box<IImageProperty> customdata(IEnumerable<float> values) => Interop.mkImageAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(int val) => Interop.mkImageAttr("customdata", new[]{val});
+        public static Box<IImageProperty> customdata(int val) => Interop.mkImageAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(params int[] values) => Interop.mkImageAttr("customdata", values);
+        public static Box<IImageProperty> customdata(IEnumerable<int> values) => Interop.mkImageAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(string val) => Interop.mkImageAttr("customdata", new[]{val});
+        public static Box<IImageProperty> customdata(string val) => Interop.mkImageAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IImageProperty> customdata(params string[] values) => Interop.mkImageAttr("customdata", values);
+        public static Box<IImageProperty> customdata(IEnumerable<string> values) => Interop.mkImageAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IImageProperty> customdata(IEnumerable<bool[]> values) => Interop.mkImageAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -151,26 +156,28 @@ namespace PlotlyH5
         public static Box<IImageProperty> uirevision(string val) => Interop.mkImageAttr("uirevision", val);
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IImageProperty> uirevision(params string[] values) => Interop.mkImageAttr("uirevision", values);
+        /// Specifies the data URI of the image to be visualized. The URI consists of \"data:image/[<media subtype>][;base64],<data>\
+        public static Box<IImageProperty> source(string val) => Interop.mkImageAttr("source", val);
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(bool val) => Interop.mkImageAttr("z", new[]{val});
+        public static Box<IImageProperty> z(bool val) => Interop.mkImageAttr("z", new[] { val });
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(params bool[] values) => Interop.mkImageAttr("z", values);
+        public static Box<IImageProperty> z(IEnumerable<bool> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(System.DateTime val) => Interop.mkImageAttr("z", new[]{val});
+        public static Box<IImageProperty> z(System.DateTime val) => Interop.mkImageAttr("z", new[] { val });
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(params System.DateTime[] values) => Interop.mkImageAttr("z", values);
+        public static Box<IImageProperty> z(IEnumerable<System.DateTime> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(float val) => Interop.mkImageAttr("z", new[]{val});
+        public static Box<IImageProperty> z(float val) => Interop.mkImageAttr("z", new[] { val });
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(params float[] values) => Interop.mkImageAttr("z", values);
+        public static Box<IImageProperty> z(IEnumerable<float> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(int val) => Interop.mkImageAttr("z", new[]{val});
+        public static Box<IImageProperty> z(int val) => Interop.mkImageAttr("z", new[] { val });
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(params int[] values) => Interop.mkImageAttr("z", values);
+        public static Box<IImageProperty> z(IEnumerable<int> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(string val) => Interop.mkImageAttr("z", new[]{val});
+        public static Box<IImageProperty> z(string val) => Interop.mkImageAttr("z", new[] { val });
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
-        public static Box<IImageProperty> z(params string[] values) => Interop.mkImageAttr("z", values);
+        public static Box<IImageProperty> z(IEnumerable<string> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
         public static Box<IImageProperty> z(IEnumerable<bool[]> values) => Interop.mkImageAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
@@ -205,21 +212,21 @@ namespace PlotlyH5
         public static Box<IImageProperty> z(IEnumerable<int?> values) => Interop.mkImageAttr("z", values.ToArray());
         /// A 2-dimensional array in which each element is an array of 3 or 4 numbers representing a color.
         public static Box<IImageProperty> z(IEnumerable<float?> values) => Interop.mkImageAttr("z", values.ToArray());
-        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
-        public static Box<IImageProperty> zmin(int val) => Interop.mkImageAttr("zmin", new[]{val});
-        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
+        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `rgba256` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
+        public static Box<IImageProperty> zmin(int val) => Interop.mkImageAttr("zmin", new[] { val });
+        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `rgba256` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
         public static Box<IImageProperty> zmin(IEnumerable<int> values) => Interop.mkImageAttr("zmin", values.ToArray());
-        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
-        public static Box<IImageProperty> zmin(float val) => Interop.mkImageAttr("zmin", new[]{val});
-        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
+        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `rgba256` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
+        public static Box<IImageProperty> zmin(float val) => Interop.mkImageAttr("zmin", new[] { val });
+        /// Array defining the lower bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [0, 0, 0]. For the `rgba` colormodel, it is [0, 0, 0, 0]. For the `rgba256` colormodel, it is [0, 0, 0, 0]. For the `hsl` colormodel, it is [0, 0, 0]. For the `hsla` colormodel, it is [0, 0, 0, 0].
         public static Box<IImageProperty> zmin(IEnumerable<float> values) => Interop.mkImageAttr("zmin", values.ToArray());
-        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
-        public static Box<IImageProperty> zmax(int val) => Interop.mkImageAttr("zmax", new[]{val});
-        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
+        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `rgba256` colormodel, it is [255, 255, 255, 255]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
+        public static Box<IImageProperty> zmax(int val) => Interop.mkImageAttr("zmax", new[] { val });
+        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `rgba256` colormodel, it is [255, 255, 255, 255]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
         public static Box<IImageProperty> zmax(IEnumerable<int> values) => Interop.mkImageAttr("zmax", values.ToArray());
-        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
-        public static Box<IImageProperty> zmax(float val) => Interop.mkImageAttr("zmax", new[]{val});
-        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
+        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `rgba256` colormodel, it is [255, 255, 255, 255]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
+        public static Box<IImageProperty> zmax(float val) => Interop.mkImageAttr("zmax", new[] { val });
+        /// Array defining the higher bound for each color component. Note that the default value will depend on the colormodel. For the `rgb` colormodel, it is [255, 255, 255]. For the `rgba` colormodel, it is [255, 255, 255, 1]. For the `rgba256` colormodel, it is [255, 255, 255, 255]. For the `hsl` colormodel, it is [360, 100, 100]. For the `hsla` colormodel, it is [360, 100, 100, 1].
         public static Box<IImageProperty> zmax(IEnumerable<float> values) => Interop.mkImageAttr("zmax", values.ToArray());
         /// Set the image's x position.
         public static Box<IImageProperty> x0(bool val) => Interop.mkImageAttr("x0", val);
@@ -270,23 +277,23 @@ namespace PlotlyH5
         /// Set the pixel's vertical size
         public static Box<IImageProperty> dy(float val) => Interop.mkImageAttr("dy", val);
         /// Sets the text elements associated with each z value.
-        public static Box<IImageProperty> text(bool val) => Interop.mkImageAttr("text", new[]{val});
+        public static Box<IImageProperty> text(bool val) => Interop.mkImageAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<bool> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IImageProperty> text(System.DateTime val) => Interop.mkImageAttr("text", new[]{val});
+        public static Box<IImageProperty> text(System.DateTime val) => Interop.mkImageAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<System.DateTime> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IImageProperty> text(float val) => Interop.mkImageAttr("text", new[]{val});
+        public static Box<IImageProperty> text(float val) => Interop.mkImageAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<float> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IImageProperty> text(int val) => Interop.mkImageAttr("text", new[]{val});
+        public static Box<IImageProperty> text(int val) => Interop.mkImageAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<int> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IImageProperty> text(string val) => Interop.mkImageAttr("text", new[]{val});
+        public static Box<IImageProperty> text(string val) => Interop.mkImageAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<string> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
@@ -324,23 +331,23 @@ namespace PlotlyH5
         /// Sets the text elements associated with each z value.
         public static Box<IImageProperty> text(IEnumerable<float?> values) => Interop.mkImageAttr("text", values.ToArray());
         /// Same as `text`.
-        public static Box<IImageProperty> hovertext(bool val) => Interop.mkImageAttr("hovertext", new[]{val});
+        public static Box<IImageProperty> hovertext(bool val) => Interop.mkImageAttr("hovertext", new[] { val });
         /// Same as `text`.
         public static Box<IImageProperty> hovertext(IEnumerable<bool> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IImageProperty> hovertext(System.DateTime val) => Interop.mkImageAttr("hovertext", new[]{val});
+        public static Box<IImageProperty> hovertext(System.DateTime val) => Interop.mkImageAttr("hovertext", new[] { val });
         /// Same as `text`.
         public static Box<IImageProperty> hovertext(IEnumerable<System.DateTime> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IImageProperty> hovertext(float val) => Interop.mkImageAttr("hovertext", new[]{val});
+        public static Box<IImageProperty> hovertext(float val) => Interop.mkImageAttr("hovertext", new[] { val });
         /// Same as `text`.
         public static Box<IImageProperty> hovertext(IEnumerable<float> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IImageProperty> hovertext(int val) => Interop.mkImageAttr("hovertext", new[]{val});
+        public static Box<IImageProperty> hovertext(int val) => Interop.mkImageAttr("hovertext", new[] { val });
         /// Same as `text`.
         public static Box<IImageProperty> hovertext(IEnumerable<int> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IImageProperty> hovertext(string val) => Interop.mkImageAttr("hovertext", new[]{val});
+        public static Box<IImageProperty> hovertext(string val) => Interop.mkImageAttr("hovertext", new[] { val });
         /// Same as `text`.
         public static Box<IImageProperty> hovertext(IEnumerable<string> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Same as `text`.
@@ -379,9 +386,9 @@ namespace PlotlyH5
         public static Box<IImageProperty> hovertext(IEnumerable<float?> values) => Interop.mkImageAttr("hovertext", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IImageProperty> hoverinfo(params Box<IImageProperty>[] properties) => Interop.mkImageAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `z`, `color` and `colormodel`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `z`, `color` and `colormodel`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IImageProperty> hovertemplate(string val) => Interop.mkImageAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `z`, `color` and `colormodel`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `z`, `color` and `colormodel`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IImageProperty> hovertemplate(IEnumerable<string> values) => Interop.mkImageAttr("hovertemplate", values.ToArray());
         /// Sets a reference between this trace's x coordinates and a 2D cartesian x axis. If *x* (the default value), the x coordinates refer to `layout.xaxis`. If *x2*, the x coordinates refer to `layout.xaxis2`, and so on.
         public static Box<IImageProperty> xaxis(int anchorId) => Interop.mkImageAttr("xaxis", anchorId > 1 ? $"x{anchorId}" : "");
@@ -391,31 +398,29 @@ namespace PlotlyH5
         public static Box<IImageProperty> yaxis(int anchorId) => Interop.mkImageAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IImageProperty> yaxis(string val) => Interop.mkImageAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IImageProperty> idssrc(string val) => Interop.mkImageAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IImageProperty> customdatasrc(string val) => Interop.mkImageAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IImageProperty> metasrc(string val) => Interop.mkImageAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IImageProperty> zsrc(string val) => Interop.mkImageAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IImageProperty> textsrc(string val) => Interop.mkImageAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IImageProperty> hovertextsrc(string val) => Interop.mkImageAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IImageProperty> hoverinfosrc(string val) => Interop.mkImageAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IImageProperty> hovertemplatesrc(string val) => Interop.mkImageAttr("hovertemplatesrc", val);
-        /// Specifies the URL of the image to be used. The URL must be accessible from the domain where the plot code is run, and can be either relative or absolute.
-        public static Box<IImageProperty> source(string val) => Interop.mkImageAttr("source", val);
-        /// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width.
+        /// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width. When `xref` ends with ` domain`, units are sized relative to the axis width.
         public static Box<IImageProperty> sizex(int val) => Interop.mkImageAttr("sizex", val);
-        /// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width.
+        /// Sets the image container size horizontally. The image will be sized based on the `position` value. When `xref` is set to `paper`, units are sized relative to the plot width. When `xref` ends with ` domain`, units are sized relative to the axis width.
         public static Box<IImageProperty> sizex(float val) => Interop.mkImageAttr("sizex", val);
-        /// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height.
+        /// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height. When `yref` ends with ` domain`, units are sized relative to the axis height.
         public static Box<IImageProperty> sizey(int val) => Interop.mkImageAttr("sizey", val);
-        /// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height.
+        /// Sets the image container size vertically. The image will be sized based on the `position` value. When `yref` is set to `paper`, units are sized relative to the plot height. When `yref` ends with ` domain`, units are sized relative to the axis height.
         public static Box<IImageProperty> sizey(float val) => Interop.mkImageAttr("sizey", val);
         /// Sets the image's x position. When `xref` is set to `paper`, units are sized relative to the plot height. See `xref` for more info
         public static Box<IImageProperty> x(bool val) => Interop.mkImageAttr("x", val);
@@ -471,13 +476,21 @@ namespace PlotlyH5
             public static Box<IImageProperty> _true() => Interop.mkImageAttr("visible", true);
         }
 
-        /// Color model used to map the numerical color components described in `z` into colors.
+        /// Color model used to map the numerical color components described in `z` into colors. If `source` is specified, this attribute will be set to `rgba256` otherwise it defaults to `rgb`.
         public static partial class Colormodel
         {
             public static Box<IImageProperty> hsl() => Interop.mkImageAttr("colormodel", "hsl");
             public static Box<IImageProperty> hsla() => Interop.mkImageAttr("colormodel", "hsla");
             public static Box<IImageProperty> rgb() => Interop.mkImageAttr("colormodel", "rgb");
             public static Box<IImageProperty> rgba() => Interop.mkImageAttr("colormodel", "rgba");
+            public static Box<IImageProperty> rgba256() => Interop.mkImageAttr("colormodel", "rgba256");
+        }
+
+        /// Picks a smoothing algorithm used to smooth `z` data. This only applies for image traces that use the `source` attribute.
+        public static partial class Zsmooth
+        {
+            public static Box<IImageProperty> fast() => Interop.mkImageAttr("zsmooth", "fast");
+            public static Box<IImageProperty> _false() => Interop.mkImageAttr("zsmooth", false);
         }
 
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
@@ -525,7 +538,7 @@ namespace PlotlyH5
             public static Box<IImageProperty> top() => Interop.mkImageAttr("yanchor", "top");
         }
 
-        /// Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to an x data coordinate If set to *paper*, the `x` position refers to the distance from the left of plot in normalized coordinates where *0* (*1*) corresponds to the left (right).
+        /// Sets the images's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
         public static partial class Xref
         {
             public static Box<IImageProperty> paper() => Interop.mkImageAttr("xref", "paper");
@@ -533,7 +546,7 @@ namespace PlotlyH5
             public static Box<IImageProperty> x(int anchorId) => Interop.mkImageAttr("xref", anchorId > 1 ? $"x{anchorId}" : "");
         }
 
-        /// Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y data coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plot in normalized coordinates where *0* (*1*) corresponds to the bottom (top).
+        /// Sets the images's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
         public static partial class Yref
         {
             public static Box<IImageProperty> paper() => Interop.mkImageAttr("yref", "paper");

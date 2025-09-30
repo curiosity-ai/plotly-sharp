@@ -8,37 +8,42 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Cone
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IConeProperty> legendgroup(string val) => Interop.mkConeAttr("legendgroup", val);
+        public static Box<IConeProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkConeAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IConeProperty> legendrank(int val) => Interop.mkConeAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IConeProperty> legendrank(float val) => Interop.mkConeAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IConeProperty> name(string val) => Interop.mkConeAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IConeProperty> uid(string val) => Interop.mkConeAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(bool val) => Interop.mkConeAttr("ids", new[]{val});
+        public static Box<IConeProperty> ids(bool val) => Interop.mkConeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(params bool[] values) => Interop.mkConeAttr("ids", values);
+        public static Box<IConeProperty> ids(IEnumerable<bool> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(System.DateTime val) => Interop.mkConeAttr("ids", new[]{val});
+        public static Box<IConeProperty> ids(System.DateTime val) => Interop.mkConeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(params System.DateTime[] values) => Interop.mkConeAttr("ids", values);
+        public static Box<IConeProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(float val) => Interop.mkConeAttr("ids", new[]{val});
+        public static Box<IConeProperty> ids(float val) => Interop.mkConeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(params float[] values) => Interop.mkConeAttr("ids", values);
+        public static Box<IConeProperty> ids(IEnumerable<float> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(int val) => Interop.mkConeAttr("ids", new[]{val});
+        public static Box<IConeProperty> ids(int val) => Interop.mkConeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(params int[] values) => Interop.mkConeAttr("ids", values);
+        public static Box<IConeProperty> ids(IEnumerable<int> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(string val) => Interop.mkConeAttr("ids", new[]{val});
+        public static Box<IConeProperty> ids(string val) => Interop.mkConeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IConeProperty> ids(params string[] values) => Interop.mkConeAttr("ids", values);
+        public static Box<IConeProperty> ids(IEnumerable<string> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IConeProperty> ids(IEnumerable<bool[]> values) => Interop.mkConeAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IConeProperty> ids(IEnumerable<float?> values) => Interop.mkConeAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(bool val) => Interop.mkConeAttr("customdata", new[]{val});
+        public static Box<IConeProperty> customdata(bool val) => Interop.mkConeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(params bool[] values) => Interop.mkConeAttr("customdata", values);
+        public static Box<IConeProperty> customdata(IEnumerable<bool> values) => Interop.mkConeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(System.DateTime val) => Interop.mkConeAttr("customdata", new[]{val});
+        public static Box<IConeProperty> customdata(System.DateTime val) => Interop.mkConeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(params System.DateTime[] values) => Interop.mkConeAttr("customdata", values);
+        public static Box<IConeProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(float val) => Interop.mkConeAttr("customdata", new[]{val});
+        public static Box<IConeProperty> customdata(float val) => Interop.mkConeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(params float[] values) => Interop.mkConeAttr("customdata", values);
+        public static Box<IConeProperty> customdata(IEnumerable<float> values) => Interop.mkConeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(int val) => Interop.mkConeAttr("customdata", new[]{val});
+        public static Box<IConeProperty> customdata(int val) => Interop.mkConeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(params int[] values) => Interop.mkConeAttr("customdata", values);
+        public static Box<IConeProperty> customdata(IEnumerable<int> values) => Interop.mkConeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(string val) => Interop.mkConeAttr("customdata", new[]{val});
+        public static Box<IConeProperty> customdata(string val) => Interop.mkConeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IConeProperty> customdata(params string[] values) => Interop.mkConeAttr("customdata", values);
+        public static Box<IConeProperty> customdata(IEnumerable<string> values) => Interop.mkConeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IConeProperty> customdata(IEnumerable<bool[]> values) => Interop.mkConeAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -150,23 +155,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IConeProperty> uirevision(params string[] values) => Interop.mkConeAttr("uirevision", values);
         /// Sets the x coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> x(bool val) => Interop.mkConeAttr("x", new[]{val});
+        public static Box<IConeProperty> x(bool val) => Interop.mkConeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<bool> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> x(System.DateTime val) => Interop.mkConeAttr("x", new[]{val});
+        public static Box<IConeProperty> x(System.DateTime val) => Interop.mkConeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> x(float val) => Interop.mkConeAttr("x", new[]{val});
+        public static Box<IConeProperty> x(float val) => Interop.mkConeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<float> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> x(int val) => Interop.mkConeAttr("x", new[]{val});
+        public static Box<IConeProperty> x(int val) => Interop.mkConeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<int> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> x(string val) => Interop.mkConeAttr("x", new[]{val});
+        public static Box<IConeProperty> x(string val) => Interop.mkConeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<string> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field and of the displayed cones.
@@ -204,23 +209,23 @@ namespace Plotly
         /// Sets the x coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> x(IEnumerable<float?> values) => Interop.mkConeAttr("x", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> y(bool val) => Interop.mkConeAttr("y", new[]{val});
+        public static Box<IConeProperty> y(bool val) => Interop.mkConeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<bool> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> y(System.DateTime val) => Interop.mkConeAttr("y", new[]{val});
+        public static Box<IConeProperty> y(System.DateTime val) => Interop.mkConeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> y(float val) => Interop.mkConeAttr("y", new[]{val});
+        public static Box<IConeProperty> y(float val) => Interop.mkConeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<float> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> y(int val) => Interop.mkConeAttr("y", new[]{val});
+        public static Box<IConeProperty> y(int val) => Interop.mkConeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<int> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> y(string val) => Interop.mkConeAttr("y", new[]{val});
+        public static Box<IConeProperty> y(string val) => Interop.mkConeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<string> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field and of the displayed cones.
@@ -258,23 +263,23 @@ namespace Plotly
         /// Sets the y coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> y(IEnumerable<float?> values) => Interop.mkConeAttr("y", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> z(bool val) => Interop.mkConeAttr("z", new[]{val});
+        public static Box<IConeProperty> z(bool val) => Interop.mkConeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<bool> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> z(System.DateTime val) => Interop.mkConeAttr("z", new[]{val});
+        public static Box<IConeProperty> z(System.DateTime val) => Interop.mkConeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> z(float val) => Interop.mkConeAttr("z", new[]{val});
+        public static Box<IConeProperty> z(float val) => Interop.mkConeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<float> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> z(int val) => Interop.mkConeAttr("z", new[]{val});
+        public static Box<IConeProperty> z(int val) => Interop.mkConeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<int> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
-        public static Box<IConeProperty> z(string val) => Interop.mkConeAttr("z", new[]{val});
+        public static Box<IConeProperty> z(string val) => Interop.mkConeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<string> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field and of the displayed cones.
@@ -312,25 +317,25 @@ namespace Plotly
         /// Sets the z coordinates of the vector field and of the displayed cones.
         public static Box<IConeProperty> z(IEnumerable<float?> values) => Interop.mkConeAttr("z", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(bool val) => Interop.mkConeAttr("u", new[]{val});
+        public static Box<IConeProperty> u(bool val) => Interop.mkConeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(params bool[] values) => Interop.mkConeAttr("u", values);
+        public static Box<IConeProperty> u(IEnumerable<bool> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(System.DateTime val) => Interop.mkConeAttr("u", new[]{val});
+        public static Box<IConeProperty> u(System.DateTime val) => Interop.mkConeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(params System.DateTime[] values) => Interop.mkConeAttr("u", values);
+        public static Box<IConeProperty> u(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(float val) => Interop.mkConeAttr("u", new[]{val});
+        public static Box<IConeProperty> u(float val) => Interop.mkConeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(params float[] values) => Interop.mkConeAttr("u", values);
+        public static Box<IConeProperty> u(IEnumerable<float> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(int val) => Interop.mkConeAttr("u", new[]{val});
+        public static Box<IConeProperty> u(int val) => Interop.mkConeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(params int[] values) => Interop.mkConeAttr("u", values);
+        public static Box<IConeProperty> u(IEnumerable<int> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(string val) => Interop.mkConeAttr("u", new[]{val});
+        public static Box<IConeProperty> u(string val) => Interop.mkConeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IConeProperty> u(params string[] values) => Interop.mkConeAttr("u", values);
+        public static Box<IConeProperty> u(IEnumerable<string> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
         public static Box<IConeProperty> u(IEnumerable<bool[]> values) => Interop.mkConeAttr("u", Bindings.flatten2DArrayIf1D(values));
         /// Sets the x components of the vector field.
@@ -366,25 +371,25 @@ namespace Plotly
         /// Sets the x components of the vector field.
         public static Box<IConeProperty> u(IEnumerable<float?> values) => Interop.mkConeAttr("u", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(bool val) => Interop.mkConeAttr("v", new[]{val});
+        public static Box<IConeProperty> v(bool val) => Interop.mkConeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(params bool[] values) => Interop.mkConeAttr("v", values);
+        public static Box<IConeProperty> v(IEnumerable<bool> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(System.DateTime val) => Interop.mkConeAttr("v", new[]{val});
+        public static Box<IConeProperty> v(System.DateTime val) => Interop.mkConeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(params System.DateTime[] values) => Interop.mkConeAttr("v", values);
+        public static Box<IConeProperty> v(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(float val) => Interop.mkConeAttr("v", new[]{val});
+        public static Box<IConeProperty> v(float val) => Interop.mkConeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(params float[] values) => Interop.mkConeAttr("v", values);
+        public static Box<IConeProperty> v(IEnumerable<float> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(int val) => Interop.mkConeAttr("v", new[]{val});
+        public static Box<IConeProperty> v(int val) => Interop.mkConeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(params int[] values) => Interop.mkConeAttr("v", values);
+        public static Box<IConeProperty> v(IEnumerable<int> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(string val) => Interop.mkConeAttr("v", new[]{val});
+        public static Box<IConeProperty> v(string val) => Interop.mkConeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IConeProperty> v(params string[] values) => Interop.mkConeAttr("v", values);
+        public static Box<IConeProperty> v(IEnumerable<string> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
         public static Box<IConeProperty> v(IEnumerable<bool[]> values) => Interop.mkConeAttr("v", Bindings.flatten2DArrayIf1D(values));
         /// Sets the y components of the vector field.
@@ -420,25 +425,25 @@ namespace Plotly
         /// Sets the y components of the vector field.
         public static Box<IConeProperty> v(IEnumerable<float?> values) => Interop.mkConeAttr("v", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(bool val) => Interop.mkConeAttr("w", new[]{val});
+        public static Box<IConeProperty> w(bool val) => Interop.mkConeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(params bool[] values) => Interop.mkConeAttr("w", values);
+        public static Box<IConeProperty> w(IEnumerable<bool> values) => Interop.mkConeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(System.DateTime val) => Interop.mkConeAttr("w", new[]{val});
+        public static Box<IConeProperty> w(System.DateTime val) => Interop.mkConeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(params System.DateTime[] values) => Interop.mkConeAttr("w", values);
+        public static Box<IConeProperty> w(IEnumerable<System.DateTime> values) => Interop.mkConeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(float val) => Interop.mkConeAttr("w", new[]{val});
+        public static Box<IConeProperty> w(float val) => Interop.mkConeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(params float[] values) => Interop.mkConeAttr("w", values);
+        public static Box<IConeProperty> w(IEnumerable<float> values) => Interop.mkConeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(int val) => Interop.mkConeAttr("w", new[]{val});
+        public static Box<IConeProperty> w(int val) => Interop.mkConeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(params int[] values) => Interop.mkConeAttr("w", values);
+        public static Box<IConeProperty> w(IEnumerable<int> values) => Interop.mkConeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(string val) => Interop.mkConeAttr("w", new[]{val});
+        public static Box<IConeProperty> w(string val) => Interop.mkConeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IConeProperty> w(params string[] values) => Interop.mkConeAttr("w", values);
+        public static Box<IConeProperty> w(IEnumerable<string> values) => Interop.mkConeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
         public static Box<IConeProperty> w(IEnumerable<bool[]> values) => Interop.mkConeAttr("w", Bindings.flatten2DArrayIf1D(values));
         /// Sets the z components of the vector field.
@@ -485,10 +490,22 @@ namespace Plotly
         public static Box<IConeProperty> hovertext(string val) => Interop.mkConeAttr("hovertext", val);
         /// Same as `text`.
         public static Box<IConeProperty> hovertext(IEnumerable<string> values) => Interop.mkConeAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `norm` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `norm` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IConeProperty> hovertemplate(string val) => Interop.mkConeAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `norm` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `norm` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IConeProperty> hovertemplate(IEnumerable<string> values) => Interop.mkConeAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `u`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IConeProperty> uhoverformat(string val) => Interop.mkConeAttr("uhoverformat", val);
+        /// Sets the hover text formatting rulefor `v`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IConeProperty> vhoverformat(string val) => Interop.mkConeAttr("vhoverformat", val);
+        /// Sets the hover text formatting rulefor `w`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IConeProperty> whoverformat(string val) => Interop.mkConeAttr("whoverformat", val);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IConeProperty> xhoverformat(string val) => Interop.mkConeAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IConeProperty> yhoverformat(string val) => Interop.mkConeAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<IConeProperty> zhoverformat(string val) => Interop.mkConeAttr("zhoverformat", val);
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
         public static Box<IConeProperty> showlegend(bool val) => Interop.mkConeAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here u/v/w norm) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
@@ -532,31 +549,31 @@ namespace Plotly
         public static Box<IConeProperty> scene(int anchorId) => Interop.mkConeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IConeProperty> scene(string val) => Interop.mkConeAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IConeProperty> idssrc(string val) => Interop.mkConeAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IConeProperty> customdatasrc(string val) => Interop.mkConeAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IConeProperty> metasrc(string val) => Interop.mkConeAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IConeProperty> xsrc(string val) => Interop.mkConeAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IConeProperty> ysrc(string val) => Interop.mkConeAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IConeProperty> zsrc(string val) => Interop.mkConeAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  u .
+        /// Sets the source reference on Chart Studio Cloud for  u .
         public static Box<IConeProperty> usrc(string val) => Interop.mkConeAttr("usrc", val);
-        /// Sets the source reference on plot.ly for  v .
+        /// Sets the source reference on Chart Studio Cloud for  v .
         public static Box<IConeProperty> vsrc(string val) => Interop.mkConeAttr("vsrc", val);
-        /// Sets the source reference on plot.ly for  w .
+        /// Sets the source reference on Chart Studio Cloud for  w .
         public static Box<IConeProperty> wsrc(string val) => Interop.mkConeAttr("wsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IConeProperty> textsrc(string val) => Interop.mkConeAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IConeProperty> hovertextsrc(string val) => Interop.mkConeAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IConeProperty> hovertemplatesrc(string val) => Interop.mkConeAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IConeProperty> hoverinfosrc(string val) => Interop.mkConeAttr("hoverinfosrc", val);
     }
 

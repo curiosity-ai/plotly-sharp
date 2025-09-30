@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Scattermapbox
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IScattermapboxProperty> showlegend(bool val) => Interop.mkScattermapboxAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScattermapboxProperty> legendgroup(string val) => Interop.mkScattermapboxAttr("legendgroup", val);
+        public static Box<IScattermapboxProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScattermapboxAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattermapboxProperty> legendrank(int val) => Interop.mkScattermapboxAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattermapboxProperty> legendrank(float val) => Interop.mkScattermapboxAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IScattermapboxProperty> opacity(int val) => Interop.mkScattermapboxAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScattermapboxProperty> uid(string val) => Interop.mkScattermapboxAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(bool val) => Interop.mkScattermapboxAttr("ids", new[]{val});
+        public static Box<IScattermapboxProperty> ids(bool val) => Interop.mkScattermapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(params bool[] values) => Interop.mkScattermapboxAttr("ids", values);
+        public static Box<IScattermapboxProperty> ids(IEnumerable<bool> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(System.DateTime val) => Interop.mkScattermapboxAttr("ids", new[]{val});
+        public static Box<IScattermapboxProperty> ids(System.DateTime val) => Interop.mkScattermapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(params System.DateTime[] values) => Interop.mkScattermapboxAttr("ids", values);
+        public static Box<IScattermapboxProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(float val) => Interop.mkScattermapboxAttr("ids", new[]{val});
+        public static Box<IScattermapboxProperty> ids(float val) => Interop.mkScattermapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(params float[] values) => Interop.mkScattermapboxAttr("ids", values);
+        public static Box<IScattermapboxProperty> ids(IEnumerable<float> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(int val) => Interop.mkScattermapboxAttr("ids", new[]{val});
+        public static Box<IScattermapboxProperty> ids(int val) => Interop.mkScattermapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(params int[] values) => Interop.mkScattermapboxAttr("ids", values);
+        public static Box<IScattermapboxProperty> ids(IEnumerable<int> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(string val) => Interop.mkScattermapboxAttr("ids", new[]{val});
+        public static Box<IScattermapboxProperty> ids(string val) => Interop.mkScattermapboxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattermapboxProperty> ids(params string[] values) => Interop.mkScattermapboxAttr("ids", values);
+        public static Box<IScattermapboxProperty> ids(IEnumerable<string> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattermapboxProperty> ids(IEnumerable<bool[]> values) => Interop.mkScattermapboxAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattermapboxProperty> ids(IEnumerable<float?> values) => Interop.mkScattermapboxAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(bool val) => Interop.mkScattermapboxAttr("customdata", new[]{val});
+        public static Box<IScattermapboxProperty> customdata(bool val) => Interop.mkScattermapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(params bool[] values) => Interop.mkScattermapboxAttr("customdata", values);
+        public static Box<IScattermapboxProperty> customdata(IEnumerable<bool> values) => Interop.mkScattermapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(System.DateTime val) => Interop.mkScattermapboxAttr("customdata", new[]{val});
+        public static Box<IScattermapboxProperty> customdata(System.DateTime val) => Interop.mkScattermapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(params System.DateTime[] values) => Interop.mkScattermapboxAttr("customdata", values);
+        public static Box<IScattermapboxProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScattermapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(float val) => Interop.mkScattermapboxAttr("customdata", new[]{val});
+        public static Box<IScattermapboxProperty> customdata(float val) => Interop.mkScattermapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(params float[] values) => Interop.mkScattermapboxAttr("customdata", values);
+        public static Box<IScattermapboxProperty> customdata(IEnumerable<float> values) => Interop.mkScattermapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(int val) => Interop.mkScattermapboxAttr("customdata", new[]{val});
+        public static Box<IScattermapboxProperty> customdata(int val) => Interop.mkScattermapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(params int[] values) => Interop.mkScattermapboxAttr("customdata", values);
+        public static Box<IScattermapboxProperty> customdata(IEnumerable<int> values) => Interop.mkScattermapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(string val) => Interop.mkScattermapboxAttr("customdata", new[]{val});
+        public static Box<IScattermapboxProperty> customdata(string val) => Interop.mkScattermapboxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattermapboxProperty> customdata(params string[] values) => Interop.mkScattermapboxAttr("customdata", values);
+        public static Box<IScattermapboxProperty> customdata(IEnumerable<string> values) => Interop.mkScattermapboxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScattermapboxProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScattermapboxAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,25 +182,25 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScattermapboxProperty> uirevision(params string[] values) => Interop.mkScattermapboxAttr("uirevision", values);
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(bool val) => Interop.mkScattermapboxAttr("lon", new[]{val});
+        public static Box<IScattermapboxProperty> lon(bool val) => Interop.mkScattermapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(params bool[] values) => Interop.mkScattermapboxAttr("lon", values);
+        public static Box<IScattermapboxProperty> lon(IEnumerable<bool> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(System.DateTime val) => Interop.mkScattermapboxAttr("lon", new[]{val});
+        public static Box<IScattermapboxProperty> lon(System.DateTime val) => Interop.mkScattermapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(params System.DateTime[] values) => Interop.mkScattermapboxAttr("lon", values);
+        public static Box<IScattermapboxProperty> lon(IEnumerable<System.DateTime> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(float val) => Interop.mkScattermapboxAttr("lon", new[]{val});
+        public static Box<IScattermapboxProperty> lon(float val) => Interop.mkScattermapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(params float[] values) => Interop.mkScattermapboxAttr("lon", values);
+        public static Box<IScattermapboxProperty> lon(IEnumerable<float> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(int val) => Interop.mkScattermapboxAttr("lon", new[]{val});
+        public static Box<IScattermapboxProperty> lon(int val) => Interop.mkScattermapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(params int[] values) => Interop.mkScattermapboxAttr("lon", values);
+        public static Box<IScattermapboxProperty> lon(IEnumerable<int> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(string val) => Interop.mkScattermapboxAttr("lon", new[]{val});
+        public static Box<IScattermapboxProperty> lon(string val) => Interop.mkScattermapboxAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattermapboxProperty> lon(params string[] values) => Interop.mkScattermapboxAttr("lon", values);
+        public static Box<IScattermapboxProperty> lon(IEnumerable<string> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IScattermapboxProperty> lon(IEnumerable<bool[]> values) => Interop.mkScattermapboxAttr("lon", Bindings.flatten2DArrayIf1D(values));
         /// Sets the longitude coordinates (in degrees East).
@@ -231,25 +236,25 @@ namespace Plotly
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IScattermapboxProperty> lon(IEnumerable<float?> values) => Interop.mkScattermapboxAttr("lon", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(bool val) => Interop.mkScattermapboxAttr("lat", new[]{val});
+        public static Box<IScattermapboxProperty> lat(bool val) => Interop.mkScattermapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(params bool[] values) => Interop.mkScattermapboxAttr("lat", values);
+        public static Box<IScattermapboxProperty> lat(IEnumerable<bool> values) => Interop.mkScattermapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(System.DateTime val) => Interop.mkScattermapboxAttr("lat", new[]{val});
+        public static Box<IScattermapboxProperty> lat(System.DateTime val) => Interop.mkScattermapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(params System.DateTime[] values) => Interop.mkScattermapboxAttr("lat", values);
+        public static Box<IScattermapboxProperty> lat(IEnumerable<System.DateTime> values) => Interop.mkScattermapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(float val) => Interop.mkScattermapboxAttr("lat", new[]{val});
+        public static Box<IScattermapboxProperty> lat(float val) => Interop.mkScattermapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(params float[] values) => Interop.mkScattermapboxAttr("lat", values);
+        public static Box<IScattermapboxProperty> lat(IEnumerable<float> values) => Interop.mkScattermapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(int val) => Interop.mkScattermapboxAttr("lat", new[]{val});
+        public static Box<IScattermapboxProperty> lat(int val) => Interop.mkScattermapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(params int[] values) => Interop.mkScattermapboxAttr("lat", values);
+        public static Box<IScattermapboxProperty> lat(IEnumerable<int> values) => Interop.mkScattermapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(string val) => Interop.mkScattermapboxAttr("lat", new[]{val});
+        public static Box<IScattermapboxProperty> lat(string val) => Interop.mkScattermapboxAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattermapboxProperty> lat(params string[] values) => Interop.mkScattermapboxAttr("lat", values);
+        public static Box<IScattermapboxProperty> lat(IEnumerable<string> values) => Interop.mkScattermapboxAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
         public static Box<IScattermapboxProperty> lat(IEnumerable<bool[]> values) => Interop.mkScattermapboxAttr("lat", Bindings.flatten2DArrayIf1D(values));
         /// Sets the latitude coordinates (in degrees North).
@@ -290,9 +295,9 @@ namespace Plotly
         public static Box<IScattermapboxProperty> text(string val) => Interop.mkScattermapboxAttr("text", val);
         /// Sets text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScattermapboxProperty> text(IEnumerable<string> values) => Interop.mkScattermapboxAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
         public static Box<IScattermapboxProperty> texttemplate(string val) => Interop.mkScattermapboxAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon` and `text`.
         public static Box<IScattermapboxProperty> texttemplate(IEnumerable<string> values) => Interop.mkScattermapboxAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each (lon,lat) pair If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScattermapboxProperty> hovertext(string val) => Interop.mkScattermapboxAttr("hovertext", val);
@@ -312,33 +317,33 @@ namespace Plotly
         public static Box<IScattermapboxProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkScattermapboxAttr("unselected", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IScattermapboxProperty> hoverinfo(params Box<IScattermapboxProperty>[] properties) => Interop.mkScattermapboxAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattermapboxProperty> hovertemplate(string val) => Interop.mkScattermapboxAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattermapboxProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScattermapboxAttr("hovertemplate", values.ToArray());
         /// Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
         public static Box<IScattermapboxProperty> subplot(int anchorId) => Interop.mkScattermapboxAttr("subplot", anchorId > 1 ? $"mapbox{anchorId}" : "");
         /// Sets a reference between this trace's data coordinates and a mapbox subplot. If *mapbox* (the default value), the data refer to `layout.mapbox`. If *mapbox2*, the data refer to `layout.mapbox2`, and so on.
         public static Box<IScattermapboxProperty> subplot(string val) => Interop.mkScattermapboxAttr("subplot", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScattermapboxProperty> idssrc(string val) => Interop.mkScattermapboxAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScattermapboxProperty> customdatasrc(string val) => Interop.mkScattermapboxAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScattermapboxProperty> metasrc(string val) => Interop.mkScattermapboxAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  lon .
+        /// Sets the source reference on Chart Studio Cloud for  lon .
         public static Box<IScattermapboxProperty> lonsrc(string val) => Interop.mkScattermapboxAttr("lonsrc", val);
-        /// Sets the source reference on plot.ly for  lat .
+        /// Sets the source reference on Chart Studio Cloud for  lat .
         public static Box<IScattermapboxProperty> latsrc(string val) => Interop.mkScattermapboxAttr("latsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScattermapboxProperty> textsrc(string val) => Interop.mkScattermapboxAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScattermapboxProperty> texttemplatesrc(string val) => Interop.mkScattermapboxAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScattermapboxProperty> hovertextsrc(string val) => Interop.mkScattermapboxAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScattermapboxProperty> hoverinfosrc(string val) => Interop.mkScattermapboxAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScattermapboxProperty> hovertemplatesrc(string val) => Interop.mkScattermapboxAttr("hovertemplatesrc", val);
     }
 

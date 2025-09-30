@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Splom
     {
@@ -17,30 +17,35 @@ namespace Plotly
         public static Box<ISplomProperty> showlegend(bool val) => Interop.mkSplomAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<ISplomProperty> legendgroup(string val) => Interop.mkSplomAttr("legendgroup", val);
+        public static Box<ISplomProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkSplomAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISplomProperty> legendrank(int val) => Interop.mkSplomAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISplomProperty> legendrank(float val) => Interop.mkSplomAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<ISplomProperty> name(string val) => Interop.mkSplomAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<ISplomProperty> uid(string val) => Interop.mkSplomAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(bool val) => Interop.mkSplomAttr("ids", new[]{val});
+        public static Box<ISplomProperty> ids(bool val) => Interop.mkSplomAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(params bool[] values) => Interop.mkSplomAttr("ids", values);
+        public static Box<ISplomProperty> ids(IEnumerable<bool> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(System.DateTime val) => Interop.mkSplomAttr("ids", new[]{val});
+        public static Box<ISplomProperty> ids(System.DateTime val) => Interop.mkSplomAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(params System.DateTime[] values) => Interop.mkSplomAttr("ids", values);
+        public static Box<ISplomProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(float val) => Interop.mkSplomAttr("ids", new[]{val});
+        public static Box<ISplomProperty> ids(float val) => Interop.mkSplomAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(params float[] values) => Interop.mkSplomAttr("ids", values);
+        public static Box<ISplomProperty> ids(IEnumerable<float> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(int val) => Interop.mkSplomAttr("ids", new[]{val});
+        public static Box<ISplomProperty> ids(int val) => Interop.mkSplomAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(params int[] values) => Interop.mkSplomAttr("ids", values);
+        public static Box<ISplomProperty> ids(IEnumerable<int> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(string val) => Interop.mkSplomAttr("ids", new[]{val});
+        public static Box<ISplomProperty> ids(string val) => Interop.mkSplomAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISplomProperty> ids(params string[] values) => Interop.mkSplomAttr("ids", values);
+        public static Box<ISplomProperty> ids(IEnumerable<string> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISplomProperty> ids(IEnumerable<bool[]> values) => Interop.mkSplomAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -76,25 +81,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISplomProperty> ids(IEnumerable<float?> values) => Interop.mkSplomAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(bool val) => Interop.mkSplomAttr("customdata", new[]{val});
+        public static Box<ISplomProperty> customdata(bool val) => Interop.mkSplomAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(params bool[] values) => Interop.mkSplomAttr("customdata", values);
+        public static Box<ISplomProperty> customdata(IEnumerable<bool> values) => Interop.mkSplomAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(System.DateTime val) => Interop.mkSplomAttr("customdata", new[]{val});
+        public static Box<ISplomProperty> customdata(System.DateTime val) => Interop.mkSplomAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(params System.DateTime[] values) => Interop.mkSplomAttr("customdata", values);
+        public static Box<ISplomProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkSplomAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(float val) => Interop.mkSplomAttr("customdata", new[]{val});
+        public static Box<ISplomProperty> customdata(float val) => Interop.mkSplomAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(params float[] values) => Interop.mkSplomAttr("customdata", values);
+        public static Box<ISplomProperty> customdata(IEnumerable<float> values) => Interop.mkSplomAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(int val) => Interop.mkSplomAttr("customdata", new[]{val});
+        public static Box<ISplomProperty> customdata(int val) => Interop.mkSplomAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(params int[] values) => Interop.mkSplomAttr("customdata", values);
+        public static Box<ISplomProperty> customdata(IEnumerable<int> values) => Interop.mkSplomAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(string val) => Interop.mkSplomAttr("customdata", new[]{val});
+        public static Box<ISplomProperty> customdata(string val) => Interop.mkSplomAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISplomProperty> customdata(params string[] values) => Interop.mkSplomAttr("customdata", values);
+        public static Box<ISplomProperty> customdata(IEnumerable<string> values) => Interop.mkSplomAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<ISplomProperty> customdata(IEnumerable<bool[]> values) => Interop.mkSplomAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -183,17 +188,21 @@ namespace Plotly
         public static Box<ISplomProperty> hovertext(string val) => Interop.mkSplomAttr("hovertext", val);
         /// Same as `text`.
         public static Box<ISplomProperty> hovertext(IEnumerable<string> values) => Interop.mkSplomAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISplomProperty> hovertemplate(string val) => Interop.mkSplomAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISplomProperty> hovertemplate(IEnumerable<string> values) => Interop.mkSplomAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<ISplomProperty> xhoverformat(string val) => Interop.mkSplomAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<ISplomProperty> yhoverformat(string val) => Interop.mkSplomAttr("yhoverformat", val);
         public static Box<ISplomProperty> marker(params Box<IMarkerProperty>[] properties) => Interop.mkSplomAttr("marker", Bindings.flattenProperties(properties));
         /// Sets the list of x axes corresponding to dimensions of this splom trace. By default, a splom will match the first N xaxes where N is the number of input dimensions. Note that, in case where `diagonal.visible` is false and `showupperhalf` or `showlowerhalf` is false, this splom trace will generate one less x-axis and one less y-axis.
-        public static Box<ISplomProperty> xaxes(string val) => Interop.mkSplomAttr("xaxes", new[]{val});
+        public static Box<ISplomProperty> xaxes(string val) => Interop.mkSplomAttr("xaxes", new[] { val });
         /// Sets the list of x axes corresponding to dimensions of this splom trace. By default, a splom will match the first N xaxes where N is the number of input dimensions. Note that, in case where `diagonal.visible` is false and `showupperhalf` or `showlowerhalf` is false, this splom trace will generate one less x-axis and one less y-axis.
         public static Box<ISplomProperty> xaxes(IEnumerable<string> values) => Interop.mkSplomAttr("xaxes", values.ToArray());
         /// Sets the list of y axes corresponding to dimensions of this splom trace. By default, a splom will match the first N yaxes where N is the number of input dimensions. Note that, in case where `diagonal.visible` is false and `showupperhalf` or `showlowerhalf` is false, this splom trace will generate one less x-axis and one less y-axis.
-        public static Box<ISplomProperty> yaxes(string val) => Interop.mkSplomAttr("yaxes", new[]{val});
+        public static Box<ISplomProperty> yaxes(string val) => Interop.mkSplomAttr("yaxes", new[] { val });
         /// Sets the list of y axes corresponding to dimensions of this splom trace. By default, a splom will match the first N yaxes where N is the number of input dimensions. Note that, in case where `diagonal.visible` is false and `showupperhalf` or `showlowerhalf` is false, this splom trace will generate one less x-axis and one less y-axis.
         public static Box<ISplomProperty> yaxes(IEnumerable<string> values) => Interop.mkSplomAttr("yaxes", values.ToArray());
         public static Box<ISplomProperty> diagonal(params Box<IDiagonalProperty>[] properties) => Interop.mkSplomAttr("diagonal", Bindings.flattenProperties(properties));
@@ -207,19 +216,19 @@ namespace Plotly
         public static Box<ISplomProperty> opacity(int val) => Interop.mkSplomAttr("opacity", val);
         /// Sets the opacity of the trace.
         public static Box<ISplomProperty> opacity(float val) => Interop.mkSplomAttr("opacity", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<ISplomProperty> idssrc(string val) => Interop.mkSplomAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<ISplomProperty> customdatasrc(string val) => Interop.mkSplomAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ISplomProperty> metasrc(string val) => Interop.mkSplomAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<ISplomProperty> hoverinfosrc(string val) => Interop.mkSplomAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<ISplomProperty> textsrc(string val) => Interop.mkSplomAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<ISplomProperty> hovertextsrc(string val) => Interop.mkSplomAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<ISplomProperty> hovertemplatesrc(string val) => Interop.mkSplomAttr("hovertemplatesrc", val);
     }
 

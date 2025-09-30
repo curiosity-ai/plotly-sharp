@@ -44,5 +44,12 @@ namespace PlotlyH5
             public static Box<ITilingProperty> x() => Interop.mkTilingAttr("flip", "x");
             public static Box<ITilingProperty> y() => Interop.mkTilingAttr("flip", "y");
         }
+
+        /// When set in conjunction with `tiling.flip`, determines on which side the root nodes are drawn in the chart. If `tiling.orientation` is *v* and `tiling.flip` is **, the root nodes appear at the top. If `tiling.orientation` is *v* and `tiling.flip` is *y*, the root nodes appear at the bottom. If `tiling.orientation` is *h* and `tiling.flip` is **, the root nodes appear at the left. If `tiling.orientation` is *h* and `tiling.flip` is *x*, the root nodes appear at the right.
+        public static partial class Orientation
+        {
+            public static Box<ITilingProperty> h() => Interop.mkTilingAttr("orientation", "h");
+            public static Box<ITilingProperty> v() => Interop.mkTilingAttr("orientation", "v");
+        }
     }
 }

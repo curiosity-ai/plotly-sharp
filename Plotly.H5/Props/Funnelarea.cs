@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IFunnelareaProperty> showlegend(bool val) => Interop.mkFunnelareaAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IFunnelareaProperty> legendgroup(string val) => Interop.mkFunnelareaAttr("legendgroup", val);
+        public static Box<IFunnelareaProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkFunnelareaAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IFunnelareaProperty> legendrank(int val) => Interop.mkFunnelareaAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IFunnelareaProperty> legendrank(float val) => Interop.mkFunnelareaAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IFunnelareaProperty> opacity(int val) => Interop.mkFunnelareaAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IFunnelareaProperty> uid(string val) => Interop.mkFunnelareaAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(bool val) => Interop.mkFunnelareaAttr("ids", new[]{val});
+        public static Box<IFunnelareaProperty> ids(bool val) => Interop.mkFunnelareaAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(params bool[] values) => Interop.mkFunnelareaAttr("ids", values);
+        public static Box<IFunnelareaProperty> ids(IEnumerable<bool> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(System.DateTime val) => Interop.mkFunnelareaAttr("ids", new[]{val});
+        public static Box<IFunnelareaProperty> ids(System.DateTime val) => Interop.mkFunnelareaAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(params System.DateTime[] values) => Interop.mkFunnelareaAttr("ids", values);
+        public static Box<IFunnelareaProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(float val) => Interop.mkFunnelareaAttr("ids", new[]{val});
+        public static Box<IFunnelareaProperty> ids(float val) => Interop.mkFunnelareaAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(params float[] values) => Interop.mkFunnelareaAttr("ids", values);
+        public static Box<IFunnelareaProperty> ids(IEnumerable<float> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(int val) => Interop.mkFunnelareaAttr("ids", new[]{val});
+        public static Box<IFunnelareaProperty> ids(int val) => Interop.mkFunnelareaAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(params int[] values) => Interop.mkFunnelareaAttr("ids", values);
+        public static Box<IFunnelareaProperty> ids(IEnumerable<int> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(string val) => Interop.mkFunnelareaAttr("ids", new[]{val});
+        public static Box<IFunnelareaProperty> ids(string val) => Interop.mkFunnelareaAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IFunnelareaProperty> ids(params string[] values) => Interop.mkFunnelareaAttr("ids", values);
+        public static Box<IFunnelareaProperty> ids(IEnumerable<string> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IFunnelareaProperty> ids(IEnumerable<bool[]> values) => Interop.mkFunnelareaAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IFunnelareaProperty> ids(IEnumerable<float?> values) => Interop.mkFunnelareaAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(bool val) => Interop.mkFunnelareaAttr("customdata", new[]{val});
+        public static Box<IFunnelareaProperty> customdata(bool val) => Interop.mkFunnelareaAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(params bool[] values) => Interop.mkFunnelareaAttr("customdata", values);
+        public static Box<IFunnelareaProperty> customdata(IEnumerable<bool> values) => Interop.mkFunnelareaAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(System.DateTime val) => Interop.mkFunnelareaAttr("customdata", new[]{val});
+        public static Box<IFunnelareaProperty> customdata(System.DateTime val) => Interop.mkFunnelareaAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(params System.DateTime[] values) => Interop.mkFunnelareaAttr("customdata", values);
+        public static Box<IFunnelareaProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkFunnelareaAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(float val) => Interop.mkFunnelareaAttr("customdata", new[]{val});
+        public static Box<IFunnelareaProperty> customdata(float val) => Interop.mkFunnelareaAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(params float[] values) => Interop.mkFunnelareaAttr("customdata", values);
+        public static Box<IFunnelareaProperty> customdata(IEnumerable<float> values) => Interop.mkFunnelareaAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(int val) => Interop.mkFunnelareaAttr("customdata", new[]{val});
+        public static Box<IFunnelareaProperty> customdata(int val) => Interop.mkFunnelareaAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(params int[] values) => Interop.mkFunnelareaAttr("customdata", values);
+        public static Box<IFunnelareaProperty> customdata(IEnumerable<int> values) => Interop.mkFunnelareaAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(string val) => Interop.mkFunnelareaAttr("customdata", new[]{val});
+        public static Box<IFunnelareaProperty> customdata(string val) => Interop.mkFunnelareaAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IFunnelareaProperty> customdata(params string[] values) => Interop.mkFunnelareaAttr("customdata", values);
+        public static Box<IFunnelareaProperty> customdata(IEnumerable<string> values) => Interop.mkFunnelareaAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IFunnelareaProperty> customdata(IEnumerable<bool[]> values) => Interop.mkFunnelareaAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -157,25 +162,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IFunnelareaProperty> uirevision(params string[] values) => Interop.mkFunnelareaAttr("uirevision", values);
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(bool val) => Interop.mkFunnelareaAttr("labels", new[]{val});
+        public static Box<IFunnelareaProperty> labels(bool val) => Interop.mkFunnelareaAttr("labels", new[] { val });
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(params bool[] values) => Interop.mkFunnelareaAttr("labels", values);
+        public static Box<IFunnelareaProperty> labels(IEnumerable<bool> values) => Interop.mkFunnelareaAttr("labels", values.ToArray());
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(System.DateTime val) => Interop.mkFunnelareaAttr("labels", new[]{val});
+        public static Box<IFunnelareaProperty> labels(System.DateTime val) => Interop.mkFunnelareaAttr("labels", new[] { val });
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(params System.DateTime[] values) => Interop.mkFunnelareaAttr("labels", values);
+        public static Box<IFunnelareaProperty> labels(IEnumerable<System.DateTime> values) => Interop.mkFunnelareaAttr("labels", values.ToArray());
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(float val) => Interop.mkFunnelareaAttr("labels", new[]{val});
+        public static Box<IFunnelareaProperty> labels(float val) => Interop.mkFunnelareaAttr("labels", new[] { val });
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(params float[] values) => Interop.mkFunnelareaAttr("labels", values);
+        public static Box<IFunnelareaProperty> labels(IEnumerable<float> values) => Interop.mkFunnelareaAttr("labels", values.ToArray());
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(int val) => Interop.mkFunnelareaAttr("labels", new[]{val});
+        public static Box<IFunnelareaProperty> labels(int val) => Interop.mkFunnelareaAttr("labels", new[] { val });
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(params int[] values) => Interop.mkFunnelareaAttr("labels", values);
+        public static Box<IFunnelareaProperty> labels(IEnumerable<int> values) => Interop.mkFunnelareaAttr("labels", values.ToArray());
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(string val) => Interop.mkFunnelareaAttr("labels", new[]{val});
+        public static Box<IFunnelareaProperty> labels(string val) => Interop.mkFunnelareaAttr("labels", new[] { val });
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
-        public static Box<IFunnelareaProperty> labels(params string[] values) => Interop.mkFunnelareaAttr("labels", values);
+        public static Box<IFunnelareaProperty> labels(IEnumerable<string> values) => Interop.mkFunnelareaAttr("labels", values.ToArray());
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
         public static Box<IFunnelareaProperty> labels(IEnumerable<bool[]> values) => Interop.mkFunnelareaAttr("labels", Bindings.flatten2DArrayIf1D(values));
         /// Sets the sector labels. If `labels` entries are duplicated, we sum associated `values` or simply count occurrences if `values` is not provided. For other array attributes (including color) we use the first non-empty entry among all occurrences of the label.
@@ -219,25 +224,25 @@ namespace PlotlyH5
         /// Sets the label step. See `label0` for more info.
         public static Box<IFunnelareaProperty> dlabel(float val) => Interop.mkFunnelareaAttr("dlabel", val);
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(bool val) => Interop.mkFunnelareaAttr("values", new[]{val});
+        public static Box<IFunnelareaProperty> values(bool val) => Interop.mkFunnelareaAttr("values", new[] { val });
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(params bool[] values) => Interop.mkFunnelareaAttr("values", values);
+        public static Box<IFunnelareaProperty> values(IEnumerable<bool> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(System.DateTime val) => Interop.mkFunnelareaAttr("values", new[]{val});
+        public static Box<IFunnelareaProperty> values(System.DateTime val) => Interop.mkFunnelareaAttr("values", new[] { val });
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(params System.DateTime[] values) => Interop.mkFunnelareaAttr("values", values);
+        public static Box<IFunnelareaProperty> values(IEnumerable<System.DateTime> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(float val) => Interop.mkFunnelareaAttr("values", new[]{val});
+        public static Box<IFunnelareaProperty> values(float val) => Interop.mkFunnelareaAttr("values", new[] { val });
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(params float[] values) => Interop.mkFunnelareaAttr("values", values);
+        public static Box<IFunnelareaProperty> values(IEnumerable<float> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(int val) => Interop.mkFunnelareaAttr("values", new[]{val});
+        public static Box<IFunnelareaProperty> values(int val) => Interop.mkFunnelareaAttr("values", new[] { val });
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(params int[] values) => Interop.mkFunnelareaAttr("values", values);
+        public static Box<IFunnelareaProperty> values(IEnumerable<int> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(string val) => Interop.mkFunnelareaAttr("values", new[]{val});
+        public static Box<IFunnelareaProperty> values(string val) => Interop.mkFunnelareaAttr("values", new[] { val });
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
-        public static Box<IFunnelareaProperty> values(params string[] values) => Interop.mkFunnelareaAttr("values", values);
+        public static Box<IFunnelareaProperty> values(IEnumerable<string> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
         public static Box<IFunnelareaProperty> values(IEnumerable<bool[]> values) => Interop.mkFunnelareaAttr("values", Bindings.flatten2DArrayIf1D(values));
         /// Sets the values of the sectors. If omitted, we count occurrences of each label.
@@ -274,23 +279,23 @@ namespace PlotlyH5
         public static Box<IFunnelareaProperty> values(IEnumerable<float?> values) => Interop.mkFunnelareaAttr("values", values.ToArray());
         public static Box<IFunnelareaProperty> marker(params Box<IMarkerProperty>[] properties) => Interop.mkFunnelareaAttr("marker", Bindings.flattenProperties(properties));
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<IFunnelareaProperty> text(bool val) => Interop.mkFunnelareaAttr("text", new[]{val});
+        public static Box<IFunnelareaProperty> text(bool val) => Interop.mkFunnelareaAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IFunnelareaProperty> text(IEnumerable<bool> values) => Interop.mkFunnelareaAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<IFunnelareaProperty> text(System.DateTime val) => Interop.mkFunnelareaAttr("text", new[]{val});
+        public static Box<IFunnelareaProperty> text(System.DateTime val) => Interop.mkFunnelareaAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IFunnelareaProperty> text(IEnumerable<System.DateTime> values) => Interop.mkFunnelareaAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<IFunnelareaProperty> text(float val) => Interop.mkFunnelareaAttr("text", new[]{val});
+        public static Box<IFunnelareaProperty> text(float val) => Interop.mkFunnelareaAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IFunnelareaProperty> text(IEnumerable<float> values) => Interop.mkFunnelareaAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<IFunnelareaProperty> text(int val) => Interop.mkFunnelareaAttr("text", new[]{val});
+        public static Box<IFunnelareaProperty> text(int val) => Interop.mkFunnelareaAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IFunnelareaProperty> text(IEnumerable<int> values) => Interop.mkFunnelareaAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
-        public static Box<IFunnelareaProperty> text(string val) => Interop.mkFunnelareaAttr("text", new[]{val});
+        public static Box<IFunnelareaProperty> text(string val) => Interop.mkFunnelareaAttr("text", new[] { val });
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IFunnelareaProperty> text(IEnumerable<string> values) => Interop.mkFunnelareaAttr("text", values.ToArray());
         /// Sets text elements associated with each sector. If trace `textinfo` contains a *text* flag, these elements will be seen on the chart. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
@@ -335,15 +340,15 @@ namespace PlotlyH5
         public static Box<IFunnelareaProperty> scalegroup(string val) => Interop.mkFunnelareaAttr("scalegroup", val);
         /// Determines which trace information appear on the graph.
         public static Box<IFunnelareaProperty> textinfo(params Box<IFunnelareaProperty>[] properties) => Interop.mkFunnelareaAttr("textinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`.
         public static Box<IFunnelareaProperty> texttemplate(string val) => Interop.mkFunnelareaAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`.
         public static Box<IFunnelareaProperty> texttemplate(IEnumerable<string> values) => Interop.mkFunnelareaAttr("texttemplate", values.ToArray());
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IFunnelareaProperty> hoverinfo(params Box<IFunnelareaProperty>[] properties) => Interop.mkFunnelareaAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IFunnelareaProperty> hovertemplate(string val) => Interop.mkFunnelareaAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `label`, `color`, `value`, `text` and `percent`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IFunnelareaProperty> hovertemplate(IEnumerable<string> values) => Interop.mkFunnelareaAttr("hovertemplate", values.ToArray());
         /// Specifies the location of the `textinfo`.
         public static Box<IFunnelareaProperty> textposition(IEnumerable<Box<IFunnelareaProperty>> properties) => Interop.mkFunnelareaAttr("textposition", Bindings.flattenProperties(properties));
@@ -361,27 +366,27 @@ namespace PlotlyH5
         public static Box<IFunnelareaProperty> baseratio(int val) => Interop.mkFunnelareaAttr("baseratio", val);
         /// Sets the ratio between bottom length and maximum top length.
         public static Box<IFunnelareaProperty> baseratio(float val) => Interop.mkFunnelareaAttr("baseratio", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IFunnelareaProperty> idssrc(string val) => Interop.mkFunnelareaAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IFunnelareaProperty> customdatasrc(string val) => Interop.mkFunnelareaAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IFunnelareaProperty> metasrc(string val) => Interop.mkFunnelareaAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  labels .
+        /// Sets the source reference on Chart Studio Cloud for  labels .
         public static Box<IFunnelareaProperty> labelssrc(string val) => Interop.mkFunnelareaAttr("labelssrc", val);
-        /// Sets the source reference on plot.ly for  values .
+        /// Sets the source reference on Chart Studio Cloud for  values .
         public static Box<IFunnelareaProperty> valuessrc(string val) => Interop.mkFunnelareaAttr("valuessrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IFunnelareaProperty> textsrc(string val) => Interop.mkFunnelareaAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IFunnelareaProperty> hovertextsrc(string val) => Interop.mkFunnelareaAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IFunnelareaProperty> texttemplatesrc(string val) => Interop.mkFunnelareaAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IFunnelareaProperty> hoverinfosrc(string val) => Interop.mkFunnelareaAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IFunnelareaProperty> hovertemplatesrc(string val) => Interop.mkFunnelareaAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IFunnelareaProperty> textpositionsrc(string val) => Interop.mkFunnelareaAttr("textpositionsrc", val);
     }
 

@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Scattergeo
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IScattergeoProperty> showlegend(bool val) => Interop.mkScattergeoAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScattergeoProperty> legendgroup(string val) => Interop.mkScattergeoAttr("legendgroup", val);
+        public static Box<IScattergeoProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScattergeoAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattergeoProperty> legendrank(int val) => Interop.mkScattergeoAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScattergeoProperty> legendrank(float val) => Interop.mkScattergeoAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IScattergeoProperty> opacity(int val) => Interop.mkScattergeoAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScattergeoProperty> uid(string val) => Interop.mkScattergeoAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(bool val) => Interop.mkScattergeoAttr("ids", new[]{val});
+        public static Box<IScattergeoProperty> ids(bool val) => Interop.mkScattergeoAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(params bool[] values) => Interop.mkScattergeoAttr("ids", values);
+        public static Box<IScattergeoProperty> ids(IEnumerable<bool> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(System.DateTime val) => Interop.mkScattergeoAttr("ids", new[]{val});
+        public static Box<IScattergeoProperty> ids(System.DateTime val) => Interop.mkScattergeoAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(params System.DateTime[] values) => Interop.mkScattergeoAttr("ids", values);
+        public static Box<IScattergeoProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(float val) => Interop.mkScattergeoAttr("ids", new[]{val});
+        public static Box<IScattergeoProperty> ids(float val) => Interop.mkScattergeoAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(params float[] values) => Interop.mkScattergeoAttr("ids", values);
+        public static Box<IScattergeoProperty> ids(IEnumerable<float> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(int val) => Interop.mkScattergeoAttr("ids", new[]{val});
+        public static Box<IScattergeoProperty> ids(int val) => Interop.mkScattergeoAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(params int[] values) => Interop.mkScattergeoAttr("ids", values);
+        public static Box<IScattergeoProperty> ids(IEnumerable<int> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(string val) => Interop.mkScattergeoAttr("ids", new[]{val});
+        public static Box<IScattergeoProperty> ids(string val) => Interop.mkScattergeoAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScattergeoProperty> ids(params string[] values) => Interop.mkScattergeoAttr("ids", values);
+        public static Box<IScattergeoProperty> ids(IEnumerable<string> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattergeoProperty> ids(IEnumerable<bool[]> values) => Interop.mkScattergeoAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScattergeoProperty> ids(IEnumerable<float?> values) => Interop.mkScattergeoAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(bool val) => Interop.mkScattergeoAttr("customdata", new[]{val});
+        public static Box<IScattergeoProperty> customdata(bool val) => Interop.mkScattergeoAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(params bool[] values) => Interop.mkScattergeoAttr("customdata", values);
+        public static Box<IScattergeoProperty> customdata(IEnumerable<bool> values) => Interop.mkScattergeoAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(System.DateTime val) => Interop.mkScattergeoAttr("customdata", new[]{val});
+        public static Box<IScattergeoProperty> customdata(System.DateTime val) => Interop.mkScattergeoAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(params System.DateTime[] values) => Interop.mkScattergeoAttr("customdata", values);
+        public static Box<IScattergeoProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScattergeoAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(float val) => Interop.mkScattergeoAttr("customdata", new[]{val});
+        public static Box<IScattergeoProperty> customdata(float val) => Interop.mkScattergeoAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(params float[] values) => Interop.mkScattergeoAttr("customdata", values);
+        public static Box<IScattergeoProperty> customdata(IEnumerable<float> values) => Interop.mkScattergeoAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(int val) => Interop.mkScattergeoAttr("customdata", new[]{val});
+        public static Box<IScattergeoProperty> customdata(int val) => Interop.mkScattergeoAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(params int[] values) => Interop.mkScattergeoAttr("customdata", values);
+        public static Box<IScattergeoProperty> customdata(IEnumerable<int> values) => Interop.mkScattergeoAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(string val) => Interop.mkScattergeoAttr("customdata", new[]{val});
+        public static Box<IScattergeoProperty> customdata(string val) => Interop.mkScattergeoAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScattergeoProperty> customdata(params string[] values) => Interop.mkScattergeoAttr("customdata", values);
+        public static Box<IScattergeoProperty> customdata(IEnumerable<string> values) => Interop.mkScattergeoAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScattergeoProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScattergeoAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,25 +182,25 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScattergeoProperty> uirevision(params string[] values) => Interop.mkScattergeoAttr("uirevision", values);
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(bool val) => Interop.mkScattergeoAttr("lon", new[]{val});
+        public static Box<IScattergeoProperty> lon(bool val) => Interop.mkScattergeoAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(params bool[] values) => Interop.mkScattergeoAttr("lon", values);
+        public static Box<IScattergeoProperty> lon(IEnumerable<bool> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(System.DateTime val) => Interop.mkScattergeoAttr("lon", new[]{val});
+        public static Box<IScattergeoProperty> lon(System.DateTime val) => Interop.mkScattergeoAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(params System.DateTime[] values) => Interop.mkScattergeoAttr("lon", values);
+        public static Box<IScattergeoProperty> lon(IEnumerable<System.DateTime> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(float val) => Interop.mkScattergeoAttr("lon", new[]{val});
+        public static Box<IScattergeoProperty> lon(float val) => Interop.mkScattergeoAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(params float[] values) => Interop.mkScattergeoAttr("lon", values);
+        public static Box<IScattergeoProperty> lon(IEnumerable<float> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(int val) => Interop.mkScattergeoAttr("lon", new[]{val});
+        public static Box<IScattergeoProperty> lon(int val) => Interop.mkScattergeoAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(params int[] values) => Interop.mkScattergeoAttr("lon", values);
+        public static Box<IScattergeoProperty> lon(IEnumerable<int> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(string val) => Interop.mkScattergeoAttr("lon", new[]{val});
+        public static Box<IScattergeoProperty> lon(string val) => Interop.mkScattergeoAttr("lon", new[] { val });
         /// Sets the longitude coordinates (in degrees East).
-        public static Box<IScattergeoProperty> lon(params string[] values) => Interop.mkScattergeoAttr("lon", values);
+        public static Box<IScattergeoProperty> lon(IEnumerable<string> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IScattergeoProperty> lon(IEnumerable<bool[]> values) => Interop.mkScattergeoAttr("lon", Bindings.flatten2DArrayIf1D(values));
         /// Sets the longitude coordinates (in degrees East).
@@ -231,25 +236,25 @@ namespace Plotly
         /// Sets the longitude coordinates (in degrees East).
         public static Box<IScattergeoProperty> lon(IEnumerable<float?> values) => Interop.mkScattergeoAttr("lon", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(bool val) => Interop.mkScattergeoAttr("lat", new[]{val});
+        public static Box<IScattergeoProperty> lat(bool val) => Interop.mkScattergeoAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(params bool[] values) => Interop.mkScattergeoAttr("lat", values);
+        public static Box<IScattergeoProperty> lat(IEnumerable<bool> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(System.DateTime val) => Interop.mkScattergeoAttr("lat", new[]{val});
+        public static Box<IScattergeoProperty> lat(System.DateTime val) => Interop.mkScattergeoAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(params System.DateTime[] values) => Interop.mkScattergeoAttr("lat", values);
+        public static Box<IScattergeoProperty> lat(IEnumerable<System.DateTime> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(float val) => Interop.mkScattergeoAttr("lat", new[]{val});
+        public static Box<IScattergeoProperty> lat(float val) => Interop.mkScattergeoAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(params float[] values) => Interop.mkScattergeoAttr("lat", values);
+        public static Box<IScattergeoProperty> lat(IEnumerable<float> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(int val) => Interop.mkScattergeoAttr("lat", new[]{val});
+        public static Box<IScattergeoProperty> lat(int val) => Interop.mkScattergeoAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(params int[] values) => Interop.mkScattergeoAttr("lat", values);
+        public static Box<IScattergeoProperty> lat(IEnumerable<int> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(string val) => Interop.mkScattergeoAttr("lat", new[]{val});
+        public static Box<IScattergeoProperty> lat(string val) => Interop.mkScattergeoAttr("lat", new[] { val });
         /// Sets the latitude coordinates (in degrees North).
-        public static Box<IScattergeoProperty> lat(params string[] values) => Interop.mkScattergeoAttr("lat", values);
+        public static Box<IScattergeoProperty> lat(IEnumerable<string> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the latitude coordinates (in degrees North).
         public static Box<IScattergeoProperty> lat(IEnumerable<bool[]> values) => Interop.mkScattergeoAttr("lat", Bindings.flatten2DArrayIf1D(values));
         /// Sets the latitude coordinates (in degrees North).
@@ -285,25 +290,25 @@ namespace Plotly
         /// Sets the latitude coordinates (in degrees North).
         public static Box<IScattergeoProperty> lat(IEnumerable<float?> values) => Interop.mkScattergeoAttr("lat", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(bool val) => Interop.mkScattergeoAttr("locations", new[]{val});
+        public static Box<IScattergeoProperty> locations(bool val) => Interop.mkScattergeoAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(params bool[] values) => Interop.mkScattergeoAttr("locations", values);
+        public static Box<IScattergeoProperty> locations(IEnumerable<bool> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(System.DateTime val) => Interop.mkScattergeoAttr("locations", new[]{val});
+        public static Box<IScattergeoProperty> locations(System.DateTime val) => Interop.mkScattergeoAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(params System.DateTime[] values) => Interop.mkScattergeoAttr("locations", values);
+        public static Box<IScattergeoProperty> locations(IEnumerable<System.DateTime> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(float val) => Interop.mkScattergeoAttr("locations", new[]{val});
+        public static Box<IScattergeoProperty> locations(float val) => Interop.mkScattergeoAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(params float[] values) => Interop.mkScattergeoAttr("locations", values);
+        public static Box<IScattergeoProperty> locations(IEnumerable<float> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(int val) => Interop.mkScattergeoAttr("locations", new[]{val});
+        public static Box<IScattergeoProperty> locations(int val) => Interop.mkScattergeoAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(params int[] values) => Interop.mkScattergeoAttr("locations", values);
+        public static Box<IScattergeoProperty> locations(IEnumerable<int> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(string val) => Interop.mkScattergeoAttr("locations", new[]{val});
+        public static Box<IScattergeoProperty> locations(string val) => Interop.mkScattergeoAttr("locations", new[] { val });
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
-        public static Box<IScattergeoProperty> locations(params string[] values) => Interop.mkScattergeoAttr("locations", values);
+        public static Box<IScattergeoProperty> locations(IEnumerable<string> values) => Interop.mkScattergeoAttr("locations", values.ToArray());
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
         public static Box<IScattergeoProperty> locations(IEnumerable<bool[]> values) => Interop.mkScattergeoAttr("locations", Bindings.flatten2DArrayIf1D(values));
         /// Sets the coordinates via location IDs or names. Coordinates correspond to the centroid of each location given. See `locationmode` for more info.
@@ -366,9 +371,9 @@ namespace Plotly
         public static Box<IScattergeoProperty> text(string val) => Interop.mkScattergeoAttr("text", val);
         /// Sets text elements associated with each (lon,lat) pair or item in `locations`. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) or `locations` coordinates. If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScattergeoProperty> text(IEnumerable<string> values) => Interop.mkScattergeoAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon`, `location` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon`, `location` and `text`.
         public static Box<IScattergeoProperty> texttemplate(string val) => Interop.mkScattergeoAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon`, `location` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `lat`, `lon`, `location` and `text`.
         public static Box<IScattergeoProperty> texttemplate(IEnumerable<string> values) => Interop.mkScattergeoAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each (lon,lat) pair or item in `locations`. If a single string, the same string appears over all the data points. If an array of string, the items are mapped in order to the this trace's (lon,lat) or `locations` coordinates. To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScattergeoProperty> hovertext(string val) => Interop.mkScattergeoAttr("hovertext", val);
@@ -388,37 +393,37 @@ namespace Plotly
         public static Box<IScattergeoProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkScattergeoAttr("unselected", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IScattergeoProperty> hoverinfo(params Box<IScattergeoProperty>[] properties) => Interop.mkScattergeoAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattergeoProperty> hovertemplate(string val) => Interop.mkScattergeoAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScattergeoProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScattergeoAttr("hovertemplate", values.ToArray());
         /// Sets a reference between this trace's geospatial coordinates and a geographic map. If *geo* (the default value), the geospatial coordinates refer to `layout.geo`. If *geo2*, the geospatial coordinates refer to `layout.geo2`, and so on.
         public static Box<IScattergeoProperty> geo(int anchorId) => Interop.mkScattergeoAttr("geo", anchorId > 1 ? $"geo{anchorId}" : "");
         /// Sets a reference between this trace's geospatial coordinates and a geographic map. If *geo* (the default value), the geospatial coordinates refer to `layout.geo`. If *geo2*, the geospatial coordinates refer to `layout.geo2`, and so on.
         public static Box<IScattergeoProperty> geo(string val) => Interop.mkScattergeoAttr("geo", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScattergeoProperty> idssrc(string val) => Interop.mkScattergeoAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScattergeoProperty> customdatasrc(string val) => Interop.mkScattergeoAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScattergeoProperty> metasrc(string val) => Interop.mkScattergeoAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  lon .
+        /// Sets the source reference on Chart Studio Cloud for  lon .
         public static Box<IScattergeoProperty> lonsrc(string val) => Interop.mkScattergeoAttr("lonsrc", val);
-        /// Sets the source reference on plot.ly for  lat .
+        /// Sets the source reference on Chart Studio Cloud for  lat .
         public static Box<IScattergeoProperty> latsrc(string val) => Interop.mkScattergeoAttr("latsrc", val);
-        /// Sets the source reference on plot.ly for  locations .
+        /// Sets the source reference on Chart Studio Cloud for  locations .
         public static Box<IScattergeoProperty> locationssrc(string val) => Interop.mkScattergeoAttr("locationssrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScattergeoProperty> textsrc(string val) => Interop.mkScattergeoAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScattergeoProperty> texttemplatesrc(string val) => Interop.mkScattergeoAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScattergeoProperty> hovertextsrc(string val) => Interop.mkScattergeoAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IScattergeoProperty> textpositionsrc(string val) => Interop.mkScattergeoAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScattergeoProperty> hoverinfosrc(string val) => Interop.mkScattergeoAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScattergeoProperty> hovertemplatesrc(string val) => Interop.mkScattergeoAttr("hovertemplatesrc", val);
     }
 

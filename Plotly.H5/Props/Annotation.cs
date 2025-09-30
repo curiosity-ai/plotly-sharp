@@ -91,7 +91,7 @@ namespace PlotlyH5
         public static Box<IAnnotationProperty> yshift(int val) => Interop.mkAnnotationAttr("yshift", val);
         /// Shifts the position of the whole annotation and arrow up (positive) or down (negative) by this many pixels.
         public static Box<IAnnotationProperty> yshift(float val) => Interop.mkAnnotationAttr("yshift", val);
-        /// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href = '...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
+        /// Sets the text associated with this annotation. Plotly uses a subset of HTML tags to do things like newline (<br>), bold (<b></b>), italics (<i></i>), hyperlinks (<a href='...'></a>). Tags <em>, <sup>, <sub> <span> are also supported.
         public static Box<IAnnotationProperty> text(string val) => Interop.mkAnnotationAttr("text", val);
         /// Sets the angle at which the `text` is drawn with respect to the horizontal.
         public static Box<IAnnotationProperty> textangle(int val) => Interop.mkAnnotationAttr("textangle", val);
@@ -248,7 +248,7 @@ namespace PlotlyH5
             public static Box<IAnnotationProperty> start() => Interop.mkAnnotationAttr("arrowside", "start");
         }
 
-        /// Indicates in what terms the tail of the annotation (ax,ay)  is specified. If `pixel`, `ax` is a relative offset in pixels  from `x`. If set to an x axis id (e.g. *x* or *x2*), `ax` is  specified in the same terms as that axis. This is useful  for trendline annotations which should continue to indicate  the correct trend when zoomed.
+        /// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a ax axis id (e.g. *ax* or *ax2*), the `ax` position refers to a ax coordinate. If set to *paper*, the `ax` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a ax axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *ax2 domain* refers to the domain of the second ax  axis and a ax position of 0.5 refers to the point between the left and the right of the domain of the second ax axis. In order for absolute positioning of the arrow to work, *axref* must be exactly the same as *xref*, otherwise *axref* will revert to *pixel* (explained next). For relative positioning, *axref* can be set to *pixel*, in which case the *ax* value is specified in pixels relative to *x*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
         public static partial class Axref
         {
             public static Box<IAnnotationProperty> pixel() => Interop.mkAnnotationAttr("axref", "pixel");
@@ -256,7 +256,7 @@ namespace PlotlyH5
             public static Box<IAnnotationProperty> x(int anchorId) => Interop.mkAnnotationAttr("axref", anchorId > 1 ? $"x{anchorId}" : "");
         }
 
-        /// Indicates in what terms the tail of the annotation (ax,ay)  is specified. If `pixel`, `ay` is a relative offset in pixels  from `y`. If set to a y axis id (e.g. *y* or *y2*), `ay` is  specified in the same terms as that axis. This is useful  for trendline annotations which should continue to indicate  the correct trend when zoomed.
+        /// Indicates in what coordinates the tail of the annotation (ax,ay) is specified. If set to a ay axis id (e.g. *ay* or *ay2*), the `ay` position refers to a ay coordinate. If set to *paper*, the `ay` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a ay axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *ay2 domain* refers to the domain of the second ay  axis and a ay position of 0.5 refers to the point between the bottom and the top of the domain of the second ay axis. In order for absolute positioning of the arrow to work, *ayref* must be exactly the same as *yref*, otherwise *ayref* will revert to *pixel* (explained next). For relative positioning, *ayref* can be set to *pixel*, in which case the *ay* value is specified in pixels relative to *y*. Absolute positioning is useful for trendline annotations which should continue to indicate the correct trend when zoomed. Relative positioning is useful for specifying the text offset for an annotated point.
         public static partial class Ayref
         {
             public static Box<IAnnotationProperty> pixel() => Interop.mkAnnotationAttr("ayref", "pixel");
@@ -264,7 +264,7 @@ namespace PlotlyH5
             public static Box<IAnnotationProperty> y(int anchorId) => Interop.mkAnnotationAttr("ayref", anchorId > 1 ? $"y{anchorId}" : "");
         }
 
-        /// Sets the annotation's x coordinate axis. If set to an x axis id (e.g. *x* or *x2*), the `x` position refers to an x coordinate If set to *paper*, the `x` position refers to the distance from the left side of the plotting area in normalized coordinates where 0 (1) corresponds to the left (right) side.
+        /// Sets the annotation's x coordinate axis. If set to a x axis id (e.g. *x* or *x2*), the `x` position refers to a x coordinate. If set to *paper*, the `x` position refers to the distance from the left of the plotting area in normalized coordinates where *0* (*1*) corresponds to the left (right). If set to a x axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the left of the domain of that axis: e.g., *x2 domain* refers to the domain of the second x  axis and a x position of 0.5 refers to the point between the left and the right of the domain of the second x axis.
         public static partial class Xref
         {
             public static Box<IAnnotationProperty> paper() => Interop.mkAnnotationAttr("xref", "paper");
@@ -272,7 +272,7 @@ namespace PlotlyH5
             public static Box<IAnnotationProperty> x(int anchorId) => Interop.mkAnnotationAttr("xref", anchorId > 1 ? $"x{anchorId}" : "");
         }
 
-        /// Sets the annotation's y coordinate axis. If set to an y axis id (e.g. *y* or *y2*), the `y` position refers to an y coordinate If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where 0 (1) corresponds to the bottom (top).
+        /// Sets the annotation's y coordinate axis. If set to a y axis id (e.g. *y* or *y2*), the `y` position refers to a y coordinate. If set to *paper*, the `y` position refers to the distance from the bottom of the plotting area in normalized coordinates where *0* (*1*) corresponds to the bottom (top). If set to a y axis ID followed by *domain* (separated by a space), the position behaves like for *paper*, but refers to the distance in fractions of the domain length from the bottom of the domain of that axis: e.g., *y2 domain* refers to the domain of the second y  axis and a y position of 0.5 refers to the point between the bottom and the top of the domain of the second y axis.
         public static partial class Yref
         {
             public static Box<IAnnotationProperty> paper() => Interop.mkAnnotationAttr("yref", "paper");

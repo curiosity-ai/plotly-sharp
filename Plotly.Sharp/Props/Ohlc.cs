@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Ohlc
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IOhlcProperty> showlegend(bool val) => Interop.mkOhlcAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IOhlcProperty> legendgroup(string val) => Interop.mkOhlcAttr("legendgroup", val);
+        public static Box<IOhlcProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkOhlcAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IOhlcProperty> legendrank(int val) => Interop.mkOhlcAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IOhlcProperty> legendrank(float val) => Interop.mkOhlcAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IOhlcProperty> opacity(int val) => Interop.mkOhlcAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IOhlcProperty> uid(string val) => Interop.mkOhlcAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(bool val) => Interop.mkOhlcAttr("ids", new[]{val});
+        public static Box<IOhlcProperty> ids(bool val) => Interop.mkOhlcAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(params bool[] values) => Interop.mkOhlcAttr("ids", values);
+        public static Box<IOhlcProperty> ids(IEnumerable<bool> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(System.DateTime val) => Interop.mkOhlcAttr("ids", new[]{val});
+        public static Box<IOhlcProperty> ids(System.DateTime val) => Interop.mkOhlcAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(params System.DateTime[] values) => Interop.mkOhlcAttr("ids", values);
+        public static Box<IOhlcProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(float val) => Interop.mkOhlcAttr("ids", new[]{val});
+        public static Box<IOhlcProperty> ids(float val) => Interop.mkOhlcAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(params float[] values) => Interop.mkOhlcAttr("ids", values);
+        public static Box<IOhlcProperty> ids(IEnumerable<float> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(int val) => Interop.mkOhlcAttr("ids", new[]{val});
+        public static Box<IOhlcProperty> ids(int val) => Interop.mkOhlcAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(params int[] values) => Interop.mkOhlcAttr("ids", values);
+        public static Box<IOhlcProperty> ids(IEnumerable<int> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(string val) => Interop.mkOhlcAttr("ids", new[]{val});
+        public static Box<IOhlcProperty> ids(string val) => Interop.mkOhlcAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IOhlcProperty> ids(params string[] values) => Interop.mkOhlcAttr("ids", values);
+        public static Box<IOhlcProperty> ids(IEnumerable<string> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IOhlcProperty> ids(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IOhlcProperty> ids(IEnumerable<float?> values) => Interop.mkOhlcAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(bool val) => Interop.mkOhlcAttr("customdata", new[]{val});
+        public static Box<IOhlcProperty> customdata(bool val) => Interop.mkOhlcAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(params bool[] values) => Interop.mkOhlcAttr("customdata", values);
+        public static Box<IOhlcProperty> customdata(IEnumerable<bool> values) => Interop.mkOhlcAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(System.DateTime val) => Interop.mkOhlcAttr("customdata", new[]{val});
+        public static Box<IOhlcProperty> customdata(System.DateTime val) => Interop.mkOhlcAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(params System.DateTime[] values) => Interop.mkOhlcAttr("customdata", values);
+        public static Box<IOhlcProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(float val) => Interop.mkOhlcAttr("customdata", new[]{val});
+        public static Box<IOhlcProperty> customdata(float val) => Interop.mkOhlcAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(params float[] values) => Interop.mkOhlcAttr("customdata", values);
+        public static Box<IOhlcProperty> customdata(IEnumerable<float> values) => Interop.mkOhlcAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(int val) => Interop.mkOhlcAttr("customdata", new[]{val});
+        public static Box<IOhlcProperty> customdata(int val) => Interop.mkOhlcAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(params int[] values) => Interop.mkOhlcAttr("customdata", values);
+        public static Box<IOhlcProperty> customdata(IEnumerable<int> values) => Interop.mkOhlcAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(string val) => Interop.mkOhlcAttr("customdata", new[]{val});
+        public static Box<IOhlcProperty> customdata(string val) => Interop.mkOhlcAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IOhlcProperty> customdata(params string[] values) => Interop.mkOhlcAttr("customdata", values);
+        public static Box<IOhlcProperty> customdata(IEnumerable<string> values) => Interop.mkOhlcAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IOhlcProperty> customdata(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,24 +182,68 @@ namespace Plotly
         public static Box<IOhlcProperty> uirevision(string val) => Interop.mkOhlcAttr("uirevision", val);
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IOhlcProperty> uirevision(params string[] values) => Interop.mkOhlcAttr("uirevision", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(bool val) => Interop.mkOhlcAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(params bool[] values) => Interop.mkOhlcAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(System.DateTime val) => Interop.mkOhlcAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(params System.DateTime[] values) => Interop.mkOhlcAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(int val) => Interop.mkOhlcAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(params int[] values) => Interop.mkOhlcAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(float val) => Interop.mkOhlcAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(params float[] values) => Interop.mkOhlcAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(string val) => Interop.mkOhlcAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IOhlcProperty> xperiod(params string[] values) => Interop.mkOhlcAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(bool val) => Interop.mkOhlcAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(params bool[] values) => Interop.mkOhlcAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(System.DateTime val) => Interop.mkOhlcAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(params System.DateTime[] values) => Interop.mkOhlcAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(int val) => Interop.mkOhlcAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(params int[] values) => Interop.mkOhlcAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(float val) => Interop.mkOhlcAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(params float[] values) => Interop.mkOhlcAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(string val) => Interop.mkOhlcAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IOhlcProperty> xperiod0(params string[] values) => Interop.mkOhlcAttr("xperiod0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IOhlcProperty> xhoverformat(string val) => Interop.mkOhlcAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IOhlcProperty> yhoverformat(string val) => Interop.mkOhlcAttr("yhoverformat", val);
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
-        public static Box<IOhlcProperty> x(bool val) => Interop.mkOhlcAttr("x", new[]{val});
+        public static Box<IOhlcProperty> x(bool val) => Interop.mkOhlcAttr("x", new[] { val });
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<bool> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
-        public static Box<IOhlcProperty> x(System.DateTime val) => Interop.mkOhlcAttr("x", new[]{val});
+        public static Box<IOhlcProperty> x(System.DateTime val) => Interop.mkOhlcAttr("x", new[] { val });
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
-        public static Box<IOhlcProperty> x(float val) => Interop.mkOhlcAttr("x", new[]{val});
+        public static Box<IOhlcProperty> x(float val) => Interop.mkOhlcAttr("x", new[] { val });
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<float> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
-        public static Box<IOhlcProperty> x(int val) => Interop.mkOhlcAttr("x", new[]{val});
+        public static Box<IOhlcProperty> x(int val) => Interop.mkOhlcAttr("x", new[] { val });
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<int> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
-        public static Box<IOhlcProperty> x(string val) => Interop.mkOhlcAttr("x", new[]{val});
+        public static Box<IOhlcProperty> x(string val) => Interop.mkOhlcAttr("x", new[] { val });
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<string> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
@@ -232,25 +281,25 @@ namespace Plotly
         /// Sets the x coordinates. If absent, linear coordinate will be generated.
         public static Box<IOhlcProperty> x(IEnumerable<float?> values) => Interop.mkOhlcAttr("x", values.ToArray());
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(bool val) => Interop.mkOhlcAttr("open", new[]{val});
+        public static Box<IOhlcProperty> _open(bool val) => Interop.mkOhlcAttr("open", new[] { val });
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(params bool[] values) => Interop.mkOhlcAttr("open", values);
+        public static Box<IOhlcProperty> _open(IEnumerable<bool> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(System.DateTime val) => Interop.mkOhlcAttr("open", new[]{val});
+        public static Box<IOhlcProperty> _open(System.DateTime val) => Interop.mkOhlcAttr("open", new[] { val });
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(params System.DateTime[] values) => Interop.mkOhlcAttr("open", values);
+        public static Box<IOhlcProperty> _open(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(float val) => Interop.mkOhlcAttr("open", new[]{val});
+        public static Box<IOhlcProperty> _open(float val) => Interop.mkOhlcAttr("open", new[] { val });
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(params float[] values) => Interop.mkOhlcAttr("open", values);
+        public static Box<IOhlcProperty> _open(IEnumerable<float> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(int val) => Interop.mkOhlcAttr("open", new[]{val});
+        public static Box<IOhlcProperty> _open(int val) => Interop.mkOhlcAttr("open", new[] { val });
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(params int[] values) => Interop.mkOhlcAttr("open", values);
+        public static Box<IOhlcProperty> _open(IEnumerable<int> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(string val) => Interop.mkOhlcAttr("open", new[]{val});
+        public static Box<IOhlcProperty> _open(string val) => Interop.mkOhlcAttr("open", new[] { val });
         /// Sets the open values.
-        public static Box<IOhlcProperty> _open(params string[] values) => Interop.mkOhlcAttr("open", values);
+        public static Box<IOhlcProperty> _open(IEnumerable<string> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the open values.
         public static Box<IOhlcProperty> _open(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("open", Bindings.flatten2DArrayIf1D(values));
         /// Sets the open values.
@@ -286,25 +335,25 @@ namespace Plotly
         /// Sets the open values.
         public static Box<IOhlcProperty> _open(IEnumerable<float?> values) => Interop.mkOhlcAttr("open", values.ToArray());
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(bool val) => Interop.mkOhlcAttr("high", new[]{val});
+        public static Box<IOhlcProperty> high(bool val) => Interop.mkOhlcAttr("high", new[] { val });
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(params bool[] values) => Interop.mkOhlcAttr("high", values);
+        public static Box<IOhlcProperty> high(IEnumerable<bool> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(System.DateTime val) => Interop.mkOhlcAttr("high", new[]{val});
+        public static Box<IOhlcProperty> high(System.DateTime val) => Interop.mkOhlcAttr("high", new[] { val });
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(params System.DateTime[] values) => Interop.mkOhlcAttr("high", values);
+        public static Box<IOhlcProperty> high(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(float val) => Interop.mkOhlcAttr("high", new[]{val});
+        public static Box<IOhlcProperty> high(float val) => Interop.mkOhlcAttr("high", new[] { val });
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(params float[] values) => Interop.mkOhlcAttr("high", values);
+        public static Box<IOhlcProperty> high(IEnumerable<float> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(int val) => Interop.mkOhlcAttr("high", new[]{val});
+        public static Box<IOhlcProperty> high(int val) => Interop.mkOhlcAttr("high", new[] { val });
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(params int[] values) => Interop.mkOhlcAttr("high", values);
+        public static Box<IOhlcProperty> high(IEnumerable<int> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(string val) => Interop.mkOhlcAttr("high", new[]{val});
+        public static Box<IOhlcProperty> high(string val) => Interop.mkOhlcAttr("high", new[] { val });
         /// Sets the high values.
-        public static Box<IOhlcProperty> high(params string[] values) => Interop.mkOhlcAttr("high", values);
+        public static Box<IOhlcProperty> high(IEnumerable<string> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the high values.
         public static Box<IOhlcProperty> high(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("high", Bindings.flatten2DArrayIf1D(values));
         /// Sets the high values.
@@ -340,25 +389,25 @@ namespace Plotly
         /// Sets the high values.
         public static Box<IOhlcProperty> high(IEnumerable<float?> values) => Interop.mkOhlcAttr("high", values.ToArray());
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(bool val) => Interop.mkOhlcAttr("low", new[]{val});
+        public static Box<IOhlcProperty> low(bool val) => Interop.mkOhlcAttr("low", new[] { val });
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(params bool[] values) => Interop.mkOhlcAttr("low", values);
+        public static Box<IOhlcProperty> low(IEnumerable<bool> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(System.DateTime val) => Interop.mkOhlcAttr("low", new[]{val});
+        public static Box<IOhlcProperty> low(System.DateTime val) => Interop.mkOhlcAttr("low", new[] { val });
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(params System.DateTime[] values) => Interop.mkOhlcAttr("low", values);
+        public static Box<IOhlcProperty> low(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(float val) => Interop.mkOhlcAttr("low", new[]{val});
+        public static Box<IOhlcProperty> low(float val) => Interop.mkOhlcAttr("low", new[] { val });
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(params float[] values) => Interop.mkOhlcAttr("low", values);
+        public static Box<IOhlcProperty> low(IEnumerable<float> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(int val) => Interop.mkOhlcAttr("low", new[]{val});
+        public static Box<IOhlcProperty> low(int val) => Interop.mkOhlcAttr("low", new[] { val });
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(params int[] values) => Interop.mkOhlcAttr("low", values);
+        public static Box<IOhlcProperty> low(IEnumerable<int> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(string val) => Interop.mkOhlcAttr("low", new[]{val});
+        public static Box<IOhlcProperty> low(string val) => Interop.mkOhlcAttr("low", new[] { val });
         /// Sets the low values.
-        public static Box<IOhlcProperty> low(params string[] values) => Interop.mkOhlcAttr("low", values);
+        public static Box<IOhlcProperty> low(IEnumerable<string> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the low values.
         public static Box<IOhlcProperty> low(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("low", Bindings.flatten2DArrayIf1D(values));
         /// Sets the low values.
@@ -394,25 +443,25 @@ namespace Plotly
         /// Sets the low values.
         public static Box<IOhlcProperty> low(IEnumerable<float?> values) => Interop.mkOhlcAttr("low", values.ToArray());
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(bool val) => Interop.mkOhlcAttr("close", new[]{val});
+        public static Box<IOhlcProperty> close(bool val) => Interop.mkOhlcAttr("close", new[] { val });
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(params bool[] values) => Interop.mkOhlcAttr("close", values);
+        public static Box<IOhlcProperty> close(IEnumerable<bool> values) => Interop.mkOhlcAttr("close", values.ToArray());
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(System.DateTime val) => Interop.mkOhlcAttr("close", new[]{val});
+        public static Box<IOhlcProperty> close(System.DateTime val) => Interop.mkOhlcAttr("close", new[] { val });
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(params System.DateTime[] values) => Interop.mkOhlcAttr("close", values);
+        public static Box<IOhlcProperty> close(IEnumerable<System.DateTime> values) => Interop.mkOhlcAttr("close", values.ToArray());
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(float val) => Interop.mkOhlcAttr("close", new[]{val});
+        public static Box<IOhlcProperty> close(float val) => Interop.mkOhlcAttr("close", new[] { val });
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(params float[] values) => Interop.mkOhlcAttr("close", values);
+        public static Box<IOhlcProperty> close(IEnumerable<float> values) => Interop.mkOhlcAttr("close", values.ToArray());
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(int val) => Interop.mkOhlcAttr("close", new[]{val});
+        public static Box<IOhlcProperty> close(int val) => Interop.mkOhlcAttr("close", new[] { val });
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(params int[] values) => Interop.mkOhlcAttr("close", values);
+        public static Box<IOhlcProperty> close(IEnumerable<int> values) => Interop.mkOhlcAttr("close", values.ToArray());
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(string val) => Interop.mkOhlcAttr("close", new[]{val});
+        public static Box<IOhlcProperty> close(string val) => Interop.mkOhlcAttr("close", new[] { val });
         /// Sets the close values.
-        public static Box<IOhlcProperty> close(params string[] values) => Interop.mkOhlcAttr("close", values);
+        public static Box<IOhlcProperty> close(IEnumerable<string> values) => Interop.mkOhlcAttr("close", values.ToArray());
         /// Sets the close values.
         public static Box<IOhlcProperty> close(IEnumerable<bool[]> values) => Interop.mkOhlcAttr("close", Bindings.flatten2DArrayIf1D(values));
         /// Sets the close values.
@@ -471,27 +520,27 @@ namespace Plotly
         public static Box<IOhlcProperty> yaxis(int anchorId) => Interop.mkOhlcAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IOhlcProperty> yaxis(string val) => Interop.mkOhlcAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IOhlcProperty> idssrc(string val) => Interop.mkOhlcAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IOhlcProperty> customdatasrc(string val) => Interop.mkOhlcAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IOhlcProperty> metasrc(string val) => Interop.mkOhlcAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IOhlcProperty> hoverinfosrc(string val) => Interop.mkOhlcAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IOhlcProperty> xsrc(string val) => Interop.mkOhlcAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  open .
+        /// Sets the source reference on Chart Studio Cloud for  open .
         public static Box<IOhlcProperty> opensrc(string val) => Interop.mkOhlcAttr("opensrc", val);
-        /// Sets the source reference on plot.ly for  high .
+        /// Sets the source reference on Chart Studio Cloud for  high .
         public static Box<IOhlcProperty> highsrc(string val) => Interop.mkOhlcAttr("highsrc", val);
-        /// Sets the source reference on plot.ly for  low .
+        /// Sets the source reference on Chart Studio Cloud for  low .
         public static Box<IOhlcProperty> lowsrc(string val) => Interop.mkOhlcAttr("lowsrc", val);
-        /// Sets the source reference on plot.ly for  close .
+        /// Sets the source reference on Chart Studio Cloud for  close .
         public static Box<IOhlcProperty> closesrc(string val) => Interop.mkOhlcAttr("closesrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IOhlcProperty> textsrc(string val) => Interop.mkOhlcAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IOhlcProperty> hovertextsrc(string val) => Interop.mkOhlcAttr("hovertextsrc", val);
     }
 
@@ -516,6 +565,14 @@ namespace Plotly
             public static Box<IOhlcProperty> x() => Interop.mkOhlcAttr("hoverinfo", "x");
             public static Box<IOhlcProperty> y() => Interop.mkOhlcAttr("hoverinfo", "y");
             public static Box<IOhlcProperty> z() => Interop.mkOhlcAttr("hoverinfo", "z");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IOhlcProperty> _end() => Interop.mkOhlcAttr("xperiodalignment", "end");
+            public static Box<IOhlcProperty> middle() => Interop.mkOhlcAttr("xperiodalignment", "middle");
+            public static Box<IOhlcProperty> start() => Interop.mkOhlcAttr("xperiodalignment", "start");
         }
 
         /// Sets the calendar system to use with `x` date data.

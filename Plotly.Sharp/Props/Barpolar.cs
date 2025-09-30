@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Barpolar
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IBarpolarProperty> showlegend(bool val) => Interop.mkBarpolarAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IBarpolarProperty> legendgroup(string val) => Interop.mkBarpolarAttr("legendgroup", val);
+        public static Box<IBarpolarProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkBarpolarAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBarpolarProperty> legendrank(int val) => Interop.mkBarpolarAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBarpolarProperty> legendrank(float val) => Interop.mkBarpolarAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IBarpolarProperty> opacity(int val) => Interop.mkBarpolarAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IBarpolarProperty> uid(string val) => Interop.mkBarpolarAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(bool val) => Interop.mkBarpolarAttr("ids", new[]{val});
+        public static Box<IBarpolarProperty> ids(bool val) => Interop.mkBarpolarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(params bool[] values) => Interop.mkBarpolarAttr("ids", values);
+        public static Box<IBarpolarProperty> ids(IEnumerable<bool> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(System.DateTime val) => Interop.mkBarpolarAttr("ids", new[]{val});
+        public static Box<IBarpolarProperty> ids(System.DateTime val) => Interop.mkBarpolarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(params System.DateTime[] values) => Interop.mkBarpolarAttr("ids", values);
+        public static Box<IBarpolarProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(float val) => Interop.mkBarpolarAttr("ids", new[]{val});
+        public static Box<IBarpolarProperty> ids(float val) => Interop.mkBarpolarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(params float[] values) => Interop.mkBarpolarAttr("ids", values);
+        public static Box<IBarpolarProperty> ids(IEnumerable<float> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(int val) => Interop.mkBarpolarAttr("ids", new[]{val});
+        public static Box<IBarpolarProperty> ids(int val) => Interop.mkBarpolarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(params int[] values) => Interop.mkBarpolarAttr("ids", values);
+        public static Box<IBarpolarProperty> ids(IEnumerable<int> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(string val) => Interop.mkBarpolarAttr("ids", new[]{val});
+        public static Box<IBarpolarProperty> ids(string val) => Interop.mkBarpolarAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBarpolarProperty> ids(params string[] values) => Interop.mkBarpolarAttr("ids", values);
+        public static Box<IBarpolarProperty> ids(IEnumerable<string> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBarpolarProperty> ids(IEnumerable<bool[]> values) => Interop.mkBarpolarAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBarpolarProperty> ids(IEnumerable<float?> values) => Interop.mkBarpolarAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(bool val) => Interop.mkBarpolarAttr("customdata", new[]{val});
+        public static Box<IBarpolarProperty> customdata(bool val) => Interop.mkBarpolarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(params bool[] values) => Interop.mkBarpolarAttr("customdata", values);
+        public static Box<IBarpolarProperty> customdata(IEnumerable<bool> values) => Interop.mkBarpolarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(System.DateTime val) => Interop.mkBarpolarAttr("customdata", new[]{val});
+        public static Box<IBarpolarProperty> customdata(System.DateTime val) => Interop.mkBarpolarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(params System.DateTime[] values) => Interop.mkBarpolarAttr("customdata", values);
+        public static Box<IBarpolarProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkBarpolarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(float val) => Interop.mkBarpolarAttr("customdata", new[]{val});
+        public static Box<IBarpolarProperty> customdata(float val) => Interop.mkBarpolarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(params float[] values) => Interop.mkBarpolarAttr("customdata", values);
+        public static Box<IBarpolarProperty> customdata(IEnumerable<float> values) => Interop.mkBarpolarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(int val) => Interop.mkBarpolarAttr("customdata", new[]{val});
+        public static Box<IBarpolarProperty> customdata(int val) => Interop.mkBarpolarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(params int[] values) => Interop.mkBarpolarAttr("customdata", values);
+        public static Box<IBarpolarProperty> customdata(IEnumerable<int> values) => Interop.mkBarpolarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(string val) => Interop.mkBarpolarAttr("customdata", new[]{val});
+        public static Box<IBarpolarProperty> customdata(string val) => Interop.mkBarpolarAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBarpolarProperty> customdata(params string[] values) => Interop.mkBarpolarAttr("customdata", values);
+        public static Box<IBarpolarProperty> customdata(IEnumerable<string> values) => Interop.mkBarpolarAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IBarpolarProperty> customdata(IEnumerable<bool[]> values) => Interop.mkBarpolarAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,23 +182,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IBarpolarProperty> uirevision(params string[] values) => Interop.mkBarpolarAttr("uirevision", values);
         /// Sets the radial coordinates
-        public static Box<IBarpolarProperty> r(bool val) => Interop.mkBarpolarAttr("r", new[]{val});
+        public static Box<IBarpolarProperty> r(bool val) => Interop.mkBarpolarAttr("r", new[] { val });
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<bool> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the radial coordinates
-        public static Box<IBarpolarProperty> r(System.DateTime val) => Interop.mkBarpolarAttr("r", new[]{val});
+        public static Box<IBarpolarProperty> r(System.DateTime val) => Interop.mkBarpolarAttr("r", new[] { val });
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<System.DateTime> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the radial coordinates
-        public static Box<IBarpolarProperty> r(float val) => Interop.mkBarpolarAttr("r", new[]{val});
+        public static Box<IBarpolarProperty> r(float val) => Interop.mkBarpolarAttr("r", new[] { val });
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<float> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the radial coordinates
-        public static Box<IBarpolarProperty> r(int val) => Interop.mkBarpolarAttr("r", new[]{val});
+        public static Box<IBarpolarProperty> r(int val) => Interop.mkBarpolarAttr("r", new[] { val });
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<int> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the radial coordinates
-        public static Box<IBarpolarProperty> r(string val) => Interop.mkBarpolarAttr("r", new[]{val});
+        public static Box<IBarpolarProperty> r(string val) => Interop.mkBarpolarAttr("r", new[] { val });
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<string> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the radial coordinates
@@ -231,23 +236,23 @@ namespace Plotly
         /// Sets the radial coordinates
         public static Box<IBarpolarProperty> r(IEnumerable<float?> values) => Interop.mkBarpolarAttr("r", values.ToArray());
         /// Sets the angular coordinates
-        public static Box<IBarpolarProperty> theta(bool val) => Interop.mkBarpolarAttr("theta", new[]{val});
+        public static Box<IBarpolarProperty> theta(bool val) => Interop.mkBarpolarAttr("theta", new[] { val });
         /// Sets the angular coordinates
         public static Box<IBarpolarProperty> theta(IEnumerable<bool> values) => Interop.mkBarpolarAttr("theta", values.ToArray());
         /// Sets the angular coordinates
-        public static Box<IBarpolarProperty> theta(System.DateTime val) => Interop.mkBarpolarAttr("theta", new[]{val});
+        public static Box<IBarpolarProperty> theta(System.DateTime val) => Interop.mkBarpolarAttr("theta", new[] { val });
         /// Sets the angular coordinates
         public static Box<IBarpolarProperty> theta(IEnumerable<System.DateTime> values) => Interop.mkBarpolarAttr("theta", values.ToArray());
         /// Sets the angular coordinates
-        public static Box<IBarpolarProperty> theta(float val) => Interop.mkBarpolarAttr("theta", new[]{val});
+        public static Box<IBarpolarProperty> theta(float val) => Interop.mkBarpolarAttr("theta", new[] { val });
         /// Sets the angular coordinates
         public static Box<IBarpolarProperty> theta(IEnumerable<float> values) => Interop.mkBarpolarAttr("theta", values.ToArray());
         /// Sets the angular coordinates
-        public static Box<IBarpolarProperty> theta(int val) => Interop.mkBarpolarAttr("theta", new[]{val});
+        public static Box<IBarpolarProperty> theta(int val) => Interop.mkBarpolarAttr("theta", new[] { val });
         /// Sets the angular coordinates
         public static Box<IBarpolarProperty> theta(IEnumerable<int> values) => Interop.mkBarpolarAttr("theta", values.ToArray());
         /// Sets the angular coordinates
-        public static Box<IBarpolarProperty> theta(string val) => Interop.mkBarpolarAttr("theta", new[]{val});
+        public static Box<IBarpolarProperty> theta(string val) => Interop.mkBarpolarAttr("theta", new[] { val });
         /// Sets the angular coordinates
         public static Box<IBarpolarProperty> theta(IEnumerable<string> values) => Interop.mkBarpolarAttr("theta", values.ToArray());
         /// Sets the angular coordinates
@@ -379,9 +384,9 @@ namespace Plotly
         public static Box<IBarpolarProperty> marker(params Box<IMarkerProperty>[] properties) => Interop.mkBarpolarAttr("marker", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IBarpolarProperty> hoverinfo(params Box<IBarpolarProperty>[] properties) => Interop.mkBarpolarAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBarpolarProperty> hovertemplate(string val) => Interop.mkBarpolarAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBarpolarProperty> hovertemplate(IEnumerable<string> values) => Interop.mkBarpolarAttr("hovertemplate", values.ToArray());
         public static Box<IBarpolarProperty> selected(params Box<ISelectedProperty>[] properties) => Interop.mkBarpolarAttr("selected", Bindings.flattenProperties(properties));
         public static Box<IBarpolarProperty> unselected(params Box<IUnselectedProperty>[] properties) => Interop.mkBarpolarAttr("unselected", Bindings.flattenProperties(properties));
@@ -389,29 +394,29 @@ namespace Plotly
         public static Box<IBarpolarProperty> subplot(int anchorId) => Interop.mkBarpolarAttr("subplot", anchorId > 1 ? $"polar{anchorId}" : "");
         /// Sets a reference between this trace's data coordinates and a polar subplot. If *polar* (the default value), the data refer to `layout.polar`. If *polar2*, the data refer to `layout.polar2`, and so on.
         public static Box<IBarpolarProperty> subplot(string val) => Interop.mkBarpolarAttr("subplot", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IBarpolarProperty> idssrc(string val) => Interop.mkBarpolarAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IBarpolarProperty> customdatasrc(string val) => Interop.mkBarpolarAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IBarpolarProperty> metasrc(string val) => Interop.mkBarpolarAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  r .
+        /// Sets the source reference on Chart Studio Cloud for  r .
         public static Box<IBarpolarProperty> rsrc(string val) => Interop.mkBarpolarAttr("rsrc", val);
-        /// Sets the source reference on plot.ly for  theta .
+        /// Sets the source reference on Chart Studio Cloud for  theta .
         public static Box<IBarpolarProperty> thetasrc(string val) => Interop.mkBarpolarAttr("thetasrc", val);
-        /// Sets the source reference on plot.ly for  base .
+        /// Sets the source reference on Chart Studio Cloud for  base .
         public static Box<IBarpolarProperty> basesrc(string val) => Interop.mkBarpolarAttr("basesrc", val);
-        /// Sets the source reference on plot.ly for  offset .
+        /// Sets the source reference on Chart Studio Cloud for  offset .
         public static Box<IBarpolarProperty> offsetsrc(string val) => Interop.mkBarpolarAttr("offsetsrc", val);
-        /// Sets the source reference on plot.ly for  width .
+        /// Sets the source reference on Chart Studio Cloud for  width .
         public static Box<IBarpolarProperty> widthsrc(string val) => Interop.mkBarpolarAttr("widthsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IBarpolarProperty> textsrc(string val) => Interop.mkBarpolarAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IBarpolarProperty> hovertextsrc(string val) => Interop.mkBarpolarAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IBarpolarProperty> hoverinfosrc(string val) => Interop.mkBarpolarAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IBarpolarProperty> hovertemplatesrc(string val) => Interop.mkBarpolarAttr("hovertemplatesrc", val);
     }
 

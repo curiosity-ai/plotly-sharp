@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IContourProperty> showlegend(bool val) => Interop.mkContourAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IContourProperty> legendgroup(string val) => Interop.mkContourAttr("legendgroup", val);
+        public static Box<IContourProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkContourAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IContourProperty> legendrank(int val) => Interop.mkContourAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IContourProperty> legendrank(float val) => Interop.mkContourAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IContourProperty> opacity(int val) => Interop.mkContourAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IContourProperty> uid(string val) => Interop.mkContourAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(bool val) => Interop.mkContourAttr("ids", new[]{val});
+        public static Box<IContourProperty> ids(bool val) => Interop.mkContourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(params bool[] values) => Interop.mkContourAttr("ids", values);
+        public static Box<IContourProperty> ids(IEnumerable<bool> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(System.DateTime val) => Interop.mkContourAttr("ids", new[]{val});
+        public static Box<IContourProperty> ids(System.DateTime val) => Interop.mkContourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(params System.DateTime[] values) => Interop.mkContourAttr("ids", values);
+        public static Box<IContourProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(float val) => Interop.mkContourAttr("ids", new[]{val});
+        public static Box<IContourProperty> ids(float val) => Interop.mkContourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(params float[] values) => Interop.mkContourAttr("ids", values);
+        public static Box<IContourProperty> ids(IEnumerable<float> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(int val) => Interop.mkContourAttr("ids", new[]{val});
+        public static Box<IContourProperty> ids(int val) => Interop.mkContourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(params int[] values) => Interop.mkContourAttr("ids", values);
+        public static Box<IContourProperty> ids(IEnumerable<int> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(string val) => Interop.mkContourAttr("ids", new[]{val});
+        public static Box<IContourProperty> ids(string val) => Interop.mkContourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IContourProperty> ids(params string[] values) => Interop.mkContourAttr("ids", values);
+        public static Box<IContourProperty> ids(IEnumerable<string> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IContourProperty> ids(IEnumerable<bool[]> values) => Interop.mkContourAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IContourProperty> ids(IEnumerable<float?> values) => Interop.mkContourAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(bool val) => Interop.mkContourAttr("customdata", new[]{val});
+        public static Box<IContourProperty> customdata(bool val) => Interop.mkContourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(params bool[] values) => Interop.mkContourAttr("customdata", values);
+        public static Box<IContourProperty> customdata(IEnumerable<bool> values) => Interop.mkContourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(System.DateTime val) => Interop.mkContourAttr("customdata", new[]{val});
+        public static Box<IContourProperty> customdata(System.DateTime val) => Interop.mkContourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(params System.DateTime[] values) => Interop.mkContourAttr("customdata", values);
+        public static Box<IContourProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(float val) => Interop.mkContourAttr("customdata", new[]{val});
+        public static Box<IContourProperty> customdata(float val) => Interop.mkContourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(params float[] values) => Interop.mkContourAttr("customdata", values);
+        public static Box<IContourProperty> customdata(IEnumerable<float> values) => Interop.mkContourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(int val) => Interop.mkContourAttr("customdata", new[]{val});
+        public static Box<IContourProperty> customdata(int val) => Interop.mkContourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(params int[] values) => Interop.mkContourAttr("customdata", values);
+        public static Box<IContourProperty> customdata(IEnumerable<int> values) => Interop.mkContourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(string val) => Interop.mkContourAttr("customdata", new[]{val});
+        public static Box<IContourProperty> customdata(string val) => Interop.mkContourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IContourProperty> customdata(params string[] values) => Interop.mkContourAttr("customdata", values);
+        public static Box<IContourProperty> customdata(IEnumerable<string> values) => Interop.mkContourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IContourProperty> customdata(IEnumerable<bool[]> values) => Interop.mkContourAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -159,25 +164,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IContourProperty> uirevision(params string[] values) => Interop.mkContourAttr("uirevision", values);
         /// Sets the z data.
-        public static Box<IContourProperty> z(bool val) => Interop.mkContourAttr("z", new[]{val});
+        public static Box<IContourProperty> z(bool val) => Interop.mkContourAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourProperty> z(params bool[] values) => Interop.mkContourAttr("z", values);
+        public static Box<IContourProperty> z(IEnumerable<bool> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourProperty> z(System.DateTime val) => Interop.mkContourAttr("z", new[]{val});
+        public static Box<IContourProperty> z(System.DateTime val) => Interop.mkContourAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourProperty> z(params System.DateTime[] values) => Interop.mkContourAttr("z", values);
+        public static Box<IContourProperty> z(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourProperty> z(float val) => Interop.mkContourAttr("z", new[]{val});
+        public static Box<IContourProperty> z(float val) => Interop.mkContourAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourProperty> z(params float[] values) => Interop.mkContourAttr("z", values);
+        public static Box<IContourProperty> z(IEnumerable<float> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourProperty> z(int val) => Interop.mkContourAttr("z", new[]{val});
+        public static Box<IContourProperty> z(int val) => Interop.mkContourAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourProperty> z(params int[] values) => Interop.mkContourAttr("z", values);
+        public static Box<IContourProperty> z(IEnumerable<int> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the z data.
-        public static Box<IContourProperty> z(string val) => Interop.mkContourAttr("z", new[]{val});
+        public static Box<IContourProperty> z(string val) => Interop.mkContourAttr("z", new[] { val });
         /// Sets the z data.
-        public static Box<IContourProperty> z(params string[] values) => Interop.mkContourAttr("z", values);
+        public static Box<IContourProperty> z(IEnumerable<string> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the z data.
         public static Box<IContourProperty> z(IEnumerable<bool[]> values) => Interop.mkContourAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the z data.
@@ -213,23 +218,23 @@ namespace PlotlyH5
         /// Sets the z data.
         public static Box<IContourProperty> z(IEnumerable<float?> values) => Interop.mkContourAttr("z", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourProperty> x(bool val) => Interop.mkContourAttr("x", new[]{val});
+        public static Box<IContourProperty> x(bool val) => Interop.mkContourAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourProperty> x(IEnumerable<bool> values) => Interop.mkContourAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourProperty> x(System.DateTime val) => Interop.mkContourAttr("x", new[]{val});
+        public static Box<IContourProperty> x(System.DateTime val) => Interop.mkContourAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourProperty> x(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourProperty> x(float val) => Interop.mkContourAttr("x", new[]{val});
+        public static Box<IContourProperty> x(float val) => Interop.mkContourAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourProperty> x(IEnumerable<float> values) => Interop.mkContourAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourProperty> x(int val) => Interop.mkContourAttr("x", new[]{val});
+        public static Box<IContourProperty> x(int val) => Interop.mkContourAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourProperty> x(IEnumerable<int> values) => Interop.mkContourAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<IContourProperty> x(string val) => Interop.mkContourAttr("x", new[]{val});
+        public static Box<IContourProperty> x(string val) => Interop.mkContourAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<IContourProperty> x(IEnumerable<string> values) => Interop.mkContourAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -291,23 +296,23 @@ namespace PlotlyH5
         /// Sets the x coordinate step. See `x0` for more info.
         public static Box<IContourProperty> dx(float val) => Interop.mkContourAttr("dx", val);
         /// Sets the y coordinates.
-        public static Box<IContourProperty> y(bool val) => Interop.mkContourAttr("y", new[]{val});
+        public static Box<IContourProperty> y(bool val) => Interop.mkContourAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourProperty> y(IEnumerable<bool> values) => Interop.mkContourAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourProperty> y(System.DateTime val) => Interop.mkContourAttr("y", new[]{val});
+        public static Box<IContourProperty> y(System.DateTime val) => Interop.mkContourAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourProperty> y(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourProperty> y(float val) => Interop.mkContourAttr("y", new[]{val});
+        public static Box<IContourProperty> y(float val) => Interop.mkContourAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourProperty> y(IEnumerable<float> values) => Interop.mkContourAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourProperty> y(int val) => Interop.mkContourAttr("y", new[]{val});
+        public static Box<IContourProperty> y(int val) => Interop.mkContourAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourProperty> y(IEnumerable<int> values) => Interop.mkContourAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<IContourProperty> y(string val) => Interop.mkContourAttr("y", new[]{val});
+        public static Box<IContourProperty> y(string val) => Interop.mkContourAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<IContourProperty> y(IEnumerable<string> values) => Interop.mkContourAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -368,26 +373,106 @@ namespace PlotlyH5
         public static Box<IContourProperty> dy(int val) => Interop.mkContourAttr("dy", val);
         /// Sets the y coordinate step. See `y0` for more info.
         public static Box<IContourProperty> dy(float val) => Interop.mkContourAttr("dy", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(bool val) => Interop.mkContourAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(params bool[] values) => Interop.mkContourAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(System.DateTime val) => Interop.mkContourAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(params System.DateTime[] values) => Interop.mkContourAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(int val) => Interop.mkContourAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(params int[] values) => Interop.mkContourAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(float val) => Interop.mkContourAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(params float[] values) => Interop.mkContourAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(string val) => Interop.mkContourAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> xperiod(params string[] values) => Interop.mkContourAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(bool val) => Interop.mkContourAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(params bool[] values) => Interop.mkContourAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(System.DateTime val) => Interop.mkContourAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(params System.DateTime[] values) => Interop.mkContourAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(int val) => Interop.mkContourAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(params int[] values) => Interop.mkContourAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(float val) => Interop.mkContourAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(params float[] values) => Interop.mkContourAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(string val) => Interop.mkContourAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IContourProperty> yperiod(params string[] values) => Interop.mkContourAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(bool val) => Interop.mkContourAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(params bool[] values) => Interop.mkContourAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(System.DateTime val) => Interop.mkContourAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(params System.DateTime[] values) => Interop.mkContourAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(int val) => Interop.mkContourAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(params int[] values) => Interop.mkContourAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(float val) => Interop.mkContourAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(params float[] values) => Interop.mkContourAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(string val) => Interop.mkContourAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> xperiod0(params string[] values) => Interop.mkContourAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(bool val) => Interop.mkContourAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(params bool[] values) => Interop.mkContourAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(System.DateTime val) => Interop.mkContourAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(params System.DateTime[] values) => Interop.mkContourAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(int val) => Interop.mkContourAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(params int[] values) => Interop.mkContourAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(float val) => Interop.mkContourAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(params float[] values) => Interop.mkContourAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(string val) => Interop.mkContourAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IContourProperty> yperiod0(params string[] values) => Interop.mkContourAttr("yperiod0", values);
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(bool val) => Interop.mkContourAttr("text", new[]{val});
+        public static Box<IContourProperty> text(bool val) => Interop.mkContourAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(params bool[] values) => Interop.mkContourAttr("text", values);
+        public static Box<IContourProperty> text(IEnumerable<bool> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(System.DateTime val) => Interop.mkContourAttr("text", new[]{val});
+        public static Box<IContourProperty> text(System.DateTime val) => Interop.mkContourAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(params System.DateTime[] values) => Interop.mkContourAttr("text", values);
+        public static Box<IContourProperty> text(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(float val) => Interop.mkContourAttr("text", new[]{val});
+        public static Box<IContourProperty> text(float val) => Interop.mkContourAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(params float[] values) => Interop.mkContourAttr("text", values);
+        public static Box<IContourProperty> text(IEnumerable<float> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(int val) => Interop.mkContourAttr("text", new[]{val});
+        public static Box<IContourProperty> text(int val) => Interop.mkContourAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(params int[] values) => Interop.mkContourAttr("text", values);
+        public static Box<IContourProperty> text(IEnumerable<int> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(string val) => Interop.mkContourAttr("text", new[]{val});
+        public static Box<IContourProperty> text(string val) => Interop.mkContourAttr("text", new[] { val });
         /// Sets the text elements associated with each z value.
-        public static Box<IContourProperty> text(params string[] values) => Interop.mkContourAttr("text", values);
+        public static Box<IContourProperty> text(IEnumerable<string> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Sets the text elements associated with each z value.
         public static Box<IContourProperty> text(IEnumerable<bool[]> values) => Interop.mkContourAttr("text", Bindings.flatten2DArrayIf1D(values));
         /// Sets the text elements associated with each z value.
@@ -423,25 +508,25 @@ namespace PlotlyH5
         /// Sets the text elements associated with each z value.
         public static Box<IContourProperty> text(IEnumerable<float?> values) => Interop.mkContourAttr("text", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(bool val) => Interop.mkContourAttr("hovertext", new[]{val});
+        public static Box<IContourProperty> hovertext(bool val) => Interop.mkContourAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(params bool[] values) => Interop.mkContourAttr("hovertext", values);
+        public static Box<IContourProperty> hovertext(IEnumerable<bool> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(System.DateTime val) => Interop.mkContourAttr("hovertext", new[]{val});
+        public static Box<IContourProperty> hovertext(System.DateTime val) => Interop.mkContourAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(params System.DateTime[] values) => Interop.mkContourAttr("hovertext", values);
+        public static Box<IContourProperty> hovertext(IEnumerable<System.DateTime> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(float val) => Interop.mkContourAttr("hovertext", new[]{val});
+        public static Box<IContourProperty> hovertext(float val) => Interop.mkContourAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(params float[] values) => Interop.mkContourAttr("hovertext", values);
+        public static Box<IContourProperty> hovertext(IEnumerable<float> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(int val) => Interop.mkContourAttr("hovertext", new[]{val});
+        public static Box<IContourProperty> hovertext(int val) => Interop.mkContourAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(params int[] values) => Interop.mkContourAttr("hovertext", values);
+        public static Box<IContourProperty> hovertext(IEnumerable<int> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(string val) => Interop.mkContourAttr("hovertext", new[]{val});
+        public static Box<IContourProperty> hovertext(string val) => Interop.mkContourAttr("hovertext", new[] { val });
         /// Same as `text`.
-        public static Box<IContourProperty> hovertext(params string[] values) => Interop.mkContourAttr("hovertext", values);
+        public static Box<IContourProperty> hovertext(IEnumerable<string> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Same as `text`.
         public static Box<IContourProperty> hovertext(IEnumerable<bool[]> values) => Interop.mkContourAttr("hovertext", Bindings.flatten2DArrayIf1D(values));
         /// Same as `text`.
@@ -478,11 +563,15 @@ namespace PlotlyH5
         public static Box<IContourProperty> hovertext(IEnumerable<float?> values) => Interop.mkContourAttr("hovertext", values.ToArray());
         /// Transposes the z data.
         public static Box<IContourProperty> transpose(bool val) => Interop.mkContourAttr("transpose", val);
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IContourProperty> xhoverformat(string val) => Interop.mkContourAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IContourProperty> yhoverformat(string val) => Interop.mkContourAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
         public static Box<IContourProperty> zhoverformat(string val) => Interop.mkContourAttr("zhoverformat", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IContourProperty> hovertemplate(string val) => Interop.mkContourAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IContourProperty> hovertemplate(IEnumerable<string> values) => Interop.mkContourAttr("hovertemplate", values.ToArray());
         /// Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data have hover labels associated with them.
         public static Box<IContourProperty> hoverongaps(bool val) => Interop.mkContourAttr("hoverongaps", val);
@@ -533,25 +622,25 @@ namespace PlotlyH5
         public static Box<IContourProperty> yaxis(int anchorId) => Interop.mkContourAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IContourProperty> yaxis(string val) => Interop.mkContourAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IContourProperty> idssrc(string val) => Interop.mkContourAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IContourProperty> customdatasrc(string val) => Interop.mkContourAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IContourProperty> metasrc(string val) => Interop.mkContourAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IContourProperty> hoverinfosrc(string val) => Interop.mkContourAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IContourProperty> zsrc(string val) => Interop.mkContourAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IContourProperty> xsrc(string val) => Interop.mkContourAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IContourProperty> ysrc(string val) => Interop.mkContourAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IContourProperty> textsrc(string val) => Interop.mkContourAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IContourProperty> hovertextsrc(string val) => Interop.mkContourAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IContourProperty> hovertemplatesrc(string val) => Interop.mkContourAttr("hovertemplatesrc", val);
         /// Sets whether or not dynamic contours are shown on hover
         public static Box<IContourProperty> show(bool val) => Interop.mkContourAttr("show", val);
@@ -584,6 +673,22 @@ namespace PlotlyH5
             public static Box<IContourProperty> x() => Interop.mkContourAttr("hoverinfo", "x");
             public static Box<IContourProperty> y() => Interop.mkContourAttr("hoverinfo", "y");
             public static Box<IContourProperty> z() => Interop.mkContourAttr("hoverinfo", "z");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IContourProperty> _end() => Interop.mkContourAttr("xperiodalignment", "end");
+            public static Box<IContourProperty> middle() => Interop.mkContourAttr("xperiodalignment", "middle");
+            public static Box<IContourProperty> start() => Interop.mkContourAttr("xperiodalignment", "start");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+        public static partial class Yperiodalignment
+        {
+            public static Box<IContourProperty> _end() => Interop.mkContourAttr("yperiodalignment", "end");
+            public static Box<IContourProperty> middle() => Interop.mkContourAttr("yperiodalignment", "middle");
+            public static Box<IContourProperty> start() => Interop.mkContourAttr("yperiodalignment", "start");
         }
 
         /// If *array*, the heatmap's x coordinates are given by *x* (the default behavior when `x` is provided). If *scaled*, the heatmap's x coordinates are given by *x0* and *dx* (the default behavior when `x` is not provided).

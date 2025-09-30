@@ -18,11 +18,11 @@ namespace PlotlyH5
         public static Box<IProjectionProperty> z(params Box<IZProperty>[] properties) => Interop.mkProjectionAttr("z", Bindings.flattenProperties(properties));
         public static Box<IProjectionProperty> rotation(params Box<IRotationProperty>[] properties) => Interop.mkProjectionAttr("rotation", Bindings.flattenProperties(properties));
         /// For conic projection types only. Sets the parallels (tangent, secant) where the cone intersects the sphere.
-        public static Box<IProjectionProperty> parallels(int val) => Interop.mkProjectionAttr("parallels", new[]{val});
+        public static Box<IProjectionProperty> parallels(int val) => Interop.mkProjectionAttr("parallels", new[] { val });
         /// For conic projection types only. Sets the parallels (tangent, secant) where the cone intersects the sphere.
         public static Box<IProjectionProperty> parallels(IEnumerable<int> values) => Interop.mkProjectionAttr("parallels", values.ToArray());
         /// For conic projection types only. Sets the parallels (tangent, secant) where the cone intersects the sphere.
-        public static Box<IProjectionProperty> parallels(float val) => Interop.mkProjectionAttr("parallels", new[]{val});
+        public static Box<IProjectionProperty> parallels(float val) => Interop.mkProjectionAttr("parallels", new[] { val });
         /// For conic projection types only. Sets the parallels (tangent, secant) where the cone intersects the sphere.
         public static Box<IProjectionProperty> parallels(IEnumerable<float> values) => Interop.mkProjectionAttr("parallels", values.ToArray());
         /// Zooms in or out on the map view. A scale of *1* corresponds to the largest zoom level that fits the map's lon and lat ranges.

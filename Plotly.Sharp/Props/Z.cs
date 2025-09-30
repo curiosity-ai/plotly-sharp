@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Z
     {
@@ -53,25 +53,25 @@ namespace Plotly
         /// Sets the width of the highlighted contour lines.
         public static Box<IZProperty> highlightwidth(float val) => Interop.mkZAttr("highlightwidth", val);
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(bool val) => Interop.mkZAttr("locations", new[]{val});
+        public static Box<IZProperty> locations(bool val) => Interop.mkZAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(params bool[] values) => Interop.mkZAttr("locations", values);
+        public static Box<IZProperty> locations(IEnumerable<bool> values) => Interop.mkZAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(System.DateTime val) => Interop.mkZAttr("locations", new[]{val});
+        public static Box<IZProperty> locations(System.DateTime val) => Interop.mkZAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(params System.DateTime[] values) => Interop.mkZAttr("locations", values);
+        public static Box<IZProperty> locations(IEnumerable<System.DateTime> values) => Interop.mkZAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(float val) => Interop.mkZAttr("locations", new[]{val});
+        public static Box<IZProperty> locations(float val) => Interop.mkZAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(params float[] values) => Interop.mkZAttr("locations", values);
+        public static Box<IZProperty> locations(IEnumerable<float> values) => Interop.mkZAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(int val) => Interop.mkZAttr("locations", new[]{val});
+        public static Box<IZProperty> locations(int val) => Interop.mkZAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(params int[] values) => Interop.mkZAttr("locations", values);
+        public static Box<IZProperty> locations(IEnumerable<int> values) => Interop.mkZAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(string val) => Interop.mkZAttr("locations", new[]{val});
+        public static Box<IZProperty> locations(string val) => Interop.mkZAttr("locations", new[] { val });
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
-        public static Box<IZProperty> locations(params string[] values) => Interop.mkZAttr("locations", values);
+        public static Box<IZProperty> locations(IEnumerable<string> values) => Interop.mkZAttr("locations", values.ToArray());
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
         public static Box<IZProperty> locations(IEnumerable<bool[]> values) => Interop.mkZAttr("locations", Bindings.flatten2DArrayIf1D(values));
         /// Specifies the location(s) of slices on the axis. When not specified slices would be created for all points of the axis z except start and end.
@@ -110,7 +110,7 @@ namespace Plotly
         public static Box<IZProperty> fill(int val) => Interop.mkZAttr("fill", val);
         /// Sets the fill ratio of the `slices`. The default fill value of the `slices` is 1 meaning that they are entirely shaded. On the other hand Applying a `fill` ratio less than one would allow the creation of openings parallel to the edges.
         public static Box<IZProperty> fill(float val) => Interop.mkZAttr("fill", val);
-        /// Sets the source reference on plot.ly for  locations .
+        /// Sets the source reference on Chart Studio Cloud for  locations .
         public static Box<IZProperty> locationssrc(string val) => Interop.mkZAttr("locationssrc", val);
     }
 }

@@ -13,6 +13,7 @@ namespace PlotlyH5
 
     public static partial class Parcats
     {
+        public static Box<IParcatsProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkParcatsAttr("legendgrouptitle", Bindings.flattenProperties(properties));
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IParcatsProperty> name(string val) => Interop.mkParcatsAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
@@ -42,7 +43,7 @@ namespace PlotlyH5
         public static Box<IParcatsProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkParcatsAttr("domain", Bindings.flattenProperties(properties));
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<IParcatsProperty> hoverinfo(params Box<IParcatsProperty>[] properties) => Interop.mkParcatsAttr("hoverinfo", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count`, `probability`, `category`, `categorycount`, `colorcount` and `bandcolorcount`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `count`, `probability`, `category`, `categorycount`, `colorcount` and `bandcolorcount`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IParcatsProperty> hovertemplate(string val) => Interop.mkParcatsAttr("hovertemplate", val);
         /// Sort paths so that like colors are bundled together within each category.
         public static Box<IParcatsProperty> bundlecolors(bool val) => Interop.mkParcatsAttr("bundlecolors", val);
@@ -60,9 +61,9 @@ namespace PlotlyH5
         public static Box<IParcatsProperty> counts(IEnumerable<int> values) => Interop.mkParcatsAttr("counts", values.ToArray());
         /// The number of observations represented by each state. Defaults to 1 so that each state represents one observation
         public static Box<IParcatsProperty> counts(IEnumerable<float> values) => Interop.mkParcatsAttr("counts", values.ToArray());
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IParcatsProperty> metasrc(string val) => Interop.mkParcatsAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  counts .
+        /// Sets the source reference on Chart Studio Cloud for  counts .
         public static Box<IParcatsProperty> countssrc(string val) => Interop.mkParcatsAttr("countssrc", val);
     }
 

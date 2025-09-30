@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Box
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IBoxProperty> showlegend(bool val) => Interop.mkBoxAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IBoxProperty> legendgroup(string val) => Interop.mkBoxAttr("legendgroup", val);
+        public static Box<IBoxProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkBoxAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBoxProperty> legendrank(int val) => Interop.mkBoxAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IBoxProperty> legendrank(float val) => Interop.mkBoxAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IBoxProperty> opacity(int val) => Interop.mkBoxAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -24,25 +29,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IBoxProperty> uid(string val) => Interop.mkBoxAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(bool val) => Interop.mkBoxAttr("ids", new[]{val});
+        public static Box<IBoxProperty> ids(bool val) => Interop.mkBoxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(params bool[] values) => Interop.mkBoxAttr("ids", values);
+        public static Box<IBoxProperty> ids(IEnumerable<bool> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(System.DateTime val) => Interop.mkBoxAttr("ids", new[]{val});
+        public static Box<IBoxProperty> ids(System.DateTime val) => Interop.mkBoxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(params System.DateTime[] values) => Interop.mkBoxAttr("ids", values);
+        public static Box<IBoxProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(float val) => Interop.mkBoxAttr("ids", new[]{val});
+        public static Box<IBoxProperty> ids(float val) => Interop.mkBoxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(params float[] values) => Interop.mkBoxAttr("ids", values);
+        public static Box<IBoxProperty> ids(IEnumerable<float> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(int val) => Interop.mkBoxAttr("ids", new[]{val});
+        public static Box<IBoxProperty> ids(int val) => Interop.mkBoxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(params int[] values) => Interop.mkBoxAttr("ids", values);
+        public static Box<IBoxProperty> ids(IEnumerable<int> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(string val) => Interop.mkBoxAttr("ids", new[]{val});
+        public static Box<IBoxProperty> ids(string val) => Interop.mkBoxAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IBoxProperty> ids(params string[] values) => Interop.mkBoxAttr("ids", values);
+        public static Box<IBoxProperty> ids(IEnumerable<string> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBoxProperty> ids(IEnumerable<bool[]> values) => Interop.mkBoxAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -78,25 +83,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IBoxProperty> ids(IEnumerable<float?> values) => Interop.mkBoxAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(bool val) => Interop.mkBoxAttr("customdata", new[]{val});
+        public static Box<IBoxProperty> customdata(bool val) => Interop.mkBoxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(params bool[] values) => Interop.mkBoxAttr("customdata", values);
+        public static Box<IBoxProperty> customdata(IEnumerable<bool> values) => Interop.mkBoxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(System.DateTime val) => Interop.mkBoxAttr("customdata", new[]{val});
+        public static Box<IBoxProperty> customdata(System.DateTime val) => Interop.mkBoxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(params System.DateTime[] values) => Interop.mkBoxAttr("customdata", values);
+        public static Box<IBoxProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(float val) => Interop.mkBoxAttr("customdata", new[]{val});
+        public static Box<IBoxProperty> customdata(float val) => Interop.mkBoxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(params float[] values) => Interop.mkBoxAttr("customdata", values);
+        public static Box<IBoxProperty> customdata(IEnumerable<float> values) => Interop.mkBoxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(int val) => Interop.mkBoxAttr("customdata", new[]{val});
+        public static Box<IBoxProperty> customdata(int val) => Interop.mkBoxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(params int[] values) => Interop.mkBoxAttr("customdata", values);
+        public static Box<IBoxProperty> customdata(IEnumerable<int> values) => Interop.mkBoxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(string val) => Interop.mkBoxAttr("customdata", new[]{val});
+        public static Box<IBoxProperty> customdata(string val) => Interop.mkBoxAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IBoxProperty> customdata(params string[] values) => Interop.mkBoxAttr("customdata", values);
+        public static Box<IBoxProperty> customdata(IEnumerable<string> values) => Interop.mkBoxAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IBoxProperty> customdata(IEnumerable<bool[]> values) => Interop.mkBoxAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,23 +182,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IBoxProperty> uirevision(params string[] values) => Interop.mkBoxAttr("uirevision", values);
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> y(bool val) => Interop.mkBoxAttr("y", new[]{val});
+        public static Box<IBoxProperty> y(bool val) => Interop.mkBoxAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<bool> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> y(System.DateTime val) => Interop.mkBoxAttr("y", new[]{val});
+        public static Box<IBoxProperty> y(System.DateTime val) => Interop.mkBoxAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> y(float val) => Interop.mkBoxAttr("y", new[]{val});
+        public static Box<IBoxProperty> y(float val) => Interop.mkBoxAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<float> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> y(int val) => Interop.mkBoxAttr("y", new[]{val});
+        public static Box<IBoxProperty> y(int val) => Interop.mkBoxAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<int> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> y(string val) => Interop.mkBoxAttr("y", new[]{val});
+        public static Box<IBoxProperty> y(string val) => Interop.mkBoxAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<string> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
@@ -231,23 +236,23 @@ namespace Plotly
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> y(IEnumerable<float?> values) => Interop.mkBoxAttr("y", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> x(bool val) => Interop.mkBoxAttr("x", new[]{val});
+        public static Box<IBoxProperty> x(bool val) => Interop.mkBoxAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> x(IEnumerable<bool> values) => Interop.mkBoxAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> x(System.DateTime val) => Interop.mkBoxAttr("x", new[]{val});
+        public static Box<IBoxProperty> x(System.DateTime val) => Interop.mkBoxAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> x(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> x(float val) => Interop.mkBoxAttr("x", new[]{val});
+        public static Box<IBoxProperty> x(float val) => Interop.mkBoxAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> x(IEnumerable<float> values) => Interop.mkBoxAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> x(int val) => Interop.mkBoxAttr("x", new[]{val});
+        public static Box<IBoxProperty> x(int val) => Interop.mkBoxAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> x(IEnumerable<int> values) => Interop.mkBoxAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IBoxProperty> x(string val) => Interop.mkBoxAttr("x", new[]{val});
+        public static Box<IBoxProperty> x(string val) => Interop.mkBoxAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IBoxProperty> x(IEnumerable<string> values) => Interop.mkBoxAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
@@ -332,26 +337,110 @@ namespace Plotly
         public static Box<IBoxProperty> dy(int val) => Interop.mkBoxAttr("dy", val);
         /// Sets the y coordinate step for multi-box traces set using q1/median/q3.
         public static Box<IBoxProperty> dy(float val) => Interop.mkBoxAttr("dy", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(bool val) => Interop.mkBoxAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(params bool[] values) => Interop.mkBoxAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(System.DateTime val) => Interop.mkBoxAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(params System.DateTime[] values) => Interop.mkBoxAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(int val) => Interop.mkBoxAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(params int[] values) => Interop.mkBoxAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(float val) => Interop.mkBoxAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(params float[] values) => Interop.mkBoxAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(string val) => Interop.mkBoxAttr("xperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the x axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> xperiod(params string[] values) => Interop.mkBoxAttr("xperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(bool val) => Interop.mkBoxAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(params bool[] values) => Interop.mkBoxAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(System.DateTime val) => Interop.mkBoxAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(params System.DateTime[] values) => Interop.mkBoxAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(int val) => Interop.mkBoxAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(params int[] values) => Interop.mkBoxAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(float val) => Interop.mkBoxAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(params float[] values) => Interop.mkBoxAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(string val) => Interop.mkBoxAttr("yperiod", val);
+        /// Only relevant when the axis `type` is *date*. Sets the period positioning in milliseconds or *M<n>* on the y axis. Special values in the form of *M<n>* could be used to declare the number of months. In this case `n` must be a positive integer.
+        public static Box<IBoxProperty> yperiod(params string[] values) => Interop.mkBoxAttr("yperiod", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(bool val) => Interop.mkBoxAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(params bool[] values) => Interop.mkBoxAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(System.DateTime val) => Interop.mkBoxAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(params System.DateTime[] values) => Interop.mkBoxAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(int val) => Interop.mkBoxAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(params int[] values) => Interop.mkBoxAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(float val) => Interop.mkBoxAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(params float[] values) => Interop.mkBoxAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(string val) => Interop.mkBoxAttr("xperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the x0 axis. When `x0period` is round number of weeks, the `x0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> xperiod0(params string[] values) => Interop.mkBoxAttr("xperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(bool val) => Interop.mkBoxAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(params bool[] values) => Interop.mkBoxAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(System.DateTime val) => Interop.mkBoxAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(params System.DateTime[] values) => Interop.mkBoxAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(int val) => Interop.mkBoxAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(params int[] values) => Interop.mkBoxAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(float val) => Interop.mkBoxAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(params float[] values) => Interop.mkBoxAttr("yperiod0", values);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(string val) => Interop.mkBoxAttr("yperiod0", val);
+        /// Only relevant when the axis `type` is *date*. Sets the base for period positioning in milliseconds or date string on the y0 axis. When `y0period` is round number of weeks, the `y0period0` by default would be on a Sunday i.e. 2000-01-02, otherwise it would be at 2000-01-01.
+        public static Box<IBoxProperty> yperiod0(params string[] values) => Interop.mkBoxAttr("yperiod0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IBoxProperty> xhoverformat(string val) => Interop.mkBoxAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IBoxProperty> yhoverformat(string val) => Interop.mkBoxAttr("yhoverformat", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover. For box traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical
         public static Box<IBoxProperty> name(string val) => Interop.mkBoxAttr("name", val);
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q1(bool val) => Interop.mkBoxAttr("q1", new[]{val});
+        public static Box<IBoxProperty> q1(bool val) => Interop.mkBoxAttr("q1", new[] { val });
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<bool> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q1(System.DateTime val) => Interop.mkBoxAttr("q1", new[]{val});
+        public static Box<IBoxProperty> q1(System.DateTime val) => Interop.mkBoxAttr("q1", new[] { val });
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q1(float val) => Interop.mkBoxAttr("q1", new[]{val});
+        public static Box<IBoxProperty> q1(float val) => Interop.mkBoxAttr("q1", new[] { val });
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<float> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q1(int val) => Interop.mkBoxAttr("q1", new[]{val});
+        public static Box<IBoxProperty> q1(int val) => Interop.mkBoxAttr("q1", new[] { val });
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<int> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q1(string val) => Interop.mkBoxAttr("q1", new[]{val});
+        public static Box<IBoxProperty> q1(string val) => Interop.mkBoxAttr("q1", new[] { val });
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<string> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
@@ -389,23 +478,23 @@ namespace Plotly
         /// Sets the Quartile 1 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q1(IEnumerable<float?> values) => Interop.mkBoxAttr("q1", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> median(bool val) => Interop.mkBoxAttr("median", new[]{val});
+        public static Box<IBoxProperty> median(bool val) => Interop.mkBoxAttr("median", new[] { val });
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<bool> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> median(System.DateTime val) => Interop.mkBoxAttr("median", new[]{val});
+        public static Box<IBoxProperty> median(System.DateTime val) => Interop.mkBoxAttr("median", new[] { val });
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> median(float val) => Interop.mkBoxAttr("median", new[]{val});
+        public static Box<IBoxProperty> median(float val) => Interop.mkBoxAttr("median", new[] { val });
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<float> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> median(int val) => Interop.mkBoxAttr("median", new[]{val});
+        public static Box<IBoxProperty> median(int val) => Interop.mkBoxAttr("median", new[] { val });
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<int> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> median(string val) => Interop.mkBoxAttr("median", new[]{val});
+        public static Box<IBoxProperty> median(string val) => Interop.mkBoxAttr("median", new[] { val });
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<string> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the median values. There should be as many items as the number of boxes desired.
@@ -443,23 +532,23 @@ namespace Plotly
         /// Sets the median values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> median(IEnumerable<float?> values) => Interop.mkBoxAttr("median", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q3(bool val) => Interop.mkBoxAttr("q3", new[]{val});
+        public static Box<IBoxProperty> q3(bool val) => Interop.mkBoxAttr("q3", new[] { val });
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<bool> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q3(System.DateTime val) => Interop.mkBoxAttr("q3", new[]{val});
+        public static Box<IBoxProperty> q3(System.DateTime val) => Interop.mkBoxAttr("q3", new[] { val });
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q3(float val) => Interop.mkBoxAttr("q3", new[]{val});
+        public static Box<IBoxProperty> q3(float val) => Interop.mkBoxAttr("q3", new[] { val });
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<float> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q3(int val) => Interop.mkBoxAttr("q3", new[]{val});
+        public static Box<IBoxProperty> q3(int val) => Interop.mkBoxAttr("q3", new[] { val });
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<int> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
-        public static Box<IBoxProperty> q3(string val) => Interop.mkBoxAttr("q3", new[]{val});
+        public static Box<IBoxProperty> q3(string val) => Interop.mkBoxAttr("q3", new[] { val });
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<string> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
@@ -497,25 +586,25 @@ namespace Plotly
         /// Sets the Quartile 3 values. There should be as many items as the number of boxes desired.
         public static Box<IBoxProperty> q3(IEnumerable<float?> values) => Interop.mkBoxAttr("q3", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(bool val) => Interop.mkBoxAttr("lowerfence", new[]{val});
+        public static Box<IBoxProperty> lowerfence(bool val) => Interop.mkBoxAttr("lowerfence", new[] { val });
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(params bool[] values) => Interop.mkBoxAttr("lowerfence", values);
+        public static Box<IBoxProperty> lowerfence(IEnumerable<bool> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(System.DateTime val) => Interop.mkBoxAttr("lowerfence", new[]{val});
+        public static Box<IBoxProperty> lowerfence(System.DateTime val) => Interop.mkBoxAttr("lowerfence", new[] { val });
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(params System.DateTime[] values) => Interop.mkBoxAttr("lowerfence", values);
+        public static Box<IBoxProperty> lowerfence(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(float val) => Interop.mkBoxAttr("lowerfence", new[]{val});
+        public static Box<IBoxProperty> lowerfence(float val) => Interop.mkBoxAttr("lowerfence", new[] { val });
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(params float[] values) => Interop.mkBoxAttr("lowerfence", values);
+        public static Box<IBoxProperty> lowerfence(IEnumerable<float> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(int val) => Interop.mkBoxAttr("lowerfence", new[]{val});
+        public static Box<IBoxProperty> lowerfence(int val) => Interop.mkBoxAttr("lowerfence", new[] { val });
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(params int[] values) => Interop.mkBoxAttr("lowerfence", values);
+        public static Box<IBoxProperty> lowerfence(IEnumerable<int> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(string val) => Interop.mkBoxAttr("lowerfence", new[]{val});
+        public static Box<IBoxProperty> lowerfence(string val) => Interop.mkBoxAttr("lowerfence", new[] { val });
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
-        public static Box<IBoxProperty> lowerfence(params string[] values) => Interop.mkBoxAttr("lowerfence", values);
+        public static Box<IBoxProperty> lowerfence(IEnumerable<string> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
         public static Box<IBoxProperty> lowerfence(IEnumerable<bool[]> values) => Interop.mkBoxAttr("lowerfence", Bindings.flatten2DArrayIf1D(values));
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
@@ -551,25 +640,25 @@ namespace Plotly
         /// Sets the lower fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `lowerfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point below 1.5 times the IQR.
         public static Box<IBoxProperty> lowerfence(IEnumerable<float?> values) => Interop.mkBoxAttr("lowerfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(bool val) => Interop.mkBoxAttr("upperfence", new[]{val});
+        public static Box<IBoxProperty> upperfence(bool val) => Interop.mkBoxAttr("upperfence", new[] { val });
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(params bool[] values) => Interop.mkBoxAttr("upperfence", values);
+        public static Box<IBoxProperty> upperfence(IEnumerable<bool> values) => Interop.mkBoxAttr("upperfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(System.DateTime val) => Interop.mkBoxAttr("upperfence", new[]{val});
+        public static Box<IBoxProperty> upperfence(System.DateTime val) => Interop.mkBoxAttr("upperfence", new[] { val });
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(params System.DateTime[] values) => Interop.mkBoxAttr("upperfence", values);
+        public static Box<IBoxProperty> upperfence(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("upperfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(float val) => Interop.mkBoxAttr("upperfence", new[]{val});
+        public static Box<IBoxProperty> upperfence(float val) => Interop.mkBoxAttr("upperfence", new[] { val });
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(params float[] values) => Interop.mkBoxAttr("upperfence", values);
+        public static Box<IBoxProperty> upperfence(IEnumerable<float> values) => Interop.mkBoxAttr("upperfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(int val) => Interop.mkBoxAttr("upperfence", new[]{val});
+        public static Box<IBoxProperty> upperfence(int val) => Interop.mkBoxAttr("upperfence", new[] { val });
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(params int[] values) => Interop.mkBoxAttr("upperfence", values);
+        public static Box<IBoxProperty> upperfence(IEnumerable<int> values) => Interop.mkBoxAttr("upperfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(string val) => Interop.mkBoxAttr("upperfence", new[]{val});
+        public static Box<IBoxProperty> upperfence(string val) => Interop.mkBoxAttr("upperfence", new[] { val });
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
-        public static Box<IBoxProperty> upperfence(params string[] values) => Interop.mkBoxAttr("upperfence", values);
+        public static Box<IBoxProperty> upperfence(IEnumerable<string> values) => Interop.mkBoxAttr("upperfence", values.ToArray());
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
         public static Box<IBoxProperty> upperfence(IEnumerable<bool[]> values) => Interop.mkBoxAttr("upperfence", Bindings.flatten2DArrayIf1D(values));
         /// Sets the upper fence values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `upperfence` is not provided but a sample (in `y` or `x`) is set, we compute the lower as the last sample point above 1.5 times the IQR.
@@ -611,25 +700,25 @@ namespace Plotly
         /// Sets the width of the notches relative to the box' width. For example, with 0, the notches are as wide as the box(es).
         public static Box<IBoxProperty> notchwidth(float val) => Interop.mkBoxAttr("notchwidth", val);
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(bool val) => Interop.mkBoxAttr("notchspan", new[]{val});
+        public static Box<IBoxProperty> notchspan(bool val) => Interop.mkBoxAttr("notchspan", new[] { val });
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(params bool[] values) => Interop.mkBoxAttr("notchspan", values);
+        public static Box<IBoxProperty> notchspan(IEnumerable<bool> values) => Interop.mkBoxAttr("notchspan", values.ToArray());
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(System.DateTime val) => Interop.mkBoxAttr("notchspan", new[]{val});
+        public static Box<IBoxProperty> notchspan(System.DateTime val) => Interop.mkBoxAttr("notchspan", new[] { val });
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(params System.DateTime[] values) => Interop.mkBoxAttr("notchspan", values);
+        public static Box<IBoxProperty> notchspan(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("notchspan", values.ToArray());
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(float val) => Interop.mkBoxAttr("notchspan", new[]{val});
+        public static Box<IBoxProperty> notchspan(float val) => Interop.mkBoxAttr("notchspan", new[] { val });
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(params float[] values) => Interop.mkBoxAttr("notchspan", values);
+        public static Box<IBoxProperty> notchspan(IEnumerable<float> values) => Interop.mkBoxAttr("notchspan", values.ToArray());
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(int val) => Interop.mkBoxAttr("notchspan", new[]{val});
+        public static Box<IBoxProperty> notchspan(int val) => Interop.mkBoxAttr("notchspan", new[] { val });
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(params int[] values) => Interop.mkBoxAttr("notchspan", values);
+        public static Box<IBoxProperty> notchspan(IEnumerable<int> values) => Interop.mkBoxAttr("notchspan", values.ToArray());
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(string val) => Interop.mkBoxAttr("notchspan", new[]{val});
+        public static Box<IBoxProperty> notchspan(string val) => Interop.mkBoxAttr("notchspan", new[] { val });
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
-        public static Box<IBoxProperty> notchspan(params string[] values) => Interop.mkBoxAttr("notchspan", values);
+        public static Box<IBoxProperty> notchspan(IEnumerable<string> values) => Interop.mkBoxAttr("notchspan", values.ToArray());
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
         public static Box<IBoxProperty> notchspan(IEnumerable<bool[]> values) => Interop.mkBoxAttr("notchspan", Bindings.flatten2DArrayIf1D(values));
         /// Sets the notch span from the boxes' `median` values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `notchspan` is not provided but a sample (in `y` or `x`) is set, we compute it as 1.57 * IQR / sqrt(N), where N is the sample size.
@@ -673,25 +762,25 @@ namespace Plotly
         /// Sets the position of the sample points in relation to the box(es). If *0*, the sample points are places over the center of the box(es). Positive (negative) values correspond to positions to the right (left) for vertical boxes and above (below) for horizontal boxes
         public static Box<IBoxProperty> pointpos(float val) => Interop.mkBoxAttr("pointpos", val);
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(bool val) => Interop.mkBoxAttr("mean", new[]{val});
+        public static Box<IBoxProperty> mean(bool val) => Interop.mkBoxAttr("mean", new[] { val });
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(params bool[] values) => Interop.mkBoxAttr("mean", values);
+        public static Box<IBoxProperty> mean(IEnumerable<bool> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(System.DateTime val) => Interop.mkBoxAttr("mean", new[]{val});
+        public static Box<IBoxProperty> mean(System.DateTime val) => Interop.mkBoxAttr("mean", new[] { val });
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(params System.DateTime[] values) => Interop.mkBoxAttr("mean", values);
+        public static Box<IBoxProperty> mean(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(float val) => Interop.mkBoxAttr("mean", new[]{val});
+        public static Box<IBoxProperty> mean(float val) => Interop.mkBoxAttr("mean", new[] { val });
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(params float[] values) => Interop.mkBoxAttr("mean", values);
+        public static Box<IBoxProperty> mean(IEnumerable<float> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(int val) => Interop.mkBoxAttr("mean", new[]{val});
+        public static Box<IBoxProperty> mean(int val) => Interop.mkBoxAttr("mean", new[] { val });
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(params int[] values) => Interop.mkBoxAttr("mean", values);
+        public static Box<IBoxProperty> mean(IEnumerable<int> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(string val) => Interop.mkBoxAttr("mean", new[]{val});
+        public static Box<IBoxProperty> mean(string val) => Interop.mkBoxAttr("mean", new[] { val });
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
-        public static Box<IBoxProperty> mean(params string[] values) => Interop.mkBoxAttr("mean", values);
+        public static Box<IBoxProperty> mean(IEnumerable<string> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
         public static Box<IBoxProperty> mean(IEnumerable<bool[]> values) => Interop.mkBoxAttr("mean", Bindings.flatten2DArrayIf1D(values));
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
@@ -727,25 +816,25 @@ namespace Plotly
         /// Sets the mean values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `mean` is not provided but a sample (in `y` or `x`) is set, we compute the mean for each box using the sample values.
         public static Box<IBoxProperty> mean(IEnumerable<float?> values) => Interop.mkBoxAttr("mean", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(bool val) => Interop.mkBoxAttr("sd", new[]{val});
+        public static Box<IBoxProperty> sd(bool val) => Interop.mkBoxAttr("sd", new[] { val });
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(params bool[] values) => Interop.mkBoxAttr("sd", values);
+        public static Box<IBoxProperty> sd(IEnumerable<bool> values) => Interop.mkBoxAttr("sd", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(System.DateTime val) => Interop.mkBoxAttr("sd", new[]{val});
+        public static Box<IBoxProperty> sd(System.DateTime val) => Interop.mkBoxAttr("sd", new[] { val });
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(params System.DateTime[] values) => Interop.mkBoxAttr("sd", values);
+        public static Box<IBoxProperty> sd(IEnumerable<System.DateTime> values) => Interop.mkBoxAttr("sd", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(float val) => Interop.mkBoxAttr("sd", new[]{val});
+        public static Box<IBoxProperty> sd(float val) => Interop.mkBoxAttr("sd", new[] { val });
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(params float[] values) => Interop.mkBoxAttr("sd", values);
+        public static Box<IBoxProperty> sd(IEnumerable<float> values) => Interop.mkBoxAttr("sd", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(int val) => Interop.mkBoxAttr("sd", new[]{val});
+        public static Box<IBoxProperty> sd(int val) => Interop.mkBoxAttr("sd", new[] { val });
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(params int[] values) => Interop.mkBoxAttr("sd", values);
+        public static Box<IBoxProperty> sd(IEnumerable<int> values) => Interop.mkBoxAttr("sd", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(string val) => Interop.mkBoxAttr("sd", new[]{val});
+        public static Box<IBoxProperty> sd(string val) => Interop.mkBoxAttr("sd", new[] { val });
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
-        public static Box<IBoxProperty> sd(params string[] values) => Interop.mkBoxAttr("sd", values);
+        public static Box<IBoxProperty> sd(IEnumerable<string> values) => Interop.mkBoxAttr("sd", values.ToArray());
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
         public static Box<IBoxProperty> sd(IEnumerable<bool[]> values) => Interop.mkBoxAttr("sd", Bindings.flatten2DArrayIf1D(values));
         /// Sets the standard deviation values. There should be as many items as the number of boxes desired. This attribute has effect only under the q1/median/q3 signature. If `sd` is not provided but a sample (in `y` or `x`) is set, we compute the standard deviation for each box using the sample values.
@@ -806,9 +895,9 @@ namespace Plotly
         public static Box<IBoxProperty> hovertext(string val) => Interop.mkBoxAttr("hovertext", val);
         /// Same as `text`.
         public static Box<IBoxProperty> hovertext(IEnumerable<string> values) => Interop.mkBoxAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBoxProperty> hovertemplate(string val) => Interop.mkBoxAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IBoxProperty> hovertemplate(IEnumerable<string> values) => Interop.mkBoxAttr("hovertemplate", values.ToArray());
         /// Do the hover effects highlight individual boxes  or sample points or both?
         public static Box<IBoxProperty> hoveron(params Box<IBoxProperty>[] properties) => Interop.mkBoxAttr("hoveron", Bindings.joinEnumProperties(properties));
@@ -820,39 +909,39 @@ namespace Plotly
         public static Box<IBoxProperty> yaxis(int anchorId) => Interop.mkBoxAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IBoxProperty> yaxis(string val) => Interop.mkBoxAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IBoxProperty> idssrc(string val) => Interop.mkBoxAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IBoxProperty> customdatasrc(string val) => Interop.mkBoxAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IBoxProperty> metasrc(string val) => Interop.mkBoxAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IBoxProperty> hoverinfosrc(string val) => Interop.mkBoxAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IBoxProperty> ysrc(string val) => Interop.mkBoxAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IBoxProperty> xsrc(string val) => Interop.mkBoxAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  q1 .
+        /// Sets the source reference on Chart Studio Cloud for  q1 .
         public static Box<IBoxProperty> q1src(string val) => Interop.mkBoxAttr("q1src", val);
-        /// Sets the source reference on plot.ly for  median .
+        /// Sets the source reference on Chart Studio Cloud for  median .
         public static Box<IBoxProperty> mediansrc(string val) => Interop.mkBoxAttr("mediansrc", val);
-        /// Sets the source reference on plot.ly for  q3 .
+        /// Sets the source reference on Chart Studio Cloud for  q3 .
         public static Box<IBoxProperty> q3src(string val) => Interop.mkBoxAttr("q3src", val);
-        /// Sets the source reference on plot.ly for  lowerfence .
+        /// Sets the source reference on Chart Studio Cloud for  lowerfence .
         public static Box<IBoxProperty> lowerfencesrc(string val) => Interop.mkBoxAttr("lowerfencesrc", val);
-        /// Sets the source reference on plot.ly for  upperfence .
+        /// Sets the source reference on Chart Studio Cloud for  upperfence .
         public static Box<IBoxProperty> upperfencesrc(string val) => Interop.mkBoxAttr("upperfencesrc", val);
-        /// Sets the source reference on plot.ly for  notchspan .
+        /// Sets the source reference on Chart Studio Cloud for  notchspan .
         public static Box<IBoxProperty> notchspansrc(string val) => Interop.mkBoxAttr("notchspansrc", val);
-        /// Sets the source reference on plot.ly for  mean .
+        /// Sets the source reference on Chart Studio Cloud for  mean .
         public static Box<IBoxProperty> meansrc(string val) => Interop.mkBoxAttr("meansrc", val);
-        /// Sets the source reference on plot.ly for  sd .
+        /// Sets the source reference on Chart Studio Cloud for  sd .
         public static Box<IBoxProperty> sdsrc(string val) => Interop.mkBoxAttr("sdsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IBoxProperty> textsrc(string val) => Interop.mkBoxAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IBoxProperty> hovertextsrc(string val) => Interop.mkBoxAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IBoxProperty> hovertemplatesrc(string val) => Interop.mkBoxAttr("hovertemplatesrc", val);
     }
 
@@ -877,6 +966,22 @@ namespace Plotly
             public static Box<IBoxProperty> x() => Interop.mkBoxAttr("hoverinfo", "x");
             public static Box<IBoxProperty> y() => Interop.mkBoxAttr("hoverinfo", "y");
             public static Box<IBoxProperty> z() => Interop.mkBoxAttr("hoverinfo", "z");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the x axis.
+        public static partial class Xperiodalignment
+        {
+            public static Box<IBoxProperty> _end() => Interop.mkBoxAttr("xperiodalignment", "end");
+            public static Box<IBoxProperty> middle() => Interop.mkBoxAttr("xperiodalignment", "middle");
+            public static Box<IBoxProperty> start() => Interop.mkBoxAttr("xperiodalignment", "start");
+        }
+
+        /// Only relevant when the axis `type` is *date*. Sets the alignment of data points on the y axis.
+        public static partial class Yperiodalignment
+        {
+            public static Box<IBoxProperty> _end() => Interop.mkBoxAttr("yperiodalignment", "end");
+            public static Box<IBoxProperty> middle() => Interop.mkBoxAttr("yperiodalignment", "middle");
+            public static Box<IBoxProperty> start() => Interop.mkBoxAttr("yperiodalignment", "start");
         }
 
         /// If *outliers*, only the sample points lying outside the whiskers are shown If *suspectedoutliers*, the outlier points are shown and points either less than 4*Q1-3*Q3 or greater than 4*Q3-3*Q1 are highlighted (see `outliercolor`) If *all*, all sample points are shown If *false*, only the box(es) are shown with no sample points Defaults to *suspectedoutliers* when `marker.outliercolor` or `marker.line.outliercolor` is set. Defaults to *all* under the q1/median/q3 signature. Otherwise defaults to *outliers*.

@@ -54,6 +54,18 @@ module Common =
         | true, false, true -> "neg" + (s.Substring(1))
         | _ -> s
 
+    /// Prefixes an underscore to position numbers or "neg" to negative numbers
+    let mapOperatorsToNames (s: string) = 
+        match s with
+        | ""   -> "empty"
+        | "/"  -> "ldivide"
+        | "\\" -> "rdivide"
+        | "-"  -> "minus"
+        | "|"  -> "pipe"
+        | "+"  -> "plus"
+        | "."  -> "dot"
+        | _    -> s
+
     let appendApostropheToReservedKeywords (s: string) =
         let reserved =
             [ "checked"

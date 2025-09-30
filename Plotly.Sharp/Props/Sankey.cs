@@ -8,35 +8,40 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Sankey
     {
+        public static Box<ISankeyProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkSankeyAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISankeyProperty> legendrank(int val) => Interop.mkSankeyAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISankeyProperty> legendrank(float val) => Interop.mkSankeyAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<ISankeyProperty> name(string val) => Interop.mkSankeyAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<ISankeyProperty> uid(string val) => Interop.mkSankeyAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(bool val) => Interop.mkSankeyAttr("ids", new[]{val});
+        public static Box<ISankeyProperty> ids(bool val) => Interop.mkSankeyAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(params bool[] values) => Interop.mkSankeyAttr("ids", values);
+        public static Box<ISankeyProperty> ids(IEnumerable<bool> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(System.DateTime val) => Interop.mkSankeyAttr("ids", new[]{val});
+        public static Box<ISankeyProperty> ids(System.DateTime val) => Interop.mkSankeyAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(params System.DateTime[] values) => Interop.mkSankeyAttr("ids", values);
+        public static Box<ISankeyProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(float val) => Interop.mkSankeyAttr("ids", new[]{val});
+        public static Box<ISankeyProperty> ids(float val) => Interop.mkSankeyAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(params float[] values) => Interop.mkSankeyAttr("ids", values);
+        public static Box<ISankeyProperty> ids(IEnumerable<float> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(int val) => Interop.mkSankeyAttr("ids", new[]{val});
+        public static Box<ISankeyProperty> ids(int val) => Interop.mkSankeyAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(params int[] values) => Interop.mkSankeyAttr("ids", values);
+        public static Box<ISankeyProperty> ids(IEnumerable<int> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(string val) => Interop.mkSankeyAttr("ids", new[]{val});
+        public static Box<ISankeyProperty> ids(string val) => Interop.mkSankeyAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISankeyProperty> ids(params string[] values) => Interop.mkSankeyAttr("ids", values);
+        public static Box<ISankeyProperty> ids(IEnumerable<string> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISankeyProperty> ids(IEnumerable<bool[]> values) => Interop.mkSankeyAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -72,25 +77,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISankeyProperty> ids(IEnumerable<float?> values) => Interop.mkSankeyAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(bool val) => Interop.mkSankeyAttr("customdata", new[]{val});
+        public static Box<ISankeyProperty> customdata(bool val) => Interop.mkSankeyAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(params bool[] values) => Interop.mkSankeyAttr("customdata", values);
+        public static Box<ISankeyProperty> customdata(IEnumerable<bool> values) => Interop.mkSankeyAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(System.DateTime val) => Interop.mkSankeyAttr("customdata", new[]{val});
+        public static Box<ISankeyProperty> customdata(System.DateTime val) => Interop.mkSankeyAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(params System.DateTime[] values) => Interop.mkSankeyAttr("customdata", values);
+        public static Box<ISankeyProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkSankeyAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(float val) => Interop.mkSankeyAttr("customdata", new[]{val});
+        public static Box<ISankeyProperty> customdata(float val) => Interop.mkSankeyAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(params float[] values) => Interop.mkSankeyAttr("customdata", values);
+        public static Box<ISankeyProperty> customdata(IEnumerable<float> values) => Interop.mkSankeyAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(int val) => Interop.mkSankeyAttr("customdata", new[]{val});
+        public static Box<ISankeyProperty> customdata(int val) => Interop.mkSankeyAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(params int[] values) => Interop.mkSankeyAttr("customdata", values);
+        public static Box<ISankeyProperty> customdata(IEnumerable<int> values) => Interop.mkSankeyAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(string val) => Interop.mkSankeyAttr("customdata", new[]{val});
+        public static Box<ISankeyProperty> customdata(string val) => Interop.mkSankeyAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISankeyProperty> customdata(params string[] values) => Interop.mkSankeyAttr("customdata", values);
+        public static Box<ISankeyProperty> customdata(IEnumerable<string> values) => Interop.mkSankeyAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<ISankeyProperty> customdata(IEnumerable<bool[]> values) => Interop.mkSankeyAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -170,7 +175,7 @@ namespace Plotly
         public static Box<ISankeyProperty> hoverinfo(params Box<ISankeyProperty>[] properties) => Interop.mkSankeyAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         public static Box<ISankeyProperty> hoverlabel(params Box<IHoverlabelProperty>[] properties) => Interop.mkSankeyAttr("hoverlabel", Bindings.flattenProperties(properties));
         public static Box<ISankeyProperty> domain(params Box<IDomainProperty>[] properties) => Interop.mkSankeyAttr("domain", Bindings.flattenProperties(properties));
-        /// Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.
         public static Box<ISankeyProperty> valueformat(string val) => Interop.mkSankeyAttr("valueformat", val);
         /// Adds a unit to follow the value in the hover tooltip. Add a space if a separation is necessary from the value.
         public static Box<ISankeyProperty> valuesuffix(string val) => Interop.mkSankeyAttr("valuesuffix", val);
@@ -180,11 +185,11 @@ namespace Plotly
         public static Box<ISankeyProperty> node(params Box<INodeProperty>[] properties) => Interop.mkSankeyAttr("node", Bindings.flattenProperties(properties));
         /// The links of the Sankey plot.
         public static Box<ISankeyProperty> link(params Box<ILinkProperty>[] properties) => Interop.mkSankeyAttr("link", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<ISankeyProperty> idssrc(string val) => Interop.mkSankeyAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<ISankeyProperty> customdatasrc(string val) => Interop.mkSankeyAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ISankeyProperty> metasrc(string val) => Interop.mkSankeyAttr("metasrc", val);
     }
 

@@ -8,9 +8,11 @@ module ParserUtils =
     open Fake.IO
     open Fake.IO.FileSystemOperators
 
+    let schemaJson = Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/refs/tags/v2.2.1/dist/plot-schema.json")
+    //let schemaJson = File.readAsString(@"D:\dev\plotly-sharp\plot-schema.json")
     /// The Plotly.js schema
     let schema =
-        Http.RequestString(@"https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plot-schema.json")
+        schemaJson
         |> JsonValue.Parse
 
     /// Returns `true` if the `JsonValue` is a component
@@ -270,6 +272,7 @@ module rec ApiParser =
                     |> spaceCaseTokebabCase
                     |> kebabCaseToCamelCase
                     |> snakeCaseToCamelCase
+                    |> mapOperatorsToNames
                     |> prefixUnderscoreOrNegativeToNumbers
                     |> appendApostropheToReservedKeywords
 
@@ -452,10 +455,11 @@ module rec ApiParser =
 
         let result =
             let schemaSkips = [ "defs" ]
-            let compSkips = [ "type"; "transform" ]
+            let compSkips = [ "type"; "transform"; ]
 
-            schema.Properties
-            |> Array.filter (fun (name, _) -> List.contains name schemaSkips |> not)
+            let prop = schema.Properties
+
+            prop |> Array.filter (fun (name, _) -> List.contains name schemaSkips |> not)
             |> JsonValue.Record
             |> allComponentNames
             |> List.filter (fun name -> List.contains name compSkips |> not)

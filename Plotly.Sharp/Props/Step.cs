@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Step
     {
@@ -21,11 +21,11 @@ namespace Plotly
         /// Sets the thickness of the bar as a fraction of the total thickness of the gauge.
         public static Box<IStepProperty> thickness(float val) => Interop.mkStepAttr("thickness", val);
         /// Sets the range of this axis.
-        public static Box<IStepProperty> range(int val) => Interop.mkStepAttr("range", new[]{val});
+        public static Box<IStepProperty> range(int val) => Interop.mkStepAttr("range", new[] { val });
         /// Sets the range of this axis.
         public static Box<IStepProperty> range(IEnumerable<int> values) => Interop.mkStepAttr("range", values.ToArray());
         /// Sets the range of this axis.
-        public static Box<IStepProperty> range(float val) => Interop.mkStepAttr("range", new[]{val});
+        public static Box<IStepProperty> range(float val) => Interop.mkStepAttr("range", new[] { val });
         /// Sets the range of this axis.
         public static Box<IStepProperty> range(IEnumerable<float> values) => Interop.mkStepAttr("range", values.ToArray());
         /// When used in a template, named items are created in the output figure in addition to any items the figure already has in this array. You can modify these items in the output figure by making your own item with `templateitemname` matching this `name` alongside your modifications (including `visible: false` or `enabled: false` to hide it). Has no effect outside of a template.
@@ -35,23 +35,23 @@ namespace Plotly
         /// Determines whether or not this step is included in the slider.
         public static Box<IStepProperty> visible(bool val) => Interop.mkStepAttr("visible", val);
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
-        public static Box<IStepProperty> args(bool val) => Interop.mkStepAttr("args", new[]{val});
+        public static Box<IStepProperty> args(bool val) => Interop.mkStepAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
         public static Box<IStepProperty> args(IEnumerable<bool> values) => Interop.mkStepAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
-        public static Box<IStepProperty> args(System.DateTime val) => Interop.mkStepAttr("args", new[]{val});
+        public static Box<IStepProperty> args(System.DateTime val) => Interop.mkStepAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
         public static Box<IStepProperty> args(IEnumerable<System.DateTime> values) => Interop.mkStepAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
-        public static Box<IStepProperty> args(float val) => Interop.mkStepAttr("args", new[]{val});
+        public static Box<IStepProperty> args(float val) => Interop.mkStepAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
         public static Box<IStepProperty> args(IEnumerable<float> values) => Interop.mkStepAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
-        public static Box<IStepProperty> args(int val) => Interop.mkStepAttr("args", new[]{val});
+        public static Box<IStepProperty> args(int val) => Interop.mkStepAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
         public static Box<IStepProperty> args(IEnumerable<int> values) => Interop.mkStepAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
-        public static Box<IStepProperty> args(string val) => Interop.mkStepAttr("args", new[]{val});
+        public static Box<IStepProperty> args(string val) => Interop.mkStepAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on slide.
         public static Box<IStepProperty> args(IEnumerable<string> values) => Interop.mkStepAttr("args", values.ToArray());
         /// Sets the text label to appear on the slider

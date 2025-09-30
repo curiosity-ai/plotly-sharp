@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Button
     {
@@ -26,43 +26,43 @@ namespace Plotly
         /// Used to refer to a named item in this array in the template. Named items from the template will be created even without a matching item in the input figure, but you can modify one by making an item with `templateitemname` matching its `name`, alongside your modifications (including `visible: false` or `enabled: false` to hide it). If there is no template or no matching item, this item will be hidden unless you explicitly show it with `visible: true`.
         public static Box<IButtonProperty> templateitemname(string val) => Interop.mkButtonAttr("templateitemname", val);
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
-        public static Box<IButtonProperty> args(bool val) => Interop.mkButtonAttr("args", new[]{val});
+        public static Box<IButtonProperty> args(bool val) => Interop.mkButtonAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
         public static Box<IButtonProperty> args(IEnumerable<bool> values) => Interop.mkButtonAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
-        public static Box<IButtonProperty> args(System.DateTime val) => Interop.mkButtonAttr("args", new[]{val});
+        public static Box<IButtonProperty> args(System.DateTime val) => Interop.mkButtonAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
         public static Box<IButtonProperty> args(IEnumerable<System.DateTime> values) => Interop.mkButtonAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
-        public static Box<IButtonProperty> args(float val) => Interop.mkButtonAttr("args", new[]{val});
+        public static Box<IButtonProperty> args(float val) => Interop.mkButtonAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
         public static Box<IButtonProperty> args(IEnumerable<float> values) => Interop.mkButtonAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
-        public static Box<IButtonProperty> args(int val) => Interop.mkButtonAttr("args", new[]{val});
+        public static Box<IButtonProperty> args(int val) => Interop.mkButtonAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
         public static Box<IButtonProperty> args(IEnumerable<int> values) => Interop.mkButtonAttr("args", values.ToArray());
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
-        public static Box<IButtonProperty> args(string val) => Interop.mkButtonAttr("args", new[]{val});
+        public static Box<IButtonProperty> args(string val) => Interop.mkButtonAttr("args", new[] { val });
         /// Sets the arguments values to be passed to the Plotly method set in `method` on click.
         public static Box<IButtonProperty> args(IEnumerable<string> values) => Interop.mkButtonAttr("args", values.ToArray());
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
-        public static Box<IButtonProperty> args2(bool val) => Interop.mkButtonAttr("args2", new[]{val});
+        public static Box<IButtonProperty> args2(bool val) => Interop.mkButtonAttr("args2", new[] { val });
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
         public static Box<IButtonProperty> args2(IEnumerable<bool> values) => Interop.mkButtonAttr("args2", values.ToArray());
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
-        public static Box<IButtonProperty> args2(System.DateTime val) => Interop.mkButtonAttr("args2", new[]{val});
+        public static Box<IButtonProperty> args2(System.DateTime val) => Interop.mkButtonAttr("args2", new[] { val });
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
         public static Box<IButtonProperty> args2(IEnumerable<System.DateTime> values) => Interop.mkButtonAttr("args2", values.ToArray());
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
-        public static Box<IButtonProperty> args2(float val) => Interop.mkButtonAttr("args2", new[]{val});
+        public static Box<IButtonProperty> args2(float val) => Interop.mkButtonAttr("args2", new[] { val });
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
         public static Box<IButtonProperty> args2(IEnumerable<float> values) => Interop.mkButtonAttr("args2", values.ToArray());
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
-        public static Box<IButtonProperty> args2(int val) => Interop.mkButtonAttr("args2", new[]{val});
+        public static Box<IButtonProperty> args2(int val) => Interop.mkButtonAttr("args2", new[] { val });
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
         public static Box<IButtonProperty> args2(IEnumerable<int> values) => Interop.mkButtonAttr("args2", values.ToArray());
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
-        public static Box<IButtonProperty> args2(string val) => Interop.mkButtonAttr("args2", new[]{val});
+        public static Box<IButtonProperty> args2(string val) => Interop.mkButtonAttr("args2", new[] { val });
         /// Sets a 2nd set of `args`, these arguments values are passed to the Plotly method set in `method` when clicking this button while in the active state. Use this to create toggle buttons.
         public static Box<IButtonProperty> args2(IEnumerable<string> values) => Interop.mkButtonAttr("args2", values.ToArray());
         /// When true, the API method is executed. When false, all other behaviors are the same and command execution is skipped. This may be useful when hooking into, for example, the `plotly_buttonclicked` method and executing the API command manually without losing the benefit of the updatemenu automatically binding to the state of the plot through the specification of `method` and `args`.

@@ -15,30 +15,35 @@ namespace PlotlyH5
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IStreamtubeProperty> legendgroup(string val) => Interop.mkStreamtubeAttr("legendgroup", val);
+        public static Box<IStreamtubeProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkStreamtubeAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IStreamtubeProperty> legendrank(int val) => Interop.mkStreamtubeAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IStreamtubeProperty> legendrank(float val) => Interop.mkStreamtubeAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<IStreamtubeProperty> name(string val) => Interop.mkStreamtubeAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IStreamtubeProperty> uid(string val) => Interop.mkStreamtubeAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(bool val) => Interop.mkStreamtubeAttr("ids", new[]{val});
+        public static Box<IStreamtubeProperty> ids(bool val) => Interop.mkStreamtubeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(params bool[] values) => Interop.mkStreamtubeAttr("ids", values);
+        public static Box<IStreamtubeProperty> ids(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(System.DateTime val) => Interop.mkStreamtubeAttr("ids", new[]{val});
+        public static Box<IStreamtubeProperty> ids(System.DateTime val) => Interop.mkStreamtubeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(params System.DateTime[] values) => Interop.mkStreamtubeAttr("ids", values);
+        public static Box<IStreamtubeProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(float val) => Interop.mkStreamtubeAttr("ids", new[]{val});
+        public static Box<IStreamtubeProperty> ids(float val) => Interop.mkStreamtubeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(params float[] values) => Interop.mkStreamtubeAttr("ids", values);
+        public static Box<IStreamtubeProperty> ids(IEnumerable<float> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(int val) => Interop.mkStreamtubeAttr("ids", new[]{val});
+        public static Box<IStreamtubeProperty> ids(int val) => Interop.mkStreamtubeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(params int[] values) => Interop.mkStreamtubeAttr("ids", values);
+        public static Box<IStreamtubeProperty> ids(IEnumerable<int> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(string val) => Interop.mkStreamtubeAttr("ids", new[]{val});
+        public static Box<IStreamtubeProperty> ids(string val) => Interop.mkStreamtubeAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IStreamtubeProperty> ids(params string[] values) => Interop.mkStreamtubeAttr("ids", values);
+        public static Box<IStreamtubeProperty> ids(IEnumerable<string> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IStreamtubeProperty> ids(IEnumerable<bool[]> values) => Interop.mkStreamtubeAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IStreamtubeProperty> ids(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(bool val) => Interop.mkStreamtubeAttr("customdata", new[]{val});
+        public static Box<IStreamtubeProperty> customdata(bool val) => Interop.mkStreamtubeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(params bool[] values) => Interop.mkStreamtubeAttr("customdata", values);
+        public static Box<IStreamtubeProperty> customdata(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(System.DateTime val) => Interop.mkStreamtubeAttr("customdata", new[]{val});
+        public static Box<IStreamtubeProperty> customdata(System.DateTime val) => Interop.mkStreamtubeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(params System.DateTime[] values) => Interop.mkStreamtubeAttr("customdata", values);
+        public static Box<IStreamtubeProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(float val) => Interop.mkStreamtubeAttr("customdata", new[]{val});
+        public static Box<IStreamtubeProperty> customdata(float val) => Interop.mkStreamtubeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(params float[] values) => Interop.mkStreamtubeAttr("customdata", values);
+        public static Box<IStreamtubeProperty> customdata(IEnumerable<float> values) => Interop.mkStreamtubeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(int val) => Interop.mkStreamtubeAttr("customdata", new[]{val});
+        public static Box<IStreamtubeProperty> customdata(int val) => Interop.mkStreamtubeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(params int[] values) => Interop.mkStreamtubeAttr("customdata", values);
+        public static Box<IStreamtubeProperty> customdata(IEnumerable<int> values) => Interop.mkStreamtubeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(string val) => Interop.mkStreamtubeAttr("customdata", new[]{val});
+        public static Box<IStreamtubeProperty> customdata(string val) => Interop.mkStreamtubeAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IStreamtubeProperty> customdata(params string[] values) => Interop.mkStreamtubeAttr("customdata", values);
+        public static Box<IStreamtubeProperty> customdata(IEnumerable<string> values) => Interop.mkStreamtubeAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IStreamtubeProperty> customdata(IEnumerable<bool[]> values) => Interop.mkStreamtubeAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -150,23 +155,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IStreamtubeProperty> uirevision(params string[] values) => Interop.mkStreamtubeAttr("uirevision", values);
         /// Sets the x coordinates of the vector field.
-        public static Box<IStreamtubeProperty> x(bool val) => Interop.mkStreamtubeAttr("x", new[]{val});
+        public static Box<IStreamtubeProperty> x(bool val) => Interop.mkStreamtubeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field.
-        public static Box<IStreamtubeProperty> x(System.DateTime val) => Interop.mkStreamtubeAttr("x", new[]{val});
+        public static Box<IStreamtubeProperty> x(System.DateTime val) => Interop.mkStreamtubeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field.
-        public static Box<IStreamtubeProperty> x(float val) => Interop.mkStreamtubeAttr("x", new[]{val});
+        public static Box<IStreamtubeProperty> x(float val) => Interop.mkStreamtubeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<float> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field.
-        public static Box<IStreamtubeProperty> x(int val) => Interop.mkStreamtubeAttr("x", new[]{val});
+        public static Box<IStreamtubeProperty> x(int val) => Interop.mkStreamtubeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<int> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field.
-        public static Box<IStreamtubeProperty> x(string val) => Interop.mkStreamtubeAttr("x", new[]{val});
+        public static Box<IStreamtubeProperty> x(string val) => Interop.mkStreamtubeAttr("x", new[] { val });
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<string> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the x coordinates of the vector field.
@@ -204,23 +209,23 @@ namespace PlotlyH5
         /// Sets the x coordinates of the vector field.
         public static Box<IStreamtubeProperty> x(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("x", values.ToArray());
         /// Sets the y coordinates of the vector field.
-        public static Box<IStreamtubeProperty> y(bool val) => Interop.mkStreamtubeAttr("y", new[]{val});
+        public static Box<IStreamtubeProperty> y(bool val) => Interop.mkStreamtubeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field.
-        public static Box<IStreamtubeProperty> y(System.DateTime val) => Interop.mkStreamtubeAttr("y", new[]{val});
+        public static Box<IStreamtubeProperty> y(System.DateTime val) => Interop.mkStreamtubeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field.
-        public static Box<IStreamtubeProperty> y(float val) => Interop.mkStreamtubeAttr("y", new[]{val});
+        public static Box<IStreamtubeProperty> y(float val) => Interop.mkStreamtubeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<float> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field.
-        public static Box<IStreamtubeProperty> y(int val) => Interop.mkStreamtubeAttr("y", new[]{val});
+        public static Box<IStreamtubeProperty> y(int val) => Interop.mkStreamtubeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<int> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field.
-        public static Box<IStreamtubeProperty> y(string val) => Interop.mkStreamtubeAttr("y", new[]{val});
+        public static Box<IStreamtubeProperty> y(string val) => Interop.mkStreamtubeAttr("y", new[] { val });
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<string> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the y coordinates of the vector field.
@@ -258,23 +263,23 @@ namespace PlotlyH5
         /// Sets the y coordinates of the vector field.
         public static Box<IStreamtubeProperty> y(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("y", values.ToArray());
         /// Sets the z coordinates of the vector field.
-        public static Box<IStreamtubeProperty> z(bool val) => Interop.mkStreamtubeAttr("z", new[]{val});
+        public static Box<IStreamtubeProperty> z(bool val) => Interop.mkStreamtubeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field.
-        public static Box<IStreamtubeProperty> z(System.DateTime val) => Interop.mkStreamtubeAttr("z", new[]{val});
+        public static Box<IStreamtubeProperty> z(System.DateTime val) => Interop.mkStreamtubeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field.
-        public static Box<IStreamtubeProperty> z(float val) => Interop.mkStreamtubeAttr("z", new[]{val});
+        public static Box<IStreamtubeProperty> z(float val) => Interop.mkStreamtubeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<float> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field.
-        public static Box<IStreamtubeProperty> z(int val) => Interop.mkStreamtubeAttr("z", new[]{val});
+        public static Box<IStreamtubeProperty> z(int val) => Interop.mkStreamtubeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<int> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field.
-        public static Box<IStreamtubeProperty> z(string val) => Interop.mkStreamtubeAttr("z", new[]{val});
+        public static Box<IStreamtubeProperty> z(string val) => Interop.mkStreamtubeAttr("z", new[] { val });
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<string> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the z coordinates of the vector field.
@@ -312,25 +317,25 @@ namespace PlotlyH5
         /// Sets the z coordinates of the vector field.
         public static Box<IStreamtubeProperty> z(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("z", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(bool val) => Interop.mkStreamtubeAttr("u", new[]{val});
+        public static Box<IStreamtubeProperty> u(bool val) => Interop.mkStreamtubeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(params bool[] values) => Interop.mkStreamtubeAttr("u", values);
+        public static Box<IStreamtubeProperty> u(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(System.DateTime val) => Interop.mkStreamtubeAttr("u", new[]{val});
+        public static Box<IStreamtubeProperty> u(System.DateTime val) => Interop.mkStreamtubeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(params System.DateTime[] values) => Interop.mkStreamtubeAttr("u", values);
+        public static Box<IStreamtubeProperty> u(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(float val) => Interop.mkStreamtubeAttr("u", new[]{val});
+        public static Box<IStreamtubeProperty> u(float val) => Interop.mkStreamtubeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(params float[] values) => Interop.mkStreamtubeAttr("u", values);
+        public static Box<IStreamtubeProperty> u(IEnumerable<float> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(int val) => Interop.mkStreamtubeAttr("u", new[]{val});
+        public static Box<IStreamtubeProperty> u(int val) => Interop.mkStreamtubeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(params int[] values) => Interop.mkStreamtubeAttr("u", values);
+        public static Box<IStreamtubeProperty> u(IEnumerable<int> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(string val) => Interop.mkStreamtubeAttr("u", new[]{val});
+        public static Box<IStreamtubeProperty> u(string val) => Interop.mkStreamtubeAttr("u", new[] { val });
         /// Sets the x components of the vector field.
-        public static Box<IStreamtubeProperty> u(params string[] values) => Interop.mkStreamtubeAttr("u", values);
+        public static Box<IStreamtubeProperty> u(IEnumerable<string> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the x components of the vector field.
         public static Box<IStreamtubeProperty> u(IEnumerable<bool[]> values) => Interop.mkStreamtubeAttr("u", Bindings.flatten2DArrayIf1D(values));
         /// Sets the x components of the vector field.
@@ -366,25 +371,25 @@ namespace PlotlyH5
         /// Sets the x components of the vector field.
         public static Box<IStreamtubeProperty> u(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("u", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(bool val) => Interop.mkStreamtubeAttr("v", new[]{val});
+        public static Box<IStreamtubeProperty> v(bool val) => Interop.mkStreamtubeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(params bool[] values) => Interop.mkStreamtubeAttr("v", values);
+        public static Box<IStreamtubeProperty> v(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(System.DateTime val) => Interop.mkStreamtubeAttr("v", new[]{val});
+        public static Box<IStreamtubeProperty> v(System.DateTime val) => Interop.mkStreamtubeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(params System.DateTime[] values) => Interop.mkStreamtubeAttr("v", values);
+        public static Box<IStreamtubeProperty> v(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(float val) => Interop.mkStreamtubeAttr("v", new[]{val});
+        public static Box<IStreamtubeProperty> v(float val) => Interop.mkStreamtubeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(params float[] values) => Interop.mkStreamtubeAttr("v", values);
+        public static Box<IStreamtubeProperty> v(IEnumerable<float> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(int val) => Interop.mkStreamtubeAttr("v", new[]{val});
+        public static Box<IStreamtubeProperty> v(int val) => Interop.mkStreamtubeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(params int[] values) => Interop.mkStreamtubeAttr("v", values);
+        public static Box<IStreamtubeProperty> v(IEnumerable<int> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(string val) => Interop.mkStreamtubeAttr("v", new[]{val});
+        public static Box<IStreamtubeProperty> v(string val) => Interop.mkStreamtubeAttr("v", new[] { val });
         /// Sets the y components of the vector field.
-        public static Box<IStreamtubeProperty> v(params string[] values) => Interop.mkStreamtubeAttr("v", values);
+        public static Box<IStreamtubeProperty> v(IEnumerable<string> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the y components of the vector field.
         public static Box<IStreamtubeProperty> v(IEnumerable<bool[]> values) => Interop.mkStreamtubeAttr("v", Bindings.flatten2DArrayIf1D(values));
         /// Sets the y components of the vector field.
@@ -420,25 +425,25 @@ namespace PlotlyH5
         /// Sets the y components of the vector field.
         public static Box<IStreamtubeProperty> v(IEnumerable<float?> values) => Interop.mkStreamtubeAttr("v", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(bool val) => Interop.mkStreamtubeAttr("w", new[]{val});
+        public static Box<IStreamtubeProperty> w(bool val) => Interop.mkStreamtubeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(params bool[] values) => Interop.mkStreamtubeAttr("w", values);
+        public static Box<IStreamtubeProperty> w(IEnumerable<bool> values) => Interop.mkStreamtubeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(System.DateTime val) => Interop.mkStreamtubeAttr("w", new[]{val});
+        public static Box<IStreamtubeProperty> w(System.DateTime val) => Interop.mkStreamtubeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(params System.DateTime[] values) => Interop.mkStreamtubeAttr("w", values);
+        public static Box<IStreamtubeProperty> w(IEnumerable<System.DateTime> values) => Interop.mkStreamtubeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(float val) => Interop.mkStreamtubeAttr("w", new[]{val});
+        public static Box<IStreamtubeProperty> w(float val) => Interop.mkStreamtubeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(params float[] values) => Interop.mkStreamtubeAttr("w", values);
+        public static Box<IStreamtubeProperty> w(IEnumerable<float> values) => Interop.mkStreamtubeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(int val) => Interop.mkStreamtubeAttr("w", new[]{val});
+        public static Box<IStreamtubeProperty> w(int val) => Interop.mkStreamtubeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(params int[] values) => Interop.mkStreamtubeAttr("w", values);
+        public static Box<IStreamtubeProperty> w(IEnumerable<int> values) => Interop.mkStreamtubeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(string val) => Interop.mkStreamtubeAttr("w", new[]{val});
+        public static Box<IStreamtubeProperty> w(string val) => Interop.mkStreamtubeAttr("w", new[] { val });
         /// Sets the z components of the vector field.
-        public static Box<IStreamtubeProperty> w(params string[] values) => Interop.mkStreamtubeAttr("w", values);
+        public static Box<IStreamtubeProperty> w(IEnumerable<string> values) => Interop.mkStreamtubeAttr("w", values.ToArray());
         /// Sets the z components of the vector field.
         public static Box<IStreamtubeProperty> w(IEnumerable<bool[]> values) => Interop.mkStreamtubeAttr("w", Bindings.flatten2DArrayIf1D(values));
         /// Sets the z components of the vector field.
@@ -484,10 +489,22 @@ namespace PlotlyH5
         public static Box<IStreamtubeProperty> text(string val) => Interop.mkStreamtubeAttr("text", val);
         /// Same as `text`.
         public static Box<IStreamtubeProperty> hovertext(string val) => Interop.mkStreamtubeAttr("hovertext", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `tubex`, `tubey`, `tubez`, `tubeu`, `tubev`, `tubew`, `norm` and `divergence`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `tubex`, `tubey`, `tubez`, `tubeu`, `tubev`, `tubew`, `norm` and `divergence`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IStreamtubeProperty> hovertemplate(string val) => Interop.mkStreamtubeAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `tubex`, `tubey`, `tubez`, `tubeu`, `tubev`, `tubew`, `norm` and `divergence`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `tubex`, `tubey`, `tubez`, `tubeu`, `tubev`, `tubew`, `norm` and `divergence`. Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IStreamtubeProperty> hovertemplate(IEnumerable<string> values) => Interop.mkStreamtubeAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `u`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IStreamtubeProperty> uhoverformat(string val) => Interop.mkStreamtubeAttr("uhoverformat", val);
+        /// Sets the hover text formatting rulefor `v`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IStreamtubeProperty> vhoverformat(string val) => Interop.mkStreamtubeAttr("vhoverformat", val);
+        /// Sets the hover text formatting rulefor `w`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
+        public static Box<IStreamtubeProperty> whoverformat(string val) => Interop.mkStreamtubeAttr("whoverformat", val);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IStreamtubeProperty> xhoverformat(string val) => Interop.mkStreamtubeAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IStreamtubeProperty> yhoverformat(string val) => Interop.mkStreamtubeAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<IStreamtubeProperty> zhoverformat(string val) => Interop.mkStreamtubeAttr("zhoverformat", val);
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
         public static Box<IStreamtubeProperty> showlegend(bool val) => Interop.mkStreamtubeAttr("showlegend", val);
         /// Determines whether or not the color domain is computed with respect to the input data (here u/v/w norm) or the bounds set in `cmin` and `cmax`  Defaults to `false` when `cmin` and `cmax` are set by the user.
@@ -531,27 +548,27 @@ namespace PlotlyH5
         public static Box<IStreamtubeProperty> scene(int anchorId) => Interop.mkStreamtubeAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<IStreamtubeProperty> scene(string val) => Interop.mkStreamtubeAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IStreamtubeProperty> idssrc(string val) => Interop.mkStreamtubeAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IStreamtubeProperty> customdatasrc(string val) => Interop.mkStreamtubeAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IStreamtubeProperty> metasrc(string val) => Interop.mkStreamtubeAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IStreamtubeProperty> xsrc(string val) => Interop.mkStreamtubeAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IStreamtubeProperty> ysrc(string val) => Interop.mkStreamtubeAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IStreamtubeProperty> zsrc(string val) => Interop.mkStreamtubeAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  u .
+        /// Sets the source reference on Chart Studio Cloud for  u .
         public static Box<IStreamtubeProperty> usrc(string val) => Interop.mkStreamtubeAttr("usrc", val);
-        /// Sets the source reference on plot.ly for  v .
+        /// Sets the source reference on Chart Studio Cloud for  v .
         public static Box<IStreamtubeProperty> vsrc(string val) => Interop.mkStreamtubeAttr("vsrc", val);
-        /// Sets the source reference on plot.ly for  w .
+        /// Sets the source reference on Chart Studio Cloud for  w .
         public static Box<IStreamtubeProperty> wsrc(string val) => Interop.mkStreamtubeAttr("wsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IStreamtubeProperty> hovertemplatesrc(string val) => Interop.mkStreamtubeAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IStreamtubeProperty> hoverinfosrc(string val) => Interop.mkStreamtubeAttr("hoverinfosrc", val);
     }
 

@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Aggregate
     {
@@ -20,7 +20,7 @@ namespace Plotly
         /// Sets the grouping target to which the aggregation is applied. Data points with matching group values will be coalesced into one point, using the supplied aggregation functions to reduce data in other data arrays. If a string, `groups` is assumed to be a reference to a data array in the parent trace object. To aggregate by nested variables, use *.* to access them. For example, set `groups` to *marker.color* to aggregate about the marker color array. If an array, `groups` is itself the data array by which we aggregate.
         public static Box<IAggregateProperty> groups(IEnumerable<string> values) => Interop.mkAggregateAttr("groups", values.ToArray());
         public static Box<IAggregateProperty> aggregations(params Box<IAggregationsProperty>[] properties) => Interop.mkAggregateAttr("aggregations", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  groups .
+        /// Sets the source reference on Chart Studio Cloud for  groups .
         public static Box<IAggregateProperty> groupssrc(string val) => Interop.mkAggregateAttr("groupssrc", val);
     }
 }

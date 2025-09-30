@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Style
     {
@@ -47,6 +47,8 @@ namespace Plotly
         public static Box<IStyleProperty> value(params Box<ISunburstProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
         public static Box<IStyleProperty> value(params Box<ITreemapProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
+        /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
+        public static Box<IStyleProperty> value(params Box<IIcicleProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
         public static Box<IStyleProperty> value(params Box<IFunnelareaProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
@@ -107,8 +109,6 @@ namespace Plotly
         public static Box<IStyleProperty> value(params Box<IScatterpolarglProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
         public static Box<IStyleProperty> value(params Box<IBarpolarProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
-        /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
-        public static Box<IStyleProperty> value(params Box<IAreaProperty>[] properties) => Interop.mkStyleAttr("value", Bindings.flattenProperties(properties));
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.
         public static Box<IStyleProperty> value(bool val) => Interop.mkStyleAttr("value", val);
         /// Sets each group styles. For example, with `groups` set to *['a', 'b', 'a', 'b']* and `styles` set to *[{target: 'a', value: { marker: { color: 'red' } }}] marker points in group *'a'* will be drawn in red.

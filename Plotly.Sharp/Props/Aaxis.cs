@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Aaxis
     {
@@ -19,23 +19,23 @@ namespace Plotly
         public static Box<IAaxisProperty> smoothing(float val) => Interop.mkAaxisAttr("smoothing", val);
         public static Box<IAaxisProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkAaxisAttr("title", Bindings.flattenProperties(properties));
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IAaxisProperty> range(bool val) => Interop.mkAaxisAttr("range", new[]{val});
+        public static Box<IAaxisProperty> range(bool val) => Interop.mkAaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IAaxisProperty> range(IEnumerable<bool> values) => Interop.mkAaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IAaxisProperty> range(System.DateTime val) => Interop.mkAaxisAttr("range", new[]{val});
+        public static Box<IAaxisProperty> range(System.DateTime val) => Interop.mkAaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IAaxisProperty> range(IEnumerable<System.DateTime> values) => Interop.mkAaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IAaxisProperty> range(float val) => Interop.mkAaxisAttr("range", new[]{val});
+        public static Box<IAaxisProperty> range(float val) => Interop.mkAaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IAaxisProperty> range(IEnumerable<float> values) => Interop.mkAaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IAaxisProperty> range(int val) => Interop.mkAaxisAttr("range", new[]{val});
+        public static Box<IAaxisProperty> range(int val) => Interop.mkAaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IAaxisProperty> range(IEnumerable<int> values) => Interop.mkAaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IAaxisProperty> range(string val) => Interop.mkAaxisAttr("range", new[]{val});
+        public static Box<IAaxisProperty> range(string val) => Interop.mkAaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IAaxisProperty> range(IEnumerable<string> values) => Interop.mkAaxisAttr("range", values.ToArray());
         /// Determines whether or not this axis is zoom-able. If true, then zoom is disabled.
@@ -43,25 +43,25 @@ namespace Plotly
         /// Specifies the maximum number of ticks for the particular axis. The actual number of ticks will be chosen automatically to be less than or equal to `nticks`. Has an effect only if `tickmode` is set to *auto*.
         public static Box<IAaxisProperty> nticks(int val) => Interop.mkAaxisAttr("nticks", val);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(bool val) => Interop.mkAaxisAttr("tickvals", new[]{val});
+        public static Box<IAaxisProperty> tickvals(bool val) => Interop.mkAaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(params bool[] values) => Interop.mkAaxisAttr("tickvals", values);
+        public static Box<IAaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(System.DateTime val) => Interop.mkAaxisAttr("tickvals", new[]{val});
+        public static Box<IAaxisProperty> tickvals(System.DateTime val) => Interop.mkAaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(params System.DateTime[] values) => Interop.mkAaxisAttr("tickvals", values);
+        public static Box<IAaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(float val) => Interop.mkAaxisAttr("tickvals", new[]{val});
+        public static Box<IAaxisProperty> tickvals(float val) => Interop.mkAaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(params float[] values) => Interop.mkAaxisAttr("tickvals", values);
+        public static Box<IAaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(int val) => Interop.mkAaxisAttr("tickvals", new[]{val});
+        public static Box<IAaxisProperty> tickvals(int val) => Interop.mkAaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(params int[] values) => Interop.mkAaxisAttr("tickvals", values);
+        public static Box<IAaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(string val) => Interop.mkAaxisAttr("tickvals", new[]{val});
+        public static Box<IAaxisProperty> tickvals(string val) => Interop.mkAaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IAaxisProperty> tickvals(params string[] values) => Interop.mkAaxisAttr("tickvals", values);
+        public static Box<IAaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAaxisProperty> tickvals(IEnumerable<bool[]> values) => Interop.mkAaxisAttr("tickvals", Bindings.flatten2DArrayIf1D(values));
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -97,25 +97,25 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IAaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkAaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(bool val) => Interop.mkAaxisAttr("ticktext", new[]{val});
+        public static Box<IAaxisProperty> ticktext(bool val) => Interop.mkAaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(params bool[] values) => Interop.mkAaxisAttr("ticktext", values);
+        public static Box<IAaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkAaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(System.DateTime val) => Interop.mkAaxisAttr("ticktext", new[]{val});
+        public static Box<IAaxisProperty> ticktext(System.DateTime val) => Interop.mkAaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(params System.DateTime[] values) => Interop.mkAaxisAttr("ticktext", values);
+        public static Box<IAaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkAaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(float val) => Interop.mkAaxisAttr("ticktext", new[]{val});
+        public static Box<IAaxisProperty> ticktext(float val) => Interop.mkAaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(params float[] values) => Interop.mkAaxisAttr("ticktext", values);
+        public static Box<IAaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkAaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(int val) => Interop.mkAaxisAttr("ticktext", new[]{val});
+        public static Box<IAaxisProperty> ticktext(int val) => Interop.mkAaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(params int[] values) => Interop.mkAaxisAttr("ticktext", values);
+        public static Box<IAaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkAaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(string val) => Interop.mkAaxisAttr("ticktext", new[]{val});
+        public static Box<IAaxisProperty> ticktext(string val) => Interop.mkAaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IAaxisProperty> ticktext(params string[] values) => Interop.mkAaxisAttr("ticktext", values);
+        public static Box<IAaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkAaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IAaxisProperty> ticktext(IEnumerable<bool[]> values) => Interop.mkAaxisAttr("ticktext", Bindings.flatten2DArrayIf1D(values));
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -160,31 +160,35 @@ namespace Plotly
         public static Box<IAaxisProperty> tickprefix(string val) => Interop.mkAaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IAaxisProperty> ticksuffix(string val) => Interop.mkAaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number
+        public static Box<IAaxisProperty> minexponent(int val) => Interop.mkAaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number
+        public static Box<IAaxisProperty> minexponent(float val) => Interop.mkAaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IAaxisProperty> separatethousands(bool val) => Interop.mkAaxisAttr("separatethousands", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see:  We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IAaxisProperty> tickformat(string val) => Interop.mkAaxisAttr("tickformat", val);
         public static Box<IAaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkAaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(bool val) => Interop.mkAaxisAttr("categoryarray", new[]{val});
+        public static Box<IAaxisProperty> categoryarray(bool val) => Interop.mkAaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(params bool[] values) => Interop.mkAaxisAttr("categoryarray", values);
+        public static Box<IAaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkAaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(System.DateTime val) => Interop.mkAaxisAttr("categoryarray", new[]{val});
+        public static Box<IAaxisProperty> categoryarray(System.DateTime val) => Interop.mkAaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(params System.DateTime[] values) => Interop.mkAaxisAttr("categoryarray", values);
+        public static Box<IAaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkAaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(float val) => Interop.mkAaxisAttr("categoryarray", new[]{val});
+        public static Box<IAaxisProperty> categoryarray(float val) => Interop.mkAaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(params float[] values) => Interop.mkAaxisAttr("categoryarray", values);
+        public static Box<IAaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkAaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(int val) => Interop.mkAaxisAttr("categoryarray", new[]{val});
+        public static Box<IAaxisProperty> categoryarray(int val) => Interop.mkAaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(params int[] values) => Interop.mkAaxisAttr("categoryarray", values);
+        public static Box<IAaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkAaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(string val) => Interop.mkAaxisAttr("categoryarray", new[]{val});
+        public static Box<IAaxisProperty> categoryarray(string val) => Interop.mkAaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IAaxisProperty> categoryarray(params string[] values) => Interop.mkAaxisAttr("categoryarray", values);
+        public static Box<IAaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkAaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IAaxisProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkAaxisAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -277,11 +281,11 @@ namespace Plotly
         public static Box<IAaxisProperty> arraytick0(int val) => Interop.mkAaxisAttr("arraytick0", val);
         /// The stride between grid lines along the axis
         public static Box<IAaxisProperty> arraydtick(int val) => Interop.mkAaxisAttr("arraydtick", val);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IAaxisProperty> tickvalssrc(string val) => Interop.mkAaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IAaxisProperty> ticktextsrc(string val) => Interop.mkAaxisAttr("ticktextsrc", val);
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IAaxisProperty> categoryarraysrc(string val) => Interop.mkAaxisAttr("categoryarraysrc", val);
         /// Sets the tick length (in px).
         public static Box<IAaxisProperty> ticklen(int val) => Interop.mkAaxisAttr("ticklen", val);
@@ -293,7 +297,7 @@ namespace Plotly
         public static Box<IAaxisProperty> tickwidth(float val) => Interop.mkAaxisAttr("tickwidth", val);
         /// Sets the tick color.
         public static Box<IAaxisProperty> tickcolor(string val) => Interop.mkAaxisAttr("tickcolor", val);
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IAaxisProperty> hoverformat(string val) => Interop.mkAaxisAttr("hoverformat", val);
         /// The minimum value visible on this axis. The maximum is determined by the sum minus the minimum values of the other two axes. The full view corresponds to all the minima set to zero.
         public static Box<IAaxisProperty> min(int val) => Interop.mkAaxisAttr("min", val);
@@ -330,6 +334,13 @@ namespace Plotly
             public static Box<IAaxisProperty> category() => Interop.mkAaxisAttr("type", "category");
             public static Box<IAaxisProperty> date() => Interop.mkAaxisAttr("type", "date");
             public static Box<IAaxisProperty> linear() => Interop.mkAaxisAttr("type", "linear");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IAaxisProperty> convertTypes() => Interop.mkAaxisAttr("autotypenumbers", "convert types");
+            public static Box<IAaxisProperty> strict() => Interop.mkAaxisAttr("autotypenumbers", "strict");
         }
 
         /// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.

@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IScatterternaryProperty> showlegend(bool val) => Interop.mkScatterternaryAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IScatterternaryProperty> legendgroup(string val) => Interop.mkScatterternaryAttr("legendgroup", val);
+        public static Box<IScatterternaryProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkScatterternaryAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatterternaryProperty> legendrank(int val) => Interop.mkScatterternaryAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IScatterternaryProperty> legendrank(float val) => Interop.mkScatterternaryAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IScatterternaryProperty> opacity(int val) => Interop.mkScatterternaryAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IScatterternaryProperty> uid(string val) => Interop.mkScatterternaryAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(bool val) => Interop.mkScatterternaryAttr("ids", new[]{val});
+        public static Box<IScatterternaryProperty> ids(bool val) => Interop.mkScatterternaryAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(params bool[] values) => Interop.mkScatterternaryAttr("ids", values);
+        public static Box<IScatterternaryProperty> ids(IEnumerable<bool> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(System.DateTime val) => Interop.mkScatterternaryAttr("ids", new[]{val});
+        public static Box<IScatterternaryProperty> ids(System.DateTime val) => Interop.mkScatterternaryAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(params System.DateTime[] values) => Interop.mkScatterternaryAttr("ids", values);
+        public static Box<IScatterternaryProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(float val) => Interop.mkScatterternaryAttr("ids", new[]{val});
+        public static Box<IScatterternaryProperty> ids(float val) => Interop.mkScatterternaryAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(params float[] values) => Interop.mkScatterternaryAttr("ids", values);
+        public static Box<IScatterternaryProperty> ids(IEnumerable<float> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(int val) => Interop.mkScatterternaryAttr("ids", new[]{val});
+        public static Box<IScatterternaryProperty> ids(int val) => Interop.mkScatterternaryAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(params int[] values) => Interop.mkScatterternaryAttr("ids", values);
+        public static Box<IScatterternaryProperty> ids(IEnumerable<int> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(string val) => Interop.mkScatterternaryAttr("ids", new[]{val});
+        public static Box<IScatterternaryProperty> ids(string val) => Interop.mkScatterternaryAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IScatterternaryProperty> ids(params string[] values) => Interop.mkScatterternaryAttr("ids", values);
+        public static Box<IScatterternaryProperty> ids(IEnumerable<string> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatterternaryProperty> ids(IEnumerable<bool[]> values) => Interop.mkScatterternaryAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IScatterternaryProperty> ids(IEnumerable<float?> values) => Interop.mkScatterternaryAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(bool val) => Interop.mkScatterternaryAttr("customdata", new[]{val});
+        public static Box<IScatterternaryProperty> customdata(bool val) => Interop.mkScatterternaryAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(params bool[] values) => Interop.mkScatterternaryAttr("customdata", values);
+        public static Box<IScatterternaryProperty> customdata(IEnumerable<bool> values) => Interop.mkScatterternaryAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(System.DateTime val) => Interop.mkScatterternaryAttr("customdata", new[]{val});
+        public static Box<IScatterternaryProperty> customdata(System.DateTime val) => Interop.mkScatterternaryAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(params System.DateTime[] values) => Interop.mkScatterternaryAttr("customdata", values);
+        public static Box<IScatterternaryProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkScatterternaryAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(float val) => Interop.mkScatterternaryAttr("customdata", new[]{val});
+        public static Box<IScatterternaryProperty> customdata(float val) => Interop.mkScatterternaryAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(params float[] values) => Interop.mkScatterternaryAttr("customdata", values);
+        public static Box<IScatterternaryProperty> customdata(IEnumerable<float> values) => Interop.mkScatterternaryAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(int val) => Interop.mkScatterternaryAttr("customdata", new[]{val});
+        public static Box<IScatterternaryProperty> customdata(int val) => Interop.mkScatterternaryAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(params int[] values) => Interop.mkScatterternaryAttr("customdata", values);
+        public static Box<IScatterternaryProperty> customdata(IEnumerable<int> values) => Interop.mkScatterternaryAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(string val) => Interop.mkScatterternaryAttr("customdata", new[]{val});
+        public static Box<IScatterternaryProperty> customdata(string val) => Interop.mkScatterternaryAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IScatterternaryProperty> customdata(params string[] values) => Interop.mkScatterternaryAttr("customdata", values);
+        public static Box<IScatterternaryProperty> customdata(IEnumerable<string> values) => Interop.mkScatterternaryAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IScatterternaryProperty> customdata(IEnumerable<bool[]> values) => Interop.mkScatterternaryAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,25 +182,25 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IScatterternaryProperty> uirevision(params string[] values) => Interop.mkScatterternaryAttr("uirevision", values);
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(bool val) => Interop.mkScatterternaryAttr("a", new[]{val});
+        public static Box<IScatterternaryProperty> a(bool val) => Interop.mkScatterternaryAttr("a", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(params bool[] values) => Interop.mkScatterternaryAttr("a", values);
+        public static Box<IScatterternaryProperty> a(IEnumerable<bool> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(System.DateTime val) => Interop.mkScatterternaryAttr("a", new[]{val});
+        public static Box<IScatterternaryProperty> a(System.DateTime val) => Interop.mkScatterternaryAttr("a", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(params System.DateTime[] values) => Interop.mkScatterternaryAttr("a", values);
+        public static Box<IScatterternaryProperty> a(IEnumerable<System.DateTime> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(float val) => Interop.mkScatterternaryAttr("a", new[]{val});
+        public static Box<IScatterternaryProperty> a(float val) => Interop.mkScatterternaryAttr("a", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(params float[] values) => Interop.mkScatterternaryAttr("a", values);
+        public static Box<IScatterternaryProperty> a(IEnumerable<float> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(int val) => Interop.mkScatterternaryAttr("a", new[]{val});
+        public static Box<IScatterternaryProperty> a(int val) => Interop.mkScatterternaryAttr("a", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(params int[] values) => Interop.mkScatterternaryAttr("a", values);
+        public static Box<IScatterternaryProperty> a(IEnumerable<int> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(string val) => Interop.mkScatterternaryAttr("a", new[]{val});
+        public static Box<IScatterternaryProperty> a(string val) => Interop.mkScatterternaryAttr("a", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> a(params string[] values) => Interop.mkScatterternaryAttr("a", values);
+        public static Box<IScatterternaryProperty> a(IEnumerable<string> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
         public static Box<IScatterternaryProperty> a(IEnumerable<bool[]> values) => Interop.mkScatterternaryAttr("a", Bindings.flatten2DArrayIf1D(values));
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
@@ -231,25 +236,25 @@ namespace PlotlyH5
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
         public static Box<IScatterternaryProperty> a(IEnumerable<float?> values) => Interop.mkScatterternaryAttr("a", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(bool val) => Interop.mkScatterternaryAttr("b", new[]{val});
+        public static Box<IScatterternaryProperty> b(bool val) => Interop.mkScatterternaryAttr("b", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(params bool[] values) => Interop.mkScatterternaryAttr("b", values);
+        public static Box<IScatterternaryProperty> b(IEnumerable<bool> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(System.DateTime val) => Interop.mkScatterternaryAttr("b", new[]{val});
+        public static Box<IScatterternaryProperty> b(System.DateTime val) => Interop.mkScatterternaryAttr("b", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(params System.DateTime[] values) => Interop.mkScatterternaryAttr("b", values);
+        public static Box<IScatterternaryProperty> b(IEnumerable<System.DateTime> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(float val) => Interop.mkScatterternaryAttr("b", new[]{val});
+        public static Box<IScatterternaryProperty> b(float val) => Interop.mkScatterternaryAttr("b", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(params float[] values) => Interop.mkScatterternaryAttr("b", values);
+        public static Box<IScatterternaryProperty> b(IEnumerable<float> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(int val) => Interop.mkScatterternaryAttr("b", new[]{val});
+        public static Box<IScatterternaryProperty> b(int val) => Interop.mkScatterternaryAttr("b", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(params int[] values) => Interop.mkScatterternaryAttr("b", values);
+        public static Box<IScatterternaryProperty> b(IEnumerable<int> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(string val) => Interop.mkScatterternaryAttr("b", new[]{val});
+        public static Box<IScatterternaryProperty> b(string val) => Interop.mkScatterternaryAttr("b", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> b(params string[] values) => Interop.mkScatterternaryAttr("b", values);
+        public static Box<IScatterternaryProperty> b(IEnumerable<string> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
         public static Box<IScatterternaryProperty> b(IEnumerable<bool[]> values) => Interop.mkScatterternaryAttr("b", Bindings.flatten2DArrayIf1D(values));
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
@@ -285,25 +290,25 @@ namespace PlotlyH5
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
         public static Box<IScatterternaryProperty> b(IEnumerable<float?> values) => Interop.mkScatterternaryAttr("b", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(bool val) => Interop.mkScatterternaryAttr("c", new[]{val});
+        public static Box<IScatterternaryProperty> c(bool val) => Interop.mkScatterternaryAttr("c", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(params bool[] values) => Interop.mkScatterternaryAttr("c", values);
+        public static Box<IScatterternaryProperty> c(IEnumerable<bool> values) => Interop.mkScatterternaryAttr("c", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(System.DateTime val) => Interop.mkScatterternaryAttr("c", new[]{val});
+        public static Box<IScatterternaryProperty> c(System.DateTime val) => Interop.mkScatterternaryAttr("c", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(params System.DateTime[] values) => Interop.mkScatterternaryAttr("c", values);
+        public static Box<IScatterternaryProperty> c(IEnumerable<System.DateTime> values) => Interop.mkScatterternaryAttr("c", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(float val) => Interop.mkScatterternaryAttr("c", new[]{val});
+        public static Box<IScatterternaryProperty> c(float val) => Interop.mkScatterternaryAttr("c", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(params float[] values) => Interop.mkScatterternaryAttr("c", values);
+        public static Box<IScatterternaryProperty> c(IEnumerable<float> values) => Interop.mkScatterternaryAttr("c", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(int val) => Interop.mkScatterternaryAttr("c", new[]{val});
+        public static Box<IScatterternaryProperty> c(int val) => Interop.mkScatterternaryAttr("c", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(params int[] values) => Interop.mkScatterternaryAttr("c", values);
+        public static Box<IScatterternaryProperty> c(IEnumerable<int> values) => Interop.mkScatterternaryAttr("c", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(string val) => Interop.mkScatterternaryAttr("c", new[]{val});
+        public static Box<IScatterternaryProperty> c(string val) => Interop.mkScatterternaryAttr("c", new[] { val });
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
-        public static Box<IScatterternaryProperty> c(params string[] values) => Interop.mkScatterternaryAttr("c", values);
+        public static Box<IScatterternaryProperty> c(IEnumerable<string> values) => Interop.mkScatterternaryAttr("c", values.ToArray());
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
         public static Box<IScatterternaryProperty> c(IEnumerable<bool[]> values) => Interop.mkScatterternaryAttr("c", Bindings.flatten2DArrayIf1D(values));
         /// Sets the quantity of component `a` in each data point. If `a`, `b`, and `c` are all provided, they need not be normalized, only the relative values matter. If only two arrays are provided they must be normalized to match `ternary<i>.sum`.
@@ -348,9 +353,9 @@ namespace PlotlyH5
         public static Box<IScatterternaryProperty> text(string val) => Interop.mkScatterternaryAttr("text", val);
         /// Sets text elements associated with each (a,b,c) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b,c). If trace `hoverinfo` contains a *text* flag and *hovertext* is not set, these elements will be seen in the hover labels.
         public static Box<IScatterternaryProperty> text(IEnumerable<string> values) => Interop.mkScatterternaryAttr("text", values.ToArray());
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b`, `c` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b`, `c` and `text`.
         public static Box<IScatterternaryProperty> texttemplate(string val) => Interop.mkScatterternaryAttr("texttemplate", val);
-        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b`, `c` and `text`.
+        /// Template string used for rendering the information text that appear on points. Note that this will override `textinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. Every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variables `a`, `b`, `c` and `text`.
         public static Box<IScatterternaryProperty> texttemplate(IEnumerable<string> values) => Interop.mkScatterternaryAttr("texttemplate", values.ToArray());
         /// Sets hover text elements associated with each (a,b,c) point. If a single string, the same string appears over all the data points. If an array of strings, the items are mapped in order to the the data points in (a,b,c). To be seen, trace `hoverinfo` must contain a *text* flag.
         public static Box<IScatterternaryProperty> hovertext(string val) => Interop.mkScatterternaryAttr("hovertext", val);
@@ -374,37 +379,37 @@ namespace PlotlyH5
         public static Box<IScatterternaryProperty> hoverinfo(params Box<IScatterternaryProperty>[] properties) => Interop.mkScatterternaryAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Do the hover effects highlight individual points (markers or line points) or do they highlight filled regions? If the fill is *toself* or *tonext* and there are no markers or text, then the default is *fills*, otherwise it is *points*.
         public static Box<IScatterternaryProperty> hoveron(params Box<IScatterternaryProperty>[] properties) => Interop.mkScatterternaryAttr("hoveron", Bindings.joinEnumProperties(properties));
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatterternaryProperty> hovertemplate(string val) => Interop.mkScatterternaryAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IScatterternaryProperty> hovertemplate(IEnumerable<string> values) => Interop.mkScatterternaryAttr("hovertemplate", values.ToArray());
         /// Sets a reference between this trace's data coordinates and a ternary subplot. If *ternary* (the default value), the data refer to `layout.ternary`. If *ternary2*, the data refer to `layout.ternary2`, and so on.
         public static Box<IScatterternaryProperty> subplot(int anchorId) => Interop.mkScatterternaryAttr("subplot", anchorId > 1 ? $"ternary{anchorId}" : "");
         /// Sets a reference between this trace's data coordinates and a ternary subplot. If *ternary* (the default value), the data refer to `layout.ternary`. If *ternary2*, the data refer to `layout.ternary2`, and so on.
         public static Box<IScatterternaryProperty> subplot(string val) => Interop.mkScatterternaryAttr("subplot", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IScatterternaryProperty> idssrc(string val) => Interop.mkScatterternaryAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IScatterternaryProperty> customdatasrc(string val) => Interop.mkScatterternaryAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IScatterternaryProperty> metasrc(string val) => Interop.mkScatterternaryAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  a .
+        /// Sets the source reference on Chart Studio Cloud for  a .
         public static Box<IScatterternaryProperty> asrc(string val) => Interop.mkScatterternaryAttr("asrc", val);
-        /// Sets the source reference on plot.ly for  b .
+        /// Sets the source reference on Chart Studio Cloud for  b .
         public static Box<IScatterternaryProperty> bsrc(string val) => Interop.mkScatterternaryAttr("bsrc", val);
-        /// Sets the source reference on plot.ly for  c .
+        /// Sets the source reference on Chart Studio Cloud for  c .
         public static Box<IScatterternaryProperty> csrc(string val) => Interop.mkScatterternaryAttr("csrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IScatterternaryProperty> textsrc(string val) => Interop.mkScatterternaryAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  texttemplate .
+        /// Sets the source reference on Chart Studio Cloud for  texttemplate .
         public static Box<IScatterternaryProperty> texttemplatesrc(string val) => Interop.mkScatterternaryAttr("texttemplatesrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IScatterternaryProperty> hovertextsrc(string val) => Interop.mkScatterternaryAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  textposition .
+        /// Sets the source reference on Chart Studio Cloud for  textposition .
         public static Box<IScatterternaryProperty> textpositionsrc(string val) => Interop.mkScatterternaryAttr("textpositionsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IScatterternaryProperty> hoverinfosrc(string val) => Interop.mkScatterternaryAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IScatterternaryProperty> hovertemplatesrc(string val) => Interop.mkScatterternaryAttr("hovertemplatesrc", val);
     }
 

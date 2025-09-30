@@ -19,7 +19,7 @@ namespace PlotlyH5
         public static Box<IDeltaProperty> reference(float val) => Interop.mkDeltaAttr("reference", val);
         /// Show relative change
         public static Box<IDeltaProperty> relative(bool val) => Interop.mkDeltaAttr("relative", val);
-        /// Sets the value formatting rule using d3 formatting mini-language which is similar to those of Python. See https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the value formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.
         public static Box<IDeltaProperty> valueformat(string val) => Interop.mkDeltaAttr("valueformat", val);
         public static Box<IDeltaProperty> increasing(params Box<IIncreasingProperty>[] properties) => Interop.mkDeltaAttr("increasing", Bindings.flattenProperties(properties));
         public static Box<IDeltaProperty> decreasing(params Box<IDecreasingProperty>[] properties) => Interop.mkDeltaAttr("decreasing", Bindings.flattenProperties(properties));

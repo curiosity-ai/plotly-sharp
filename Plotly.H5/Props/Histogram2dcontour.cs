@@ -17,6 +17,11 @@ namespace PlotlyH5
         public static Box<IHistogram2dcontourProperty> showlegend(bool val) => Interop.mkHistogram2dcontourAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IHistogram2dcontourProperty> legendgroup(string val) => Interop.mkHistogram2dcontourAttr("legendgroup", val);
+        public static Box<IHistogram2dcontourProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkHistogram2dcontourAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHistogram2dcontourProperty> legendrank(int val) => Interop.mkHistogram2dcontourAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IHistogram2dcontourProperty> legendrank(float val) => Interop.mkHistogram2dcontourAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IHistogram2dcontourProperty> opacity(int val) => Interop.mkHistogram2dcontourAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -26,25 +31,25 @@ namespace PlotlyH5
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IHistogram2dcontourProperty> uid(string val) => Interop.mkHistogram2dcontourAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(bool val) => Interop.mkHistogram2dcontourAttr("ids", new[]{val});
+        public static Box<IHistogram2dcontourProperty> ids(bool val) => Interop.mkHistogram2dcontourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(params bool[] values) => Interop.mkHistogram2dcontourAttr("ids", values);
+        public static Box<IHistogram2dcontourProperty> ids(IEnumerable<bool> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(System.DateTime val) => Interop.mkHistogram2dcontourAttr("ids", new[]{val});
+        public static Box<IHistogram2dcontourProperty> ids(System.DateTime val) => Interop.mkHistogram2dcontourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(params System.DateTime[] values) => Interop.mkHistogram2dcontourAttr("ids", values);
+        public static Box<IHistogram2dcontourProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(float val) => Interop.mkHistogram2dcontourAttr("ids", new[]{val});
+        public static Box<IHistogram2dcontourProperty> ids(float val) => Interop.mkHistogram2dcontourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(params float[] values) => Interop.mkHistogram2dcontourAttr("ids", values);
+        public static Box<IHistogram2dcontourProperty> ids(IEnumerable<float> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(int val) => Interop.mkHistogram2dcontourAttr("ids", new[]{val});
+        public static Box<IHistogram2dcontourProperty> ids(int val) => Interop.mkHistogram2dcontourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(params int[] values) => Interop.mkHistogram2dcontourAttr("ids", values);
+        public static Box<IHistogram2dcontourProperty> ids(IEnumerable<int> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(string val) => Interop.mkHistogram2dcontourAttr("ids", new[]{val});
+        public static Box<IHistogram2dcontourProperty> ids(string val) => Interop.mkHistogram2dcontourAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IHistogram2dcontourProperty> ids(params string[] values) => Interop.mkHistogram2dcontourAttr("ids", values);
+        public static Box<IHistogram2dcontourProperty> ids(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHistogram2dcontourProperty> ids(IEnumerable<bool[]> values) => Interop.mkHistogram2dcontourAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -80,25 +85,25 @@ namespace PlotlyH5
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IHistogram2dcontourProperty> ids(IEnumerable<float?> values) => Interop.mkHistogram2dcontourAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(bool val) => Interop.mkHistogram2dcontourAttr("customdata", new[]{val});
+        public static Box<IHistogram2dcontourProperty> customdata(bool val) => Interop.mkHistogram2dcontourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(params bool[] values) => Interop.mkHistogram2dcontourAttr("customdata", values);
+        public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<bool> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(System.DateTime val) => Interop.mkHistogram2dcontourAttr("customdata", new[]{val});
+        public static Box<IHistogram2dcontourProperty> customdata(System.DateTime val) => Interop.mkHistogram2dcontourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(params System.DateTime[] values) => Interop.mkHistogram2dcontourAttr("customdata", values);
+        public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(float val) => Interop.mkHistogram2dcontourAttr("customdata", new[]{val});
+        public static Box<IHistogram2dcontourProperty> customdata(float val) => Interop.mkHistogram2dcontourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(params float[] values) => Interop.mkHistogram2dcontourAttr("customdata", values);
+        public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<float> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(int val) => Interop.mkHistogram2dcontourAttr("customdata", new[]{val});
+        public static Box<IHistogram2dcontourProperty> customdata(int val) => Interop.mkHistogram2dcontourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(params int[] values) => Interop.mkHistogram2dcontourAttr("customdata", values);
+        public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<int> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(string val) => Interop.mkHistogram2dcontourAttr("customdata", new[]{val});
+        public static Box<IHistogram2dcontourProperty> customdata(string val) => Interop.mkHistogram2dcontourAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IHistogram2dcontourProperty> customdata(params string[] values) => Interop.mkHistogram2dcontourAttr("customdata", values);
+        public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IHistogram2dcontourProperty> customdata(IEnumerable<bool[]> values) => Interop.mkHistogram2dcontourAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -159,23 +164,23 @@ namespace PlotlyH5
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IHistogram2dcontourProperty> uirevision(params string[] values) => Interop.mkHistogram2dcontourAttr("uirevision", values);
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogram2dcontourProperty> x(bool val) => Interop.mkHistogram2dcontourAttr("x", new[]{val});
+        public static Box<IHistogram2dcontourProperty> x(bool val) => Interop.mkHistogram2dcontourAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<bool> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogram2dcontourProperty> x(System.DateTime val) => Interop.mkHistogram2dcontourAttr("x", new[]{val});
+        public static Box<IHistogram2dcontourProperty> x(System.DateTime val) => Interop.mkHistogram2dcontourAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<System.DateTime> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogram2dcontourProperty> x(float val) => Interop.mkHistogram2dcontourAttr("x", new[]{val});
+        public static Box<IHistogram2dcontourProperty> x(float val) => Interop.mkHistogram2dcontourAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<float> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogram2dcontourProperty> x(int val) => Interop.mkHistogram2dcontourAttr("x", new[]{val});
+        public static Box<IHistogram2dcontourProperty> x(int val) => Interop.mkHistogram2dcontourAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<int> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
-        public static Box<IHistogram2dcontourProperty> x(string val) => Interop.mkHistogram2dcontourAttr("x", new[]{val});
+        public static Box<IHistogram2dcontourProperty> x(string val) => Interop.mkHistogram2dcontourAttr("x", new[] { val });
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the x axis.
@@ -213,23 +218,23 @@ namespace PlotlyH5
         /// Sets the sample data to be binned on the x axis.
         public static Box<IHistogram2dcontourProperty> x(IEnumerable<float?> values) => Interop.mkHistogram2dcontourAttr("x", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogram2dcontourProperty> y(bool val) => Interop.mkHistogram2dcontourAttr("y", new[]{val});
+        public static Box<IHistogram2dcontourProperty> y(bool val) => Interop.mkHistogram2dcontourAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<bool> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogram2dcontourProperty> y(System.DateTime val) => Interop.mkHistogram2dcontourAttr("y", new[]{val});
+        public static Box<IHistogram2dcontourProperty> y(System.DateTime val) => Interop.mkHistogram2dcontourAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<System.DateTime> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogram2dcontourProperty> y(float val) => Interop.mkHistogram2dcontourAttr("y", new[]{val});
+        public static Box<IHistogram2dcontourProperty> y(float val) => Interop.mkHistogram2dcontourAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<float> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogram2dcontourProperty> y(int val) => Interop.mkHistogram2dcontourAttr("y", new[]{val});
+        public static Box<IHistogram2dcontourProperty> y(int val) => Interop.mkHistogram2dcontourAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<int> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
-        public static Box<IHistogram2dcontourProperty> y(string val) => Interop.mkHistogram2dcontourAttr("y", new[]{val});
+        public static Box<IHistogram2dcontourProperty> y(string val) => Interop.mkHistogram2dcontourAttr("y", new[] { val });
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the sample data to be binned on the y axis.
@@ -267,25 +272,25 @@ namespace PlotlyH5
         /// Sets the sample data to be binned on the y axis.
         public static Box<IHistogram2dcontourProperty> y(IEnumerable<float?> values) => Interop.mkHistogram2dcontourAttr("y", values.ToArray());
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(bool val) => Interop.mkHistogram2dcontourAttr("z", new[]{val});
+        public static Box<IHistogram2dcontourProperty> z(bool val) => Interop.mkHistogram2dcontourAttr("z", new[] { val });
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(params bool[] values) => Interop.mkHistogram2dcontourAttr("z", values);
+        public static Box<IHistogram2dcontourProperty> z(IEnumerable<bool> values) => Interop.mkHistogram2dcontourAttr("z", values.ToArray());
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(System.DateTime val) => Interop.mkHistogram2dcontourAttr("z", new[]{val});
+        public static Box<IHistogram2dcontourProperty> z(System.DateTime val) => Interop.mkHistogram2dcontourAttr("z", new[] { val });
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(params System.DateTime[] values) => Interop.mkHistogram2dcontourAttr("z", values);
+        public static Box<IHistogram2dcontourProperty> z(IEnumerable<System.DateTime> values) => Interop.mkHistogram2dcontourAttr("z", values.ToArray());
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(float val) => Interop.mkHistogram2dcontourAttr("z", new[]{val});
+        public static Box<IHistogram2dcontourProperty> z(float val) => Interop.mkHistogram2dcontourAttr("z", new[] { val });
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(params float[] values) => Interop.mkHistogram2dcontourAttr("z", values);
+        public static Box<IHistogram2dcontourProperty> z(IEnumerable<float> values) => Interop.mkHistogram2dcontourAttr("z", values.ToArray());
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(int val) => Interop.mkHistogram2dcontourAttr("z", new[]{val});
+        public static Box<IHistogram2dcontourProperty> z(int val) => Interop.mkHistogram2dcontourAttr("z", new[] { val });
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(params int[] values) => Interop.mkHistogram2dcontourAttr("z", values);
+        public static Box<IHistogram2dcontourProperty> z(IEnumerable<int> values) => Interop.mkHistogram2dcontourAttr("z", values.ToArray());
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(string val) => Interop.mkHistogram2dcontourAttr("z", new[]{val});
+        public static Box<IHistogram2dcontourProperty> z(string val) => Interop.mkHistogram2dcontourAttr("z", new[] { val });
         /// Sets the aggregation data.
-        public static Box<IHistogram2dcontourProperty> z(params string[] values) => Interop.mkHistogram2dcontourAttr("z", values);
+        public static Box<IHistogram2dcontourProperty> z(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("z", values.ToArray());
         /// Sets the aggregation data.
         public static Box<IHistogram2dcontourProperty> z(IEnumerable<bool[]> values) => Interop.mkHistogram2dcontourAttr("z", Bindings.flatten2DArrayIf1D(values));
         /// Sets the aggregation data.
@@ -343,11 +348,15 @@ namespace PlotlyH5
         public static Box<IHistogram2dcontourProperty> ncontours(int val) => Interop.mkHistogram2dcontourAttr("ncontours", val);
         public static Box<IHistogram2dcontourProperty> contours(params Box<IContoursProperty>[] properties) => Interop.mkHistogram2dcontourAttr("contours", Bindings.flattenProperties(properties));
         public static Box<IHistogram2dcontourProperty> line(params Box<ILineProperty>[] properties) => Interop.mkHistogram2dcontourAttr("line", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. See: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IHistogram2dcontourProperty> xhoverformat(string val) => Interop.mkHistogram2dcontourAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IHistogram2dcontourProperty> yhoverformat(string val) => Interop.mkHistogram2dcontourAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.By default the values are formatted using generic number format.
         public static Box<IHistogram2dcontourProperty> zhoverformat(string val) => Interop.mkHistogram2dcontourAttr("zhoverformat", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IHistogram2dcontourProperty> hovertemplate(string val) => Interop.mkHistogram2dcontourAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available. variable `z` Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IHistogram2dcontourProperty> hovertemplate(IEnumerable<string> values) => Interop.mkHistogram2dcontourAttr("hovertemplate", values.ToArray());
         /// Determines whether or not the color domain is computed with respect to the input data (here in `z`) or the bounds set in `zmin` and `zmax`  Defaults to `false` when `zmin` and `zmax` are set by the user.
         public static Box<IHistogram2dcontourProperty> zauto(bool val) => Interop.mkHistogram2dcontourAttr("zauto", val);
@@ -386,21 +395,21 @@ namespace PlotlyH5
         public static Box<IHistogram2dcontourProperty> yaxis(int anchorId) => Interop.mkHistogram2dcontourAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IHistogram2dcontourProperty> yaxis(string val) => Interop.mkHistogram2dcontourAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IHistogram2dcontourProperty> idssrc(string val) => Interop.mkHistogram2dcontourAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IHistogram2dcontourProperty> customdatasrc(string val) => Interop.mkHistogram2dcontourAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IHistogram2dcontourProperty> metasrc(string val) => Interop.mkHistogram2dcontourAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IHistogram2dcontourProperty> hoverinfosrc(string val) => Interop.mkHistogram2dcontourAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IHistogram2dcontourProperty> xsrc(string val) => Interop.mkHistogram2dcontourAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IHistogram2dcontourProperty> ysrc(string val) => Interop.mkHistogram2dcontourAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<IHistogram2dcontourProperty> zsrc(string val) => Interop.mkHistogram2dcontourAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IHistogram2dcontourProperty> hovertemplatesrc(string val) => Interop.mkHistogram2dcontourAttr("hovertemplatesrc", val);
     }
 

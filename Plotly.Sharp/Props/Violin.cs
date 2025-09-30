@@ -8,8 +8,8 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Violin
     {
@@ -17,6 +17,11 @@ namespace Plotly
         public static Box<IViolinProperty> showlegend(bool val) => Interop.mkViolinAttr("showlegend", val);
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<IViolinProperty> legendgroup(string val) => Interop.mkViolinAttr("legendgroup", val);
+        public static Box<IViolinProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkViolinAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IViolinProperty> legendrank(int val) => Interop.mkViolinAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<IViolinProperty> legendrank(float val) => Interop.mkViolinAttr("legendrank", val);
         /// Sets the opacity of the trace.
         public static Box<IViolinProperty> opacity(int val) => Interop.mkViolinAttr("opacity", val);
         /// Sets the opacity of the trace.
@@ -24,25 +29,25 @@ namespace Plotly
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<IViolinProperty> uid(string val) => Interop.mkViolinAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(bool val) => Interop.mkViolinAttr("ids", new[]{val});
+        public static Box<IViolinProperty> ids(bool val) => Interop.mkViolinAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(params bool[] values) => Interop.mkViolinAttr("ids", values);
+        public static Box<IViolinProperty> ids(IEnumerable<bool> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(System.DateTime val) => Interop.mkViolinAttr("ids", new[]{val});
+        public static Box<IViolinProperty> ids(System.DateTime val) => Interop.mkViolinAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(params System.DateTime[] values) => Interop.mkViolinAttr("ids", values);
+        public static Box<IViolinProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(float val) => Interop.mkViolinAttr("ids", new[]{val});
+        public static Box<IViolinProperty> ids(float val) => Interop.mkViolinAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(params float[] values) => Interop.mkViolinAttr("ids", values);
+        public static Box<IViolinProperty> ids(IEnumerable<float> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(int val) => Interop.mkViolinAttr("ids", new[]{val});
+        public static Box<IViolinProperty> ids(int val) => Interop.mkViolinAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(params int[] values) => Interop.mkViolinAttr("ids", values);
+        public static Box<IViolinProperty> ids(IEnumerable<int> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(string val) => Interop.mkViolinAttr("ids", new[]{val});
+        public static Box<IViolinProperty> ids(string val) => Interop.mkViolinAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<IViolinProperty> ids(params string[] values) => Interop.mkViolinAttr("ids", values);
+        public static Box<IViolinProperty> ids(IEnumerable<string> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IViolinProperty> ids(IEnumerable<bool[]> values) => Interop.mkViolinAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -78,25 +83,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<IViolinProperty> ids(IEnumerable<float?> values) => Interop.mkViolinAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(bool val) => Interop.mkViolinAttr("customdata", new[]{val});
+        public static Box<IViolinProperty> customdata(bool val) => Interop.mkViolinAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(params bool[] values) => Interop.mkViolinAttr("customdata", values);
+        public static Box<IViolinProperty> customdata(IEnumerable<bool> values) => Interop.mkViolinAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(System.DateTime val) => Interop.mkViolinAttr("customdata", new[]{val});
+        public static Box<IViolinProperty> customdata(System.DateTime val) => Interop.mkViolinAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(params System.DateTime[] values) => Interop.mkViolinAttr("customdata", values);
+        public static Box<IViolinProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkViolinAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(float val) => Interop.mkViolinAttr("customdata", new[]{val});
+        public static Box<IViolinProperty> customdata(float val) => Interop.mkViolinAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(params float[] values) => Interop.mkViolinAttr("customdata", values);
+        public static Box<IViolinProperty> customdata(IEnumerable<float> values) => Interop.mkViolinAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(int val) => Interop.mkViolinAttr("customdata", new[]{val});
+        public static Box<IViolinProperty> customdata(int val) => Interop.mkViolinAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(params int[] values) => Interop.mkViolinAttr("customdata", values);
+        public static Box<IViolinProperty> customdata(IEnumerable<int> values) => Interop.mkViolinAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(string val) => Interop.mkViolinAttr("customdata", new[]{val});
+        public static Box<IViolinProperty> customdata(string val) => Interop.mkViolinAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<IViolinProperty> customdata(params string[] values) => Interop.mkViolinAttr("customdata", values);
+        public static Box<IViolinProperty> customdata(IEnumerable<string> values) => Interop.mkViolinAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<IViolinProperty> customdata(IEnumerable<bool[]> values) => Interop.mkViolinAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -177,23 +182,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<IViolinProperty> uirevision(params string[] values) => Interop.mkViolinAttr("uirevision", values);
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> y(bool val) => Interop.mkViolinAttr("y", new[]{val});
+        public static Box<IViolinProperty> y(bool val) => Interop.mkViolinAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<bool> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> y(System.DateTime val) => Interop.mkViolinAttr("y", new[]{val});
+        public static Box<IViolinProperty> y(System.DateTime val) => Interop.mkViolinAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<System.DateTime> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> y(float val) => Interop.mkViolinAttr("y", new[]{val});
+        public static Box<IViolinProperty> y(float val) => Interop.mkViolinAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<float> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> y(int val) => Interop.mkViolinAttr("y", new[]{val});
+        public static Box<IViolinProperty> y(int val) => Interop.mkViolinAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<int> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> y(string val) => Interop.mkViolinAttr("y", new[]{val});
+        public static Box<IViolinProperty> y(string val) => Interop.mkViolinAttr("y", new[] { val });
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<string> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the y sample data or coordinates. See overview for more info.
@@ -231,23 +236,23 @@ namespace Plotly
         /// Sets the y sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> y(IEnumerable<float?> values) => Interop.mkViolinAttr("y", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> x(bool val) => Interop.mkViolinAttr("x", new[]{val});
+        public static Box<IViolinProperty> x(bool val) => Interop.mkViolinAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<bool> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> x(System.DateTime val) => Interop.mkViolinAttr("x", new[]{val});
+        public static Box<IViolinProperty> x(System.DateTime val) => Interop.mkViolinAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<System.DateTime> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> x(float val) => Interop.mkViolinAttr("x", new[]{val});
+        public static Box<IViolinProperty> x(float val) => Interop.mkViolinAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<float> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> x(int val) => Interop.mkViolinAttr("x", new[]{val});
+        public static Box<IViolinProperty> x(int val) => Interop.mkViolinAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<int> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
-        public static Box<IViolinProperty> x(string val) => Interop.mkViolinAttr("x", new[]{val});
+        public static Box<IViolinProperty> x(string val) => Interop.mkViolinAttr("x", new[] { val });
         /// Sets the x sample data or coordinates. See overview for more info.
         public static Box<IViolinProperty> x(IEnumerable<string> values) => Interop.mkViolinAttr("x", values.ToArray());
         /// Sets the x sample data or coordinates. See overview for more info.
@@ -324,6 +329,10 @@ namespace Plotly
         public static Box<IViolinProperty> y0(string val) => Interop.mkViolinAttr("y0", val);
         /// Sets the y coordinate for single-box traces or the starting coordinate for multi-box traces set using q1/median/q3. See overview for more info.
         public static Box<IViolinProperty> y0(params string[] values) => Interop.mkViolinAttr("y0", values);
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<IViolinProperty> xhoverformat(string val) => Interop.mkViolinAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<IViolinProperty> yhoverformat(string val) => Interop.mkViolinAttr("yhoverformat", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover. For violin traces, the name will also be used for the position coordinate, if `x` and `x0` (`y` and `y0` if horizontal) are missing and the position axis is categorical. Note that the trace name is also used as a default value for attribute `scalegroup` (please see its description for details).
         public static Box<IViolinProperty> name(string val) => Interop.mkViolinAttr("name", val);
         /// Sets the bandwidth used to compute the kernel density estimate. By default, the bandwidth is determined by Silverman's rule of thumb.
@@ -333,23 +342,23 @@ namespace Plotly
         /// If there are multiple violins that should be sized according to to some metric (see `scalemode`), link them by providing a non-empty group id here shared by every trace in the same group. If a violin's `width` is undefined, `scalegroup` will default to the trace's name. In this case, violins with the same names will be linked together
         public static Box<IViolinProperty> scalegroup(string val) => Interop.mkViolinAttr("scalegroup", val);
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
-        public static Box<IViolinProperty> span(bool val) => Interop.mkViolinAttr("span", new[]{val});
+        public static Box<IViolinProperty> span(bool val) => Interop.mkViolinAttr("span", new[] { val });
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
         public static Box<IViolinProperty> span(IEnumerable<bool> values) => Interop.mkViolinAttr("span", values.ToArray());
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
-        public static Box<IViolinProperty> span(System.DateTime val) => Interop.mkViolinAttr("span", new[]{val});
+        public static Box<IViolinProperty> span(System.DateTime val) => Interop.mkViolinAttr("span", new[] { val });
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
         public static Box<IViolinProperty> span(IEnumerable<System.DateTime> values) => Interop.mkViolinAttr("span", values.ToArray());
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
-        public static Box<IViolinProperty> span(float val) => Interop.mkViolinAttr("span", new[]{val});
+        public static Box<IViolinProperty> span(float val) => Interop.mkViolinAttr("span", new[] { val });
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
         public static Box<IViolinProperty> span(IEnumerable<float> values) => Interop.mkViolinAttr("span", values.ToArray());
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
-        public static Box<IViolinProperty> span(int val) => Interop.mkViolinAttr("span", new[]{val});
+        public static Box<IViolinProperty> span(int val) => Interop.mkViolinAttr("span", new[] { val });
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
         public static Box<IViolinProperty> span(IEnumerable<int> values) => Interop.mkViolinAttr("span", values.ToArray());
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
-        public static Box<IViolinProperty> span(string val) => Interop.mkViolinAttr("span", new[]{val});
+        public static Box<IViolinProperty> span(string val) => Interop.mkViolinAttr("span", new[] { val });
         /// Sets the span in data space for which the density function will be computed. Has an effect only when `spanmode` is set to *manual*.
         public static Box<IViolinProperty> span(IEnumerable<string> values) => Interop.mkViolinAttr("span", values.ToArray());
         public static Box<IViolinProperty> line(params Box<ILineProperty>[] properties) => Interop.mkViolinAttr("line", Bindings.flattenProperties(properties));
@@ -376,9 +385,9 @@ namespace Plotly
         public static Box<IViolinProperty> hovertext(string val) => Interop.mkViolinAttr("hovertext", val);
         /// Same as `text`.
         public static Box<IViolinProperty> hovertext(IEnumerable<string> values) => Interop.mkViolinAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IViolinProperty> hovertemplate(string val) => Interop.mkViolinAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<IViolinProperty> hovertemplate(IEnumerable<string> values) => Interop.mkViolinAttr("hovertemplate", values.ToArray());
         public static Box<IViolinProperty> box(params Box<IBoxProperty>[] properties) => Interop.mkViolinAttr("box", Bindings.flattenProperties(properties));
         public static Box<IViolinProperty> meanline(params Box<IMeanlineProperty>[] properties) => Interop.mkViolinAttr("meanline", Bindings.flattenProperties(properties));
@@ -398,23 +407,23 @@ namespace Plotly
         public static Box<IViolinProperty> yaxis(int anchorId) => Interop.mkViolinAttr("yaxis", anchorId > 1 ? $"y{anchorId}" : "");
         /// Sets a reference between this trace's y coordinates and a 2D cartesian y axis. If *y* (the default value), the y coordinates refer to `layout.yaxis`. If *y2*, the y coordinates refer to `layout.yaxis2`, and so on.
         public static Box<IViolinProperty> yaxis(string val) => Interop.mkViolinAttr("yaxis", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<IViolinProperty> idssrc(string val) => Interop.mkViolinAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<IViolinProperty> customdatasrc(string val) => Interop.mkViolinAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<IViolinProperty> metasrc(string val) => Interop.mkViolinAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<IViolinProperty> hoverinfosrc(string val) => Interop.mkViolinAttr("hoverinfosrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<IViolinProperty> ysrc(string val) => Interop.mkViolinAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<IViolinProperty> xsrc(string val) => Interop.mkViolinAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<IViolinProperty> textsrc(string val) => Interop.mkViolinAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<IViolinProperty> hovertextsrc(string val) => Interop.mkViolinAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<IViolinProperty> hovertemplatesrc(string val) => Interop.mkViolinAttr("hovertemplatesrc", val);
     }
 

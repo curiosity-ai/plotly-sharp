@@ -8,21 +8,21 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Config
     {
         /// Determines whether the graphs are interactive or not. If *false*, no interactivity, for export or image generation.
         public static Box<IConfigProperty> staticPlot(bool val) => Interop.mkConfigAttr("staticPlot", val);
-        /// Sets base URL for the 'Edit in Chart Studio' (aka sendDataToCloud) mode bar button and the showLink/sendData on-graph link
+        /// When set it determines base URL for the 'Edit in Chart Studio' `showEditInChartStudio`/`showSendToCloud` mode bar button and the showLink/sendData on-graph link. To enable sending your data to Chart Studio Cloud, you need to set both `plotlyServerURL` to 'https://chart-studio.plotly.com' and also set `showSendToCloud` to true.
         public static Box<IConfigProperty> plotlyServerURL(string val) => Interop.mkConfigAttr("plotlyServerURL", val);
         /// Determines whether the graph is editable or not. Sets all pieces of `edits` unless a separate `edits` config item overrides individual parts.
         public static Box<IConfigProperty> editable(bool val) => Interop.mkConfigAttr("editable", val);
         public static Box<IConfigProperty> edits(params Box<IEditsProperty>[] properties) => Interop.mkConfigAttr("edits", Bindings.flattenProperties(properties));
         /// Determines whether the graphs are plotted with respect to layout.autosize:true and infer its container size.
         public static Box<IConfigProperty> autosizable(bool val) => Interop.mkConfigAttr("autosizable", val);
-        /// Determines whether to change the layout size when window is resized. In v2, this option will be removed and will always be true.
+        /// Determines whether to change the layout size when window is resized. In v3, this option will be removed and will always be true.
         public static Box<IConfigProperty> responsive(bool val) => Interop.mkConfigAttr("responsive", val);
         /// When `layout.autosize` is turned on, determines whether the graph fills the container (the default) or the screen (if set to *true*).
         public static Box<IConfigProperty> fillFrame(bool val) => Interop.mkConfigAttr("fillFrame", val);
@@ -42,11 +42,11 @@ namespace Plotly
         public static Box<IConfigProperty> showAxisRangeEntryBoxes(bool val) => Interop.mkConfigAttr("showAxisRangeEntryBoxes", val);
         /// Determines whether or not tips are shown while interacting with the resulting graphs.
         public static Box<IConfigProperty> showTips(bool val) => Interop.mkConfigAttr("showTips", val);
-        /// Determines whether a link to plot.ly is displayed at the bottom right corner of resulting graphs. Use with `sendData` and `linkText`.
+        /// Determines whether a link to Chart Studio Cloud is displayed at the bottom right corner of resulting graphs. Use with `sendData` and `linkText`.
         public static Box<IConfigProperty> showLink(bool val) => Interop.mkConfigAttr("showLink", val);
         /// Sets the text appearing in the `showLink` link.
         public static Box<IConfigProperty> linkText(string val) => Interop.mkConfigAttr("linkText", val);
-        /// If *showLink* is true, does it contain data just link to a plot.ly file?
+        /// If *showLink* is true, does it contain data just link to a Chart Studio Cloud file?
         public static Box<IConfigProperty> sendData(bool val) => Interop.mkConfigAttr("sendData", val);
         /// Adds a source-displaying function to show sources on the resulting graphs.
         public static Box<IConfigProperty> showSources(bool val) => Interop.mkConfigAttr("showSources", val);
@@ -68,7 +68,7 @@ namespace Plotly
         public static Box<IConfigProperty> showSources(string val) => Interop.mkConfigAttr("showSources", val);
         /// Adds a source-displaying function to show sources on the resulting graphs.
         public static Box<IConfigProperty> showSources(params string[] values) => Interop.mkConfigAttr("showSources", values);
-        /// Should we include a ModeBar button, labeled \"Edit in Chart Studio\", that sends this chart to plot.ly or another plotly server as specified by `plotlyServerURL` for editing, export, etc? Prior to version 1.43.0 this button was included by default, now it is opt-in using this flag. Note that this button can (depending on `plotlyServerURL`) send your data to an external server. However that server does not persist your data until you arrive at the Chart Studio and explicitly click \"Save\".
+        /// Should we include a ModeBar button, labeled \"Edit in Chart Studio\", that sends this chart to chart-studio.plotly.com (formerly plot.ly) or another plotly server as specified by `plotlyServerURL` for editing, export, etc? Prior to version 1.43.0 this button was included by default, now it is opt-in using this flag. Note that this button can (depending on `plotlyServerURL` being set) send your data to an external server. However that server does not persist your data until you arrive at the Chart Studio and explicitly click \"Save\".
         public static Box<IConfigProperty> showSendToCloud(bool val) => Interop.mkConfigAttr("showSendToCloud", val);
         /// Same as `showSendToCloud`, but use a pencil icon instead of a floppy-disk. Note that if both `showSendToCloud` and `showEditInChartStudio` are turned, only `showEditInChartStudio` will be honored.
         public static Box<IConfigProperty> showEditInChartStudio(bool val) => Interop.mkConfigAttr("showEditInChartStudio", val);
@@ -92,25 +92,25 @@ namespace Plotly
         public static Box<IConfigProperty> modeBarButtonsToRemove(string val) => Interop.mkConfigAttr("modeBarButtonsToRemove", val);
         /// Remove mode bar buttons by name. See ./components/modebar/buttons.js for the list of names.
         public static Box<IConfigProperty> modeBarButtonsToRemove(params string[] values) => Interop.mkConfigAttr("modeBarButtonsToRemove", values);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(bool val) => Interop.mkConfigAttr("modeBarButtonsToAdd", val);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(params bool[] values) => Interop.mkConfigAttr("modeBarButtonsToAdd", values);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(System.DateTime val) => Interop.mkConfigAttr("modeBarButtonsToAdd", val);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(params System.DateTime[] values) => Interop.mkConfigAttr("modeBarButtonsToAdd", values);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(int val) => Interop.mkConfigAttr("modeBarButtonsToAdd", val);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(params int[] values) => Interop.mkConfigAttr("modeBarButtonsToAdd", values);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(float val) => Interop.mkConfigAttr("modeBarButtonsToAdd", val);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(params float[] values) => Interop.mkConfigAttr("modeBarButtonsToAdd", values);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(string val) => Interop.mkConfigAttr("modeBarButtonsToAdd", val);
-        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments.
+        /// Add mode bar button using config objects See ./components/modebar/buttons.js for list of arguments. To enable predefined modebar buttons e.g. shape drawing, hover and spikelines, simply provide their string name(s). This could include: *v1hovermode*, *hoverclosest*, *hovercompare*, *togglehover*, *togglespikelines*, *drawline*, *drawopenpath*, *drawclosedpath*, *drawcircle*, *drawrect* and *eraseshape*. Please note that these predefined buttons will only be shown if they are compatible with all trace types used in a graph.
         public static Box<IConfigProperty> modeBarButtonsToAdd(params string[] values) => Interop.mkConfigAttr("modeBarButtonsToAdd", values);
         /// Define fully custom mode bar buttons as nested array, where the outer arrays represents button groups, and the inner arrays have buttons config objects or names of default buttons See ./components/modebar/buttons.js for more info.
         public static Box<IConfigProperty> modeBarButtons(bool val) => Interop.mkConfigAttr("modeBarButtons", val);

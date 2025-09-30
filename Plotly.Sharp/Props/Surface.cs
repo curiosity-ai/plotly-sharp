@@ -8,37 +8,42 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Surface
     {
         /// Sets the legend group for this trace. Traces part of the same legend group hide/show at the same time when toggling legend items.
         public static Box<ISurfaceProperty> legendgroup(string val) => Interop.mkSurfaceAttr("legendgroup", val);
+        public static Box<ISurfaceProperty> legendgrouptitle(params Box<ILegendgrouptitleProperty>[] properties) => Interop.mkSurfaceAttr("legendgrouptitle", Bindings.flattenProperties(properties));
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISurfaceProperty> legendrank(int val) => Interop.mkSurfaceAttr("legendrank", val);
+        /// Sets the legend rank for this trace. Items and groups with smaller ranks are presented on top/left side while with `*reversed* `legend.traceorder` they are on bottom/right side. The default legendrank is 1000, so that you can use ranks less than 1000 to place certain items before all unranked items, and ranks greater than 1000 to go after all unranked items.
+        public static Box<ISurfaceProperty> legendrank(float val) => Interop.mkSurfaceAttr("legendrank", val);
         /// Sets the trace name. The trace name appear as the legend item and on hover.
         public static Box<ISurfaceProperty> name(string val) => Interop.mkSurfaceAttr("name", val);
         /// Assign an id to this trace, Use this to provide object constancy between traces during animations and transitions.
         public static Box<ISurfaceProperty> uid(string val) => Interop.mkSurfaceAttr("uid", val);
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(bool val) => Interop.mkSurfaceAttr("ids", new[]{val});
+        public static Box<ISurfaceProperty> ids(bool val) => Interop.mkSurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(params bool[] values) => Interop.mkSurfaceAttr("ids", values);
+        public static Box<ISurfaceProperty> ids(IEnumerable<bool> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(System.DateTime val) => Interop.mkSurfaceAttr("ids", new[]{val});
+        public static Box<ISurfaceProperty> ids(System.DateTime val) => Interop.mkSurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(params System.DateTime[] values) => Interop.mkSurfaceAttr("ids", values);
+        public static Box<ISurfaceProperty> ids(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(float val) => Interop.mkSurfaceAttr("ids", new[]{val});
+        public static Box<ISurfaceProperty> ids(float val) => Interop.mkSurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(params float[] values) => Interop.mkSurfaceAttr("ids", values);
+        public static Box<ISurfaceProperty> ids(IEnumerable<float> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(int val) => Interop.mkSurfaceAttr("ids", new[]{val});
+        public static Box<ISurfaceProperty> ids(int val) => Interop.mkSurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(params int[] values) => Interop.mkSurfaceAttr("ids", values);
+        public static Box<ISurfaceProperty> ids(IEnumerable<int> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(string val) => Interop.mkSurfaceAttr("ids", new[]{val});
+        public static Box<ISurfaceProperty> ids(string val) => Interop.mkSurfaceAttr("ids", new[] { val });
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
-        public static Box<ISurfaceProperty> ids(params string[] values) => Interop.mkSurfaceAttr("ids", values);
+        public static Box<ISurfaceProperty> ids(IEnumerable<string> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISurfaceProperty> ids(IEnumerable<bool[]> values) => Interop.mkSurfaceAttr("ids", Bindings.flatten2DArrayIf1D(values));
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
@@ -74,25 +79,25 @@ namespace Plotly
         /// Assigns id labels to each datum. These ids for object constancy of data points during animation. Should be an array of strings, not numbers or any other type.
         public static Box<ISurfaceProperty> ids(IEnumerable<float?> values) => Interop.mkSurfaceAttr("ids", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(bool val) => Interop.mkSurfaceAttr("customdata", new[]{val});
+        public static Box<ISurfaceProperty> customdata(bool val) => Interop.mkSurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(params bool[] values) => Interop.mkSurfaceAttr("customdata", values);
+        public static Box<ISurfaceProperty> customdata(IEnumerable<bool> values) => Interop.mkSurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(System.DateTime val) => Interop.mkSurfaceAttr("customdata", new[]{val});
+        public static Box<ISurfaceProperty> customdata(System.DateTime val) => Interop.mkSurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(params System.DateTime[] values) => Interop.mkSurfaceAttr("customdata", values);
+        public static Box<ISurfaceProperty> customdata(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(float val) => Interop.mkSurfaceAttr("customdata", new[]{val});
+        public static Box<ISurfaceProperty> customdata(float val) => Interop.mkSurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(params float[] values) => Interop.mkSurfaceAttr("customdata", values);
+        public static Box<ISurfaceProperty> customdata(IEnumerable<float> values) => Interop.mkSurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(int val) => Interop.mkSurfaceAttr("customdata", new[]{val});
+        public static Box<ISurfaceProperty> customdata(int val) => Interop.mkSurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(params int[] values) => Interop.mkSurfaceAttr("customdata", values);
+        public static Box<ISurfaceProperty> customdata(IEnumerable<int> values) => Interop.mkSurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(string val) => Interop.mkSurfaceAttr("customdata", new[]{val});
+        public static Box<ISurfaceProperty> customdata(string val) => Interop.mkSurfaceAttr("customdata", new[] { val });
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
-        public static Box<ISurfaceProperty> customdata(params string[] values) => Interop.mkSurfaceAttr("customdata", values);
+        public static Box<ISurfaceProperty> customdata(IEnumerable<string> values) => Interop.mkSurfaceAttr("customdata", values.ToArray());
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
         public static Box<ISurfaceProperty> customdata(IEnumerable<bool[]> values) => Interop.mkSurfaceAttr("customdata", Bindings.flatten2DArrayIf1D(values));
         /// Assigns extra data each datum. This may be useful when listening to hover, click and selection events. Note that, *scatter* traces also appends customdata items in the markers DOM elements
@@ -150,23 +155,23 @@ namespace Plotly
         /// Controls persistence of some user-driven changes to the trace: `constraintrange` in `parcoords` traces, as well as some `editable: true` modifications such as `name` and `colorbar.title`. Defaults to `layout.uirevision`. Note that other user-driven trace attribute changes are controlled by `layout` attributes: `trace.visible` is controlled by `layout.legend.uirevision`, `selectedpoints` is controlled by `layout.selectionrevision`, and `colorbar.(x|y)` (accessible with `config: {editable: true}`) is controlled by `layout.editrevision`. Trace changes are tracked by `uid`, which only falls back on trace index if no `uid` is provided. So if your app can add/remove traces before the end of the `data` array, such that the same trace has a different index, you can still preserve user-driven changes if you give each trace a `uid` that stays with it as it moves.
         public static Box<ISurfaceProperty> uirevision(params string[] values) => Interop.mkSurfaceAttr("uirevision", values);
         /// Sets the z coordinates.
-        public static Box<ISurfaceProperty> z(bool val) => Interop.mkSurfaceAttr("z", new[]{val});
+        public static Box<ISurfaceProperty> z(bool val) => Interop.mkSurfaceAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<bool> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<ISurfaceProperty> z(System.DateTime val) => Interop.mkSurfaceAttr("z", new[]{val});
+        public static Box<ISurfaceProperty> z(System.DateTime val) => Interop.mkSurfaceAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<ISurfaceProperty> z(float val) => Interop.mkSurfaceAttr("z", new[]{val});
+        public static Box<ISurfaceProperty> z(float val) => Interop.mkSurfaceAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<float> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<ISurfaceProperty> z(int val) => Interop.mkSurfaceAttr("z", new[]{val});
+        public static Box<ISurfaceProperty> z(int val) => Interop.mkSurfaceAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<int> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the z coordinates.
-        public static Box<ISurfaceProperty> z(string val) => Interop.mkSurfaceAttr("z", new[]{val});
+        public static Box<ISurfaceProperty> z(string val) => Interop.mkSurfaceAttr("z", new[] { val });
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<string> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the z coordinates.
@@ -204,23 +209,23 @@ namespace Plotly
         /// Sets the z coordinates.
         public static Box<ISurfaceProperty> z(IEnumerable<float?> values) => Interop.mkSurfaceAttr("z", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<ISurfaceProperty> x(bool val) => Interop.mkSurfaceAttr("x", new[]{val});
+        public static Box<ISurfaceProperty> x(bool val) => Interop.mkSurfaceAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<bool> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<ISurfaceProperty> x(System.DateTime val) => Interop.mkSurfaceAttr("x", new[]{val});
+        public static Box<ISurfaceProperty> x(System.DateTime val) => Interop.mkSurfaceAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<ISurfaceProperty> x(float val) => Interop.mkSurfaceAttr("x", new[]{val});
+        public static Box<ISurfaceProperty> x(float val) => Interop.mkSurfaceAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<float> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<ISurfaceProperty> x(int val) => Interop.mkSurfaceAttr("x", new[]{val});
+        public static Box<ISurfaceProperty> x(int val) => Interop.mkSurfaceAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<int> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the x coordinates.
-        public static Box<ISurfaceProperty> x(string val) => Interop.mkSurfaceAttr("x", new[]{val});
+        public static Box<ISurfaceProperty> x(string val) => Interop.mkSurfaceAttr("x", new[] { val });
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<string> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the x coordinates.
@@ -258,23 +263,23 @@ namespace Plotly
         /// Sets the x coordinates.
         public static Box<ISurfaceProperty> x(IEnumerable<float?> values) => Interop.mkSurfaceAttr("x", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<ISurfaceProperty> y(bool val) => Interop.mkSurfaceAttr("y", new[]{val});
+        public static Box<ISurfaceProperty> y(bool val) => Interop.mkSurfaceAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<ISurfaceProperty> y(IEnumerable<bool> values) => Interop.mkSurfaceAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<ISurfaceProperty> y(System.DateTime val) => Interop.mkSurfaceAttr("y", new[]{val});
+        public static Box<ISurfaceProperty> y(System.DateTime val) => Interop.mkSurfaceAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<ISurfaceProperty> y(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<ISurfaceProperty> y(float val) => Interop.mkSurfaceAttr("y", new[]{val});
+        public static Box<ISurfaceProperty> y(float val) => Interop.mkSurfaceAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<ISurfaceProperty> y(IEnumerable<float> values) => Interop.mkSurfaceAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<ISurfaceProperty> y(int val) => Interop.mkSurfaceAttr("y", new[]{val});
+        public static Box<ISurfaceProperty> y(int val) => Interop.mkSurfaceAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<ISurfaceProperty> y(IEnumerable<int> values) => Interop.mkSurfaceAttr("y", values.ToArray());
         /// Sets the y coordinates.
-        public static Box<ISurfaceProperty> y(string val) => Interop.mkSurfaceAttr("y", new[]{val});
+        public static Box<ISurfaceProperty> y(string val) => Interop.mkSurfaceAttr("y", new[] { val });
         /// Sets the y coordinates.
         public static Box<ISurfaceProperty> y(IEnumerable<string> values) => Interop.mkSurfaceAttr("y", values.ToArray());
         /// Sets the y coordinates.
@@ -319,32 +324,38 @@ namespace Plotly
         public static Box<ISurfaceProperty> hovertext(string val) => Interop.mkSurfaceAttr("hovertext", val);
         /// Same as `text`.
         public static Box<ISurfaceProperty> hovertext(IEnumerable<string> values) => Interop.mkSurfaceAttr("hovertext", values.ToArray());
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISurfaceProperty> hovertemplate(string val) => Interop.mkSurfaceAttr("hovertemplate", val);
-        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\". Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plot.ly/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
+        /// Template string used for rendering the information that appear on hover box. Note that this will override `hoverinfo`. Variables are inserted using %{variable}, for example \"y: %{y}\" as well as %{xother}, {%_xother}, {%_xother_}, {%xother_}. When showing info for several points, *xother* will be added to those with different x positions from the first point. An underscore before or after *(x|y)other* will add a space on that side, only when this field is shown. Numbers are formatted using d3-format's syntax %{variable:d3-format}, for example \"Price: %{y:$.2f}\". https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format for details on the formatting syntax. Dates are formatted using d3-time-format's syntax %{variable|d3-time-format}, for example \"Day: %{2019-01-01|%A}\". https://github.com/d3/d3-time-format#locale_format for details on the date formatting syntax. The variables available in `hovertemplate` are the ones emitted as event data described at this link https://plotly.com/javascript/plotlyjs-events/#event-data. Additionally, every attributes that can be specified per-point (the ones that are `arrayOk: true`) are available.  Anything contained in tag `<extra>` is displayed in the secondary box, for example \"<extra>{fullData.name}</extra>\". To hide the secondary box completely, use an empty tag `<extra></extra>`.
         public static Box<ISurfaceProperty> hovertemplate(IEnumerable<string> values) => Interop.mkSurfaceAttr("hovertemplate", values.ToArray());
+        /// Sets the hover text formatting rulefor `x`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `xaxis.hoverformat`.
+        public static Box<ISurfaceProperty> xhoverformat(string val) => Interop.mkSurfaceAttr("xhoverformat", val);
+        /// Sets the hover text formatting rulefor `y`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `yaxis.hoverformat`.
+        public static Box<ISurfaceProperty> yhoverformat(string val) => Interop.mkSurfaceAttr("yhoverformat", val);
+        /// Sets the hover text formatting rulefor `z`  using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*By default the values are formatted using `zaxis.hoverformat`.
+        public static Box<ISurfaceProperty> zhoverformat(string val) => Interop.mkSurfaceAttr("zhoverformat", val);
         /// Determines whether or not gaps (i.e. {nan} or missing values) in the `z` data are filled in.
         public static Box<ISurfaceProperty> connectgaps(bool val) => Interop.mkSurfaceAttr("connectgaps", val);
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(bool val) => Interop.mkSurfaceAttr("surfacecolor", new[]{val});
+        public static Box<ISurfaceProperty> surfacecolor(bool val) => Interop.mkSurfaceAttr("surfacecolor", new[] { val });
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(params bool[] values) => Interop.mkSurfaceAttr("surfacecolor", values);
+        public static Box<ISurfaceProperty> surfacecolor(IEnumerable<bool> values) => Interop.mkSurfaceAttr("surfacecolor", values.ToArray());
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(System.DateTime val) => Interop.mkSurfaceAttr("surfacecolor", new[]{val});
+        public static Box<ISurfaceProperty> surfacecolor(System.DateTime val) => Interop.mkSurfaceAttr("surfacecolor", new[] { val });
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(params System.DateTime[] values) => Interop.mkSurfaceAttr("surfacecolor", values);
+        public static Box<ISurfaceProperty> surfacecolor(IEnumerable<System.DateTime> values) => Interop.mkSurfaceAttr("surfacecolor", values.ToArray());
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(float val) => Interop.mkSurfaceAttr("surfacecolor", new[]{val});
+        public static Box<ISurfaceProperty> surfacecolor(float val) => Interop.mkSurfaceAttr("surfacecolor", new[] { val });
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(params float[] values) => Interop.mkSurfaceAttr("surfacecolor", values);
+        public static Box<ISurfaceProperty> surfacecolor(IEnumerable<float> values) => Interop.mkSurfaceAttr("surfacecolor", values.ToArray());
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(int val) => Interop.mkSurfaceAttr("surfacecolor", new[]{val});
+        public static Box<ISurfaceProperty> surfacecolor(int val) => Interop.mkSurfaceAttr("surfacecolor", new[] { val });
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(params int[] values) => Interop.mkSurfaceAttr("surfacecolor", values);
+        public static Box<ISurfaceProperty> surfacecolor(IEnumerable<int> values) => Interop.mkSurfaceAttr("surfacecolor", values.ToArray());
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(string val) => Interop.mkSurfaceAttr("surfacecolor", new[]{val});
+        public static Box<ISurfaceProperty> surfacecolor(string val) => Interop.mkSurfaceAttr("surfacecolor", new[] { val });
         /// Sets the surface color values, used for setting a color scale independent of `z`.
-        public static Box<ISurfaceProperty> surfacecolor(params string[] values) => Interop.mkSurfaceAttr("surfacecolor", values);
+        public static Box<ISurfaceProperty> surfacecolor(IEnumerable<string> values) => Interop.mkSurfaceAttr("surfacecolor", values.ToArray());
         /// Sets the surface color values, used for setting a color scale independent of `z`.
         public static Box<ISurfaceProperty> surfacecolor(IEnumerable<bool[]> values) => Interop.mkSurfaceAttr("surfacecolor", Bindings.flatten2DArrayIf1D(values));
         /// Sets the surface color values, used for setting a color scale independent of `z`.
@@ -417,6 +428,26 @@ namespace Plotly
         public static Box<ISurfaceProperty> opacity(int val) => Interop.mkSurfaceAttr("opacity", val);
         /// Sets the opacity of the surface. Please note that in the case of using high `opacity` values for example a value greater than or equal to 0.5 on two surfaces (and 0.25 with four surfaces), an overlay of multiple transparent surfaces may not perfectly be sorted in depth by the webgl API. This behavior may be improved in the near future and is subject to change.
         public static Box<ISurfaceProperty> opacity(float val) => Interop.mkSurfaceAttr("opacity", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(bool val) => Interop.mkSurfaceAttr("opacityscale", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(params bool[] values) => Interop.mkSurfaceAttr("opacityscale", values);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(System.DateTime val) => Interop.mkSurfaceAttr("opacityscale", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(params System.DateTime[] values) => Interop.mkSurfaceAttr("opacityscale", values);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(int val) => Interop.mkSurfaceAttr("opacityscale", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(params int[] values) => Interop.mkSurfaceAttr("opacityscale", values);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(float val) => Interop.mkSurfaceAttr("opacityscale", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(params float[] values) => Interop.mkSurfaceAttr("opacityscale", values);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(string val) => Interop.mkSurfaceAttr("opacityscale", val);
+        /// Sets the opacityscale. The opacityscale must be an array containing arrays mapping a normalized value to an opacity value. At minimum, a mapping for the lowest (0) and highest (1) values are required. For example, `[[0, 1], [0.5, 0.2], [1, 1]]` means that higher/lower values would have higher opacity values and those in the middle would be more transparent Alternatively, `opacityscale` may be a palette name string of the following list: 'min', 'max', 'extremes' and 'uniform'. The default is 'uniform'.
+        public static Box<ISurfaceProperty> opacityscale(params string[] values) => Interop.mkSurfaceAttr("opacityscale", values);
         /// Determines which trace information appear on hover. If `none` or `skip` are set, no information is displayed upon hovering. But, if `none` is set, click and hover events are still fired.
         public static Box<ISurfaceProperty> hoverinfo(params Box<ISurfaceProperty>[] properties) => Interop.mkSurfaceAttr("hoverinfo", Bindings.joinEnumProperties(properties));
         /// Determines whether or not an item corresponding to this trace is shown in the legend.
@@ -425,27 +456,27 @@ namespace Plotly
         public static Box<ISurfaceProperty> scene(int anchorId) => Interop.mkSurfaceAttr("scene", anchorId > 1 ? $"scene{anchorId}" : "");
         /// Sets a reference between this trace's 3D coordinate system and a 3D scene. If *scene* (the default value), the (x,y,z) coordinates refer to `layout.scene`. If *scene2*, the (x,y,z) coordinates refer to `layout.scene2`, and so on.
         public static Box<ISurfaceProperty> scene(string val) => Interop.mkSurfaceAttr("scene", val);
-        /// Sets the source reference on plot.ly for  ids .
+        /// Sets the source reference on Chart Studio Cloud for  ids .
         public static Box<ISurfaceProperty> idssrc(string val) => Interop.mkSurfaceAttr("idssrc", val);
-        /// Sets the source reference on plot.ly for  customdata .
+        /// Sets the source reference on Chart Studio Cloud for  customdata .
         public static Box<ISurfaceProperty> customdatasrc(string val) => Interop.mkSurfaceAttr("customdatasrc", val);
-        /// Sets the source reference on plot.ly for  meta .
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ISurfaceProperty> metasrc(string val) => Interop.mkSurfaceAttr("metasrc", val);
-        /// Sets the source reference on plot.ly for  z .
+        /// Sets the source reference on Chart Studio Cloud for  z .
         public static Box<ISurfaceProperty> zsrc(string val) => Interop.mkSurfaceAttr("zsrc", val);
-        /// Sets the source reference on plot.ly for  x .
+        /// Sets the source reference on Chart Studio Cloud for  x .
         public static Box<ISurfaceProperty> xsrc(string val) => Interop.mkSurfaceAttr("xsrc", val);
-        /// Sets the source reference on plot.ly for  y .
+        /// Sets the source reference on Chart Studio Cloud for  y .
         public static Box<ISurfaceProperty> ysrc(string val) => Interop.mkSurfaceAttr("ysrc", val);
-        /// Sets the source reference on plot.ly for  text .
+        /// Sets the source reference on Chart Studio Cloud for  text .
         public static Box<ISurfaceProperty> textsrc(string val) => Interop.mkSurfaceAttr("textsrc", val);
-        /// Sets the source reference on plot.ly for  hovertext .
+        /// Sets the source reference on Chart Studio Cloud for  hovertext .
         public static Box<ISurfaceProperty> hovertextsrc(string val) => Interop.mkSurfaceAttr("hovertextsrc", val);
-        /// Sets the source reference on plot.ly for  hovertemplate .
+        /// Sets the source reference on Chart Studio Cloud for  hovertemplate .
         public static Box<ISurfaceProperty> hovertemplatesrc(string val) => Interop.mkSurfaceAttr("hovertemplatesrc", val);
-        /// Sets the source reference on plot.ly for  surfacecolor .
+        /// Sets the source reference on Chart Studio Cloud for  surfacecolor .
         public static Box<ISurfaceProperty> surfacecolorsrc(string val) => Interop.mkSurfaceAttr("surfacecolorsrc", val);
-        /// Sets the source reference on plot.ly for  hoverinfo .
+        /// Sets the source reference on Chart Studio Cloud for  hoverinfo .
         public static Box<ISurfaceProperty> hoverinfosrc(string val) => Interop.mkSurfaceAttr("hoverinfosrc", val);
         /// Hides/displays surfaces between minimum and maximum iso-values.
         public static Box<ISurfaceProperty> show(bool val) => Interop.mkSurfaceAttr("show", val);

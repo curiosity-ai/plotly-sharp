@@ -8,17 +8,17 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Lonaxis
     {
         /// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
-        public static Box<ILonaxisProperty> range(int val) => Interop.mkLonaxisAttr("range", new[]{val});
+        public static Box<ILonaxisProperty> range(int val) => Interop.mkLonaxisAttr("range", new[] { val });
         /// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
         public static Box<ILonaxisProperty> range(IEnumerable<int> values) => Interop.mkLonaxisAttr("range", values.ToArray());
         /// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
-        public static Box<ILonaxisProperty> range(float val) => Interop.mkLonaxisAttr("range", new[]{val});
+        public static Box<ILonaxisProperty> range(float val) => Interop.mkLonaxisAttr("range", new[] { val });
         /// Sets the range of this axis (in degrees), sets the map's clipped coordinates.
         public static Box<ILonaxisProperty> range(IEnumerable<float> values) => Interop.mkLonaxisAttr("range", values.ToArray());
         /// Sets whether or not graticule are shown on the map.

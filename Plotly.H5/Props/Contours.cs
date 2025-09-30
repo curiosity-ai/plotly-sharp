@@ -31,7 +31,7 @@ namespace PlotlyH5
         public static Box<IContoursProperty> showlabels(bool val) => Interop.mkContoursAttr("showlabels", val);
         /// Sets the font used for labeling the contour levels. The default color comes from the lines, if shown. The default family and size come from `layout.font`.
         public static Box<IContoursProperty> labelfont(params Box<ILabelfontProperty>[] properties) => Interop.mkContoursAttr("labelfont", Bindings.flattenProperties(properties));
-        /// Sets the contour label formatting rule using d3 formatting mini-language which is very similar to Python, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format
+        /// Sets the contour label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format.
         public static Box<IContoursProperty> labelformat(string val) => Interop.mkContoursAttr("labelformat", val);
         /// Sets the value or values of the constraint boundary. When `operation` is set to one of the comparison values (=,< ,>=,>,<  =  ) * value * is  expected  to  be  a  number.  When ` operation ` is  set  to  one  of  the  interval  values ( [ ] , ( ) , [ ) , ( ] , ] [ , ) ( , ] ( , ) [ ) * value * is  expected  to  be  an  array  of  two  numbers  where  the  first  is  the  lower  bound  and  the  second  is  the  upper  bound. 
         public static Box<IContoursProperty> value(bool val) => Interop.mkContoursAttr("value", val);

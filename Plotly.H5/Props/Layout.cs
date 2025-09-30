@@ -54,25 +54,25 @@ namespace PlotlyH5
         /// Sets the gap (in plot fraction) between bars of the same location coordinate.
         public static Box<ILayoutProperty> waterfallgroupgap(float val) => Interop.mkLayoutAttr("waterfallgroupgap", val);
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(bool val) => Interop.mkLayoutAttr("hiddenlabels", new[]{val});
+        public static Box<ILayoutProperty> hiddenlabels(bool val) => Interop.mkLayoutAttr("hiddenlabels", new[] { val });
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(params bool[] values) => Interop.mkLayoutAttr("hiddenlabels", values);
+        public static Box<ILayoutProperty> hiddenlabels(IEnumerable<bool> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(System.DateTime val) => Interop.mkLayoutAttr("hiddenlabels", new[]{val});
+        public static Box<ILayoutProperty> hiddenlabels(System.DateTime val) => Interop.mkLayoutAttr("hiddenlabels", new[] { val });
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(params System.DateTime[] values) => Interop.mkLayoutAttr("hiddenlabels", values);
+        public static Box<ILayoutProperty> hiddenlabels(IEnumerable<System.DateTime> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(float val) => Interop.mkLayoutAttr("hiddenlabels", new[]{val});
+        public static Box<ILayoutProperty> hiddenlabels(float val) => Interop.mkLayoutAttr("hiddenlabels", new[] { val });
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(params float[] values) => Interop.mkLayoutAttr("hiddenlabels", values);
+        public static Box<ILayoutProperty> hiddenlabels(IEnumerable<float> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(int val) => Interop.mkLayoutAttr("hiddenlabels", new[]{val});
+        public static Box<ILayoutProperty> hiddenlabels(int val) => Interop.mkLayoutAttr("hiddenlabels", new[] { val });
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(params int[] values) => Interop.mkLayoutAttr("hiddenlabels", values);
+        public static Box<ILayoutProperty> hiddenlabels(IEnumerable<int> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(string val) => Interop.mkLayoutAttr("hiddenlabels", new[]{val});
+        public static Box<ILayoutProperty> hiddenlabels(string val) => Interop.mkLayoutAttr("hiddenlabels", new[] { val });
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
-        public static Box<ILayoutProperty> hiddenlabels(params string[] values) => Interop.mkLayoutAttr("hiddenlabels", values);
+        public static Box<ILayoutProperty> hiddenlabels(IEnumerable<string> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
         public static Box<ILayoutProperty> hiddenlabels(IEnumerable<bool[]> values) => Interop.mkLayoutAttr("hiddenlabels", Bindings.flatten2DArrayIf1D(values));
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
@@ -108,27 +108,33 @@ namespace PlotlyH5
         /// hiddenlabels is the funnelarea & pie chart analog of visible:'legendonly' but it can contain many labels, and can simultaneously hide slices from several pies/funnelarea charts
         public static Box<ILayoutProperty> hiddenlabels(IEnumerable<float?> values) => Interop.mkLayoutAttr("hiddenlabels", values.ToArray());
         /// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
-        public static Box<ILayoutProperty> piecolorway(string val) => Interop.mkLayoutAttr("piecolorway", new[]{val});
+        public static Box<ILayoutProperty> piecolorway(string val) => Interop.mkLayoutAttr("piecolorway", new[] { val });
         /// Sets the default pie slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendpiecolors`.
         public static Box<ILayoutProperty> piecolorway(IEnumerable<string> values) => Interop.mkLayoutAttr("piecolorway", values.ToArray());
         /// If `true`, the pie slice colors (whether given by `piecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
         public static Box<ILayoutProperty> extendpiecolors(bool val) => Interop.mkLayoutAttr("extendpiecolors", val);
-        /// Sets the source reference on plot.ly for  hiddenlabels .
+        /// Sets the source reference on Chart Studio Cloud for  hiddenlabels .
         public static Box<ILayoutProperty> hiddenlabelssrc(string val) => Interop.mkLayoutAttr("hiddenlabelssrc", val);
         /// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
-        public static Box<ILayoutProperty> sunburstcolorway(string val) => Interop.mkLayoutAttr("sunburstcolorway", new[]{val});
+        public static Box<ILayoutProperty> sunburstcolorway(string val) => Interop.mkLayoutAttr("sunburstcolorway", new[] { val });
         /// Sets the default sunburst slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendsunburstcolors`.
         public static Box<ILayoutProperty> sunburstcolorway(IEnumerable<string> values) => Interop.mkLayoutAttr("sunburstcolorway", values.ToArray());
         /// If `true`, the sunburst slice colors (whether given by `sunburstcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
         public static Box<ILayoutProperty> extendsunburstcolors(bool val) => Interop.mkLayoutAttr("extendsunburstcolors", val);
         /// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
-        public static Box<ILayoutProperty> treemapcolorway(string val) => Interop.mkLayoutAttr("treemapcolorway", new[]{val});
+        public static Box<ILayoutProperty> treemapcolorway(string val) => Interop.mkLayoutAttr("treemapcolorway", new[] { val });
         /// Sets the default treemap slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendtreemapcolors`.
         public static Box<ILayoutProperty> treemapcolorway(IEnumerable<string> values) => Interop.mkLayoutAttr("treemapcolorway", values.ToArray());
         /// If `true`, the treemap slice colors (whether given by `treemapcolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
         public static Box<ILayoutProperty> extendtreemapcolors(bool val) => Interop.mkLayoutAttr("extendtreemapcolors", val);
+        /// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
+        public static Box<ILayoutProperty> iciclecolorway(string val) => Interop.mkLayoutAttr("iciclecolorway", new[] { val });
+        /// Sets the default icicle slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendiciclecolors`.
+        public static Box<ILayoutProperty> iciclecolorway(IEnumerable<string> values) => Interop.mkLayoutAttr("iciclecolorway", values.ToArray());
+        /// If `true`, the icicle slice colors (whether given by `iciclecolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
+        public static Box<ILayoutProperty> extendiciclecolors(bool val) => Interop.mkLayoutAttr("extendiciclecolors", val);
         /// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
-        public static Box<ILayoutProperty> funnelareacolorway(string val) => Interop.mkLayoutAttr("funnelareacolorway", new[]{val});
+        public static Box<ILayoutProperty> funnelareacolorway(string val) => Interop.mkLayoutAttr("funnelareacolorway", new[] { val });
         /// Sets the default funnelarea slice colors. Defaults to the main `colorway` used for trace colors. If you specify a new list here it can still be extended with lighter and darker colors, see `extendfunnelareacolors`.
         public static Box<ILayoutProperty> funnelareacolorway(IEnumerable<string> values) => Interop.mkLayoutAttr("funnelareacolorway", values.ToArray());
         /// If `true`, the funnelarea slice colors (whether given by `funnelareacolorway` or inherited from `colorway`) will be extended to three times its original length by first repeating every color 20% lighter then each color 20% darker. This is intended to reduce the likelihood of reusing the same color when you have many slices, but you can set `false` to disable. Colors provided in the trace, using `marker.colors`, are never extended.
@@ -148,18 +154,38 @@ namespace PlotlyH5
         /// Sets the plot's height (in px).
         public static Box<ILayoutProperty> height(float val) => Interop.mkLayoutAttr("height", val);
         public static Box<ILayoutProperty> margin(params Box<IMarginProperty>[] properties) => Interop.mkLayoutAttr("margin", Bindings.flattenProperties(properties));
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(bool val) => Interop.mkLayoutAttr("computed", val);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(params bool[] values) => Interop.mkLayoutAttr("computed", values);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(System.DateTime val) => Interop.mkLayoutAttr("computed", val);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(params System.DateTime[] values) => Interop.mkLayoutAttr("computed", values);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(int val) => Interop.mkLayoutAttr("computed", val);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(params int[] values) => Interop.mkLayoutAttr("computed", values);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(float val) => Interop.mkLayoutAttr("computed", val);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(params float[] values) => Interop.mkLayoutAttr("computed", values);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(string val) => Interop.mkLayoutAttr("computed", val);
+        /// Placeholder for exporting automargin-impacting values namely `margin.t`, `margin.b`, `margin.l` and `margin.r` in *full-json* mode.
+        public static Box<ILayoutProperty> computed(params string[] values) => Interop.mkLayoutAttr("computed", values);
         /// Sets the background color of the paper where the graph is drawn.
         public static Box<ILayoutProperty> paperBgcolor(string val) => Interop.mkLayoutAttr("paper_bgcolor", val);
         /// Sets the background color of the plotting area in-between x and y axes.
         public static Box<ILayoutProperty> plotBgcolor(string val) => Interop.mkLayoutAttr("plot_bgcolor", val);
         /// Sets the decimal and thousand separators. For example, *. * puts a '.' before decimals and a space between thousands. In English locales, dflt is *.,* but other locales may alter this default.
         public static Box<ILayoutProperty> separators(string val) => Interop.mkLayoutAttr("separators", val);
-        /// Determines whether or not a text link citing the data source is placed at the bottom-right cored of the figure. Has only an effect only on graphs that have been generated via forked graphs from the plotly service (at https://plot.ly or on-premise).
+        /// Determines whether or not a text link citing the data source is placed at the bottom-right cored of the figure. Has only an effect only on graphs that have been generated via forked graphs from the Chart Studio Cloud (at https://chart-studio.plotly.com or on-premise).
         public static Box<ILayoutProperty> hidesources(bool val) => Interop.mkLayoutAttr("hidesources", val);
         /// Determines whether or not a legend is drawn. Default is `true` if there is a trace to show and any of these: a) Two or more traces would by default be shown in the legend. b) One pie trace is shown in the legend. c) One trace is explicitly given with `showlegend: true`.
         public static Box<ILayoutProperty> showlegend(bool val) => Interop.mkLayoutAttr("showlegend", val);
         /// Sets the default trace colors.
-        public static Box<ILayoutProperty> colorway(string val) => Interop.mkLayoutAttr("colorway", new[]{val});
+        public static Box<ILayoutProperty> colorway(string val) => Interop.mkLayoutAttr("colorway", new[] { val });
         /// Sets the default trace colors.
         public static Box<ILayoutProperty> colorway(IEnumerable<string> values) => Interop.mkLayoutAttr("colorway", values.ToArray());
         /// If provided, a changed value tells `Plotly.react` that one or more data arrays has changed. This way you can modify arrays in-place rather than making a complete new copy for an incremental change. If NOT provided, `Plotly.react` assumes that data arrays are being treated as immutable, thus any data array with a different identity from its predecessor contains new data.
@@ -262,7 +288,8 @@ namespace PlotlyH5
         public static Box<ILayoutProperty> template(string val) => Interop.mkLayoutAttr("template", val);
         /// Default attributes to be applied to the plot. Templates can be created from existing plots using `Plotly.makeTemplate`, or created manually. They should be objects with format: `{layout: layoutTemplate, data: {[type]: [traceTemplate, ...]}, ...}` `layoutTemplate` and `traceTemplate` are objects matching the attribute structure of `layout` and a data trace.  Trace templates are applied cyclically to traces of each type. Container arrays (eg `annotations`) have special handling: An object ending in `defaults` (eg `annotationdefaults`) is applied to each array item. But if an item has a `templateitemname` key we look in the template array for an item with matching `name` and apply that instead. If no matching `name` is found we mark the item invisible. Any named template item not referenced is appended to the end of the array, so you can use this for a watermark annotation or a logo image, for example. To omit one of these items on the plot, make an item with matching `templateitemname` and `visible: false`.
         public static Box<ILayoutProperty> template(params string[] values) => Interop.mkLayoutAttr("template", values);
-        public static Box<ILayoutProperty> modebar(params Box<IModebarProperty>[] properties) => Interop.mkLayoutAttr("modebar", Bindings.flattenProperties(properties));
+        public static Box<ILayoutProperty> newshape(params Box<INewshapeProperty>[] properties) => Interop.mkLayoutAttr("newshape", Bindings.flattenProperties(properties));
+        public static Box<ILayoutProperty> activeshape(params Box<IActiveshapeProperty>[] properties) => Interop.mkLayoutAttr("activeshape", Bindings.flattenProperties(properties));
         /// Sets transition options used during Plotly.react updates.
         public static Box<ILayoutProperty> transition(params Box<ITransitionProperty>[] properties) => Interop.mkLayoutAttr("transition", Bindings.flattenProperties(properties));
         /// Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
@@ -296,7 +323,8 @@ namespace PlotlyH5
         public static Box<ILayoutProperty> colorscale(params Box<IColorscaleProperty>[] properties) => Interop.mkLayoutAttr("colorscale", Bindings.flattenProperties(properties));
         public static Box<ILayoutProperty> coloraxis(int id, params Box<IColoraxisProperty>[] properties) => Interop.mkLayoutAttr($"coloraxis{id}", Bindings.flattenProperties(properties));
         public static Box<ILayoutProperty> coloraxis(params Box<IColoraxisProperty>[] properties) => Interop.mkLayoutAttr("coloraxis", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  meta .
+        public static Box<ILayoutProperty> modebar(params Box<IModebarProperty>[] properties) => Interop.mkLayoutAttr("modebar", Bindings.flattenProperties(properties));
+        /// Sets the source reference on Chart Studio Cloud for  meta .
         public static Box<ILayoutProperty> metasrc(string val) => Interop.mkLayoutAttr("metasrc", val);
     }
 
@@ -348,6 +376,13 @@ namespace PlotlyH5
             public static Box<ILayoutProperty> overlay() => Interop.mkLayoutAttr("waterfallmode", "overlay");
         }
 
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. This is the default value; however it could be overridden for individual axes.
+        public static partial class Autotypenumbers
+        {
+            public static Box<ILayoutProperty> convertTypes() => Interop.mkLayoutAttr("autotypenumbers", "convert types");
+            public static Box<ILayoutProperty> strict() => Interop.mkLayoutAttr("autotypenumbers", "strict");
+        }
+
         /// Determines the mode of single click interactions. *event* is the default value and emits the `plotly_click` event. In addition this mode emits the `plotly_selected` event in drag modes *lasso* and *select*, but with no event data attached (kept for compatibility reasons). The *select* flag enables selecting single data points via click. This mode also supports persistent selections, meaning that pressing Shift while clicking, adds to / subtracts from an existing selection. *select* with `hovermode`: *x* can be confusing, consider explicitly setting `hovermode`: *closest* when using this feature. Selection events are sent accordingly as long as *event* flag is set as well. When the *event* flag is missing, `plotly_click` and `plotly_selected` events are not fired.
         public static partial class Clickmode
         {
@@ -359,6 +394,11 @@ namespace PlotlyH5
         /// Determines the mode of drag interactions. *select* and *lasso* apply only to scatter traces with markers or text. *orbit* and *turntable* apply only to 3D scenes.
         public static partial class Dragmode
         {
+            public static Box<ILayoutProperty> drawcircle() => Interop.mkLayoutAttr("dragmode", "drawcircle");
+            public static Box<ILayoutProperty> drawclosedpath() => Interop.mkLayoutAttr("dragmode", "drawclosedpath");
+            public static Box<ILayoutProperty> drawline() => Interop.mkLayoutAttr("dragmode", "drawline");
+            public static Box<ILayoutProperty> drawopenpath() => Interop.mkLayoutAttr("dragmode", "drawopenpath");
+            public static Box<ILayoutProperty> drawrect() => Interop.mkLayoutAttr("dragmode", "drawrect");
             public static Box<ILayoutProperty> lasso() => Interop.mkLayoutAttr("dragmode", "lasso");
             public static Box<ILayoutProperty> orbit() => Interop.mkLayoutAttr("dragmode", "orbit");
             public static Box<ILayoutProperty> pan() => Interop.mkLayoutAttr("dragmode", "pan");
@@ -368,16 +408,18 @@ namespace PlotlyH5
             public static Box<ILayoutProperty> _false() => Interop.mkLayoutAttr("dragmode", false);
         }
 
-        /// Determines the mode of hover interactions. If `clickmode` includes the *select* flag, `hovermode` defaults to *closest*. If `clickmode` lacks the *select* flag, it defaults to *x* or *y* (depending on the trace's `orientation` value) for plots based on cartesian coordinates. For anything else the default value is *closest*.
+        /// Determines the mode of hover interactions. If *closest*, a single hoverlabel will appear for the *closest* point within the `hoverdistance`. If *x* (or *y*), multiple hoverlabels will appear for multiple points at the *closest* x- (or y-) coordinate within the `hoverdistance`, with the caveat that no more than one hoverlabel will appear per trace. If *x unified* (or *y unified*), a single hoverlabel will appear multiple points at the closest x- (or y-) coordinate within the `hoverdistance` with the caveat that no more than one hoverlabel will appear per trace. In this mode, spikelines are enabled by default perpendicular to the specified axis. If false, hover interactions are disabled.
         public static partial class Hovermode
         {
             public static Box<ILayoutProperty> closest() => Interop.mkLayoutAttr("hovermode", "closest");
+            public static Box<ILayoutProperty> xUnified() => Interop.mkLayoutAttr("hovermode", "x unified");
             public static Box<ILayoutProperty> x() => Interop.mkLayoutAttr("hovermode", "x");
+            public static Box<ILayoutProperty> yUnified() => Interop.mkLayoutAttr("hovermode", "y unified");
             public static Box<ILayoutProperty> y() => Interop.mkLayoutAttr("hovermode", "y");
             public static Box<ILayoutProperty> _false() => Interop.mkLayoutAttr("hovermode", false);
         }
 
-        /// When \"dragmode\" is set to \"select\", this limits the selection of the drag to horizontal, vertical or diagonal. \"h\" only allows horizontal selection, \"v\" only vertical, \"d\" only diagonal and \"any\" sets no limit.
+        /// When `dragmode` is set to *select*, this limits the selection of the drag to horizontal, vertical or diagonal. *h* only allows horizontal selection, *v* only vertical, *d* only diagonal and *any* sets no limit.
         public static partial class Selectdirection
         {
             public static Box<ILayoutProperty> any() => Interop.mkLayoutAttr("selectdirection", "any");

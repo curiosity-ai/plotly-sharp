@@ -8,61 +8,53 @@ namespace Plotly
     using System.Collections.Generic;
     using System.Linq;
     using Types;
-    using Bridge;
-    using static Retyped.dom;
+    using H5;
+    using static H5.Core.dom;
 
     public static partial class Radialaxis
     {
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IRadialaxisProperty> domain(int val) => Interop.mkRadialaxisAttr("domain", new[]{val});
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IRadialaxisProperty> domain(IEnumerable<int> values) => Interop.mkRadialaxisAttr("domain", values.ToArray());
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IRadialaxisProperty> domain(float val) => Interop.mkRadialaxisAttr("domain", new[]{val});
-        /// Polar chart subplots are not supported yet. This key has currently no effect.
-        public static Box<IRadialaxisProperty> domain(IEnumerable<float> values) => Interop.mkRadialaxisAttr("domain", values.ToArray());
         /// A single toggle to hide the axis while preserving interaction like dragging. Default is true when a cheater plot is present on the axis, otherwise false
         public static Box<IRadialaxisProperty> visible(bool val) => Interop.mkRadialaxisAttr("visible", val);
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IRadialaxisProperty> range(bool val) => Interop.mkRadialaxisAttr("range", new[]{val});
+        public static Box<IRadialaxisProperty> range(bool val) => Interop.mkRadialaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IRadialaxisProperty> range(IEnumerable<bool> values) => Interop.mkRadialaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IRadialaxisProperty> range(System.DateTime val) => Interop.mkRadialaxisAttr("range", new[]{val});
+        public static Box<IRadialaxisProperty> range(System.DateTime val) => Interop.mkRadialaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IRadialaxisProperty> range(IEnumerable<System.DateTime> values) => Interop.mkRadialaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IRadialaxisProperty> range(float val) => Interop.mkRadialaxisAttr("range", new[]{val});
+        public static Box<IRadialaxisProperty> range(float val) => Interop.mkRadialaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IRadialaxisProperty> range(IEnumerable<float> values) => Interop.mkRadialaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IRadialaxisProperty> range(int val) => Interop.mkRadialaxisAttr("range", new[]{val});
+        public static Box<IRadialaxisProperty> range(int val) => Interop.mkRadialaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IRadialaxisProperty> range(IEnumerable<int> values) => Interop.mkRadialaxisAttr("range", values.ToArray());
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
-        public static Box<IRadialaxisProperty> range(string val) => Interop.mkRadialaxisAttr("range", new[]{val});
+        public static Box<IRadialaxisProperty> range(string val) => Interop.mkRadialaxisAttr("range", new[] { val });
         /// Sets the range of this axis. If the axis `type` is *log*, then you must take the log of your desired range (e.g. to set the range from 1 to 100, set the range from 0 to 2). If the axis `type` is *date*, it should be date strings, like date data, though Date objects and unix milliseconds will be accepted and converted to strings. If the axis `type` is *category*, it should be numbers, using the scale where each category is assigned a serial number from zero in the order it appears.
         public static Box<IRadialaxisProperty> range(IEnumerable<string> values) => Interop.mkRadialaxisAttr("range", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(bool val) => Interop.mkRadialaxisAttr("categoryarray", new[]{val});
+        public static Box<IRadialaxisProperty> categoryarray(bool val) => Interop.mkRadialaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(params bool[] values) => Interop.mkRadialaxisAttr("categoryarray", values);
+        public static Box<IRadialaxisProperty> categoryarray(IEnumerable<bool> values) => Interop.mkRadialaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(System.DateTime val) => Interop.mkRadialaxisAttr("categoryarray", new[]{val});
+        public static Box<IRadialaxisProperty> categoryarray(System.DateTime val) => Interop.mkRadialaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(params System.DateTime[] values) => Interop.mkRadialaxisAttr("categoryarray", values);
+        public static Box<IRadialaxisProperty> categoryarray(IEnumerable<System.DateTime> values) => Interop.mkRadialaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(float val) => Interop.mkRadialaxisAttr("categoryarray", new[]{val});
+        public static Box<IRadialaxisProperty> categoryarray(float val) => Interop.mkRadialaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(params float[] values) => Interop.mkRadialaxisAttr("categoryarray", values);
+        public static Box<IRadialaxisProperty> categoryarray(IEnumerable<float> values) => Interop.mkRadialaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(int val) => Interop.mkRadialaxisAttr("categoryarray", new[]{val});
+        public static Box<IRadialaxisProperty> categoryarray(int val) => Interop.mkRadialaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(params int[] values) => Interop.mkRadialaxisAttr("categoryarray", values);
+        public static Box<IRadialaxisProperty> categoryarray(IEnumerable<int> values) => Interop.mkRadialaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(string val) => Interop.mkRadialaxisAttr("categoryarray", new[]{val});
+        public static Box<IRadialaxisProperty> categoryarray(string val) => Interop.mkRadialaxisAttr("categoryarray", new[] { val });
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
-        public static Box<IRadialaxisProperty> categoryarray(params string[] values) => Interop.mkRadialaxisAttr("categoryarray", values);
+        public static Box<IRadialaxisProperty> categoryarray(IEnumerable<string> values) => Interop.mkRadialaxisAttr("categoryarray", values.ToArray());
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
         public static Box<IRadialaxisProperty> categoryarray(IEnumerable<bool[]> values) => Interop.mkRadialaxisAttr("categoryarray", Bindings.flatten2DArrayIf1D(values));
         /// Sets the order in which categories on this axis appear. Only has an effect if `categoryorder` is set to *array*. Used with `categoryorder`.
@@ -102,7 +94,7 @@ namespace Plotly
         /// Sets the angle (in degrees) from which the radial axis is drawn. Note that by default, radial axis line on the theta=0 line corresponds to a line pointing right (like what mathematicians prefer). Defaults to the first `polar.sector` angle.
         public static Box<IRadialaxisProperty> angle(float val) => Interop.mkRadialaxisAttr("angle", val);
         public static Box<IRadialaxisProperty> title(params Box<ITitleProperty>[] properties) => Interop.mkRadialaxisAttr("title", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IRadialaxisProperty> hoverformat(string val) => Interop.mkRadialaxisAttr("hoverformat", val);
         /// Controls persistence of user-driven changes in axis `range`, `autorange`, `angle`, and `title` if in `editable: true` configuration. Defaults to `polar<N>.uirevision`.
         public static Box<IRadialaxisProperty> uirevision(bool val) => Interop.mkRadialaxisAttr("uirevision", val);
@@ -185,23 +177,23 @@ namespace Plotly
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<IRadialaxisProperty> dtick(params string[] values) => Interop.mkRadialaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IRadialaxisProperty> tickvals(bool val) => Interop.mkRadialaxisAttr("tickvals", new[]{val});
+        public static Box<IRadialaxisProperty> tickvals(bool val) => Interop.mkRadialaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IRadialaxisProperty> tickvals(System.DateTime val) => Interop.mkRadialaxisAttr("tickvals", new[]{val});
+        public static Box<IRadialaxisProperty> tickvals(System.DateTime val) => Interop.mkRadialaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IRadialaxisProperty> tickvals(float val) => Interop.mkRadialaxisAttr("tickvals", new[]{val});
+        public static Box<IRadialaxisProperty> tickvals(float val) => Interop.mkRadialaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IRadialaxisProperty> tickvals(int val) => Interop.mkRadialaxisAttr("tickvals", new[]{val});
+        public static Box<IRadialaxisProperty> tickvals(int val) => Interop.mkRadialaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<IRadialaxisProperty> tickvals(string val) => Interop.mkRadialaxisAttr("tickvals", new[]{val});
+        public static Box<IRadialaxisProperty> tickvals(string val) => Interop.mkRadialaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -239,23 +231,23 @@ namespace Plotly
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<IRadialaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkRadialaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IRadialaxisProperty> ticktext(bool val) => Interop.mkRadialaxisAttr("ticktext", new[]{val});
+        public static Box<IRadialaxisProperty> ticktext(bool val) => Interop.mkRadialaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IRadialaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkRadialaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IRadialaxisProperty> ticktext(System.DateTime val) => Interop.mkRadialaxisAttr("ticktext", new[]{val});
+        public static Box<IRadialaxisProperty> ticktext(System.DateTime val) => Interop.mkRadialaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IRadialaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkRadialaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IRadialaxisProperty> ticktext(float val) => Interop.mkRadialaxisAttr("ticktext", new[]{val});
+        public static Box<IRadialaxisProperty> ticktext(float val) => Interop.mkRadialaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IRadialaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkRadialaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IRadialaxisProperty> ticktext(int val) => Interop.mkRadialaxisAttr("ticktext", new[]{val});
+        public static Box<IRadialaxisProperty> ticktext(int val) => Interop.mkRadialaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IRadialaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkRadialaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<IRadialaxisProperty> ticktext(string val) => Interop.mkRadialaxisAttr("ticktext", new[]{val});
+        public static Box<IRadialaxisProperty> ticktext(string val) => Interop.mkRadialaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<IRadialaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkRadialaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -308,6 +300,10 @@ namespace Plotly
         public static Box<IRadialaxisProperty> tickprefix(string val) => Interop.mkRadialaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<IRadialaxisProperty> ticksuffix(string val) => Interop.mkRadialaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IRadialaxisProperty> minexponent(int val) => Interop.mkRadialaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<IRadialaxisProperty> minexponent(float val) => Interop.mkRadialaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<IRadialaxisProperty> separatethousands(bool val) => Interop.mkRadialaxisAttr("separatethousands", val);
         /// Sets the tick font.
@@ -316,14 +312,14 @@ namespace Plotly
         public static Box<IRadialaxisProperty> tickangle(int val) => Interop.mkRadialaxisAttr("tickangle", val);
         /// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
         public static Box<IRadialaxisProperty> tickangle(float val) => Interop.mkRadialaxisAttr("tickangle", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<IRadialaxisProperty> tickformat(string val) => Interop.mkRadialaxisAttr("tickformat", val);
         public static Box<IRadialaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkRadialaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the source reference on plot.ly for  categoryarray .
+        /// Sets the source reference on Chart Studio Cloud for  categoryarray .
         public static Box<IRadialaxisProperty> categoryarraysrc(string val) => Interop.mkRadialaxisAttr("categoryarraysrc", val);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<IRadialaxisProperty> tickvalssrc(string val) => Interop.mkRadialaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<IRadialaxisProperty> ticktextsrc(string val) => Interop.mkRadialaxisAttr("ticktextsrc", val);
     }
 
@@ -337,6 +333,13 @@ namespace Plotly
             public static Box<IRadialaxisProperty> date() => Interop.mkRadialaxisAttr("type", "date");
             public static Box<IRadialaxisProperty> linear() => Interop.mkRadialaxisAttr("type", "linear");
             public static Box<IRadialaxisProperty> log() => Interop.mkRadialaxisAttr("type", "log");
+        }
+
+        /// Using *strict* a numeric string in trace data is not converted to a number. Using *convert types* a numeric string in trace data may be treated as a number during automatic axis `type` detection. Defaults to layout.autotypenumbers.
+        public static partial class Autotypenumbers
+        {
+            public static Box<IRadialaxisProperty> convertTypes() => Interop.mkRadialaxisAttr("autotypenumbers", "convert types");
+            public static Box<IRadialaxisProperty> strict() => Interop.mkRadialaxisAttr("autotypenumbers", "strict");
         }
 
         /// Determines whether or not the range of this axis is computed in relation to the input data. See `rangemode` for more info. If `range` is provided, then `autorange` is set to *false*.

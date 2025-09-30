@@ -59,23 +59,23 @@ namespace PlotlyH5
         /// Sets the step in-between ticks on this axis. Use with `tick0`. Must be a positive number, or special strings available to *log* and *date* axes. If the axis `type` is *log*, then ticks are set every 10^(n*dtick) where n is the tick number. For example, to set a tick mark at 1, 10, 100, 1000, ... set dtick to 1. To set tick marks at 1, 100, 10000, ... set dtick to 2. To set tick marks at 1, 5, 25, 125, 625, 3125, ... set dtick to log_10(5), or 0.69897000433. *log* has several special values; *L<f>*, where `f` is a positive number, gives ticks linearly spaced in value (but not position). For example `tick0` = 0.1, `dtick` = *L0.5* will put ticks at 0.1, 0.6, 1.1, 1.6 etc. To show powers of 10 plus small digits between, use *D1* (all digits) or *D2* (only 2 and 5). `tick0` is ignored for *D1* and *D2*. If the axis `type` is *date*, then you must convert the time to milliseconds. For example, to set the interval between ticks to one day, set `dtick` to 86400000.0. *date* also has special values *M<n>* gives ticks spaced by a number of months. `n` must be a positive integer. To set ticks on the 15th of every third month, set `tick0` to *2000-01-15* and `dtick` to *M3*. To set ticks every 4 years, set `dtick` to *M48*
         public static Box<ICaxisProperty> dtick(params string[] values) => Interop.mkCaxisAttr("dtick", values);
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<ICaxisProperty> tickvals(bool val) => Interop.mkCaxisAttr("tickvals", new[]{val});
+        public static Box<ICaxisProperty> tickvals(bool val) => Interop.mkCaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<bool> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<ICaxisProperty> tickvals(System.DateTime val) => Interop.mkCaxisAttr("tickvals", new[]{val});
+        public static Box<ICaxisProperty> tickvals(System.DateTime val) => Interop.mkCaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<System.DateTime> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<ICaxisProperty> tickvals(float val) => Interop.mkCaxisAttr("tickvals", new[]{val});
+        public static Box<ICaxisProperty> tickvals(float val) => Interop.mkCaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<float> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<ICaxisProperty> tickvals(int val) => Interop.mkCaxisAttr("tickvals", new[]{val});
+        public static Box<ICaxisProperty> tickvals(int val) => Interop.mkCaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<int> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
-        public static Box<ICaxisProperty> tickvals(string val) => Interop.mkCaxisAttr("tickvals", new[]{val});
+        public static Box<ICaxisProperty> tickvals(string val) => Interop.mkCaxisAttr("tickvals", new[] { val });
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<string> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
@@ -113,23 +113,23 @@ namespace PlotlyH5
         /// Sets the values at which ticks on this axis appear. Only has an effect if `tickmode` is set to *array*. Used with `ticktext`.
         public static Box<ICaxisProperty> tickvals(IEnumerable<float?> values) => Interop.mkCaxisAttr("tickvals", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<ICaxisProperty> ticktext(bool val) => Interop.mkCaxisAttr("ticktext", new[]{val});
+        public static Box<ICaxisProperty> ticktext(bool val) => Interop.mkCaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<ICaxisProperty> ticktext(IEnumerable<bool> values) => Interop.mkCaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<ICaxisProperty> ticktext(System.DateTime val) => Interop.mkCaxisAttr("ticktext", new[]{val});
+        public static Box<ICaxisProperty> ticktext(System.DateTime val) => Interop.mkCaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<ICaxisProperty> ticktext(IEnumerable<System.DateTime> values) => Interop.mkCaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<ICaxisProperty> ticktext(float val) => Interop.mkCaxisAttr("ticktext", new[]{val});
+        public static Box<ICaxisProperty> ticktext(float val) => Interop.mkCaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<ICaxisProperty> ticktext(IEnumerable<float> values) => Interop.mkCaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<ICaxisProperty> ticktext(int val) => Interop.mkCaxisAttr("ticktext", new[]{val});
+        public static Box<ICaxisProperty> ticktext(int val) => Interop.mkCaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<ICaxisProperty> ticktext(IEnumerable<int> values) => Interop.mkCaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
-        public static Box<ICaxisProperty> ticktext(string val) => Interop.mkCaxisAttr("ticktext", new[]{val});
+        public static Box<ICaxisProperty> ticktext(string val) => Interop.mkCaxisAttr("ticktext", new[] { val });
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
         public static Box<ICaxisProperty> ticktext(IEnumerable<string> values) => Interop.mkCaxisAttr("ticktext", values.ToArray());
         /// Sets the text displayed at the ticks position via `tickvals`. Only has an effect if `tickmode` is set to *array*. Used with `tickvals`.
@@ -182,6 +182,10 @@ namespace PlotlyH5
         public static Box<ICaxisProperty> tickprefix(string val) => Interop.mkCaxisAttr("tickprefix", val);
         /// Sets a tick label suffix.
         public static Box<ICaxisProperty> ticksuffix(string val) => Interop.mkCaxisAttr("ticksuffix", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<ICaxisProperty> minexponent(int val) => Interop.mkCaxisAttr("minexponent", val);
+        /// Hide SI prefix for 10^n if |n| is below this number. This only has an effect when `tickformat` is *SI* or *B*.
+        public static Box<ICaxisProperty> minexponent(float val) => Interop.mkCaxisAttr("minexponent", val);
         /// If \"true\", even 4-digit integers are separated
         public static Box<ICaxisProperty> separatethousands(bool val) => Interop.mkCaxisAttr("separatethousands", val);
         /// Sets the tick font.
@@ -190,10 +194,10 @@ namespace PlotlyH5
         public static Box<ICaxisProperty> tickangle(int val) => Interop.mkCaxisAttr("tickangle", val);
         /// Sets the angle of the tick labels with respect to the horizontal. For example, a `tickangle` of -90 draws the tick labels vertically.
         public static Box<ICaxisProperty> tickangle(float val) => Interop.mkCaxisAttr("tickangle", val);
-        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the tick label formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<ICaxisProperty> tickformat(string val) => Interop.mkCaxisAttr("tickformat", val);
         public static Box<ICaxisProperty> tickformatstops(params Box<ITickformatstopsProperty>[] properties) => Interop.mkCaxisAttr("tickformatstops", Bindings.flattenProperties(properties));
-        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format And for dates see: https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Formatting.md#format We add one item to d3's date formatter: *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
+        /// Sets the hover text formatting rule using d3 formatting mini-languages which are very similar to those in Python. For numbers, see: https://github.com/d3/d3-3.x-api-reference/blob/master/Formatting.md#d3_format. And for dates see: https://github.com/d3/d3-time-format#locale_format. We add two items to d3's date formatter: *%h* for half of the year as a decimal number as well as *%{n}f* for fractional seconds with n digits. For example, *2016-10-13 09:15:23.456* with tickformat *%H~%M~%S.%2f* would display *09~15~23.46*
         public static Box<ICaxisProperty> hoverformat(string val) => Interop.mkCaxisAttr("hoverformat", val);
         /// Determines whether or not a line bounding this axis is drawn.
         public static Box<ICaxisProperty> showline(bool val) => Interop.mkCaxisAttr("showline", val);
@@ -235,9 +239,9 @@ namespace PlotlyH5
         public static Box<ICaxisProperty> uirevision(string val) => Interop.mkCaxisAttr("uirevision", val);
         /// Controls persistence of user-driven changes in axis `min`, and `title` if in `editable: true` configuration. Defaults to `ternary<N>.uirevision`.
         public static Box<ICaxisProperty> uirevision(params string[] values) => Interop.mkCaxisAttr("uirevision", values);
-        /// Sets the source reference on plot.ly for  tickvals .
+        /// Sets the source reference on Chart Studio Cloud for  tickvals .
         public static Box<ICaxisProperty> tickvalssrc(string val) => Interop.mkCaxisAttr("tickvalssrc", val);
-        /// Sets the source reference on plot.ly for  ticktext .
+        /// Sets the source reference on Chart Studio Cloud for  ticktext .
         public static Box<ICaxisProperty> ticktextsrc(string val) => Interop.mkCaxisAttr("ticktextsrc", val);
     }
 
