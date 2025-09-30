@@ -6,7 +6,7 @@ namespace Plotly
     ////////////////////////////////*/
     namespace Types
     {
-    
+        using H5;
 
         [ObjectLiteral]
         public interface IPlotProperty
