@@ -1,4 +1,4 @@
-﻿<Project Sdk="h5.Target/23.2.35852">
+﻿<Project Sdk="h5.Target/25.11.62725">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SkipResourcesExtraction>true</SkipResourcesExtraction>
@@ -11,13 +11,13 @@
     <None Include="plotly-h5-logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="h5" Version="25.5.58366" />
-    <PackageReference Include="h5.core" Version="24.11.53879" />
+    <PackageReference Include="h5" Version="25.11.62743" />
+    <PackageReference Include="h5.core" Version="25.11.62746" />
   </ItemGroup>
 
   <PropertyGroup>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>(c) Copyright 2020 Curiosity GmbH - all right reserved</Copyright>
+    <Copyright>(c) Copyright 2025 Curiosity GmbH - all right reserved</Copyright>
     <Company>Curiosity GmbH</Company>
     <Authors>Curiosity GmbH</Authors>
     <PackageProjectUrl>https://github.com/curiosity-ai/plotly-sharp</PackageProjectUrl>
