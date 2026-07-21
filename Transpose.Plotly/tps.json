@@ -1,0 +1,22 @@
+{
+  // See the Transpose compiler for the supported tps.json configuration options.
+  "html": { "disabled": true },
+  "reflection": { "disabled": true },
+
+  // Always build both the minified and non-minified versions of the code so that resources for both
+  // variants are embedded in the package and a referencing project can pick per build configuration.
+  "outputFormatting": "Both",
+
+  "resources": [
+    // The compiled bundle (Transpose.Plotly.js/.min.js) and its metadata are embedded automatically.
+    // Here we only ship the vendored plotly.js library that the binding depends on.
+    {
+      "name": "plotly.js",
+      "files": [ "tps/plotly.js" ]
+    },
+    {
+      "name": "plotly.min.js",
+      "files": [ "tps/plotly.min.js" ]
+    }
+  ]
+}

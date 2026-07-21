@@ -1,5 +1,5 @@
 variables:
-  projectH5:  './Plotly.H5/Plotly.H5.csproj'
+  projectPlotly:  './Transpose.Plotly/Transpose.Plotly.csproj'
   projectSharp:  './Plotly.Sharp/Plotly.Sharp.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
@@ -30,35 +30,35 @@ steps:
     
 - task: CmdLine@2
   inputs:
-    script: 'dotnet tool update --global h5-compiler'
+    script: 'dotnet tool update --global Transpose.Compiler'
 
 - task: DotNetCoreCLI@2
   displayName: 'restore nuget'
   inputs:
     command: 'restore'
-    projects: '$(projectH5)'
+    projects: '$(projectPlotly)'
 
 - task: DotNetCoreCLI@2
   displayName: 'build'
   inputs:
     command: 'build'
-    projects: '$(projectH5)'
+    projects: '$(projectPlotly)'
     arguments: '-c $(buildConfiguration) /p:Version=$(buildVersion) /p:AllowUnsafeBlocks=True /p:LangVersion=latest'
 
 - task: DotNetCoreCLI@2
   displayName: 'pack nuget'
   inputs:
     command: 'pack'
-    packagesToPack: '$(projectH5)'
+    packagesToPack: '$(projectPlotly)'
     configuration: '$(buildConfiguration)'
     versioningScheme: 'off'
     buildProperties: 'Version="$(buildVersion)";AllowUnsafeBlocks="True";LangVersion="latest"'
 
 - task: DotNetCoreCLI@2
-  displayName: 'restore projectH5'
+  displayName: 'restore projectPlotly'
   inputs:
     command: 'restore'
-    projects: '$(projectH5)'
+    projects: '$(projectPlotly)'
 
 
 - task: DotNetCoreCLI@2
@@ -68,10 +68,10 @@ steps:
     projects: '$(projectSharp)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'build projectH5'
+  displayName: 'build projectPlotly'
   inputs:
     command: 'build'
-    projects: '$(projectH5)'
+    projects: '$(projectPlotly)'
     arguments: '-c $(buildConfiguration) /p:Version=$(buildVersion) /p:AssemblyVersion=$(buildVersion) /p:AllowUnsafeBlocks=True /p:WarningLevel=0 /p:AnalysisLevel=0'
 
 # - task: DotNetCoreCLI@2
@@ -86,10 +86,10 @@ steps:
     script: 'dir $(Build.SourcesDirectory)\*.nupkg /S'
 
 - task: NuGetCommand@2
-  displayName: 'push Plotly.H5 to nuget'
+  displayName: 'push Transpose.Plotly to nuget'
   inputs:
     command: 'push'
-    packagesToPush: '**/Plotly.H5.$(buildVersion).nupkg'
+    packagesToPush: '**/Transpose.Plotly.$(buildVersion).nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget-curiosity'
 
