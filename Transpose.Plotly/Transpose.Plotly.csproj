@@ -11,8 +11,8 @@
     <None Include="transpose-plotly-logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Transpose.BCL" Version="26.7.2882" />
-    <PackageReference Include="Transpose.Core" Version="26.7.2884" />
+    <PackageReference Include="Transpose.BCL" Version="26.7.2903" />
+    <PackageReference Include="Transpose.Core" Version="26.7.2904" />
   </ItemGroup>
 
   <PropertyGroup>
