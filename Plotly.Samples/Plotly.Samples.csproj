@@ -1,0 +1,20 @@
+<Project Sdk="Transpose.Build.Target/26.7.2692">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Plotly.Samples</AssemblyName>
+    <RootNamespace>Plotly.Samples</RootNamespace>
+    <LangVersion>7.2</LangVersion>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Transpose.BCL" Version="26.7.2903" />
+    <PackageReference Include="Transpose.Core" Version="26.7.2904" />
+    <PackageReference Include="Tesserae" Version="2026.7.68442" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tesserae.Plotly\Tesserae.Plotly.csproj" />
+  </ItemGroup>
+</Project>

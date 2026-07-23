@@ -1,0 +1,34 @@
+<Project Sdk="Transpose.Build.Target/26.7.2692">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SkipResourcesExtraction>true</SkipResourcesExtraction>
+    <LangVersion>7.2</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="tesserae-plotly-logo.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Transpose.BCL" Version="26.7.2903" />
+    <PackageReference Include="Transpose.Core" Version="26.7.2904" />
+    <PackageReference Include="Tesserae" Version="2026.7.68442" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>(c) Copyright 2026 Curiosity GmbH - all right reserved</Copyright>
+    <Company>Curiosity GmbH</Company>
+    <Authors>Curiosity GmbH</Authors>
+    <PackageProjectUrl>https://github.com/curiosity-ai/plotly-sharp</PackageProjectUrl>
+    <AssemblyName>Tesserae.Plotly</AssemblyName>
+    <RootNamespace>Tesserae.Plotly</RootNamespace>
+    <PackageId>Tesserae.Plotly</PackageId>
+    <Description>Tesserae.Plotly provides a strongly-typed Plotly binding and a Tesserae IComponent wrapper for building charts in Tesserae web applications.</Description>
+    <PackageTags>Plotly, Tesserae, Transpose, Graphs, Charts, HTML, UI</PackageTags>
+    <PackageIcon>tesserae-plotly-logo.png</PackageIcon>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>

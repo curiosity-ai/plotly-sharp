@@ -12,6 +12,32 @@ _**Plotly.Bridge**_ provides a strongly-typed binding to use [Plotly](https://pl
 
 [![Nuget](https://img.shields.io/nuget/v/Plotly.Bridge.svg?maxAge=0&colorB=brightgreen)](https://www.nuget.org/packages/Plotly.Bridge)
 
+_**Tesserae.Plotly**_ provides the same strongly-typed binding **plus** a first-class [Tesserae](https://github.com/curiosity-ai/tesserae) `IComponent` wrapper (`PlotlyChart`) for building charts inside Tesserae web applications compiled with the Transpose C#-to-JavaScript compiler. The vendored `plotly.js` is bundled in the package and injected automatically, so no CDN is required.
+
+[![Nuget](https://img.shields.io/nuget/v/Tesserae.Plotly.svg?maxAge=0&colorB=brightgreen)](https://www.nuget.org/packages/Tesserae.Plotly)
+
+### Using `PlotlyChart` in a Tesserae app
+
+`PlotlyChart` is a normal Tesserae component: it draws itself into a full-size container when mounted and keeps itself sized to that container (via a `ResizeObserver`), so all the usual sizing helpers (`.WS()`, `.HS()`, `.S()`, `.W(..)`, `.H(..)`, `.Grow()`, …) apply. Key Plotly options are surfaced as fluent methods.
+
+```csharp
+using Tesserae.Plotly;
+using static Tesserae.UI;
+
+var chart = new PlotlyChart(
+        Traces.scatter(Scatter.x(months), Scatter.y(revenue), Scatter.mode(Scatter.Mode.lines()), Scatter.name("Revenue")),
+        Traces.scatter(Scatter.x(months), Scatter.y(costs),   Scatter.mode(Scatter.Mode.lines()), Scatter.name("Costs")))
+    .Title("Monthly revenue vs. costs")
+    .Background("#ffffff")
+    .ShowLegend()
+    .WS().H(360);
+
+// Later, update the existing plot efficiently (uses Plotly.react under the hood):
+chart.Update(Traces.bar(Bar.x(months), Bar.y(newValues)));
+```
+
+The `Plotly.Samples` project in this repository is a runnable Tesserae app with one page per plot type (line/scatter, bar, pie, bubble, histogram, box &amp; violin, heatmap, contour, 3D surface &amp; scatter, candlestick, polar, sunburst, indicator) plus dedicated **Sizing** and **Updating** demos.
+
 Both libraries are automatically generated from the official [plotly.js API schema](https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plot-schema.json), and includes  the respective plotly.min.js file as part of the Nuget package.
 
 Example:
