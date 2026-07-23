@@ -25,7 +25,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $date=$(Get-Date -Format yyyy.M);
+      $date=$(Get-Date -Format yy.M);
       Write-Host "##vso[task.setvariable variable=buildVersion]$date.$(build.buildId)"
     
 - task: CmdLine@2
