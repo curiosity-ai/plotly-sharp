@@ -1,5 +1,5 @@
 variables:
-  projectPlotly:  './Transpose.Plotly/Transpose.Plotly.csproj'
+  projectPlotly:  './Tesserae.Plotly/Tesserae.Plotly.csproj'
   projectSharp:  './Plotly.Sharp/Plotly.Sharp.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
@@ -86,10 +86,10 @@ steps:
     script: 'dir $(Build.SourcesDirectory)\*.nupkg /S'
 
 - task: NuGetCommand@2
-  displayName: 'push Transpose.Plotly to nuget'
+  displayName: 'push Tesserae.Plotly to nuget'
   inputs:
     command: 'push'
-    packagesToPush: '**/Transpose.Plotly.$(buildVersion).nupkg'
+    packagesToPush: '**/Tesserae.Plotly.$(buildVersion).nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'nuget-curiosity'
 
