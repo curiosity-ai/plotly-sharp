@@ -14,7 +14,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fake.IO.FileSystem" Version="6.1.4" />
-    <PackageReference Include="FSharp.Data" Version="8.1.14" />
+    <PackageReference Include="FSharp.Data" Version="8.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.6.0" />
   </ItemGroup>
   <ItemGroup>
