@@ -251,7 +251,13 @@ namespace Tesserae.Plotly
             window.clearTimeout(_resizeTimeout);
             _resizeTimeout = window.setTimeout((_) =>
             {
-                try { Script.Write("Plotly.Plots.resize({0})", _container); } catch { }
+                // Re-check on the timer tick: the container may have been hidden/unmounted since this was scheduled.
+                if (!_rendered || !_container.IsMounted()) return;
+
+                // Plotly.Plots.resize() rejects a Promise (rather than throwing synchronously) when the div isn't
+                // currently displayed, e.g. it sits inside a hidden tab/pivot - a plain try/catch around the call
+                // cannot catch that, so it surfaces as an unhandled promise rejection. Swallow it on the JS side.
+                Script.Write("Plotly.Plots.resize({0}).catch(function(){})", _container);
             }, 16);
         }
 
