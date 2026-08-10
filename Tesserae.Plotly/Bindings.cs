@@ -223,13 +223,12 @@ namespace Tesserae.Plotly
 
                             void OnResize()
                             {
-                                // The resize call will fail if the chart is currently in a hidden state - if this is the case then swallow the exception (it's not recommended, though, since there is no support for the story
-                                // where the chart gets hidden, the User resizes the window and then the chart gets shown again; it may no longer be the correct size after the resize)
-                                try
-                                {
-                                    Script.Write("Plotly.Plots.resize({0})", Container);
-                                }
-                                catch { }
+                                // The resize call rejects a Promise (rather than throwing synchronously) if the chart is currently in
+                                // a hidden state - a plain try/catch around the call cannot catch that, so it surfaces as an unhandled
+                                // promise rejection instead. Swallow it on the JS side (it's not recommended, though, since there is no
+                                // support for the story where the chart gets hidden, the User resizes the window and then the chart
+                                // gets shown again; it may no longer be the correct size after the resize)
+                                Script.Write("Plotly.Plots.resize({0}).catch(function(){})", Container);
                             }
 
                             void OnResizeEvent(Event e) => OnResize();
