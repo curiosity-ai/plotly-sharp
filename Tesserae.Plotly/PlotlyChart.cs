@@ -45,8 +45,9 @@ namespace Tesserae.Plotly
 
         /// <summary>The element that the sizing helpers write onto (this component opts out of the stack-item wrapper).</summary>
         public HTMLElement StylingContainer           => _container;
+
         /// <summary>This component styles its own container, so styling should not be propagated to a stack-item parent.</summary>
-        public bool        PropagateToStackItemParent => false;
+        public bool        PropagateStylesToWrapper => false;
 
         /// <summary>Creates an empty chart. Add data with <see cref="Traces"/>/<see cref="AddTrace"/> and configure it fluently.</summary>
         public PlotlyChart()
