@@ -1,4 +1,4 @@
-<Project Sdk="Transpose.Build.Target/26.7.2692">
+<Project Sdk="Transpose.Build.Target/26.8.4125">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SkipResourcesExtraction>true</SkipResourcesExtraction>
@@ -11,8 +11,8 @@
     <None Include="tesserae-plotly-logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Transpose.BCL" Version="26.8.4500" />
-    <PackageReference Include="Transpose.Core" Version="26.8.4176" />
+    <PackageReference Include="Transpose.BCL" Version="26.8.4619" />
+    <PackageReference Include="Transpose.Core" Version="26.8.4597" />
     <PackageReference Include="Tesserae" Version="2026.8.70037" />
   </ItemGroup>
 
